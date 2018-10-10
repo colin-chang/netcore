@@ -5,7 +5,7 @@ https://docs.microsoft.com/zh-cn/aspnet/core/host-and-deploy/linux-nginx?view=as
 
 **相关注意事项**
 
-.net core程序无论是调试还是发布版本，都必须在程序目录下运行命令，否则可能会出现静态资源文件无法访问的问题
+.net core程序无论是调试还是发布版本，都必须在程序目录下运行命令，否则可能会出现静态资源文件无法访问的问题
  
 
 **启动并监听Web服务**
@@ -13,7 +13,7 @@ systemd 可用于创建服务文件以启动和监视基础 Web 应用。 system
 
 * 创建服务文件
 ```sh
-sudo vim /etc/systemd/system/kestrel-lottery.service
+$ sudo vim /etc/systemd/system/kestrel-lottery.service
 ```
 
 * 服务文件内容如下
