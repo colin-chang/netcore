@@ -23,7 +23,7 @@ Description=Lottery
 
 [Service]
 WorkingDirectory=/home/colin/projs/lottery
-ExecStart=/usr/bin/dotnet /home/colin/projs/lottery/Colin.Lottery.WebApp.dll
+ExecStart=/usr/bin/dotnet /home/colin/apps/content/lottery/Colin.Lottery.WebApp.dll
 Restart=always
 # Restart service after 10 seconds if the dotnet service crashes:
 RestartSec=10
@@ -39,14 +39,17 @@ WantedBy=multi-user.target
 * 启动服务
 ```sh
 # 启用服务
-$ systemctl enable kestrel-lottery.service
+$ sudo systemctl enable kestrel-lottery.service
 
 # 启动服务
-$ systemctl start kestrel-lottery.service
+$ sudo systemctl start kestrel-lottery.service
 
 # 查看服务状态
-$ systemctl status kestrel-lottery.service
+$ sudo systemctl status kestrel-lottery.service
 
 # 停止服务
-$ systemctl stop kestrel-lottery.service
+$ sudo systemctl stop kestrel-lottery.service
+
+# 重启服务
+$ sudo systemctl restart kestrel-lottery.service
 ```
