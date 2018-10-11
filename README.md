@@ -22,7 +22,7 @@ $ sudo vim /etc/systemd/system/kestrel-lottery.service
 Description=Lottery
 
 [Service]
-WorkingDirectory=/home/colin/projs/lottery
+WorkingDirectory=/home/colin/apps/content/lottery
 ExecStart=/usr/bin/dotnet /home/colin/apps/content/lottery/Colin.Lottery.WebApp.dll
 Restart=always
 # Restart service after 10 seconds if the dotnet service crashes:
