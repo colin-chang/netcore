@@ -308,6 +308,7 @@ SQL Server中查询unicode and ANSI字段时务必使用unicode编码
 有shapes表结构如上图，我们可以根据Type字段将每行数据映射为`Circle`,`Square`,`Triangle`等具体类型对象。以下为示例代码：
 
 <hr style="clear:both;height:0">
+
 ```csharp
 var shapes = new List<IShape>();
 using (var reader = connection.ExecuteReader("select * from Shapes"))
