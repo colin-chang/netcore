@@ -1,4 +1,4 @@
-# .net core
+# .Net Core
 
 使用 Nginx 在 Linux 上托管 ASP.NET Core
 https://docs.microsoft.com/zh-cn/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-2.1&tabs=aspnetcore2x

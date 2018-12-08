@@ -1,0 +1,68 @@
+{
+    "title": ".Net Core-软件开发",
+    "description": ".Net高效跨平台技术方案",
+    "plugins": [
+        "disqus",
+        "-lunr", "-search", "search-plus",
+        "advanced-emoji",
+        "github",
+        "multipart",
+        "katex",
+        "splitter",
+        "tbfed-pagefooter",
+        "anchors",
+        "favicon",
+        "sitemap",
+        "copy-code-button",
+        "-sharing",
+        "toggle-chapters",
+        "book-summary-scroll-position-saver",
+        "prism",
+        "-highlight"
+    ],
+    "pluginsConfig": {
+        "disqus": {
+            "shortName": "Idea"
+        },
+        "github": {
+            "url": "https://github.com/colin-chang/netcore"
+        },
+        "prism": {
+            "css": [
+                "prismjs/themes/prism-okaidia.css"
+            ]
+          },
+        "tbfed-pagefooter": {
+            "copyright": "&copy Colin Chang",
+            "modify_label": "文件修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "favicon": {
+            "shortcut": "assets/images/favicon.ico",
+            "bookmark": "assets/images/favicon.ico",
+            "appleTouch": "assets/images/apple-touch-icon.png",
+            "appleTouchMore": {
+                "120x120": "assets/images/apple-touch-icon-120x120.png",
+                "180x180": "assets/images/apple-touch-icon-180x180.png"
+            }
+        },
+        "sitemap": {
+            "hostname": "http://colin-chang.site/book/netcore"
+        },
+        "sharing": {
+            "facebook": true,
+            "twitter": true,
+            "google": false,
+            "weibo": false,
+            "instapaper": false,
+            "vk": false,
+            "all": [
+                "facebook", "google", "twitter",
+                "weibo", "instapaper"
+            ]
+        }
+    },
+    "styles": {
+        "website": "website.css"
+    }
+}

@@ -1,0 +1,26 @@
+abbr {
+    cursor: pointer;
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #c7254e;
+    background-color: #f9f2f4;
+    border-radius: 4px;
+}
+
+abbr[title] {
+    border-bottom: none;
+    text-decoration: none;
+}
+
+.markdown-section pre {
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.markdown-section *{
+    font-size: 14px;
+    /*font-family: '微软雅黑';*/
+}
+.markdown-section small{
+    font-size: 85%;
+}
