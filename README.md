@@ -1,55 +1,14 @@
 # .Net Core
 
-使用 Nginx 在 Linux 上托管 ASP.NET Core
-https://docs.microsoft.com/zh-cn/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-2.1&tabs=aspnetcore2x
+.NET Core 是开放源代码通用开发平台，由 Microsoft 和 .NET 社区在 GitHub 上共同维护。 它跨平台（支持 Windows、macOS 和 Linux），并且可用于生成设备、云和 IoT 应用程序。
 
-**相关注意事项**
+https://docs.microsoft.com/zh-cn/dotnet/core/about
 
-.net core程序无论是调试还是发布版本，都必须在程序目录下运行命令，否则可能会出现静态资源文件无法访问的问题
- 
-
-**启动并监听Web服务**
-systemd 可用于创建服务文件以启动和监视基础 Web 应用。 systemd 是一个 init 系统，可以提供用于启动、停止和管理进程的许多强大的功能。
-
-* 创建服务文件
-```sh
-$ sudo vim /etc/systemd/system/kestrel-lottery.service
-```
-
-* 服务文件内容如下
-```
-[Unit]
-Description=Lottery
-
-[Service]
-WorkingDirectory=/home/colin/apps/content/lottery
-ExecStart=/usr/bin/dotnet /home/colin/apps/content/lottery/Colin.Lottery.WebApp.dll
-Restart=always
-# Restart service after 10 seconds if the dotnet service crashes:
-RestartSec=10
-SyslogIdentifier=dotnet-lottery
-User=colin
-Environment=ASPNETCORE_ENVIRONMENT=Production
-Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
-
-[Install]
-WantedBy=multi-user.target
-```
-
-* 启动服务
-```sh
-# 启用服务
-$ sudo systemctl enable kestrel-lottery.service
-
-# 启动服务
-$ sudo systemctl start kestrel-lottery.service
-
-# 查看服务状态
-$ sudo systemctl status kestrel-lottery.service
-
-# 停止服务
-$ sudo systemctl stop kestrel-lottery.service
-
-# 重启服务
-$ sudo systemctl restart kestrel-lottery.service
-```
+.NET Core 具有以下特性：
+* 跨平台： 可以在 Windows、macOS 和 Linux 操作系统上运行。
+* 跨体系结构保持一致： 在多个体系结构（包括 x64、x86 和 ARM）上以相同的行为运行代码。
+* 命令行工具： 包括用于本地开发和持续集成方案中的易于使用的命令行工具。
+* 部署灵活： 可以包含在应用或已安装的并行用户或计算机范围中。 可搭配 Docker 容器使用。
+* 兼容性：.NET Core 通过 .NET Standard与 .NET Framework、Xamarin 和 Mono 兼容。
+* 开放源：.NET Core 是一个开放源平台，使用 MIT 和 Apache 2 许可证。 .NET Core 是一个 .NET * oundation 项目。
+* 由 Microsoft 支持：.NET Core 由 Microsoft 依据 .NET Core 支持提供支持。
