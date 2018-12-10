@@ -4,6 +4,8 @@
 
 .net core程序无论是调试还是发布版本，都**建议在程序目录下运行命令，否则可能会出现静态资源文件无法访问的问题**。
 
+> 发布命令 `dotnet publish -c Release`
+
 ## 1. Linux
 在Linux中也可以使用 `dotnet ./your_app.dll` 方式在终端中运行.Net Core程序，但是退出终端后，程序就停止了。我们可以将运行命令封装到一个Linux服务中，服务器启动后就可以在后台静默运行了。
 
@@ -46,19 +48,19 @@ systemd 可用于创建服务文件以启动和监视基础 Web 应用。 system
 
     ```sh
     # 启用服务
-    $ sudo systemctl enable kestrel-lottery.service
+    $ sudo systemctl enable lottery.service
 
     # 启动服务
-    $ sudo systemctl start kestrel-lottery.service
+    $ sudo systemctl start lottery.service
 
     # 查看服务状态
-    $ sudo systemctl status kestrel-lottery.service
+    $ sudo systemctl status lottery.service
 
     # 停止服务
-    $ sudo systemctl stop kestrel-lottery.service
+    $ sudo systemctl stop lottery.service
 
     # 重启服务
-    $ sudo systemctl restart kestrel-lottery.service
+    $ sudo systemctl restart lottery.service
     ```
 
 完成以上步骤之后，Asp.Net Core程序已经挂载到了Kestrel服务器上并以Linux服务方式后台静默运行。虽然Kestrel服务器对Asp.Net支持非常好，但微软不建议其作为对外服务器，而是建议使用IIS/Nginx/Apache等作为代理服务器对外开放。
