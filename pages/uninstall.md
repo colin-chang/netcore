@@ -19,8 +19,7 @@ Linux发行版众多，截止到写这篇文档时，.Net Core 2.2支持的Linux
 ## 1. 安装
 .Net Core的安装异常简单。到[官网下载](https://dotnet.microsoft.com/download)安装即可。Windows和Mac中都是下载安装包，双击运行安装，不再赘述。Linux选择对应的发行版本，执行官方的安装命令即可。
 
-> Debian 9 提醒
-Debian 9 安装.Net Core之前要先安装`apt-transport-https`（官方安装步骤遗漏了此步骤）
+>**提醒** Debian 9 安装.Net Core之前要先安装`apt-transport-https`（官方安装步骤遗漏了此步骤）
 
 ```sh
 $ sudo apt-get install apt-transport-https
