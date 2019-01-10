@@ -47,7 +47,7 @@
             }
         },
         "sitemap": {
-            "hostname": "http://colin-chang.site/book/netcore"
+            "hostname": "https://colin-chang.site/books/netcore"
         },
         "sharing": {
             "facebook": true,

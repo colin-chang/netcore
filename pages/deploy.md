@@ -68,6 +68,7 @@ systemd 可用于创建服务文件以启动和监视基础 Web 应用。 system
 关于Linux下Nginx部署，参阅：
 
 http://colin-chang.site/book/linux/part2/nginx.html
+
 https://docs.microsoft.com/zh-cn/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-2.2
 
 Apache配置，参阅：

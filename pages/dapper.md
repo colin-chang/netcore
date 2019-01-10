@@ -121,7 +121,7 @@ var robin = new Author("Robin", "Robin Song");
 
 using (var cnn = Cnn)
 {
-    await cnnExecuteAsync(sql, new Author[] { colin, robin });
+    await cnn.ExecuteAsync(sql, new Author[] { colin, robin });
 }
 ```
 #### 2) 更新数据
@@ -129,7 +129,7 @@ using (var cnn = Cnn)
 string sql = "UPDATE author SET Address=@address WHERE Id=@id";
 using (var cnn = Cnn)
 {
-    await cnnExecuteAsync(sql, new { id = 1, address = "山东" });
+    await cnn.ExecuteAsync(sql, new { id = 1, address = "山东" });
 }
 ```
 #### 3) 删除数据
@@ -137,7 +137,7 @@ using (var cnn = Cnn)
 string sql = "DELETE FROM author WHERE Id=@id";
 using (var cnn = Cnn)
 {
-    await cnnExecuteAsync(sql,new {id=2});
+    await cnn.ExecuteAsync(sql,new {id=2});
 }
 ```
 
@@ -147,7 +147,7 @@ using (var cnn = Cnn)
 var sql = "SELECT * FROM author WHERE Id=@id";
 using (var cnn = Cnn)
 {
-    var authors = await cnnQueryAsync<Author>(sql, new { id = 1 });
+    var authors = await cnn.QueryAsync<Author>(sql, new { id = 1 });
 }
 ```
 常用的`IN ()`方式查询
@@ -155,7 +155,7 @@ using (var cnn = Cnn)
 var sql = "SELECT * FROM author WHERE Id IN @ids";
 using (var cnn = Cnn)
 {
-    var authors = await cnnQueryAsync<Author>(sql, new { ids = new int[] { 1, 2 } });
+    var authors = await cnn.QueryAsync<Author>(sql, new { ids = new int[] { 1, 2 } });
 }
 ```
 #### 2) 多表连接查询
@@ -165,7 +165,7 @@ var sql = @"SELECT * FROM article AS ar JOIN author AS au ON ar.AuthorId = au.Id
 var articles = new Dictionary<int, Article>();
 using (var cnn = Cnn)
 {
-    var data = await cnnQueryAsync<Article, Author, Comment, Article>(sql,
+    var data = await cnn.QueryAsync<Article, Author, Comment, Article>(sql,
     (article, author, comment) =>
     {
         //1:1
@@ -198,7 +198,7 @@ string sqls = @"
 
 using (var cnn = Cnn)
 {
-    var reader = await cnnQueryMultipleAsync(sqls, new { id = 1, articleId = 1 });
+    var reader = await cnn.QueryMultipleAsync(sqls, new { id = 1, articleId = 1 });
     var articles = await reader.ReadAsync<Article>();
     var comments= await reader.ReadAsync<Comment>();
 
@@ -224,10 +224,10 @@ using (var cnn = Cnn)
     IDbTransaction tran = null;
     try
     {
-        cnnOpen();
-        tran = cnnBeginTransaction();
+        cnn.Open();
+        tran = cnn.BeginTransaction();
         foreach (var script in scripts)
-            await cnnExecuteAsync(script.Sql, script.Param, tran, commandType: script.CommandType);
+            await cnn.ExecuteAsync(script.Sql, script.Param, tran, commandType: script.CommandType);
 
         tran.Commit();
     }
@@ -258,7 +258,7 @@ Dapper完全支持存储过程。存储过程比较简单，代码就不展示�
 ```csharp
 using (var cnn = Cnn)
 {
-    var users = cnnQuery<Author>("spGetAuthors", new {Id = 1}, commandType: CommandType.StoredProcedure);
+    var users = cnn.Query<Author>("spGetAuthors", new {Id = 1}, commandType: CommandType.StoredProcedure);
 }
 ```
 使用传入传出参数的存储过程。
@@ -269,7 +269,7 @@ p.Add("@b", dbType: DbType.Int32, direction: ParameterDirection.Output);
 p.Add("@c", dbType: DbType.Int32, direction: ParameterDirection.ReturnValue);
 using (var cnn = Cnn)
 {
-    cnnExecute("spMagicProc", p, commandType: CommandType.StoredProcedure);
+    cnn.Execute("spMagicProc", p, commandType: CommandType.StoredProcedure);
 }
 
 int b = p.Get<int>("@b");
@@ -283,7 +283,7 @@ Dapper支持对SQL语句中bool和数字类型进行替换。
 var sql = "SELECT * FROM article WHERE Status= {=Normal}";
 using (var cnn = Cnn)
 {
-    var articles = await cnnQueryAsync<Article>(sql, new {ArticleStatus.Normal});
+    var articles = await cnn.QueryAsync<Article>(sql, new {ArticleStatus.Normal});
 }
 ```
 参数替换在特定类型字段中非常好用，比如"category id", "status code" or "region"
