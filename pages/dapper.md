@@ -217,7 +217,7 @@ var scripts = new SqlScript[]
 {
     new SqlScript("UPDATE article SET UpdateTime=NOW() WHERE Id=@id",new {id=2}),
     new SqlScript("UPDATE author SET BirthDate=NOW() WHERE Id=@id",new {id=1})
-}
+};
 
 using (var cnn = Cnn)
 {
