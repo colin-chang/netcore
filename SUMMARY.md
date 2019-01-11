@@ -4,5 +4,7 @@
 
 * [安装卸载](pages/uninstall.md)
 * [部署项目](pages/deploy.md)
+* [依赖注入](pages/di.md)
+    * [1. 控制反转（IoC）](pages/ioc.md)
 * [Dapper](pages/dapper.md)
 * [HTTPS](pages/https.md)

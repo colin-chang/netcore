@@ -22,7 +22,7 @@
     ],
     "pluginsConfig": {
         "disqus": {
-            "shortName": "Idea"
+            "shortName": "http-colin-chang-site"
         },
         "github": {
             "url": "https://github.com/colin-chang/netcore"
