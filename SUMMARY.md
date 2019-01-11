@@ -8,5 +8,6 @@
     * [1. 控制反转（IoC）](pages/ioc.md)
     * [2. 依赖注入（DI）](pages/di.md)
     * [3. 服务注册与提供](pages/serviceprovider.md)
+    * [4. 构造函数选择与服务生命周期管理](pages/ctorlifetime.md)
 * [Dapper](pages/dapper.md)
 * [HTTPS](pages/https.md)
