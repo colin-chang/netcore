@@ -6,5 +6,6 @@
 * [部署项目](pages/deploy.md)
 * [依赖注入](pages/di.md)
     * [1. 控制反转（IoC）](pages/ioc.md)
+    * [2. 依赖注入（DI）](pages/di.md)
 * [Dapper](pages/dapper.md)
 * [HTTPS](pages/https.md)
