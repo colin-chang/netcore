@@ -1,109 +1,48 @@
-# 服务注册与提供
+# .Net Core 服务消费
 
-* [1. ServiceProvider与ServiceDescriptor](#1-serviceprovider与servicedescriptor)
-* [2. 服务注册与提供](#2-服务注册与提供)
-    * [2.1 ServiceProvider提供服务](#21-serviceprovider提供服务)
-    * [2.2 服务实例集合](#22-服务实例集合)
-    * [2.3 ServiceProvider自身对象](#23-serviceprovider自身对象)
-    * [2.4 泛型支持](#24-泛型支持)
+* [1. ServiceProvider](#1-serviceprovider)
+* [2. 消费服务](#2-消费服务)
+* [3. 服务集合](#3-服务集合)
+* [4. 泛型支持](#4-泛型支持)
+* [5. 构造函数选择](#5-构造函数选择)
 
-在采用了依赖注入的应用中，我们总是直接利用DI容器直接获取所需的服务实例，换句话说，DI容器起到了一个服务提供者的角色，它能够根据我们提供的服务描述信息提供一个可用的服务对象。ASP.NET Core中的DI容器体现为一个实现了IServiceProvider接口的对象。
+## 1. ServiceProvider
+在采用了依赖注入的应用中，我们总是直接利用DI容器直接获取所需的服务实例，换句话说，DI容器起到了一个服务提供者的角色，它能够根据我们提供的服务描述信息提供一个可用的服务对象。
 
-## 1. ServiceProvider与ServiceDescriptor
-作为一个服务的提供者，ASP.NET Core中的DI容器最终体现为一个IServiceProvider接口，我们将所有实现了该接口的类型及其实例统称为ServiceProvider。如下面的代码片段所示，该接口简单至极，它仅仅提供了唯一个GetService方法，该方法根据提供的服务类型为你提供对应的服务实例。
+作为一个服务的提供者，ASP.NET Core中的DI容器最终体现为一个IServiceProvider接口。此接口只声明了一个GetService方法以根据指定的服务类型来提供对应的服务实例。
 
 ```csharp
 public interface IServiceProvider
 {
     object GetService(Type serviceType);
 }
-```
 
-ASP.NET Core内部真正使用的是一个实现了IServiceProvider接口的内部类型（该类型的名称为“ServiceProvider”），我们不能直接创建该对象，只能间接地通过调用IServiceCollection接口的扩展方法BuildServiceProvider得到它。IServiceCollection接口定义在“Microsoft.Extensions.DependencyInjection”命名空间下，如果没有特别说明，本系列文章涉及到的与ASP.NET Core依赖注入相关的类型均采用此命名空间。 如下面的代码片段所示，IServiceCollection接口实际上代表一个元素为ServiceDescriptor对象的集合，它直接继承了另一个接口IList<ServiceDescriptor>，而ServiceCollection类实现了该接口。
-
-```csharp
-public static class ServiceCollectionExtensions
+public static class ServiceCollectionContainerBuilderExtensions
 {
-    public static IServiceProvider BuildServiceProvider(this rviceCollection services);
-}
- 
-public interface IServiceCollection : IList<ServiceDescriptor>
-{}
- 
-Public class ServiceCollection: IServiceCollection
-{
-    //省略成员
+    public static ServiceProvider BuildServiceProvider(this IServiceCollection services);
 }
 ```
 
-体现为DI容器的ServiceProvider之所以能够根据我们给定的服务类型（一般是一个接口类型）提供一个能够开箱即用的服务实例，是因为我们预先注册了相应的服务描述信息，这些指导ServiceProvider正确实施服务提供操作的服务描述体现为如下一个ServiceDescriptor类型。
+ASP.NET Core内部真正使用的是一个实现了IServiceProvider接口的内部类型（该类型的名称为“ServiceProvider”），我们不能直接创建该对象，只能间接地通过调用IServiceCollection接口的扩展方法BuildServiceProvider得到它。
+
+由于ASP.NET Core中的ServiceProvider是根据一个代表ServiceDescriptor集合的IServiceCollection对象创建的，当我们调用其GetService方法的时候，它会根据我们提供的服务类型找到对应的ServiceDecriptor对象。如果该ServiceDecriptor对象的ImplementationInstance属性返回一个具体的对象，该对象将直接用作被提供的服务实例。如果ServiceDecriptor对象的ImplementationFactory返回一个具体的委托，该委托对象将直接用作创建服务实例的工厂。如果这两个属性均为Null，ServiceProvider才会根据ImplementationType属性返回的类型调用相应的构造函数创建被提供的服务实例。**ServiceProvider仅仅支持构造器注入，属性注入和方法注入的支持并未提供。**
+
+除了定义在IServiceProvider的这个GetService方法，DI框架为了该接口定了如下这些扩展方法。GetService&lt;T&gt;方法会泛型参数的形式指定了服务类型，返回的服务实例也会作对应的类型转换。如果指定服务类型的服务注册不存在，GetService方法会返回Null，如果调用GetRequiredService或者GetRequiredService&lt;T&gt;方法则会抛出一个InvalidOperationException类型的异常。如果所需的服务实例是必需的，我们一般会调用者两个扩展方法。
 
 ```csharp
-public class ServiceDescriptor
+public static class ServiceProviderServiceExtensions
 {
-    public ServiceDescriptor(Type serviceType, object instance);
-    public ServiceDescriptor(Type serviceType, Func<IServiceProvider, object> factory, ServiceLifetime lifetime);
-    public ServiceDescriptor(Type serviceType, Type implementationType, ServiceLifetime lifetime);
- 
-    public Type ServiceType {  get; }
-    public ServiceLifetime Lifetime {  get; }
- 
-    public Type ImplementationType {  get; }
-    public object ImplementationInstance {  get; }
-    public Func<IServiceProvider, object> ImplementationFactory {  get; }      
-}
-```
-
-ServiceDescriptor的ServiceType属性代表提供服务的类型，由于标准化的服务一般会定义成接口，所以在绝大部分情况下体现为一个接口类型。类型为ServiceLifetime的属性Lifetime体现了ServiceProvider针对服务实例生命周期的控制方式。如下面的代码片段所示，ServiceLifetime是一个枚举类型，定义其中的三个选项（Singleton、Scoped和Transient）体现三种对服务对象生命周期的控制形式，我们将在本节后续部分对此作专门的介绍。
-
-```csharp
-public enum ServiceLifetime
-{
-    Singleton,
-    Scoped,
-    Transient
-}
-```
-
-对于ServiceDescriptor的其他三个属性来说，它们实际上是辅助ServiceProvider完成具体的服务实例提供操。ImplementationType属性代表被提供服务实例的真实类型，属性ImplementationInstance则直接代表被提供的服务实例，ImplementationFactory则提供了一个创建服务实例的委托对象。ASP.NET Core与依赖注入相关的几个核心类型具有如下图所示的关系。
-
-![ASP.NET Core与依赖注入核心类型](../img/serviceprovider/netcoredi.png)
-
-由于ASP.NET Core中的ServiceProvider是根据一个代表ServiceDescriptor集合的IServiceCollection对象创建的，当我们调用其GetService方法的时候，它会根据我们提供的服务类型找到对应的ServiceDecriptor对象。如果该ServiceDecriptor对象的ImplementationInstance属性返回一个具体的对象，该对象将直接用作被提供的服务实例。如果ServiceDecriptor对象的ImplementationFactory返回一个具体的委托，该委托对象将直接用作创建服务实例的工厂。如果这两个属性均为Null，ServiceProvider才会根据ImplementationType属性返回的类型调用相应的构造函数创建被提供的服务实例。至于我们在上面一节中提到的三种依赖注入方式，**ServiceProvider仅仅支持构造器注入，属性注入和方法注入的支持并未提供。**
-
-## 2. 服务注册与提供
-ASP.NET Core针对依赖注入的编程主要体现在两个方面：
-* 创建一个ServiceCollection对象并将服务注册信息以ServiceDescriptor对象的形式添加其中；
-* 针对ServiceCollection对象创建对应的ServiceProvider并利用它提供我们需要的服务实例。
-
-在进行服务注册的时候，我们可以直接调用相应的构造函数创建ServiceDescriptor对象并将其添加到ServiceCollection对象之中。除此之外，IServiceCollection接口还具有如下三组扩展方法将这两个步骤合二为一。从下面给出的代码片段我们不难看出这三组扩展方法分别针对上面我们提及的三种针对服务实例的生命周期控制方式，泛型参数TService代表服务的声明类型，即ServiceDescriptor的ServiceType属性，至于ServiceDescriptor的其他属性，则通过方法相应的参数来提供。
-
-```csharp
-public static class ServiceCollectionExtensions
-{
-    public static IServiceCollection AddScoped<TService>(this IServiceCollection services) where TService: class;
-   //其他AddScoped<TService>重载
- 
-    public static IServiceCollection AddSingleton<TService>(this IServiceCollection services) where TService: class;
-   //其他AddSingleton<TService>重载
- 
-    public static IServiceCollection AddTransient<TService>(this IServiceCollection services) where TService: class;
-    //其他AddTransient<TService>重载
-}
-```
-
-对于用作DI容器的ServiceProvider对象来说，我们可以直接调用它的GetService方法根据指定的服务类型获得想用的服务实例。除此之外，服务的提供还可以通过IServiceProvider接口相应的扩展方法来完成。如下面的代码片段所示，扩展方法GetService<T>以泛型参数的形式指定服务的声明类型。至于另外两个扩展方法GetRequiredService和GetRequiredService<T>，如果ServiceProvider不能提供一个具体的服务实例，一个InvalidOperationException异常会被抛出来并提示相应的服务注册信息不足。
-
-```csharp
-public static class ServiceProviderExtensions
-{ 
     public static T GetService<T>(this IServiceProvider provider);
-    public static object GetRequiredService(this IServiceProvider provider, Type serviceType);
+
     public static T GetRequiredService<T>(this IServiceProvider provider);
+    public static object GetRequiredService(this IServiceProvider provider, Type serviceType);
+    
+    public static IEnumerable<T> GetServices<T>(this IServiceProvider provider);
+    public static IEnumerable<object> GetServices(this IServiceProvider provider, Type serviceType);
 }
 ```
 
-### 2.1 ServiceProvider提供服务
+## 2. 消费服务
 接下来采用实例演示的方式来介绍如何利用ServiceCollection进行服务注册，以及如何利用ServiceCollection创建对应的ServiceProvider来提供我们需要的服务实例。
 
 定义四个服务接口（IFoo、IBar、IBaz和IGux）以及分别实现它们的四个服务类（Foo、Bar、Baz和Gux）如下面的代码片段所示，IGux具有三个只读属性（Foo、Bar和Baz）均为接口类型，并在构造函数中进行初始化。
@@ -168,7 +107,7 @@ serviceProvider.GetService<IBaz>(): Baz
 serviceProvider.GetService<IGux>(): Gux
 ```
 
-### 2.2 服务实例集合
+## 3. 服务集合
 如果我们在调用GetService方法的时候将服务类型指定为IEnumerable<T>，那么返回的结果将会是一个集合对象。除此之外， 我们可以直接调用IServiceProvider如下两个扩展方法GetServeces达到相同的目的。在这种情况下，ServiceProvider将会利用所有与指定服务类型相匹配的ServiceDescriptor来提供具体的服务实例，这些均会作为返回的集合对象的元素。如果所有的ServiceDescriptor均与指定的服务类型不匹配，那么最终返回的是一个空的集合对象。
 
 ```csharp
@@ -219,22 +158,7 @@ Foo
 Bar
 ```
 
-### 2.3 ServiceProvider自身对象
-对于ServiceProvider的服务提供机制来说，还有一个小小的细节值得我们关注，那就是当我们调用GetService或者GetRequiredService方法的时候若将服务类型设定为IServiceProvider，那么得到的对象实际上就是ServiceProvider自身这个对象。与之同理，调用GetServices方法将会返回一个包含自身的集合。如下所示的代码片段体现了ServiceProvider的这个特性。
-
-```csharp
-class Program
-{
-    static void Main(string[] args)
-    {
-        IServiceProvider serviceProvider = new ServiceCollection().BuildServiceProvider();
-        Debug.Assert(object.ReferenceEquals(serviceProvider, serviceProvider.GetService<IServiceProvider>()));
-        Debug.Assert(object.ReferenceEquals(serviceProvider, serviceProvider.GetServices<IServiceProvider>().Single()));
-    }
-}
-```
-
-### 2.4 泛型支持
+## 4. 泛型支持
 ServiceProvider提供的服务实例不仅限于普通的类型，它对泛型服务类型同样支持。在针对泛型服务进行注册的时候，我们可以将服务类型设定为携带具体泛型参数的“关闭泛型类型”（比如IFoobar&lt;IFoo,IBar&gt;），除此之外服务类型也可以是包含具体泛型参数的“开放泛型类型”（比如IFoo&lt;,&gt;）。前者实际上还是将其视为非泛型服务来对待，后者才真正体现了“泛型”的本质。
 
 比如我们注册了某个泛型服务接口IFoobar&lt;,&gt;与它的实现类Foobar&lt;,&gt;之间的映射关系，当我们指定一个携带具体泛型参数的服务接口类型IFoobar&lt;IFoo,IBar&gt;并调用ServiceProvider的GetService方法获取对应的服务实例时，ServiceProvider会针对指定的泛型参数类型(IFoo和IBar)来解析与之匹配的实现类型（可能是Foo和Baz）并得到最终的实现类型（Foobar&lt;Foo,Baz&gt;）。
@@ -286,5 +210,100 @@ serviceProvider.GetService<IFoobar<IFoo, IBar>>().Foo: Foo
 serviceProvider.GetService<IFoobar<IFoo, IBar>>().Bar: Bar 
 ```
 
+## 5. 构造函数选择
+当ServiceProvider利用ImplementationType属性返回的真实类型的构造函数来创建最终的服务实例时，如果服务的真实类型定义了多个构造函数，那么ServiceProvider针对构造函数的选择会采用怎样的策略呢？
+
+如果ServiceProvider试图通过调用构造函数的方式来创建服务实例，传入构造函数的所有参数必须先被初始化，最终被选择出来的构造函数必须具备一个基本的条件：**ServiceProvider能够提供构造函数的所有参数。**
+
+我们在一个控制台应用中定义了四个服务接口（IFoo、IBar、IBaz和IGux）以及实现它们的四个服务类（Foo、Bar、Baz和Gux）。如下面的代码片段所示，我们为Gux定义了三个构造函数，参数均为我们定义了服务接口类型。为了确定ServiceProvider最终选择哪个构造函数来创建目标服务实例，我们在构造函数执行时在控制台上输出相应的指示性文字。
+
+```csharp
+public interface IFoo {}
+public interface IBar {}
+public interface IBaz {}
+public interface IGux {}
+ 
+public class Foo : IFoo {}
+public class Bar : IBar {}
+public class Baz : IBaz {}
+public class Gux : IGux
+{
+    public Gux(IFoo foo)
+    {
+        Console.WriteLine("Gux(IFoo)");
+    }
+ 
+    public Gux(IFoo foo, IBar bar)
+    {
+        Console.WriteLine("Gux(IFoo, IBar)");
+    }
+ 
+    public Gux(IFoo foo, IBar bar, IBaz baz)
+    {
+        Console.WriteLine("Gux(IFoo, IBar, IBaz)");
+    }
+}
+```
+
+我们在作为程序入口的Main方法中创建一个ServiceCollection对象并在其中添加针对IFoo、IBar以及IGux这三个服务接口的服务注册，针对服务接口IBaz的注册并未被添加。我们利用由它创建的ServiceProvider来提供针对服务接口IGux的实例，究竟能否得到一个Gux对象呢？如果可以，它又是通过执行哪个构造函数创建的呢？
+
+```csharp
+class Program
+{
+    static void Main(string[] args)
+    {       
+        new ServiceCollection()
+            .AddTransient<IFoo, Foo>()
+            .AddTransient<IBar, Bar>()
+            .AddTransient<IGux, Gux>()
+            .BuildServiceProvider()
+            .GetServices<IGux>();
+    }
+}
+```
+
+对于定义在Gux中的三个构造函数来说，ServiceProvider所在的ServiceCollection包含针对接口IFoo和IBar的服务注册，所以它能够提供前面两个构造函数的所有参数。由于第三个构造函数具有一个类型为IBaz的参数，这无法通过ServiceProvider来提供。根据我们上面介绍的第一个原则（ServiceProvider能够提供构造函数的所有参数），Gux的前两个构造函数会成为合法的候选构造函数，那么ServiceProvider最终会选择哪一个呢？
+
+在所有合法的候选构造函数列表中，最终被选择出来的构造函数具有这么一个特征：**每一个候选构造函数的参数类型集合都是这个构造函数参数类型集合的子集。**如果这样的构造函数并不存在，一个类型为InvalidOperationException的异常会被抛出来。根据这个原则，Gux的第二个构造函数的参数类型包括IFoo和IBar，而第一个构造函数仅仅具有一个类型为IFoo的参数，最终被选择出来的会是Gux的第二个构造函数，所有运行我们的实例程序将会在控制台上产生如下的输出结果。
+
+```
+Gux(IFoo, IBar)
+```
+
+接下来我们对实例程序略加改动。如下面的代码片段所示，我们只为Gux定义两个构造函数，它们都具有两个参数，参数类型分别为IFoo&IBar和IBar&IBaz。在Main方法中，我们将针对IBaz/Baz的服务注册添加到创建的ServiceCollection上。
+
+```csharp
+class Program
+{
+    static void Main(string[] args)
+    {       
+        new ServiceCollection()
+            .AddTransient<IFoo, Foo>()
+            .AddTransient<IBar, Bar>()
+            .AddTransient<IBaz, Baz>()
+            .AddTransient<IGux, Gux>()
+            .BuildServiceProvider()
+            .GetServices<IGux>();
+    }
+}
+ 
+public class Gux : IGux
+{
+    public Gux(IFoo foo, IBar bar) {}
+    public Gux(IBar bar, IBaz baz) {}
+}
+```
+
+对于Gux的两个构造函数，虽然它们的参数均能够由ServiceProvider来提供，但是并没有一个构造函数的参数类型集合能够成为所有有效构造函数参数类型集合的超集，所以ServiceProvider无法选择出一个最佳的构造函数。如果我们运行这个程序，一个InvalidOperationException异常会被抛出来，控制台上将呈现出如下所示的错误消息。
+
+```
+Unhandled Exception: System.InvalidOperationException: Unable to activate type 'Gux'. The following constructors are ambigious:
+Void .ctor(IFoo, IBar)
+Void .ctor(IBar, IBaz)
+...
+```
+
 > 参考文献
-http://www.cnblogs.com/artech/p/asp-net-core-di-register.html
+* http://www.cnblogs.com/artech/p/asp-net-core-di-register.html
+* http://www.cnblogs.com/artech/p/asp-net-core-di-life-time.html
+* https://www.cnblogs.com/artech/p/net-core-di-08.html

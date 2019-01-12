@@ -1,123 +1,34 @@
-# 构造函数选择与服务生命周期管理
+# 服务生命周期
 
-* [1. 构造函数选择](#1-构造函数选择)
-* [2. 生命周期管理](#2-生命周期管理)
-    * [2.1 ServiceScope与ServiceScopeFactory](#21-servicescope与servicescopefactory)
-    * [2.2 三种生命周期管理模式](#22-三种生命周期管理模式)
-    * [2.3 服务实例的回收](#23-服务实例的回收)
+* [1. 服务范围](#1-服务范围)
+* [2. 生命周期管理模式](#2-生命周期管理模式)
+* [3. 服务对象回收](#3-服务实例的回收)
+* [4. Asp.Net Core 服务生命周期](#4-aspnet-core-服务生命周期)
+* [5. ASP.NET Core 服务范围检验](#5-aspnet-core-服务范围检验)
 
-ServiceProvider最终提供的服务实例都是根据对应的ServiceDescriptor创建的，对于一个具体的ServiceDescriptor对象来说，如果它的ImplementationInstance和ImplementationFactory属性均为Null，那么ServiceProvider最终会利用其ImplementationType属性返回的真实类型选择一个适合的构造函数来创建最终的服务实例。我们知道服务服务的真实类型可以定义了多个构造函数，那么ServiceProvider针对构造函数的选择会采用怎样的策略呢？
-
-## 1. 构造函数选择
-如果ServiceProvider试图通过调用构造函数的方式来创建服务实例，传入构造函数的所有参数必须先被初始化，最终被选择出来的构造函数必须具备一个基本的条件：**ServiceProvider能够提供构造函数的所有参数。**
-
-我们在一个控制台应用中定义了四个服务接口（IFoo、IBar、IBaz和IGux）以及实现它们的四个服务类（Foo、Bar、Baz和Gux）。如下面的代码片段所示，我们为Gux定义了三个构造函数，参数均为我们定义了服务接口类型。为了确定ServiceProvider最终选择哪个构造函数来创建目标服务实例，我们在构造函数执行时在控制台上输出相应的指示性文字。
-
-```csharp
-public interface IFoo {}
-public interface IBar {}
-public interface IBaz {}
-public interface IGux {}
+生命周期决定了ServiceProvider采用怎样的方式创建和回收服务实例。ServiceProvider具有三种基本的生命周期管理模式，分别对应着枚举类型ServiceLifetime的三个选项（Singleton、Scoped和Transient）。对于ServiceProvider支持的这三种生命周期管理模式，Singleton和Transient的语义很明确，前者（Singleton）表示以“单例”的方式管理服务实例的生命周期，意味着ServiceProvider对象多次针对同一个服务类型所提供的服务实例实际上是同一个对象；而后者（Transient）则完全相反，对于每次服务提供请求，ServiceProvider总会创建一个新的对象。那么Scoped又体现了ServiceProvider针对服务实例怎样的生命周期管理方式呢？
  
-public class Foo : IFoo {}
-public class Bar : IBar {}
-public class Baz : IBaz {}
-public class Gux : IGux
-{
-    public Gux(IFoo foo)
-    {
-        Console.WriteLine("Gux(IFoo)");
-    }
- 
-    public Gux(IFoo foo, IBar bar)
-    {
-        Console.WriteLine("Gux(IFoo, IBar)");
-    }
- 
-    public Gux(IFoo foo, IBar bar, IBaz baz)
-    {
-        Console.WriteLine("Gux(IFoo, IBar, IBaz)");
-    }
-}
-```
-
-我们在作为程序入口的Main方法中创建一个ServiceCollection对象并在其中添加针对IFoo、IBar以及IGux这三个服务接口的服务注册，针对服务接口IBaz的注册并未被添加。我们利用由它创建的ServiceProvider来提供针对服务接口IGux的实例，究竟能否得到一个Gux对象呢？如果可以，它又是通过执行哪个构造函数创建的呢？
-
-```csharp
-class Program
-{
-    static void Main(string[] args)
-    {       
-        new ServiceCollection()
-            .AddTransient<IFoo, Foo>()
-            .AddTransient<IBar, Bar>()
-            .AddTransient<IGux, Gux>()
-            .BuildServiceProvider()
-            .GetServices<IGux>();
-    }
-}
-```
-
-对于定义在Gux中的三个构造函数来说，ServiceProvider所在的ServiceCollection包含针对接口IFoo和IBar的服务注册，所以它能够提供前面两个构造函数的所有参数。由于第三个构造函数具有一个类型为IBaz的参数，这无法通过ServiceProvider来提供。根据我们上面介绍的第一个原则（ServiceProvider能够提供构造函数的所有参数），Gux的前两个构造函数会成为合法的候选构造函数，那么ServiceProvider最终会选择哪一个呢？
-
-在所有合法的候选构造函数列表中，最终被选择出来的构造函数具有这么一个特征：**每一个候选构造函数的参数类型集合都是这个构造函数参数类型集合的子集。**如果这样的构造函数并不存在，一个类型为InvalidOperationException的异常会被抛出来。根据这个原则，Gux的第二个构造函数的参数类型包括IFoo和IBar，而第一个构造函数仅仅具有一个类型为IFoo的参数，最终被选择出来的会是Gux的第二个构造函数，所有运行我们的实例程序将会在控制台上产生如下的输出结果。
-
-```
-Gux(IFoo, IBar)
-```
-
-接下来我们对实例程序略加改动。如下面的代码片段所示，我们只为Gux定义两个构造函数，它们都具有两个参数，参数类型分别为IFoo&IBar和IBar&IBaz。在Main方法中，我们将针对IBaz/Baz的服务注册添加到创建的ServiceCollection上。
-
-```csharp
-class Program
-{
-    static void Main(string[] args)
-    {       
-        new ServiceCollection()
-            .AddTransient<IFoo, Foo>()
-            .AddTransient<IBar, Bar>()
-            .AddTransient<IBaz, Baz>()
-            .AddTransient<IGux, Gux>()
-            .BuildServiceProvider()
-            .GetServices<IGux>();
-    }
-}
- 
-public class Gux : IGux
-{
-    public Gux(IFoo foo, IBar bar) {}
-    public Gux(IBar bar, IBaz baz) {}
-}
-```
-
-对于Gux的两个构造函数，虽然它们的参数均能够由ServiceProvider来提供，但是并没有一个构造函数的参数类型集合能够成为所有有效构造函数参数类型集合的超集，所以ServiceProvider无法选择出一个最佳的构造函数。如果我们运行这个程序，一个InvalidOperationException异常会被抛出来，控制台上将呈现出如下所示的错误消息。
-
-```
-Unhandled Exception: System.InvalidOperationException: Unable to activate type 'Gux'. The following constructors are ambigious:
-Void .ctor(IFoo, IBar)
-Void .ctor(IBar, IBaz)
-...
-```
-
-## 2. 生命周期管理
-生命周期管理决定了ServiceProvider采用怎样的方式创建和回收服务实例。ServiceProvider具有三种基本的生命周期管理模式，分别对应着枚举类型ServiceLifetime的三个选项（Singleton、Scoped和Transient）。对于ServiceProvider支持的这三种生命周期管理模式，Singleton和Transient的语义很明确，前者（Singleton）表示以“单例”的方式管理服务实例的生命周期，意味着ServiceProvider对象多次针对同一个服务类型所提供的服务实例实际上是同一个对象；而后者（Transient）则完全相反，对于每次服务提供请求，ServiceProvider总会创建一个新的对象。那么Scoped又体现了ServiceProvider针对服务实例怎样的生命周期管理方式呢？
-
-### 2.1 ServiceScope与ServiceScopeFactory
-ServiceScope为某个ServiceProvider对象圈定了一个“作用域”，枚举类型ServiceLifetime中的Scoped选项指的就是这么一个ServiceScope。在依赖注入的应用编程接口中，ServiceScope通过一个名为IServiceScope的接口来表示。如下面的代码片段所示，继承自IDisposable接口的IServiceScope具有一个唯一的只读属性ServiceProvider返回确定这个服务范围边界的ServiceProvider。ServiceScope由它对应的工厂ServiceScopeFactory来创建，后者体现为具有如下定义的接口IServiceScopeFactory。
+## 1. 服务范围
+Scoped代表一种怎样的生命周期模式，很多初学者往往搞不清楚。这里所谓的Scope指的是由IServiceScope接口表示的“服务范围”，该范围由IServiceScopeFactory接口表示的“服务范围工厂”来创建。如下面的代码片段所示，IServiceProvider的扩展方法CreateScope正是利用提供的IServiceScopeFactory服务实例来创建作为服务范围的IServiceScope对象。
 
 ```csharp
 public interface IServiceScope : IDisposable
 {
     IServiceProvider ServiceProvider { get; }
 }
- 
+
 public interface IServiceScopeFactory
 {
     IServiceScope CreateScope();
 }
+
+public static class ServiceProviderServiceExtensions
+{
+   public static IServiceScope CreateScope(this IServiceProvider provider) => provider.GetRequiredService<IServiceScopeFactory>().CreateScope();
+}
 ```
 
-若要充分理解ServiceScope和ServiceProvider之间的关系，我们需要简单了解一下ServiceProvider的层级结构。除了直接通过一个ServiceCollection对象创建一个独立的ServiceProvider对象之外，一个ServiceProvider还可以根据另一个ServiceProvider对象来创建，如果采用后一种创建方式，我们指定的ServiceProvider与创建的ServiceProvider将成为一种“父子”关系。
+ServiceScope为某个ServiceProvider对象圈定了一个“作用域”，枚举类型ServiceLifetime中的Scoped选项指的就是这么一个ServiceScope。若要充分理解ServiceScope和ServiceProvider之间的关系，我们需要简单了解一下ServiceProvider的层级结构。除了直接通过一个ServiceCollection对象创建一个独立的ServiceProvider对象之外，一个ServiceProvider还可以根据另一个ServiceProvider对象来创建，如果采用后一种创建方式，我们指定的ServiceProvider与创建的ServiceProvider将成为一种“父子”关系。
 
 ```csharp
 internal class ServiceProvider : IServiceProvider, IDisposable
@@ -133,9 +44,9 @@ internal class ServiceProvider : IServiceProvider, IDisposable
 
 虽然在ServiceProvider在创建过程中体现了ServiceProvider之间存在着一种树形化的层级结构，但是ServiceProvider对象本身并没有一个指向“父亲”的引用，它仅仅会保留针对根节点的引用。如上面的代码片段所示，针对根节点的引用体现为ServiceProvider类的字段_root。当我们根据作为“父亲”的ServiceProvider创建一个新的ServiceProvider的时候，父子均指向同一个“根”。我们可以将创建过程中体现的层级化关系称为“逻辑关系”，而将ServiceProvider对象自身的引用关系称为“物理关系”，下图清楚地揭示了这两种关系之间的转化。
 
-![ServiceProvider层级关系](../img/ctorlifetime/serviceprovider.png)
+![ServiceProvider层级关系](../img/lifetime/serviceprovider.png)
 
-由于ServiceProvider自身是一个内部类型，我们不能采用调用构造函数的方式根据一个作为“父亲”的ServiceProvider创建另一个作为“儿子”的ServiceProvider，但是这个目的可以间接地通过创建ServiceScope的方式来完成。如下面的代码片段所示，我们首先创建一个独立的ServiceProvider并调用其GetService<T>方法获得一个ServiceScopeFactory对象，然后调用后者的CreateScope方法创建一个新的ServiceScope，它的ServiceProvider就是前者的“儿子”。
+由于ServiceProvider自身是一个内部类型，我们不能采用调用构造函数的方式根据一个作为“父亲”的ServiceProvider创建另一个作为“儿子”的ServiceProvider，但是这个目的可以间接地通过创建ServiceScope的方式来完成。如下面的代码片段所示，我们首先创建一个独立的ServiceProvider并调用其CreateScope方法创建一个新的ServiceScope，它的ServiceProvider就是前者的“儿子”。
 
 ```csharp
 class Program
@@ -143,7 +54,7 @@ class Program
     static void Main(string[] args)
     {
         IServiceProvider serviceProvider1 = new ServiceCollection().BuildServiceProvider();
-        IServiceProvider serviceProvider2 = serviceProvider1.GetService<IServiceScopeFactory>().CreateScope().ServiceProvider;
+        IServiceProvider serviceProvider2 = serviceProvider1.CreateScope().ServiceProvider;
  
         object root = serviceProvider2.GetType().GetField("_root", BindingFlags.Instance| BindingFlags.NonPublic).GetValue(serviceProvider2);
         Debug.Assert(object.ReferenceEquals(serviceProvider1, root));        
@@ -192,12 +103,12 @@ internal class ServiceScopeFactory : IServiceScopeFactory
 }
 ```
 
-### 2.2 三种生命周期管理模式
+## 2. 生命周期管理模式
 只有在充分了解ServiceScope的创建过程以及它与ServiceProvider之间的关系之后，我们才会对ServiceProvider支持的三种生命周期管理模式（Singleton、Scope和Transient）具有深刻的认识。就服务实例的提供方式来说，它们之间具有如下的差异：
 
-* Singleton：ServiceProvider创建的服务实例保存在作为根节点的ServiceProvider上，所有具有同一根节点的所有ServiceProvider提供的服务实例均是同一个对象。
-* Scoped：ServiceProvider创建的服务实例由自己保存，所以同一个ServiceProvider对象提供的服务实例均是同一个对象。
-* Transient：针对每一次服务提供请求，ServiceProvider总是创建一个新的服务实例。
+* Singleton：IServiceProvider创建的服务实例保存在作为根容器的IServiceProvider上，所有多个同根的IServiceProvider对象提供的针对同一类型的服务实例都是同一个对象。
+* Scoped：IServiceProvider创建的服务实例由自己保存，所以同一个IServiceProvider对象提供的针对同一类型的服务实例均是同一个对象。
+* Transient：针对每一次服务提供请求，IServiceProvider总是创建一个新的服务实例。
 
 在一个控制台应用中定义了如下三个服务接口（IFoo、IBar和IBaz）以及分别实现它们的三个服务类(Foo、Bar和Baz)。
 
@@ -223,8 +134,8 @@ class Program
             .AddScoped<IBar, Bar>()
             .AddSingleton<IBaz, Baz>()
             .BuildServiceProvider();
-        IServiceProvider child1 = root.GetService<IServiceScopeFactory>().CreateScope().ServiceProvider;
-        IServiceProvider child2 = root.GetService<IServiceScopeFactory>().CreateScope().ServiceProvider;
+        IServiceProvider child1 = root.CreateScope().ServiceProvider;
+        IServiceProvider child2 = root.CreateScope().ServiceProvider;
  
         Console.WriteLine("ReferenceEquals(root.GetService<IFoo>(), root.GetService<IFoo>() = {0}",ReferenceEquals(root.GetService<IFoo>(), root.GetService<IFoo>()));
         Console.WriteLine("ReferenceEquals(child1.GetService<IBar>(), child1.GetService<IBar>() = {0}",ReferenceEquals(child1.GetService<IBar>(), child1.GetService<IBar>()));
@@ -242,13 +153,27 @@ ReferenceEquals(child1.GetService<IBar>(), child2.GetService<IBar>()     = False
 ReferenceEquals(child1.GetService<IBaz>(), child2.GetService<IBaz>()     = True
 ```
 
-### 2.3 服务实例的回收
+## 3. 服务对象回收
 ServiceProvider除了为我们提供所需的服务实例之外，对于由它提供的服务实例，它还肩负起回收之责。这里所说的回收与.NET自身的垃圾回收机制无关，仅仅针对于自身类型实现了IDisposable接口的服务实例，所谓的回收仅仅体现为调用它们的Dispose方法。ServiceProvider针对服务实例所采用的回收策略取决于服务注册时采用的生命周期管理模式，具体采用的服务回收策略主要体现为如下两点：
 
-* 注册服务采用Singleton模式，由某个ServiceProvider提供的服务实例其回收工作由作为根的ServiceProvider负责，后者的Dispose方法被调用的时候，这些服务实例的Dispose方法会自动执行。
-* 注册服务采用其他模式（Scope或者Transient），ServiceProvider自行承担由它提供的服务实例的回收工作，当它的Dispose方法被调用的时候，这些服务实例的Dispose方法会自动执行。
+* Singleton：提供Disposable服务实例保存在作为根容器的IServiceProvider对象上，只有后者被释放的时候这些Disposable服务实例才能被释放。
+* Scoped和Transient：IServiceProvider对象会保存由它提供的Disposable服务实例，当自己被释放的时候，这些Disposable会被释放。
 
-在一个控制台应用中定义了如下三个服务接口（IFoo、IBar和IBaz）以及三个实现它们的服务类（Foo、Bar和Baz），这些类型具有相同的基类Disposable。Disposable实现了IDisposable接口，我们在Dispose方法中输出相应的文字以确定对象回收的时机。
+综上所述，每个作为DI容器的IServiceProvider对象都具有如下图所示两个列表来存放服务实例，我们将它们分别命名为“Realized Services”和“Disposable Services”，对于一个作为非根容器的IServiceProvider对象来说，由它提供的Scoped服务保存在自身的Realized Services列表中，Singleton服务实例则会保存在根容器的Realized Services列表。如果服务实现类型实现了IDisposable接口，Scoped和Transient服务实例会被保存到自身的Disposable Services列表中，而Singleton服务实例则会保存到根容器的Disposable Services列表。
+
+![服务对象回收示意图](../img/lifetime/servicedispose.png)
+
+当某个IServiceProvider被用于提供针对指定类型的服务实例时，它会根据服务类型提取出表示服务注册的ServiceDescriptor对象并根据后者得到对应的生命周期模式。如果生命周期模式为Singleton，并且作为根容器的Realized Services列表中包含对应的服务实例，后者将作为最终提供的服务实例。如果这样的服务实例尚未创建，那么新的服务将会被创建出来并作为提供的服务实例。在返回之后该对象会被添加到根容器的Realized Services列表中，如果实例类型实现了IDisposable接口，创建的服务实例会被添加到根容器的Disposable Services列表中。
+
+如果生命周期为Scoped，那么IServiceProvider会先确定自身的Realized Services列表中是否存在对应的服务实例，存在的服务实例将作为最终返回的服务实例。如果Realized Services列表不存在对应的服务实例，那么新的服务实例会被创建出来。在作为最终的服务实例被返回之前，创建的服务实例会被添加的自身的Realized Services列表中，如果实例类型实现了IDisposable接口，创建的服务实例会被添加到自身的Disposable Services列表中。
+
+如果提供服务的生命周期为Transient，那么IServiceProvider会直接创建一个新的服务实例。在作为最终的服务实例被返回之前，创建的服务实例会被添加的自身的Realized Services列表中，如果实例类型实现了IDisposable接口，创建的服务实例会被添加到自身的Disposable Services列表中。
+
+对于非根容器的IServiceProvider对象来说，它的生命周期是由“包裹”着它的IServiceScope对象控制的。从上面给出的定义可以看出IServiceScope实现了IDisposable接口，Dispose方法的执行不仅标志着当前服务范围的终结，也意味着对应IServiceProvider对象生命周期的结束。一旦IServiceProvider因自身Dispose方法的调用而被释放的时候，它会从自身的Disposable Services列表中提取出所有需要被释放的服务实例，并调用它们的Dispose方法。在这之后，Disposable Services和Realized Services列表会被清空，列表中的服务实例和IServiceProvider对象自身会成为垃圾对象被GC回收。
+
+我们通过以下示例来体会。
+
+在控制台应用中定义了如下三个服务接口（IFoo、IBar和IBaz）以及三个实现它们的服务类（Foo、Bar和Baz），这些类型具有相同的基类Disposable。Disposable实现了IDisposable接口，我们在Dispose方法中输出相应的文字以确定对象回收的时机。
 
 ```csharp
 public interface IFoo {}
@@ -280,8 +205,8 @@ class Program
             .AddScoped<IBar, Bar>()
             .AddSingleton<IBaz, Baz>()
             .BuildServiceProvider();
-        IServiceProvider child1 = root.GetService<IServiceScopeFactory>().CreateScope().ServiceProvider;
-        IServiceProvider child2 = root.GetService<IServiceScopeFactory>().CreateScope().ServiceProvider;
+        IServiceProvider child1 = root.CreateScope().ServiceProvider;
+        IServiceProvider child2 = root.CreateScope().ServiceProvider;
  
         child1.GetService<IFoo>();
         child1.GetService<IFoo>();
@@ -331,7 +256,7 @@ public void DoWork(IServiceProvider serviceProvider)
 ```csharp
 public void DoWork(IServiceProvider serviceProvider)
 {
-    using (IServiceScope serviceScope = serviceProvider.GetService<IServiceScopeFactory>().CreateScope())
+    using (IServiceScope serviceScope = serviceProvider.CreateScope())
     {
         IFoobar foobar = serviceScope.ServiceProvider.GetService<IFoobar>();
         // ...
@@ -394,10 +319,43 @@ Foobar.Dispose()
 Foobar.Finalize()
 ```
 
+## 4. Asp.Net Core 服务生命周期
+DI框架所谓的服务范围在ASP.NET Core应用中具有明确的边界，指的是针对每个HTTP请求的上下文，也就是服务范围的生命周期与每个请求上下文绑定在一起。如图6所示，ASP.NET Core应用中用于提供服务实例的IServiceProvider对象分为两种类型，一种是作为根容器并与应用具有相同生命周期的IServiceProvider，另一个类则是根据请求及时创建和释放的IServiceProvider，我们可以将它们分别称为Application ServiceProvider和Request ServiceProvider。
+
+![Asp.Net Core 服务生命周期](../img/lifetime/asp.netcorelifetime.png)
+
+在ASP.NET Core应用初始化过程中，即请求管道构建过程中使用的服务实例都是由Application ServiceProvider提供的。在具体处理每个请求时，ASP.NET Core框架会利用注册的一个中间件来针对当前请求创建一个服务范围，该服务范围提供的Request ServiceProvider用来提供当前请求处理过程中所需的服务实例。一旦服务请求处理完成，上述的这个中间件会主动释放掉由它创建的服务范围。
+
+## 5. ASP.NET Core 服务范围检验
+如果我们在一个ASP.NET Core应用中将一个服务的生命周期注册为Scoped，实际上是希望服务实例采用基于请求的生命周期。
+
+假定以下场景。
+
+在一个ASP.NET Core应用中采用Entity Framework Core来访问数据库，我们一般会将对应的DbContext类型（姑且命名为FoobarDbContext）注册为一个Scoped服务，这样既可以保证在FoobarDbContext能够自同一个请求上下文中被重用，也可以确保FoobarDbContext在请求结束之后能够及时将数据库链接释放掉。
+
+假定有另一个Singleton服务（姑且命名为Foobar）具有针对FoobarDbContext的依赖。由于Foobar是一个Singleton服务实例，所以被它引用的FoobarDbContext也只能在应用关闭的时候才能被释放。
+
+为了解决以上这个问题，可以让IServiceProvider在提供Scoped服务实例的时候进行针对性的检验。针对服务范围验证的开关由ServiceProviderOptions的ValidateScopes属性来控制，默认情况下是关闭的。如果希望开启针对服务范围的验证，我们可以在调用IServiceCollect接口的BuildServiceProvider方法的时候指定一个ServiceProviderOptions对象作为参数，或者直接调用另一个扩展方法并将传入的参数validateScopes设置为True。
+
+```csharp
+public class ServiceProviderOptions
+{
+    public bool ValidateScopes { get; set; }
+}
+
+public static class ServiceCollectionContainerBuilderExtensions
+{
+    public static ServiceProvider BuildServiceProvider(this IServiceCollection services, ServiceProviderOptions options);
+    public static ServiceProvider BuildServiceProvider(this IServiceCollection services, bool validateScopes);
+}
+```
+
+针对服务范围的验证对于IServiceProvider来说是一项额外附加的操作，会对性能带来或多或少的影响，所以一般情况下这个开关只会在开发（Development）环境被开启，对于产品（Production）或者预发（Staging）环境下最好将其关闭。
 
 <small id='comment'>
 [1] 对于分别采用 Scoped和Singleton模式提供的服务实例，当前ServiceProvider和根ServiceProvider分别具有对它们的引用。如果采用Transient模式，只有服务类型实现了IDisposable接口，当前ServiceProvider才需要对它保持引用以完成对它们的回收，否则没有任何一个ServiceProvider保持对它们的引用。
 <small>
 
 > 参考文献
-http://www.cnblogs.com/artech/p/asp-net-core-di-life-time.html
+* http://www.cnblogs.com/artech/p/asp-net-core-di-life-time.html
+* https://www.cnblogs.com/artech/p/net-core-di-08.html
