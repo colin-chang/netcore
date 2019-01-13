@@ -9,7 +9,7 @@
 ## 1. 依赖注入在管道构建过程中的使用
 在ASP.NET Core管道的构架过程中主要涉及三个对象/类型，作为宿主的WebHost和它的创建者WebHostBuilder，以及注册到WebHostBuilder的Startup类型。 如下的代码片段体现了启动ASP.NET Core应用采用的典型编程模式：我们首先创建一个IWebHostBuilder对象，并将Startup类型注册到它之上。在调用Build方法创建WebHost之前，我们还可以调用相应的方式做其他所需的注册工作。当我们调用WebHost的Run方法之后，后者会利用注册的Startup类型来构建完整的管道。那么在管道的构建过程中，DI是如何被应用的呢？
 
-```chsarp
+```csharp
 WebHost.CreateDefaultBuilder(args)
     .UseStartup<Startup>()
     .Xxx
