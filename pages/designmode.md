@@ -6,7 +6,7 @@
 正如我们在[前面](ioc.md)提到过的，很多人将IoC理解为一种“面向对象的设计模式”，实际上IoC自身不仅与面向对象没有必然的联系，它也算不上是一种设计模式。一般来讲，设计模式提供了一种解决某种具体问题的方案，但是IoC既没有一个针对性的问题领域，其自身没有提供一种可实施的解决方案，所以我更加倾向于将IoC视为一种设计原则，实际上很多我们熟悉的设计模式背后采用了IoC原则。
 
 ## 1. 模板方法（Template Method）
-提到IoC，很多人首先想到的是DI，但是在我看来与IoC思想最为接近的倒是另一种被称为“模板方法（Template  Method）”的设计模式。模板方法模式与IoC的意图可以说不谋而合，该模式主张将一个可复用的工作流程或者由多个步骤组成的算法定义成模板方法，组成这个流程或者算法的步骤实现在相应的虚方法之中，模板方法根据按照预先编排的流程去调用这些虚方法。所有这些方法均定义在同一个类中，我们可以通过派生该类并重写相应的虚方法达到对流程定制的目的。
+提到IoC，很多人首先想到的是DI，但是在我看来与IoC思想最为接近的倒是另一种被称为“模板方法（Template  Method）”的设计模式。模板方法模式与IoC的意图可以说不谋而合，该模式主张将一个可复用的工作流程或者由多个步骤组成的算法定义成模板方法，组成这个流程或者算法的步骤实现在相应的虚方法之中，模板方法根据预先编排的流程去调用这些虚方法。所有这些方法均定义在同一个类中，我们可以通过派生该类并重写相应的虚方法达到对流程定制的目的。
 
 对于[控制反转（IoC）](ioc.md)演示的这个MVC的例子，我们可以将整个请求处理流程实现在如下一个MvcEngine类中，请求的监听与接收、目标Controller的激活与执行以及View的呈现分别定义在5个受保护的虚方法中，模板方法StartAsync根据预定义的请求处理流程先后调用这5个方法。
 
@@ -32,7 +32,7 @@ public class MvcEngine
 }
  ```
 
-对于具体的应用来说，如果定义在MvcEngine针对请求的处理方式完全符合它的要求，它只需要创建这个一个MvcEngine对象，然后指定一个对应的基地址调用模板方法StartAsync开启这个MVC引擎即可。如果该MVC引擎处理请求的某个环节不能满足它的要求，它可以创建MvcEngine的派生类，并重写实现该环节的相应虚方法即可。
+对于具体的应用来说，如果MvcEngine中针对请求的处理方式完全符合要求，则它只需要创建一个MvcEngine对象，然后指定一个对应的基地址调用模板方法StartAsync开启这个MVC引擎即可。如果该MVC引擎处理请求的某个环节不能满足它的要求，它可以创建MvcEngine的派生类，并重写实现该环节的相应虚方法即可。
 
 比如说定义在某个应用程序中的Controller都是无状态的，它希望采用单例（Singleton）的方式重用已经激活的Controller以提高性能，那么它就可以按照如下的方式创建一个自定义的FoobarMvcEngine并按照自己的方式重写
 
@@ -112,7 +112,7 @@ public interface IViewRender
 }
   ```
 
-对于具体的应用程序来说，如果需要对请求处理的某个环节进行定制，它需要将定制的操作实现在对应接口的实现类中。在MvcEngine的派生类中，我们需要重写对应的工厂方法来提供被定制的对象。 比如上面提及的以单例模式提供目标Controller对象的实现就定义在SingletonControllerActivator类中，我们在派生于MvcEngine的FoobarMvcEngine类中重写了工厂方法GetControllerActivator使其返回一个SingletonControllerActivator对象。
+对于具体的应用程序来说，如需对请求处理某个环节进行定制，在对应接口实现类中重写对应的工厂方法即可。比如上面提及的以单例模式提供目标Controller对象的实现就定义在SingletonControllerActivator类中，我们在派生于MvcEngine的FoobarMvcEngine类中重写了工厂方法GetControllerActivator使其返回一个SingletonControllerActivator对象。
 
 ```csharp
 public class SingletonControllerActivator : IControllerActivator
@@ -135,7 +135,7 @@ public class FoobarMvcEngine : MvcEngine
 
 具体来说，我们需要定义一个独立的工厂接口或者抽象工厂类，并在其中定义多个的工厂方法来提供“同一系列”的多个相关对象。如果希望抽象工厂具有一组默认的“产出”，我们也可以将一个未被封闭的具体类作为抽象工厂，以虚方法形式定义的工厂方法将默认的对象作为返回值。我们根据实际的需要通过实现工厂接口或者继承抽象工厂类（不一定是抽象类）定义具体工厂类来提供一组定制的系列对象。
 
-现在我们采用抽象工厂模式来改造我们的MVC框架。如下面的代码片段所示，我们定义了一个名为IMvcEngineFactory的接口作为抽象工厂，定义在其中定义了四个方法来提供请求监听和处理过程使用到的4种核心对象。如果MVC提供了针对这四种核心组件的默认实现，我们可以按照如下的方式为这个抽象工厂提供一个默认实现（MvcEngineFactory）。
+现在我们采用抽象工厂模式来改造我们的MVC框架。如下面的代码片段所示，我们定义了一个名为IMvcEngineFactory的接口作为抽象工厂，其中定义了四个方法来提供请求监听和处理过程使用到的4种核心对象。如果MVC提供了针对这四种核心组件的默认实现，我们可以按照如下的方式为这个抽象工厂提供一个默认实现（MvcEngineFactory）。
 
 ```csharp
 public interface IMvcEngineFactory
@@ -155,7 +155,7 @@ public class MvcEngineFactory： IMvcEngineFactory
 }
 ```
 
-现在我们采用抽象工厂模式来改造我们的MVC框架。我们在创建MvcEngine对象可以提供一个具体的IMvcEngineFactory对象，如果没有显式指定，MvcEngine会使用默认的EngineFactory对象。在用于启动引擎的StartAsync方法中，MvcEngine利用IMvcEngineFactory来获取相应的对象协作完整对请求的处理流程。
+现在我们采用抽象工厂模式来改造我们的MVC框架。在创建MvcEngine对象时可以提供一个具体的IMvcEngineFactory对象，如果没有显式指定，MvcEngine会使用默认的EngineFactory对象。在用于启动引擎的StartAsync方法中，MvcEngine利用IMvcEngineFactory来获取相应的对象协作完成对请求的处理流程。
 
 ```csharp
 public class MvcEngine

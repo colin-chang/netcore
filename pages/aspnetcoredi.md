@@ -1,6 +1,6 @@
-# Asp.Net Core 依赖注入
+# Asp.Net Core 依赖注入使用
 * [1. 依赖注入在管道构建过程中的使用](#1-依赖注入在管道构建过程中的使用)
-* [2. 依赖服务注入](#2-依赖服务注入)
+* [2. 依赖服务注册](#2-依赖服务注册)
 * [3. 依赖服务消费](#3-依赖服务消费)
     * [3.1 Controller/PageModel](#31-controllerpagemodel)
     * [3.2 View](#32-view)
@@ -34,7 +34,9 @@ public interface IWebHostBuilder
 
 值得一提的是，Startup类型的ConfigureServices方法是允许具有一个IServiceProvider类型的返回值，如果这个方法返回一个具体的ServiceProrivder，那么WebHost将不会利用ServiceCollection来创建ServiceProvider，而是直接使用这个返回的ServiceProvider来调用Startup对象/类型的Configure方法。这实际上是一个很有用的扩展点，使用它可以实现针对第三方DI框架（如Unity、Castle、Ninject和AutoFac等）的集成。
 
-## 2. 依赖服务注入
+这里我们只是简单的介绍了Asp.Net Core程序启动的简单过程，具体实现细节属于Asp.Net Core框架的内容，我们将在后续[Asp.Net Core 程序启动源码和DI源码分析](disrc.md)中做详细介绍
+
+## 2. 依赖服务注册
 接下来我们通过一个实例来演示如何利用Startup类型的ConfigureServices来注册服务，以及在Startup类型上的两种依赖注入形式。如下面的代码片段所示，我们定义了两个服务接口（IFoo和IBar）和对应的实现类型（Foo和Bar）。其中服务Foo是通过调用WebHostBuilder的ConfigureServices方法进行注册的，而另一个服务Bar的注册则发生在Startup的ConfigureServices方法上。对于Startup来说，它具有一个类型为IFoo的只读属性，该属性在构造函数利用传入的参数进行初始化，不用说这体现了针对Startup的构造器注入。Startup的Configure方法除了ApplicationBuilder作为第一个参数之外，还具有另一个类型为IBar的参数，我们利用它来演示方法注入。
 
 ```csharp

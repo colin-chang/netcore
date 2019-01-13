@@ -11,6 +11,7 @@
     * [4. 服务注册](pages/register.md)
     * [5. 服务消费](pages/consume.md)
     * [6. 服务生命周期](pages/lifetime.md)
-    * [7. Asp.Net Core DI深入](pages/aspnetcoredi.md)
+    * [7. Asp.Net Core DI 使用](pages/aspnetcoredi.md)
+    * [8. Asp.Net Core DI 源码分析](pages/disrc.md)
 * [Dapper](pages/dapper.md)
 * [HTTPS](pages/https.md)
