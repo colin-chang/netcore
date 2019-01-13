@@ -192,9 +192,6 @@ public class Foo : IFoo
 正因为如此，ASP.NET Core框架使用的DI框架只支持构造器注入，而不支持属性和方法注入（类似于Startup和中间件基于约定的方法注入除外）。但是我们很有可能不知不觉地会按照Service Locator模式来编写我们的代码，从某种意义上讲，当我们在程序中使用IServiceProvider（表示DI容器）来提取某个服务实例的时候，就意味着我们已经在使用Service Locator模式了，所以当我们遇到这种情况下的时候应该多想一想是否一定需要这么做。虽然我们提倡尽可能避免使用Service Locator模式，但是有的时候（有其是在编写框架或者组件的时候），我们是无法避免使用IServiceProvider来提取服务。
 
 ## 4. .Net Core中的DI
-
-毫不夸张地说，整个ASP.NET Core框架是建立在一个依赖注入框架之上的，它在应用启动时构建请求处理管道过程中，以及利用该管道处理每个请求过程中使用到的服务对象均来源于DI容器。该DI容器不仅为ASP.NET Core框架提供必要的服务，同时作为了应用的服务提供者，依赖注入已经成为了ASP.NET Core应用基本的编程模式。
-
 .NET Core针对依赖注入的编程主要体现在两个方面：
 * 服务注册：创建一个ServiceCollection对象并将服务注册信息以ServiceDescriptor对象的形式添加其中
 * 服务消费： 通过ServiceCollection对象创建对应的ServiceProvider并利用它提供我们需要的服务实例
