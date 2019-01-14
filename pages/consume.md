@@ -25,9 +25,9 @@ public static class ServiceCollectionContainerBuilderExtensions
 
 ASP.NET Core内部真正使用的是一个实现了IServiceProvider接口的内部类型（该类型的名称为“ServiceProvider”），我们不能直接创建该对象，只能间接地通过调用IServiceCollection接口的扩展方法BuildServiceProvider得到它。
 
-由于ASP.NET Core中的ServiceProvider是根据一个代表ServiceDescriptor集合的IServiceCollection对象创建的，当我们调用其GetService方法的时候，它会根据我们提供的服务类型找到对应的ServiceDecriptor对象。如果该ServiceDecriptor对象的ImplementationInstance属性返回一个具体的对象，该对象将直接用作被提供的服务实例。如果ServiceDecriptor对象的ImplementationFactory返回一个具体的委托，该委托对象将直接用作创建服务实例的工厂。如果这两个属性均为Null，ServiceProvider才会根据ImplementationType属性返回的类型调用相应的构造函数创建被提供的服务实例。**ServiceProvider仅仅支持构造器注入，属性注入和方法注入的支持并未提供。**
+由于ASP.NET Core中的ServiceProvider是根据一个代表ServiceDescriptor集合的IServiceCollection对象创建的，当我们调用其GetService方法的时候，它会根据我们提供的服务类型找到对应的ServiceDecriptor对象。如果该ServiceDecriptor对象的ImplementationInstance属性返回一个具体的对象，该对象将直接用服务实例。如果ServiceDecriptor对象的ImplementationFactory返回一个具体的委托，该委托对象将直接用作创建服务实例的工厂。如果这两个属性均为Null，ServiceProvider才会根据ImplementationType属性返回的类型调用相应的构造函数创建被提供的服务实例。**ServiceProvider仅仅支持构造器注入，属性注入和方法注入的支持并未提供。**
 
-除了定义在IServiceProvider的这个GetService方法，DI框架为了该接口定了如下这些扩展方法。GetService&lt;T&gt;方法会泛型参数的形式指定了服务类型，返回的服务实例也会作对应的类型转换。如果指定服务类型的服务注册不存在，GetService方法会返回Null，如果调用GetRequiredService或者GetRequiredService&lt;T&gt;方法则会抛出一个InvalidOperationException类型的异常。如果所需的服务实例是必需的，我们一般会调用者两个扩展方法。
+除了定义在IServiceProvider的这个GetService方法，DI框架为该接口定了如下这些扩展方法。GetService&lt;T&gt;方法会以泛型参数的形式指定服务类型，返回的服务实例也会作对应的类型转换。如果指定服务类型的服务注册不存在，GetService方法会返回Null，如果调用GetRequiredService或者GetRequiredService&lt;T&gt;方法则会抛出一个InvalidOperationException类型的异常。如果所需的服务实例是必需的，我们一般会调用这两个扩展方法。
 
 ```csharp
 public static class ServiceProviderServiceExtensions
@@ -98,7 +98,7 @@ class Program
 }
 ```
 
-接下来我们调用ServiceCollection对象的扩展方法BuildServiceProvider得到对应的ServiceProvider对象，然后调用其扩展方法GetService<T>分别获得针对四个接口的服务实例对象并将类型名称其输出到控制台上。运行该程序之后，我们会在控制台上得到如下的输出结果，由此印证ServiceProvider为我们提供了我们期望的服务实例。
+接下来我们调用ServiceCollection对象的扩展方法BuildServiceProvider得到对应的ServiceProvider对象，然后调用其扩展方法GetService<T>分别获得针对四个接口的服务实例对象并将类型名称输出到控制台上。运行该程序之后，我们会在控制台上得到如下的输出结果，由此印证ServiceProvider为我们提供了我们期望的服务实例。
 
 ```csharp
 serviceProvider.GetService<IFoo>(): Foo
@@ -108,7 +108,7 @@ serviceProvider.GetService<IGux>(): Gux
 ```
 
 ## 3. 服务集合
-如果我们在调用GetService方法的时候将服务类型指定为IEnumerable<T>，那么返回的结果将会是一个集合对象。除此之外， 我们可以直接调用IServiceProvider如下两个扩展方法GetServeces达到相同的目的。在这种情况下，ServiceProvider将会利用所有与指定服务类型相匹配的ServiceDescriptor来提供具体的服务实例，这些均会作为返回的集合对象的元素。如果所有的ServiceDescriptor均与指定的服务类型不匹配，那么最终返回的是一个空的集合对象。
+如果我们在调用GetService方法的时候将服务类型指定为IEnumerable<T>，那么返回的结果将会是一个集合对象。除此之外，我们可以直接调用IServiceProvider如下两个扩展方法GetServeces达到相同的目的。在这种情况下，ServiceProvider将会利用所有与指定服务类型相匹配的ServiceDescriptor来提供具体的服务实例，这些均会作为返回的集合对象的元素。如果所有的ServiceDescriptor均与指定的服务类型不匹配，那么最终返回的是一个空的集合对象。
 
 ```csharp
 public static class ServiceProviderExtensions
@@ -161,7 +161,7 @@ Bar
 ## 4. 泛型支持
 ServiceProvider提供的服务实例不仅限于普通的类型，它对泛型服务类型同样支持。在针对泛型服务进行注册的时候，我们可以将服务类型设定为携带具体泛型参数的“关闭泛型类型”（比如IFoobar&lt;IFoo,IBar&gt;），除此之外服务类型也可以是包含具体泛型参数的“开放泛型类型”（比如IFoo&lt;,&gt;）。前者实际上还是将其视为非泛型服务来对待，后者才真正体现了“泛型”的本质。
 
-比如我们注册了某个泛型服务接口IFoobar&lt;,&gt;与它的实现类Foobar&lt;,&gt;之间的映射关系，当我们指定一个携带具体泛型参数的服务接口类型IFoobar&lt;IFoo,IBar&gt;并调用ServiceProvider的GetService方法获取对应的服务实例时，ServiceProvider会针对指定的泛型参数类型(IFoo和IBar)来解析与之匹配的实现类型（可能是Foo和Baz）并得到最终的实现类型（Foobar&lt;Foo,Baz&gt;）。
+比如我们注册了某个泛型服务接口IFoobar&lt;,&gt;与它的实现类Foobar&lt;,&gt;之间的映射关系，当我们指定一个携带具体泛型参数的服务接口类型IFoobar&lt;IFoo,IBar&gt;并调用ServiceProvider的GetService方法获取对应的服务实例时，ServiceProvider会针对指定的泛型参数类型(IFoo和IBar)来解析与之匹配的实现类型（可能是Foo和Bar）并得到最终的实现类型（Foobar&lt;Foo,Bar&gt;）。
 
 我们同样利用一个简单的控制台应用来演示基于泛型的服务注册与提供方式。如下面的代码片段所示，我们定义了三个服务接口（IFoo、IBar和IFoobar&lt;T1,T2&gt;）和实现它们的三个服务类（Foo、Bar个Foobar&lt;T1,T2&gt;）,泛型接口具有两个泛型参数类型的属性（Foo和Bar），它们在实现类中以构造器注入的方式被初始化。
 

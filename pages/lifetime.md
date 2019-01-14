@@ -42,7 +42,7 @@ internal class ServiceProvider : IServiceProvider, IDisposable
 }
 ```
 
-虽然在ServiceProvider在创建过程中体现了ServiceProvider之间存在着一种树形化的层级结构，但是ServiceProvider对象本身并没有一个指向“父亲”的引用，它仅仅会保留针对根节点的引用。如上面的代码片段所示，针对根节点的引用体现为ServiceProvider类的字段_root。当我们根据作为“父亲”的ServiceProvider创建一个新的ServiceProvider的时候，父子均指向同一个“根”。我们可以将创建过程中体现的层级化关系称为“逻辑关系”，而将ServiceProvider对象自身的引用关系称为“物理关系”，下图清楚地揭示了这两种关系之间的转化。
+虽然在创建过程中体现了ServiceProvider之间存在着一种树形化的层级结构，但是ServiceProvider对象本身并没有一个指向“父亲”的引用，它仅仅会保留针对根节点的引用。如上面的代码片段所示，针对根节点的引用体现为ServiceProvider类的字段_root。当我们根据作为“父亲”的ServiceProvider创建一个新的ServiceProvider的时候，父子均指向同一个“根”。我们可以将创建过程中体现的层级化关系称为“逻辑关系”，而将ServiceProvider对象自身的引用关系称为“物理关系”，下图清楚地揭示了这两种关系之间的转化。
 
 ![ServiceProvider层级关系](../img/lifetime/serviceprovider.png)
 
@@ -145,7 +145,7 @@ class Program
 }
 ```
 为了验证ServiceProvider针对Transient模式是否总是创建新的服务实例，我们利用同一个ServiceProvider（root）获取针对服务接口IFoo的实例并进行比较。为了验证ServiceProvider针对Scope模式是否仅仅在当前ServiceScope下具有“单例”的特性，我们先后比较了同一个ServiceProvider（child1）和不同ServiceProvider（child1和child2）两次针对服务接口IBar获取的实例。为了验证具有“同根”的所有ServiceProvider针对Singleton模式总是返回同一个服务实例，我们比较了两个不同child1和child2两次针对服务接口IBaz获取的服务实例。如下所示的输出结构印证了我们上面的论述。
-
+ 
 ```
 ReferenceEquals(root.GetService<IFoo>(), root.GetService<IFoo>()         = False
 ReferenceEquals(child1.GetService<IBar>(), child1.GetService<IBar>()     = True
