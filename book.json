@@ -5,16 +5,14 @@
         "disqus",
         "-lunr", "-search", "search-plus",
         "advanced-emoji",
-        "github",
+        "github-buttons",
         "multipart",
-        "katex",
         "splitter",
         "tbfed-pagefooter",
         "anchors",
-        "favicon",
         "sitemap",
         "copy-code-button",
-        "-sharing",
+        "-sharing", "sharing-plus",
         "toggle-chapters",
         "book-summary-scroll-position-saver",
         "prism",
@@ -24,27 +22,23 @@
         "disqus": {
             "shortName": "http-colin-chang-site"
         },
-        "github": {
-            "url": "https://github.com/colin-chang/netcore"
+        "github-buttons": {
+            "buttons": [{
+                "user": "colin-chang",
+                "repo": "netcore",
+                "type": "star",
+                "size": "small"
+            }]
         },
         "prism": {
             "css": [
                 "prismjs/themes/prism-okaidia.css"
             ]
-          },
+        },
         "tbfed-pagefooter": {
             "copyright": "&copy Colin Chang",
             "modify_label": "文件修订时间：",
             "modify_format": "YYYY-MM-DD HH:mm:ss"
-        },
-        "favicon": {
-            "shortcut": "assets/images/favicon.ico",
-            "bookmark": "assets/images/favicon.ico",
-            "appleTouch": "assets/images/apple-touch-icon.png",
-            "appleTouchMore": {
-                "120x120": "assets/images/apple-touch-icon-120x120.png",
-                "180x180": "assets/images/apple-touch-icon-180x180.png"
-            }
         },
         "sitemap": {
             "hostname": "https://colin-chang.site/books/netcore"
@@ -52,13 +46,12 @@
         "sharing": {
             "facebook": true,
             "twitter": true,
-            "google": false,
+            "google": true,
             "weibo": false,
             "instapaper": false,
             "vk": false,
             "all": [
-                "facebook", "google", "twitter",
-                "weibo", "instapaper"
+                "facebook", "google", "twitter","instapaper","vk","weibo"
             ]
         }
     },
