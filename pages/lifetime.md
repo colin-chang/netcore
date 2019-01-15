@@ -163,11 +163,11 @@ ServiceProvider除了为我们提供所需的服务实例之外，对于由它�
 
 ![服务对象回收示意图](../img/lifetime/servicedispose.png)
 
-当IServiceProvider提供服务实例时，它会提取出对应的ServiceDescriptor对象并读取其的生命周期模式。
+当IServiceProvider提供服务实例时，它会提取出对应的ServiceDescriptor对象并读取其生命周期模式。
 
 如果生命周期为Singleton，且根容器Realized Services列表中已包含对应的服务实例，后者将作为最终提供的服务实例。若服务实例尚未创建，那么将创建新服务对象作为提供的服务实例。返回的该服务对象将被添加到根容器Realized Services列表中，如果服务类型实现了IDisposable接口，该实例会添加到根容器的Disposable Services列表中。
 
-如果生命周期为Scoped，那么IServiceProvider会先确定自身的Realized Services列表中是否存在对应的服务实例，存在的服务实例将作为最终返回的服务实例。如果Realized Services列表不存在对应的服务实例，那么将创建新的服务实例。在最终服务实例返回之前，该实例将添加的自身的Realized Services列表中，如果实例类型实现了IDisposable接口，该实例会被添加到自身的Disposable Services列表中。
+如果生命周期为Scoped，那么IServiceProvider会先确定自身的Realized Services列表中是否存在对应的服务实例，存在的服务实例将作为最终返回的服务实例。如果Realized Services列表不存在对应的服务实例，那么将创建新的服务实例。在最终服务实例返回之前，该实例将添加到自身的Realized Services列表中，如果实例类型实现了IDisposable接口，该实例会被添加到自身的Disposable Services列表中。
 
 如果生命周期为Transient，那么IServiceProvider会直接创建一个新的服务实例。在作为最终的服务实例被返回之前，该实例会被添到的自身的Realized Services列表中，如果实例类型实现了IDisposable接口，创建的服务实例会被添加到自身的Disposable Services列表中。
 
@@ -286,7 +286,7 @@ public class Foobar : IFoobar
 }
 ```
 
-在作为程序入口的Main方法中，我们创建了一个ServiceCollection对象并采用Transient模式将IFoobbar/Foobar注册其中。借助于通过该ServiceCollection创建的ServiceProvider，我们分别采用上述的两种方式获取服务实例并试图对它实施回收。为了强制GC试试垃圾回收，我们显式调用了GC的Collect方法。
+在作为程序入口的Main方法中，我们创建了一个ServiceCollection对象并采用Transient模式将IFoobbar/Foobar注册其中。借助于通过该ServiceCollection创建的ServiceProvider，我们分别采用上述的两种方式获取服务实例并试图对它实施回收。为了强制GC实时垃圾回收，我们显式调用了GC的Collect方法。
 
 ```csharp
 class Program

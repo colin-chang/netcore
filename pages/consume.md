@@ -98,7 +98,7 @@ class Program
 }
 ```
 
-接下来我们调用ServiceCollection对象的扩展方法BuildServiceProvider得到对应的ServiceProvider对象，然后调用其扩展方法GetService<T>分别获得针对四个接口的服务实例对象并将类型名称输出到控制台上。运行该程序之后，我们会在控制台上得到如下的输出结果，由此印证ServiceProvider为我们提供了我们期望的服务实例。
+接下来我们调用ServiceCollection对象的扩展方法BuildServiceProvider得到对应的ServiceProvider对象，然后调用其扩展方法GetService&lt;T&gt;分别获得针对四个接口的服务实例对象并将类型名称输出到控制台上。运行该程序之后，我们会在控制台上得到如下的输出结果，由此印证ServiceProvider为我们提供了我们期望的服务实例。
 
 ```csharp
 serviceProvider.GetService<IFoo>(): Foo
@@ -108,7 +108,7 @@ serviceProvider.GetService<IGux>(): Gux
 ```
 
 ## 3. 服务集合
-如果我们在调用GetService方法的时候将服务类型指定为IEnumerable<T>，那么返回的结果将会是一个集合对象。除此之外，我们可以直接调用IServiceProvider如下两个扩展方法GetServeces达到相同的目的。在这种情况下，ServiceProvider将会利用所有与指定服务类型相匹配的ServiceDescriptor来提供具体的服务实例，这些均会作为返回的集合对象的元素。如果所有的ServiceDescriptor均与指定的服务类型不匹配，那么最终返回的是一个空的集合对象。
+如果我们在调用GetService方法的时候将服务类型指定为IEnumerable&lt;T&gt;，那么返回的结果将会是一个集合对象。除此之外，我们可以直接调用IServiceProvider如下两个扩展方法GetServeces达到相同的目的。在这种情况下，ServiceProvider将会利用所有与指定服务类型相匹配的ServiceDescriptor来提供具体的服务实例，这些均会作为返回的集合对象的元素。如果所有的ServiceDescriptor均与指定的服务类型不匹配，那么最终返回的是一个空的集合对象。
 
 ```csharp
 public static class ServiceProviderExtensions
@@ -149,7 +149,7 @@ public class Foo : IFoobar {}
 public class Bar : IFoobar {}
 ```
 
-在调用ServiceCollection对象的扩展方法BuildServiceProvider得到对应的ServiceProvider对象之后，我们先调用其GetService<T>方法以确定针对服务接口IFoobar得到的服务实例的真实类型就是是Foo还是Bar。接下来我们调用ServiceProvider的扩展方法GetServices<T>获取一组针对服务接口IFoobar的服务实例并将它们的真是类型打印在控制台上。该程序运行后将会在控制台上生成如下的输出结果。
+在调用ServiceCollection对象的扩展方法BuildServiceProvider得到对应的ServiceProvider对象之后，我们先调用其GetService&lt;T&gt;方法以确定针对服务接口IFoobar得到的服务实例的真实类型就是是Foo还是Bar。接下来我们调用ServiceProvider的扩展方法GetServices&lt;T&gt;获取一组针对服务接口IFoobar的服务实例并将它们的真是类型打印在控制台上。该程序运行后将会在控制台上生成如下的输出结果。
 
 ```
 serviceProvider.GetService<IFoobar>(): Bar
