@@ -6,6 +6,7 @@
 [`docker start/stop/restart`](#2-docker-startstoprestart)|启动/停止/重启容器
 [`docker ps`](#3-docker-ps)|列出容器
 [`docker images`](#4-docker-images)|列出本地镜像
+[`docker build`](#5-docker-build)|列出本地镜像
 [`docker rm/rmi`](#5-docker-rmrmi)|删除容器或镜像
 [`docker exec/attach`](#6-docker-execattach)|进入容器
 
@@ -115,7 +116,7 @@ $ docker ps -a -f=ancestor=lottery
 ```
 
 ## 4. docker images
-`docker images`列出本地镜像。
+`docker images`用于列出本地镜像。
 
 ```sh
 # 命令格式
@@ -133,8 +134,27 @@ options|含义
 $ docker images
 ```
 
-## 5. docker rm/rmi
-### 5.1 docker rm
+## 5. docker build
+`docker build`命令可以使用Dockerfile构建镜像。Dockerfile相关内容参见[制作镜像](docker-dockerfile.md)。
+
+```sh
+# 命令格式
+$ docker build [OPTIONS] PATH | URL | -
+```
+
+options|含义
+:-|:-
+`-t`|镜像的名字及标签，通常 name:tag 或者 name 格式；可以在一次构建中为一个镜像设置多个标签
+`-f` |Dockerfile名称。(默认为 ‘PATH/Dockerfile’)
+`--pull`|尝试去更新镜像的新版本
+
+```sh
+# 在当前目录下使用Dockerfile构建名为"colin/webapp"的镜像，tag为1.0
+$ docker build -t colin/webapp:1.0 .
+```
+
+## 6. docker rm/rmi
+### 6.1 docker rm
 `docker rm`用于删除容器。删除容器之前需要先停止容器。
 
 options|含义
@@ -154,7 +174,7 @@ $ docker rm $(docker ps -aq)
 $ docker rm $(docker ps -aq -f=ancestor=ubuntu)
 ```
 
-### 5.2 docker rmi
+### 6.2 docker rmi
 `docker rmi`用于删除镜像。删除容器之前需要先停止容器。删除镜像之前必须把所有这个镜像的容器删除。使用`docker image rm`指令也可以删除镜像。
 
 ```sh
@@ -164,9 +184,9 @@ $ docker rm $(docker ps -aq -f=ancestor=nginx)
 $ docker rmi nginx
 ```
 
-## 6. docker exec/attach
+## 7. docker exec/attach
 进入Docker容器有多种方式，这里我们介绍最简单的`docker attach`和`docker exec`两种方式
-### 6.1 docker attach
+### 7.1 docker attach
 `docker attach`用于附加本地终端输入输出及错误流信息到一个运行中的容器。如果容器创建时未指定交互式(-it)运行，可能无法通过`docker attach`进入到容器中。为了确保可以通过`docker attach`进入容器，执行`docker run`时需要指定`-it`，并在启动后执行`/bin/bash`。如
 `docker run -itd --name mysql -e MYSQL_ROOT_PASSWORD=pwd mysql /bin/bash`
 
@@ -178,7 +198,7 @@ docker attach有诸多不便之处，推荐使用`docker exec`方式进入容器
 $ docker attach --sig-proxy=false mysql
 ```
 
-### 6.2 docker exec
+### 7.2 docker exec
 `docker exec`可以进入容器内执行命令。使用方式比较简单，详见[官方文档](https://docs.docker.com/engine/reference/commandline/exec/)
 
 ```sh
