@@ -19,7 +19,7 @@ WebHost.CreateDefaultBuilder(args)
 
 DI在ASP.NET Core管道构建过程中的应用基本体现在下面这个序列图中。当我们调用WebHostBuilder的Build方法创建对应的WebHost的时候，前者会创建一个ServiceCollection对象，并将一系列预定义的服务注册在它之上。接下来WebHostBuilder会利用这个ServiceCollection对象创建出对应的ServiceProvider，这个ServiceProvider和ServiceCollection对象会一并传递给最终创建WebHost对象。当我们调用WebHost的Run方法启动它的时候，如果注册的Startup是一个实例类型，则会以构造器注入的方式创建对应的Startup对象。我们注册的Startup类型的构造函数是允许定义参数的，但是参数类型必须是预先注册到ServiceCollection中的服务类型。
 
-![DI在ASP.NET Core管道构建过程中的应用](../img/aspnetcoredi/diinpip.png)
+![DI在ASP.NET Core管道构建过程中的应用](../img/di/diinpip.png)
 
 注册的Startup方法可以包含一个可选的ConfigureServices方法，这个方法具有一个类型为IServiceCollection接口的参数。WebHost会将WebHostBuilder传递给它的ServiceCollection作为参数调用这个ConfigureServices方法，而我们则利用这个方法将注册的中间件和应用所需的服务注册到这个ServiceCollection对象上。在这之后，所有需要的服务（包括框架和应用注册的服务）都注册到这个ServiceCollection上面，WebHost会利用它创建一个新的ServiceProvider。WebHost会利用这个ServiceProvider对象以方法注入的方式调用Startup对象/类型的Configure方法，最终完成你对整个管道的建立。换句话会说，定义在Startup类型中旨在用于注册Middleware的Configure方法除了采用IApplicationBuilder作为第一个参数之外，它依然可以采用注册的任何一个服务类型作为后续参数的类型。
 
@@ -83,7 +83,7 @@ public class Startup
 
 在Startup的Configure方法中，我们调用IApplicationBulder的Run方法注册了一个Middleware，后者将两个注入的服务的类型作为响应的内容输出。
 
-![依赖服务的注册与注入](../img/aspnetcoredi/register.jpg)
+![依赖服务的注册与注入](../img/di/register.jpg)
 
 另外，WebHostBuilder在创建ServiceCollection之后，会注册一些默认的服务（如IHostingEnvironment，ILoggerFactory等）。这些服务和我们自行注册的服务并没有任何区别，只要我们知道对应的服务类型，就可以通过注入的方式获取并使用它们。
 
