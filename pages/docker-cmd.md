@@ -7,8 +7,8 @@
 [`docker ps`](#3-docker-ps)|列出容器
 [`docker images`](#4-docker-images)|列出本地镜像
 [`docker build`](#5-docker-build)|列出本地镜像
-[`docker rm/rmi`](#5-docker-rmrmi)|删除容器或镜像
-[`docker exec/attach`](#6-docker-execattach)|进入容器
+[`docker rm/rmi`](#6-docker-rmrmi)|删除容器或镜像
+[`docker exec/attach`](#7-docker-execattach)|进入容器
 
 Docker操作的相关指令非常多，详细的使用方法可以参考[官方文档](https://docs.docker.com/engine/reference/run/)，此处我们只列举部分常用命令及其使用注意事项。
 

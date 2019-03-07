@@ -31,8 +31,9 @@ static void Main(string[] args)
 
 运行以上程序。
 ```sh
-$ dotnet run cmddemo                    # 输出 name:Colin   age:18
-$ dotnet run cmddemo name=Robin age=20  # 输出 name:Robin   age:20
+$ dotnet run cmddemo                        # 输出 name:Colin   age:18
+$ dotnet run cmddemo name=Robin age=20      # 输出 name:Robin   age:20
+$ dotnet run cmddemo --name Robin age 20    # 输出 name:Robin   age:20
 ```
 
 由于`AddCommandLine()`在`AddInMemoryCollection()`之后，所以当命令行有参数时会覆盖内存配置信息。
@@ -209,7 +210,15 @@ public static class ConfigProvider
     /// </summary>
     public static IConfiguration Configuration { get; }
 
+    /// <summary>
+    /// 读取CommandLine配置。
+    /// </summary>
+    /// <param name="cmdParameter">CommandLine参数名</param>
+    public string this[string cmdParameter] => _cmdConfiguration[cmdParameter];
+
     private static IServiceCollection _services;
+    private IConfiguration _cmdConfiguration;
+    
 
     static ConfigProvider()
     {
@@ -220,6 +229,16 @@ public static class ConfigProvider
         _services = new ServiceCollection();
     }
 
+    /// <summary>
+    /// 创建用于"读取CommandLine配置"的对象
+    /// </summary>
+    /// <param name="args">AddCommandLine args</param>
+    public ConfigProvider(string[] args)
+    {
+        _cmdConfiguration = new ConfigurationBuilder()
+            .AddCommandLine(args)
+            .Build();
+    }
 
     /// <summary>
     /// 读取配置
