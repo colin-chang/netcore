@@ -202,7 +202,7 @@ WebHost.CreateDefaultBuilder(args)
 在Asp.Net Core程序中我们可以方便的通过以上[Config&lt;T&gt;](#32-configt)方式使用配置，但在其它.Net Core应用中DI并未默认被引入，我们可以考虑配置文件读取操作封装为一个工具类。考虑到配置文件热更新问题对象映射我们采用Config&lt;T&gt;方式处理。
 
 ```csharp
-public static class ConfigProvider
+public class ConfigProvider
 {
     /// <summary>
     /// 配置Root节点

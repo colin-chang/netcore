@@ -51,7 +51,7 @@
 * [2. 微服务](pages/index.md)
     * [2.1 微服务架构](pages/microservice-intro.md)
     * [2.2 服务治理](pages/microservice-consul.md)
-    * [2.3 熔断降级](pages/index.md)
+    * [2.3 熔断降级](pages/microservice-polly.md)
     * [2.4 网关](pages/index.md)
     * [2.4 微服务授权](pages/index.md)
     * [2.4 Thrift高效通讯](pages/index.md)
