@@ -52,9 +52,10 @@
     * [2.1 微服务架构](pages/microservice-intro.md)
     * [2.2 服务治理](pages/microservice-consul.md)
     * [2.3 熔断降级](pages/microservice-polly.md)
-    * [2.4 网关](pages/index.md)
-    * [2.4 微服务授权](pages/index.md)
-    * [2.4 Thrift高效通讯](pages/index.md)
+    * [2.4 网关](pages/microservice-ocelot.md)
+    * [2.5 微服务授权](pages/index.md)
+    * [2.6 Thrift高效通讯](pages/index.md)
+    * [2.7 Docker+微服务](pages/microservice-docker.md)
 <!-- 微服务架构、Consul服务治理和服务发现、Polly熔断降级、Ocelot网关、Identity Server微服务授权；Thrift高效通讯 -->
 
 ## PART Ⅲ 其他技术

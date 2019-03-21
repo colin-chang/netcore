@@ -42,7 +42,38 @@ $ dotnet add package Consul
 
 生产环境中每个服务一般都会存在一个集群，互为备份，保证系统可用性。WebAPI项目默认启动监听 http://5000，单机启动多个服务实例时需要区别端口，我们可以在程序启动时动态指定端口。或者使用docker做端口映射。
 
-#### 1) 服务启动设置
+#### 1) 配置文件
+使用默认配置文件 `appsettings.json`,`Build Action`为`Content`,`Copy to output directory`为`Copy always`
+
+在`appsettings.json`中添加如下配置。配置内容根据实际环境修改即可。
+
+```json
+{
+  "BindHosts": [
+    "192.168.31.191"
+  ],
+  "ConsulClient": {
+    "Address": "http://127.0.0.1:8500",
+    "Datacenter": "dc1"
+  }
+}
+```
+
+#### 2) 添加健康检查API
+```csharp
+[Route("api/[controller]")]
+[ApiController]
+public class HealthController : ControllerBase
+{
+    [HttpGet]
+    public ActionResult Get()
+    {
+        return Ok();
+    }
+}
+```
+
+#### 3) 修改启动配置
 
 ```csharp
 public class Program
@@ -50,10 +81,11 @@ public class Program
     public static void Main(string[] args)
     {
         /*
-            * 程序启动时必须指定端口号，命令格式为 dotnet run --port 5000
-            * 
-            * 通过docker方式运行时要显式指定 ENTRYPOINT 参数。 形如 docker run xxx --port 5000
-            */
+        * 程序启动时必须指定端口号，命令格式为 dotnet run --port 5000
+        * 
+        * 通过docker方式运行时要显式指定 ENTRYPOINT 参数。 形如 docker run xxx --port 5000
+        */
+
         var config = new ConfigProvider(args);
 
         // 端口
@@ -78,27 +110,20 @@ public class Program
             .UseStartup<Startup>();
 ```
 
-#### 2) appsettings.json
-```json
-{
-  "BindHosts": [
-    "192.168.31.191"
-  ],
-  "ConsulClient": {
-    "Address": "http://127.0.0.1:8500",
-    "Datacenter": "dc1"
-  }
-}
-```
 
-#### 3) 服务注册注销
+
+#### 4) 服务注册注销
 ```csharp
 public async void Configure(IApplicationBuilder app, IHostingEnvironment env,
     IApplicationLifetime applicationLifetime)
 {
     app.UseMvc();
+    
+    await Register2Consul(applicationLifetime);
+}
 
-
+private async Task Register2Consul(IApplicationLifetime applicationLifetime)
+{
     var serviceName = Assembly.GetEntryAssembly().GetName().Name;
     var serviceId = $"{serviceName}_{Guid.NewGuid()}";
 
