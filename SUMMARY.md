@@ -56,7 +56,6 @@
     * [2.5 微服务授权](pages/index.md)
     * [2.6 Thrift高效通讯](pages/index.md)
     * [2.7 Docker+微服务](pages/microservice-docker.md)
-<!-- 微服务架构、Consul服务治理和服务发现、Polly熔断降级、Ocelot网关、Identity Server微服务授权；Thrift高效通讯 -->
 
 ## PART Ⅲ 其他技术
 * [1. 多线程/异步](pages/index.md)
@@ -66,7 +65,7 @@
     * [1.4 线程池](pages/multithreading-threadpool.md)
     * [1.5 UI资源跨线程访问](pages/multithreading-uiresource.md)
     * [1.6 异步编程模型](pages/multithreading-async.md)
-* [2. 单元测试](pages/index.md)
+* [2. 单元测试](pages/unittest.md)
 
 ## Part IV - 常用解决方案
 * [1. AutoFac](pages/autofac.md)
