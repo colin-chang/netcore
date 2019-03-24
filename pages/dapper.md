@@ -347,10 +347,20 @@ using (var reader = connection.ExecuteReader("select * from Shapes"))
 ```
 
 ## 5. Dapper Plus
-Dapper仅提供了SqlHelper常用功能和对象映射，我们通常会对Dapper进行二次封装扩展以更方便的使用Dapper。
+Dapper仅提供了SqlHelper常用功能和对象映射，我们通常会对Dapper进行二次封装扩展以更方便的使用Dapper。 下面Dapper扩展在无损Dapper性能的前提下，基本覆盖了日常数据操作，仅供参考。
 
-[Dapper Plus](https://github.com/colin-chang/dapper-plus)扩展在无损Dapper性能的前提下，基本覆盖了日常数据操作。
+代码已上传到Github，这里不再展开。
+https://github.com/colin-chang/DapperHelper
 
-Dapper Plus包含了上面的所有数据操作，案例中的代码已经包含在[单元测试](https://github.com/colin-chang/dapper-plus/tree/master/DapperPlus.Test)项目中。
+具体使用方式可以查看单元测试
+https://github.com/colin-chang/DapperHelper/blob/master/ColinChang.DapperHelper.Test/DapperPlusTest.cs
 
-源码地址：https://github.com/colin-chang/dapper-plus
+> 该帮助累已发布到Nuget
+
+```sh
+# Package Manager
+Install-Package ColinChang.DapperHelper
+
+# .NET CLI
+dotnet add package ColinChang.DapperHelper
+```
