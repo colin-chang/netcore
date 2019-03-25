@@ -33,7 +33,7 @@ static void Main(string[] args)
 ```sh
 $ dotnet run cmddemo                        # 输出 name:Colin   age:18
 $ dotnet run cmddemo name=Robin age=20      # 输出 name:Robin   age:20
-$ dotnet run cmddemo --name Robin age 20    # 输出 name:Robin   age:20
+$ dotnet run cmddemo --name Robin --age 20    # 输出 name:Robin   age:20
 ```
 
 由于`AddCommandLine()`在`AddInMemoryCollection()`之后，所以当命令行有参数时会覆盖内存配置信息。
@@ -178,7 +178,7 @@ public HomeController(IOptions<Class> classAccesser)
 new ConfigurationBuilder().AddJsonFile("appsettings.json", true, true)
 ```
 
-[3.1 Bind](#31-bind)方式配置文件读取方式并不支持热更新。[Config&lt;T&gt;](#32-configt)方式支持配置文件热更新但是需要使用`IOptionsSnapshot<T>`替换`IOptions<T>`。
+[3.1 Bind](#31-bind)方式配置文件读取方式并不支持热更新。[Config&lt;T&gt;](#32-configt)方式支持配置文件热更新但是需要使用 IOptionsSnapshot&lt;T&gt; 替换 IOptions&lt;T&gt;。
 
 ```csharp
 private readonly Class _cls;
@@ -201,82 +201,20 @@ WebHost.CreateDefaultBuilder(args)
 ## 5. 配置管理工具类封装
 在Asp.Net Core程序中我们可以方便的通过以上[Config&lt;T&gt;](#32-configt)方式使用配置，但在其它.Net Core应用中DI并未默认被引入，我们可以考虑配置文件读取操作封装为一个工具类。考虑到配置文件热更新问题对象映射我们采用Config&lt;T&gt;方式处理。
 
-```csharp
-public class ConfigProvider
-{
-    /// <summary>
-    /// 配置Root节点
-    /// 读取一级节点：ConfigUtil.Configuration["nodeName"],读取多级节点：ConfigUtil.Configuration["node1:node2"]
-    /// </summary>
-    public static IConfiguration Configuration { get; }
+代码已上传到Github，这里不再展开。
+https://github.com/colin-chang/ConfigurationManager.Core
 
-    /// <summary>
-    /// 读取CommandLine配置。
-    /// </summary>
-    /// <param name="cmdParameter">CommandLine参数名</param>
-    public string this[string cmdParameter] => _cmdConfiguration[cmdParameter];
+具体使用方式可以查看示例项目。
+https://github.com/colin-chang/ConfigurationManager.Core/tree/master/ColinChang.ConfigurationManager.Sample
 
-    private static IServiceCollection _services;
-    private IConfiguration _cmdConfiguration;
-    
+> 该帮助类已发布到Nuget
 
-    static ConfigProvider()
-    {
-        Configuration = new ConfigurationBuilder()
-            .AddJsonFile("appsettings.json", false, true)
-            .Build();
+```sh
+# Package Manager
+Install-Package ColinChang.ConfigurationManager.Core 
 
-        _services = new ServiceCollection();
-    }
-
-    /// <summary>
-    /// 创建用于"读取CommandLine配置"的对象
-    /// </summary>
-    /// <param name="args">AddCommandLine args</param>
-    public ConfigProvider(string[] args)
-    {
-        _cmdConfiguration = new ConfigurationBuilder()
-            .AddCommandLine(args)
-            .Build();
-    }
-
-    /// <summary>
-    /// 读取配置
-    /// </summary>
-    /// <param name="keys">节点名称序列</param>
-    /// <returns>配置值</returns>
-    public static string GetAppSettings(params string[] keys)
-    {
-        if (keys == null || keys.Length <= 0)
-            return null;
-
-        return Configuration[string.Join(":", keys)];
-    }
-
-    /// <summary>
-    /// 读取配置
-    /// </summary>
-    /// <param name="key">节点名称</param>
-    /// <typeparam name="T">配置对象类型</typeparam>
-    /// <returns>配置对象</returns>
-    public static T GetAppSettings<T>(string key) where T : class, new()
-    {
-        return _services.Configure<T>(Configuration.GetSection(key)).BuildServiceProvider()
-            .GetService<IOptionsSnapshot<T>>().Value;
-    }
-}
-```
-
-使用以上工具类读取配置示例：
-
-```csharp
-var appName = ConfigProvider.Configuration["AppName"];
-var className=ConfigProvider.Configuration["Class:ClassName"];
-
-appName = ConfigProvider.GetAppSettings("AppName");
-className = ConfigProvider.GetAppSettings("Class", "ClassName");
-
-var cls = ConfigProvider.GetAppSettings<Class>("Class");
+# .NET CLI
+dotnet add package ColinChang.ConfigurationManager.Core
 ```
 
 ## 6. Configuration框架解析

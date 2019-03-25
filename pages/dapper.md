@@ -355,7 +355,7 @@ https://github.com/colin-chang/DapperHelper
 具体使用方式可以查看单元测试
 https://github.com/colin-chang/DapperHelper/blob/master/ColinChang.DapperHelper.Test/DapperPlusTest.cs
 
-> 该帮助累已发布到Nuget
+> 该帮助类已发布到Nuget
 
 ```sh
 # Package Manager
