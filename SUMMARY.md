@@ -70,7 +70,6 @@
 ## Part IV - 常用解决方案
 * [1. AutoFac](pages/autofac.md)
 * [2. HTTPS](pages/https.md)
-* [3. 定时任务](pages/quartz.md)
-* [4. 邮件短信通知](pages/mailsms.md)
-* [5. 在线支付](pages/mailsms.md)
-* [6. 页面静态化和SSI](pages/staticssi.md)
+* [3. 邮件短信通知](pages/mailsms.md)
+* [4. 在线支付](pages/mailsms.md)
+* [5. 页面静态化和SSI](pages/staticssi.md)

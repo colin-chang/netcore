@@ -9,6 +9,7 @@
 [`docker build`](#5-docker-build)|列出本地镜像
 [`docker rm/rmi`](#6-docker-rmrmi)|删除容器或镜像
 [`docker exec/attach`](#7-docker-execattach)|进入容器
+[`docker logs [OPTIONS] CONTAINER`](#8-docker-logs)|查看日志
 
 Docker操作的相关指令非常多，详细的使用方法可以参考[官方文档](https://docs.docker.com/engine/reference/run/)，此处我们只列举部分常用命令及其使用注意事项。
 
@@ -204,4 +205,26 @@ $ docker attach --sig-proxy=false mysql
 ```sh
 # 进入my-nginx容器并开启一个交互式终端
 $ docker exec -it my-nginx /bin/bash
+```
+
+## 8. docker logs
+`docker logs`用于查看指定容器的日志。
+
+```sh
+# 命令格式
+$ docker logs [OPTIONS] CONTAINER
+```
+
+options|含义
+:-|:-
+`-f `|跟踪日志输出
+`--details`|显示详细日志
+`--tail`|从最新日志起算，输出日志行数
+`-t `|显示日志记录时间
+`--since`|输出指定时间之后的日志。时间格式：`2013-01-02T13:23:37`
+`until`|输出指定时间之前的日志。时间格式：`2013-01-02T13:23:37`
+
+```sh
+# 输出nginx容器最新的10条日志
+$ docker logs -ft --tail 10 nginx
 ```

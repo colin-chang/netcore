@@ -9,7 +9,7 @@ Windows和MacOS中可以都可以使用[Docker Desktop](https://www.docker.com/p
 
 ```sh
 # 安装docker
-$ sudo apt-get install docker.io
+$ sudo apt install docker.io
 
 # 查看docker版本
 $ sudo docker version
