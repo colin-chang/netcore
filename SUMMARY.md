@@ -54,7 +54,7 @@
     * [2.3 熔断降级](pages/microservice-polly.md)
     * [2.4 网关](pages/microservice-ocelot.md)
     * [2.5 微服务授权](pages/index.md)
-    * [2.6 Thrift高效通讯](pages/index.md)
+    * [2.6 RPC](pages/rpc.md)
     * [2.7 Docker+微服务](pages/microservice-docker.md)
 
 ## PART Ⅲ 其他技术
