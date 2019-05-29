@@ -178,7 +178,7 @@ using (var cnn = Cnn)
             articleEntry.Comments = new List<Comment>{};
             articles.Add(article.Id, articleEntry);
         }
-        articleEntry.Comments.Append(comment);
+        articleEntry.Comments = articleEntry.Comments.Append(comment);
         return articleEntry;
     });
     // var result= data.Distinct();
