@@ -240,6 +240,23 @@ public class TestController : ControllerBase
 
 ![PUT请求JSON参数](../img/webapi/put.png)
 
+> JSON
+
+ContentType为applciation/json时，传递参数必须是[JSON格式](https://www.json.org/)。
+
+按照JSON官网的规范（"A value can be a string in double quotes, or a number, or true or false or null, or an object or an array. These structures can be nested."），JSON可以直接传递字符串、数字和布尔三种简单类型。需要特别注意的是，字符串需要包裹在双引号直接(**双引号作为字符串的一部分**)。
+
+```csharp
+[HttpPost]
+public void Post([FromBody] string value)
+{
+}
+```
+
+![POST字符串](../img/webapi/post-simple.jpg)
+
+![POST Ajax](../img/webapi/post-ajax.jpg)
+
 ## 4. 返回值
 
 ASP.NET Core 提供以下 Web API 控制器操作返回类型选项：

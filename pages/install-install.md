@@ -81,8 +81,5 @@ exit 0
 
 如果对shell脚本不熟悉的小伙伴也可以使用以下命令快速卸载，以mac为例，
 ```sh
-$ curl -o uninstall.sh https://gist.githubusercontent.com/colin-chang/1d8da588f399165924dc62dad42598d8/raw/50444ab4db30ab8d6205216dec0c3983333a5d6b/dotnet-uninstall-pkgs.sh
-$ chmod -R 740 uninstall.sh
-$ sudo sh uninstall.sh
-$ rm uninstall.sh
+$ curl -o uninstall.sh https://gist.githubusercontent.com/colin-chang/1d8da588f399165924dc62dad42598d8/raw/50444ab4db30ab8d6205216dec0c3983333a5d6b/dotnet-uninstall-pkgs.sh && chmod -R 740 uninstall.sh && sudo sh uninstall.sh && rm uninstall.sh
 ```
