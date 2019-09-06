@@ -117,7 +117,7 @@
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     {
         //启用中间件生成 Swagger规范 和 Swagger UI 
-        app.UseSwagger();
+        app.UseOpenApi();
         app.UseSwaggerUi3();
         
         app.UseMvc();
