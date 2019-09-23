@@ -71,7 +71,7 @@ systemd 可用于创建服务文件以启动和监视基础 Web 应用。 system
 
 关于Linux下Nginx部署，参阅：
 
-https://colinchang.net/linux/part2/nginx.html
+https://linux.colinchang.net/part2/nginx.html
 
 https://docs.microsoft.com/zh-cn/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-2.2
 
@@ -93,6 +93,6 @@ https://docs.microsoft.com/zh-cn/aspnet/core/host-and-deploy/iis/?view=aspnetcor
 
 .Net Core可以使用Docker技术实现跨平台的容器部署。
 * .Net Core应用程序Docker部署参阅[制作网站镜像](docker-dockerfile.md)
-* Nginx反代服务器Docker部署参阅https://colinchang.net/linux/part2/nginx.html。
+* Nginx反代服务器Docker部署参阅https://linux.colinchang.net/part2/nginx.html。
 
 可以参阅[lottery](https://github.com/TechnologyGeeks/lottery)项目的部署过程。

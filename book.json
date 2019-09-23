@@ -40,7 +40,7 @@
             "modify_format": "YYYY-MM-DD HH:mm:ss"
         },
         "sitemap": {
-            "hostname": "https://colinchang.net/netcore"
+            "hostname": "https://netcore.colinchang.net/"
         },
         "sharing": {
             "facebook": true,
