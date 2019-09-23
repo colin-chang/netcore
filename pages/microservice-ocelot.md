@@ -95,7 +95,7 @@ DownstreamHeaderTransform|Headers信息转发
 {
     "UpstreamPathTemplate": "/",
     "UpstreamHttpMethod": [ "Get" ],
-    "UpstreamHost": "colin-chang.site",
+    "UpstreamHost": "colinchang.net",
     "DownstreamPathTemplate": "/",
     "DownstreamScheme": "https",
     "DownstreamHostAndPorts": [

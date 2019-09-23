@@ -1,5 +1,5 @@
-* [About Me](http://colin-chang.site/contact/)
-* [Colin's Blog](http://colin-chang.site)
+* [About Me](https://colinchang.net/contact/)
+* [Colin's Blog](https://colinchang.net)
 * [前言](README.md)
 
 ## Part I - .NET Core 基础
