@@ -12,3 +12,11 @@ https://docs.microsoft.com/zh-cn/dotnet/core/about
 * 兼容性：.NET Core 通过 .NET Standard与 .NET Framework、Xamarin 和 Mono 兼容。
 * 开放源：.NET Core 是一个开放源平台，使用 MIT 和 Apache 2 许可证。 .NET Core 是一个 .NET * oundation 项目。
 * 由 Microsoft 支持：.NET Core 由 Microsoft 依据 .NET Core 支持提供支持。
+
+> How to run?
+
+```sh
+npm install gitbook-cli -g
+gitbook install
+gitbook serve
+```
