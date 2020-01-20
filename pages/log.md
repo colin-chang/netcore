@@ -1,5 +1,5 @@
 # 日志管理
-
+   
 ASP.NET Core 支持适用于各种内置和第三方日志记录提供程序的日志记录 API,并统一了日志操作接口`ILogger`,同时默认提供了基础日志的Provider。
 
 ## 1. 记录日志
@@ -34,3 +34,4 @@ Asp.Net Core默认的日志提供程序并没有提供写文件、数据库、�
 由于实现了统一的日志接口，替换不同的日志提供程序后，使用日志组件记录日志的代码无需修改，这也体现了面向接口多态编程的好处。
 
 除了前面提到的日志组件，在大型分布式应用或微服务中就需要将分布式应用中分散各处的日志进行统一整理归类，这就需要分布式日志管理，如经典的日志组件 [ELK](https://ccstudio.org/distribution/pages/log-elk.html)(跨平台)，.Net Core 日志组件 [Exceptionless](https://ccstudio.org/distribution/pages/exceptionless.html)(依赖Windows平台)。
+
