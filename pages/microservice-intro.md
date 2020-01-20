@@ -2,7 +2,7 @@
 
 ## 1. 单体结构
 
-![单体结构图](../img/microservice/single.png)
+![单体结构图](https://s2.ax1x.com/2020/01/19/19jHfI.png)
 
 缺点:
 * 只能采用同一种技术,很难用不同的语言或者语言不同版本开发不同模块;
@@ -14,7 +14,7 @@
 
 ## 2. 微服务
 
-![微服务架构图](../img/microservice/microservice.jpg)
+![微服务架构图](https://s2.ax1x.com/2020/01/19/19jqpt.jpg)
 
 优点:
 * 可以用不同的语言或者语言不同版本开发不同模块;

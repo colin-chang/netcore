@@ -25,7 +25,7 @@ $ dotnet add package MySql.Data
 ```
 ### 2.2 数据模型
 #### 1) 数据库
-![数据库结构](../img/dapper/db-structure.jpg)
+![数据库结构](https://s2.ax1x.com/2020/01/19/19oBe1.jpg)
 ```sql
 CREATE TABLE `article` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
@@ -303,7 +303,7 @@ SQL Server中查询unicode and ANSI字段时务必使用unicode编码
 ### 4.4 多数据类型行
 某些情况下同一行数据的某个字段可以是不同的数据类型。这种情况使用`IDataReader.GetRowParser`非常方便。
 
-<img src="../img/dapper/shapes.jpg" style="width:200px;float:left;margin-right:20px">
+<img src="https://s2.ax1x.com/2020/01/19/19owLR.jpg" style="width:200px;float:left;margin-right:20px">
 
 有shapes表结构如上图，我们可以根据Type字段将每行数据映射为`Circle`,`Square`,`Triangle`等具体类型对象。以下为示例代码：
 

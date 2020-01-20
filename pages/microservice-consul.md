@@ -176,7 +176,7 @@ $ dotnet SmsService.dll --port 8000
 $ dotnet SmsService.dll --port 8001
 ```
 
-![Consul服务注册](../img/microservice/smsservice.jpg)
+![Consul服务注册](https://s2.ax1x.com/2020/01/19/19j7tA.jpg)
 
 服务刚启动时会有短暂的 Failing 状态。服务正常结束(Ctrl+C)会触发 ApplicationStopped,正常注销。即使非正常结束也没关系,Consul 健康检查过一会发现服务器死掉后也会主动注销。如果服务器刚刚崩溃,但是还买来得及注销,消费的使用者可能就会拿到已经崩溃的实 例,这个问题通过后面讲的重试等策略解决。
 

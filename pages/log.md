@@ -22,7 +22,7 @@ public class HomeController : Controller
 
 在Asp.Net Core服务器构建之前的`CreateDefaultBuilder`中配置了默认的日志服务。我们可以在不做任何配置的情况下直接DI使用默认的日志服务,日志可以在控制台，VS调试窗口和事件查看器中查看到输出入的日志。
 
-![默认日志配置](../img/log/log.jpg)
+![默认日志配置](https://s2.ax1x.com/2020/01/19/19jITH.jpg)
 
 更详细的日志使用请参见[官方文档](https://docs.microsoft.com/zh-cn/aspnet/core/fundamentals/logging/?view=aspnetcore-2.2)
 
@@ -33,4 +33,4 @@ Asp.Net Core默认的日志提供程序并没有提供写文件、数据库、�
 
 由于实现了统一的日志接口，替换不同的日志提供程序后，使用日志组件记录日志的代码无需修改，这也体现了面向接口多态编程的好处。
 
-除了前面提到的日志组件，在大型分布式应用或微服务中就需要将分布式应用中分散各处的日志进行统一整理归类，这就需要分布式日志管理，如经典的日志组件 [ELK](https://colinchang.net/distribution/pages/log-elk.html)(跨平台)，.Net Core 日志组件 [Exceptionless](https://colinchang.net/distribution/pages/exceptionless.html)(依赖Windows平台)。
+除了前面提到的日志组件，在大型分布式应用或微服务中就需要将分布式应用中分散各处的日志进行统一整理归类，这就需要分布式日志管理，如经典的日志组件 [ELK](https://ccstudio.org/distribution/pages/log-elk.html)(跨平台)，.Net Core 日志组件 [Exceptionless](https://ccstudio.org/distribution/pages/exceptionless.html)(依赖Windows平台)。

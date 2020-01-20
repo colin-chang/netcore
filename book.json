@@ -41,7 +41,7 @@
             "modify_format": "YYYY-MM-DD HH:mm:ss"
         },
         "sitemap": {
-            "hostname": "https://netcore.colinchang.net/"
+            "hostname": "https://netcore.ccstudio.org/"
         },
         "sharing": {
             "facebook": true,
@@ -55,17 +55,17 @@
             ]
         },
         "favicon-absolute":{
-            "favicon": "img/assets/favicon.ico",
-            "bookmark":"img/assets/favicon.ico",
-            "appleTouchIcon152":"img/assets/apple-touch-icon-precomposed-152.png",
-            "appleTouchIconPrecomposed152": "img/assets/apple-touch-icon-precomposed-152.png",
+            "favicon": "img/favicon.ico",
+            "bookmark": "img/favicon.ico",
+            "appleTouchIcon152": "https://s2.ax1x.com/2020/01/19/19g6JA.png",
+            "appleTouchIconPrecomposed152": "https://s2.ax1x.com/2020/01/19/19g6JA.png",
             "appleTouchIconMore": {
-                "120x120": "img/assets/apple-touch-icon-120.png",
-                "180x180": "img/assets/apple-touch-icon-180.png"
+                "120x120": "https://s2.ax1x.com/2020/01/19/19gRQP.png",
+                "180x180": "https://s2.ax1x.com/2020/01/19/19grIH.png"
             },
             "appleTouchIconPrecomposedMore": {
-                "120x120": "img/assets/apple-touch-icon-120.png",
-                "180x180": "img/assets/apple-touch-icon-180.png"
+                "120x120": "https://s2.ax1x.com/2020/01/19/19gRQP.png",
+                "180x180": "https://s2.ax1x.com/2020/01/19/19grIH.png"
             }
         }
     },

@@ -6,5 +6,5 @@
     overflow:scroll;
   }
 </style>
-<iframe class="pipeline" src="../img/pipeline/pipeline.svg">
+<iframe class="pipeline" src="../img/pip.svg">
 </iframe>

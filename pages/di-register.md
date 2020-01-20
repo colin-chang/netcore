@@ -1,13 +1,14 @@
 # .Net Core 服务注册
 
-* [1. ServiceDescriptor](#1-servicedescriptor)
-* [2. IServiceCollection](#2-iservicecollection)
-    * [Add](#1-add)
-    * [Add{Lifetime}](#2-addlifetime)
-    * [TryAdd](#3-tryadd)
-    * [TryAdd{Lifetime}](#4-tryaddlifetime)
-    * [TryAddEnumerable](#5-tryaddenumerable)
-    * [RemoveAll & Replace](#6-removeall--replace)
+- [.Net Core 服务注册](#net-core-%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c)
+  - [1. ServiceDescriptor](#1-servicedescriptor)
+  - [2. IServiceCollection](#2-iservicecollection)
+    - [1) Add](#1-add)
+    - [2) Add{Lifetime}](#2-addlifetime)
+    - [3) TryAdd](#3-tryadd)
+    - [4) TryAdd{Lifetime}](#4-tryaddlifetime)
+  - [5) TryAddEnumerable](#5-tryaddenumerable)
+    - [6) RemoveAll & Replace](#6-removeall--replace)
 
 **服务注册本质是创建相应的ServiceDescriptor对象并将其添加到指定IServiceCollection集合对象中的过程。**
 
@@ -182,7 +183,7 @@ new ServiceCollection().TryAddEnumerable(service);
 
 假设我们采用如上所示的方式利用一个Lamda表达式来创建一个ServiceDescriptor对象，对于创建的ServiceDescriptor来说，其服务实例工厂是一个Func&lt;IServiceProvider, object&gt;对象，所以当我们将它作为参数调用TryAddEnumerable方法的会抛出如下图所示的ArgumentException异常。
 
-![ArgumentException类型的异常](../img/register/exception.png)
+![ArgumentException类型的异常](https://s2.ax1x.com/2020/01/19/1CmrJx.png)
 
 ### 6) RemoveAll & Replace
 上面介绍的这些方法最终的目的都是添加新的ServiceDescriptor到指定的IServiceCollection对象中，有的时候我们还希望删除或者替换现有的某个ServiceDescriptor，这种情况下通常发生在需要对当前使用框架中由某个服务提供的功能进行定制的时候。由于IServiceCollection实现了IList<ServiceDescriptor>接口，所以我们可以调用其Clear、Remove和RemoveAt方法来清除或者删除现有的ServiceDescriptor。除此之外，我们还可以选择如下这些扩展方法。

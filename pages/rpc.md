@@ -12,7 +12,7 @@ RPC(Remote Procedure Call Protocol) - 远程过程调用协议，是一种通过
 
 单体程序中可以直接调用自身服务方法，但在分布式系统当中，如何实现服务调用呢，RPC技术简单说就是为了解决远程调用服务的一种技术，使得调用者像调用本地服务一样方便透明。
 
-![RPC示意图](../img/rpc/rpc-intro.png)
+![RPC示意图](https://s2.ax1x.com/2020/01/19/1CnJAA.png)
 
 RPC可以采用HTTP协议，并且使用最为广泛，优点是开放、标准、简单、兼容性升级容易，缺点是性能略低。在 QPS 较高或者对响应时间要求苛刻的情况下,常采用二进制传输、如TCP通讯,更加高效也更加安全。也有部分公司采用私有协议，如腾讯的JCE协议。RPC 虽然效率略高,但是耦合性强,如果兼容性处理不好的话,一旦服务器端接口升级,客户端就要同步更新,没有HTTP灵活。
 
@@ -297,7 +297,7 @@ await Service.DeleteAsync(0);
 
 ## 3. 案例源码
 
-![案例解决方案](../img/rpc/rpc-sln.jpg)
+![案例解决方案](https://s2.ax1x.com/2020/01/19/1Cn30H.jpg)
 
 Core目录下是.Net Core版本实现。
 Net目录下是.Net Framework版本实现。

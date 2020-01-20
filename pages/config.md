@@ -219,4 +219,4 @@ dotnet add package ColinChang.ConfigurationManager.Core
 
 ## 6. Configuration框架解析
 
-![Configuration框架解析](../img/config/framework.jpg)
+![Configuration框架解析](https://s2.ax1x.com/2020/01/19/19ody9.jpg)

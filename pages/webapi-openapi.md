@@ -1,10 +1,13 @@
 # OpenAPI
 
-* [1. AppKey](#1-appkey)
-* [2. OpenAPI](#2-openapi)
-    * [2.1 Swagger](#21-swagger)
-    * [2.2 Swagger 集成](#22-swagger-集成)
-* [3. 开发SDK](#3-开发sdk)
+- [OpenAPI](#openapi)
+  - [1. AppKey](#1-appkey)
+  - [2. OpenAPI](#2-openapi)
+    - [2.1 Swagger](#21-swagger)
+      - [1) Swagger 规范](#1-swagger-%e8%a7%84%e8%8c%83)
+      - [2) Swagger UI](#2-swagger-ui)
+    - [2.2 Swagger 集成](#22-swagger-%e9%9b%86%e6%88%90)
+  - [3. 开发SDK](#3-%e5%bc%80%e5%8f%91sdk)
 
 ## 1. AppKey
 当我们将WebAPI对外网公开供所有开发者调用时，除了注意前面讲到[安全控制](webapi-security.md)之外，我们更常用`AppKey`来对开发者进行管理。
@@ -90,11 +93,11 @@
 ```
 #### 2) Swagger UI
 `Swagger UI`提供了基于`Web`的用户界面方便用户直观的查看使用`Swagger`规范内容。Web UI 如下所示：
-![Swagger UI](../img/webapi/swagger-ui.png)
+![Swagger UI](https://s2.ax1x.com/2020/01/19/1CuDxK.png)
 
 控制器中的每个公共操作方法都在`Swagger UI`中进行测试。单击方法名称可以展开该部分。添加所有必要的参数，然后单击“试试看!”。
 
-![Swagger UI测试](../img/webapi/swagger-ui-try.png)
+![Swagger UI测试](https://s2.ax1x.com/2020/01/19/1CusKO.png)
 
 ### 2.2 Swagger 集成
 目前在.Net Core平台下比较流行的`Swagger`集成工具有`Swashbuckle`和`NSwag`。两者均包含 Swagger UI 的嵌入式版本，因此可使用中间件注册调用将该嵌入式版本托管在 ASP.NET Core 应用中。
