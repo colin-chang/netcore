@@ -55,8 +55,8 @@
             ]
         },
         "favicon-absolute":{
-            "favicon": "favicon.ico",
-            "bookmark": "favicon.ico",
+            "favicon": "https://ccstudio.org/favicon.ico",
+            "bookmark": "https://ccstudio.org/favicon.ico",
             "appleTouchIcon152": "https://s2.ax1x.com/2020/01/19/19g6JA.png",
             "appleTouchIconPrecomposed152": "https://s2.ax1x.com/2020/01/19/19g6JA.png",
             "appleTouchIconMore": {
