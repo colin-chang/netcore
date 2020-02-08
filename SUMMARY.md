@@ -1,5 +1,4 @@
-* [About Me](https://ccstudio.org/contact/)
-* [Colin's Blog](https://ccstudio.org)
+* [CC Studio](https://ccstudio.org)
 * [前言](README.md)
 
 ## Part I - .NET Core 基础
