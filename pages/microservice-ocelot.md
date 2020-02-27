@@ -13,7 +13,7 @@ API网关就是为了解决以上这些问题。API网关的角色是作为客�
 * 资料:http://www.csharpkit.com/apigateway.html
 * Ocelot 中文文档:http://www.jessetalk.cn/2018/03/19/net-core-apigateway-ocelot-docs/
 
-![多路网关架构](https://s2.ax1x.com/2020/01/19/19jL1P.jpg)
+![多路网关架构](https://i.loli.net/2020/02/26/CE2UqAMKmQzxg7y.jpg)
 
 ## 2. Ocelot 基本使用
 Ocelot 就是一个提供了请求路由、安全验证等功能的 API 网关微服务。在Asp.Net Core中一般表现为一个WebAPI项目，但是我们不需要MVC功能，所以删除MVC服务和中间件以及Controller。

@@ -112,7 +112,7 @@ public class User
     public string Password { get; set; }
 }
 ```
-![JWT认证](https://s2.ax1x.com/2020/01/19/19otWF.jpg)
+![JWT认证](https://i.loli.net/2020/02/26/ItW9j2kElwspoZd.jpg)
 
 ## 3. 使用认证授权
 ```csharp
@@ -128,9 +128,9 @@ public class ValuesController : ControllerBase
     }
 }
 ```
-![JWT Policy授权](https://s2.ax1x.com/2020/01/19/19oaQJ.jpg)
+![JWT Policy授权](https://i.loli.net/2020/02/26/Nd4FHEakgisMwLj.jpg)
 
 标准的`Bearer Token`授权方式，在发送HTTP请求时会在`Request.Header`中添加`Authorization`项，内容是`Bearer Token`。如下图所示。
-![JWT Authorize](https://s2.ax1x.com/2020/01/19/19oNz4.jpg)
+![JWT Authorize](https://i.loli.net/2020/02/26/mgjJXvwkTNO1Z6f.jpg)
 
 在需要认证授权的`Controller`或`Action`打上`Authorize`标记即可启用认证。现在更多推荐使用基于Policy的授权方式。

@@ -30,11 +30,11 @@ WebHost.CreateDefaultBuilder(args)
 
 ### 2.2 launchSettings.json
 
-![launchSettings.json文件路径](https://s2.ax1x.com/2020/01/19/1CnM6O.jpg)
+![launchSettings.json文件路径](https://i.loli.net/2020/02/26/DSkJVUdcaBZPn8Y.jpg)
 
 ASP.Net Core包含一个launchSettings.json的文件,此文件是项目启动配置文件。我们可在其中配置`ASPNETCORE_ENVIRONMENT`环境变量。
 
-![launchSettings.json文件路径](https://s2.ax1x.com/2020/01/19/1CnQXD.jpg)
+![launchSettings.json文件路径](https://i.loli.net/2020/02/26/z6bPH487DXiqVya.jpg)
 
 ## 3. 使用环境变量
 

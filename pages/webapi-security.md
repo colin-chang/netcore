@@ -31,7 +31,7 @@ Session机制使用简单但也存在一些问题。
 ### 2.2 JWT
 `JWT`(JSON WEB TOKEN)是一个开放标准(RFC 7519)方法实现，用于通信双方之间安全认证。
 
-![JWT验证流程图](https://s2.ax1x.com/2020/01/19/1CugVH.png)
+![JWT验证流程图](https://i.loli.net/2020/02/26/sQbX5qamjrDlGSu.png)
 
 1. 前端通过Web表单将自己的用户名和密码发送到后端的接口。这一过程一般是一个`HTTP POST`请求。建议的方式是通过SSL加密的传输（`https`协议），从而避免敏感信息被嗅探。
 2. 服务端验证通过后将一些简单非敏感信息如`UserId`、`UserRole`等写到一个`Json`对象中并使用密钥签名后得到Token返回给客户端。
@@ -52,7 +52,7 @@ Session机制使用简单但也存在一些问题。
 * `Secret`泄漏后不再安全
 
 ### 2.3 JWT 结构
-![JWT结构图](https://s2.ax1x.com/2020/01/19/1Cu2ad.jpg)
+![JWT结构图](https://i.loli.net/2020/02/26/yYPQqZsNBSz2wFC.jpg)
 
 如上图所示，`JWT`由`Header`、`Payload`、`Signature`三部分构成。
 

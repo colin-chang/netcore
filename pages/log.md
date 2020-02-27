@@ -22,7 +22,7 @@ public class HomeController : Controller
 
 在Asp.Net Core服务器构建之前的`CreateDefaultBuilder`中配置了默认的日志服务。我们可以在不做任何配置的情况下直接DI使用默认的日志服务,日志可以在控制台，VS调试窗口和事件查看器中查看到输出入的日志。
 
-![默认日志配置](https://s2.ax1x.com/2020/01/19/19jITH.jpg)
+![默认日志配置](https://i.loli.net/2020/02/26/XKQsZ2i6z7CTI5x.jpg)
 
 更详细的日志使用请参见[官方文档](https://docs.microsoft.com/zh-cn/aspnet/core/fundamentals/logging/?view=aspnetcore-2.2)
 

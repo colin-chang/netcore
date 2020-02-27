@@ -183,7 +183,7 @@ new ServiceCollection().TryAddEnumerable(service);
 
 假设我们采用如上所示的方式利用一个Lamda表达式来创建一个ServiceDescriptor对象，对于创建的ServiceDescriptor来说，其服务实例工厂是一个Func&lt;IServiceProvider, object&gt;对象，所以当我们将它作为参数调用TryAddEnumerable方法的会抛出如下图所示的ArgumentException异常。
 
-![ArgumentException类型的异常](https://s2.ax1x.com/2020/01/19/1CmrJx.png)
+![ArgumentException类型的异常](https://i.loli.net/2020/02/26/GSMgkrhYCRnw5fT.png)
 
 ### 6) RemoveAll & Replace
 上面介绍的这些方法最终的目的都是添加新的ServiceDescriptor到指定的IServiceCollection对象中，有的时候我们还希望删除或者替换现有的某个ServiceDescriptor，这种情况下通常发生在需要对当前使用框架中由某个服务提供的功能进行定制的时候。由于IServiceCollection实现了IList<ServiceDescriptor>接口，所以我们可以调用其Clear、Remove和RemoveAt方法来清除或者删除现有的ServiceDescriptor。除此之外，我们还可以选择如下这些扩展方法。

@@ -29,12 +29,12 @@ HTTPS协议的主要作用有两个：一种是建立一个信息安全通道，
 * 服务端。一般指支持Https的网站，比如github、支付宝。
 * CA(Certificate Authorities)机构。Https证书签发和管理机构，比如Symantec、Comodo、GoDaddy、GlobalSign。
 
-    ![https主体](https://s2.ax1x.com/2020/01/19/1CmOmQ.png)
+    ![https主体](https://i.loli.net/2020/02/26/2vJl74IhwHiasWT.png)
 
 #### 2) 工作流程
 客户端在使用HTTPS方式与Web服务器通信时有以下几个步骤，如图所示。
 
-![HTTPS工作原理](https://s2.ax1x.com/2020/01/19/1CmjTs.png)
+![HTTPS工作原理](https://i.loli.net/2020/02/26/t8dKfR6CbrOMYBS.png)
 
 工作流程，基本分为三个阶段:
 
@@ -77,7 +77,7 @@ Let's Encrypt 是一个免费、开放，自动化的证书颁发机构，由 IS
 ## 4. 免费升级到 HTTPS
 一般的HTTPS使用流程如下。
 
-![HTTPS使用流程](https://s2.ax1x.com/2020/01/19/19TAX9.png)
+![HTTPS使用流程](https://i.loli.net/2020/02/26/H5OhIoYkGQE3Wvf.png)
 
 
 > Let’s Encrypt TLS 免费证书使用
@@ -90,11 +90,11 @@ Let’s Encrypt TLS证书可以自动化生成和更新，由于他们是免费�
 
 * 选择对应的软件和操作系统环境
 
-    ![Certbot官网](https://s2.ax1x.com/2020/01/19/1CnA0J.jpg)
+    ![Certbot官网](https://i.loli.net/2020/02/26/S8XhGaJvfgBOlxz.jpg)
 
 * 参照网站给出的命令进行安装/配置/更新 证书
 
-    ![证书安装配置](https://s2.ax1x.com/2020/01/19/1Cnkm4.jpg)
+    ![证书安装配置](https://i.loli.net/2020/02/26/NAxD6MGTXW9KbUz.jpg)
 
 * 完成以上配置后，访问你的网站，不出意外已经升级到https了👍
 
@@ -151,7 +151,7 @@ GitHub官方文档已经说明了如何开启HTTPS。英文不熟悉的小伙伴
 
 * 解析域名
 
-![解析域名](https://s2.ax1x.com/2020/01/19/1CnP6U.jpg)
+![解析域名](https://i.loli.net/2020/02/27/AYqRwvrJu6DoEFm.jpg)
 
 * Github Pages 项目配置
     * 打开 username.github.io 项目设置,并找到 `GitHub Pages` 模块的`Custom domain`填写自己的域名并点击 Save
@@ -160,7 +160,7 @@ GitHub官方文档已经说明了如何开启HTTPS。英文不熟悉的小伙伴
 #### 2）开启HTTPS
 找到如下图所示的`Enforce HTTPS`选项并勾选。然后访问下自己的域名，不出意外的话，已经是https了。
 
-![解析域名](https://s2.ax1x.com/2020/01/19/1CniXF.jpg)
+![解析域名](https://i.loli.net/2020/02/26/yjJwiaeBrEOxoYd.jpg)
 
 
 那么如果如果之前已经开启了自定义域名， enforce HTTPS 无法勾选且怎么办？往下看...

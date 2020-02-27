@@ -6,4 +6,4 @@ ASP.NET Core的核心是通过一个Server和若干注册的Middleware构成的�
 
 DI框架具有两个核心的功能，即服务的注册和提供，这两个功能分别由对应的对象来承载, 它们分别是ServiceCollection和ServiceProvider。如下图所示，我们将相应的服务以不同的生命周期模式（Transient、Scoped和Singleton）注册到ServiceCollection对象之上，在利用后者创建的ServiceProvider根据注册的服务类型提取相应的服务对象。
 
-![ServiceCollection和ServiceProvider](https://s2.ax1x.com/2020/01/19/19o5wt.jpg)
+![ServiceCollection和ServiceProvider](https://i.loli.net/2020/02/26/1kK8xBc92UHsPq6.jpg)

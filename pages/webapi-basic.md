@@ -237,9 +237,9 @@ public class TestController : ControllerBase
     }
 ```
 
-![POST请求表单参数](https://s2.ax1x.com/2020/01/19/1Cukgf.png)
+![POST请求表单参数](https://i.loli.net/2020/02/26/BK8ALvHeqthEYG5.png)
 
-![PUT请求JSON参数](https://s2.ax1x.com/2020/01/19/1CuiCt.png)
+![PUT请求JSON参数](https://i.loli.net/2020/02/26/QwxlN83juSkFMWI.png)
 
 > JSON
 
@@ -254,9 +254,9 @@ public void Post([FromBody] string value)
 }
 ```
 
-![POST字符串](https://s2.ax1x.com/2020/01/19/1Cu3vT.jpg)
+![POST字符串](https://i.loli.net/2020/02/26/ISQYUX3DcBlH7om.jpg)
 
-![POST Ajax](https://s2.ax1x.com/2020/01/19/1CuYb4.jpg)
+![POST Ajax](https://i.loli.net/2020/02/26/IbmZe26jgABL8yu.jpg)
 
 ## 4. 返回值
 

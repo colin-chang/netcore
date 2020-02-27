@@ -93,11 +93,11 @@
 ```
 #### 2) Swagger UI
 `Swagger UI`提供了基于`Web`的用户界面方便用户直观的查看使用`Swagger`规范内容。Web UI 如下所示：
-![Swagger UI](https://s2.ax1x.com/2020/01/19/1CuDxK.png)
+![Swagger UI](https://i.loli.net/2020/02/26/HXB2ARYdclVfMnr.png)
 
 控制器中的每个公共操作方法都在`Swagger UI`中进行测试。单击方法名称可以展开该部分。添加所有必要的参数，然后单击“试试看!”。
 
-![Swagger UI测试](https://s2.ax1x.com/2020/01/19/1CusKO.png)
+![Swagger UI测试](https://i.loli.net/2020/02/26/qurDnSIFZ74mGe5.png)
 
 ### 2.2 Swagger 集成
 目前在.Net Core平台下比较流行的`Swagger`集成工具有`Swashbuckle`和`NSwag`。两者均包含 Swagger UI 的嵌入式版本，因此可使用中间件注册调用将该嵌入式版本托管在 ASP.NET Core 应用中。
