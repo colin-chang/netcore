@@ -166,4 +166,4 @@ public class TemplateTest
 ```
 
 实际案例可以参考 
-https://github.com/colin-chang/MongoHelper/blob/master/ColinChang.OpenSource.MongoHelper.Test/MongoHelperTest.cs
+https://github.com/colin-chang/MongoHelper/blob/master/ColinChang.MongoHelper.Test/MongoHelperTest.cs
