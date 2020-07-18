@@ -1,0 +1,1228 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.3 生命周期 · .Net Core-软件开发</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../website.css">
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="pipeline-environment.html" />
+    
+    
+    <link rel="prev" href="pipeline-middlewire.html" />
+    
+
+    
+        <link rel="shortcut icon" href="https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png" type="image/x-icon">
+    
+    
+        <link rel="bookmark" href="https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png" type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" sizes="152x152" href="https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png">
+    
+    
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png">
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png">
+        
+    
+    
+        
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png">
+        
+        <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"colin-chang","repo":"netcore","type":"star","size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" >
+            
+                <a target="_blank" href="https://ccstudio.org">
+            
+                    
+                    CC Studio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part I - .NET Core 基础</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. 安装部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="install-install.html">
+            
+                <a href="install-install.html">
+            
+                    
+                    1.1 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="install-deploy.html">
+            
+                <a href="install-deploy.html">
+            
+                    
+                    1.2 部署项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="config.html">
+            
+                <a href="config.html">
+            
+                    
+                    2. 配置管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="index.md">
+            
+                <span>
+            
+                    
+                    3. 依赖注入
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="di-intro.html">
+            
+                <a href="di-intro.html">
+            
+                    
+                    3.1 依赖注入引入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="di-ioc.html">
+            
+                <a href="di-ioc.html">
+            
+                    
+                    3.2 控制反转（IoC）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="di-designmode.html">
+            
+                <a href="di-designmode.html">
+            
+                    
+                    3.3 基于IoC的设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="di-di.html">
+            
+                <a href="di-di.html">
+            
+                    
+                    3.4 依赖注入（DI）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="di-register.html">
+            
+                <a href="di-register.html">
+            
+                    
+                    3.5 服务注册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="di-consume.html">
+            
+                <a href="di-consume.html">
+            
+                    
+                    3.6 服务消费
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="di-lifetime.html">
+            
+                <a href="di-lifetime.html">
+            
+                    
+                    3.7 服务生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="di-aspnetcore.html">
+            
+                <a href="di-aspnetcore.html">
+            
+                    
+                    3.8 Asp.Net Core DI 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="di-src.html">
+            
+                <a href="di-src.html">
+            
+                    
+                    3.9 Asp.Net Core DI 源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="index.md">
+            
+                <span>
+            
+                    
+                    4. Asp.Net Core管道
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="pipeline-diagram.html">
+            
+                <a href="pipeline-diagram.html">
+            
+                    
+                    4.1 管道模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="pipeline-middlewire.html">
+            
+                <a href="pipeline-middlewire.html">
+            
+                    
+                    4.2 中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.4.3" data-path="pipeline-lifetime.html">
+            
+                <a href="pipeline-lifetime.html">
+            
+                    
+                    4.3 生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="pipeline-environment.html">
+            
+                <a href="pipeline-environment.html">
+            
+                    
+                    4.4 环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="supplement.html">
+            
+                <a href="supplement.html">
+            
+                    
+                    5. Session和Cache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="index.md">
+            
+                <span>
+            
+                    
+                    6. 认证与授权
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="auth-authentication.html">
+            
+                <a href="auth-authentication.html">
+            
+                    
+                    6.1 Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="auth-cookie.html">
+            
+                <a href="auth-cookie.html">
+            
+                    
+                    6.2 Cookie Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="auth-jwt.html">
+            
+                <a href="auth-jwt.html">
+            
+                    
+                    6.3 JwtBear Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="auth-auth2.html">
+            
+                <a href="auth-auth2.html">
+            
+                    
+                    6.4 OAuth2 & OpenID Connect Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="authorization.html">
+            
+                <a href="authorization.html">
+            
+                    
+                    6.5 Authorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="index.md">
+            
+                <span>
+            
+                    
+                    7. WebAPI
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="webapi-restful.html">
+            
+                <a href="webapi-restful.html">
+            
+                    
+                    7.1 WebAPI和Restful
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="webapi-basic.html">
+            
+                <a href="webapi-basic.html">
+            
+                    
+                    7.2 WebAPI基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="webapi-multiversion.html">
+            
+                <a href="webapi-multiversion.html">
+            
+                    
+                    7.3 多版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="webapi-security.html">
+            
+                <a href="webapi-security.html">
+            
+                    
+                    7.4 安全控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="webapi-openapi.html">
+            
+                <a href="webapi-openapi.html">
+            
+                    
+                    7.5 OpenAPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="log.html">
+            
+                <a href="log.html">
+            
+                    
+                    8. 日志管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part Ⅱ - 数据访问</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="dapper.html">
+            
+                <a href="dapper.html">
+            
+                    
+                    1. Dapper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2. EF Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part Ⅱ - 微服务</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="docker-intro.html">
+            
+                <a href="docker-intro.html">
+            
+                    
+                    1.1 Docker简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="docker-install.html">
+            
+                <a href="docker-install.html">
+            
+                    
+                    1.2 安装配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="docker-cmd.html">
+            
+                <a href="docker-cmd.html">
+            
+                    
+                    1.3 常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="docker-dockerfile.html">
+            
+                <a href="docker-dockerfile.html">
+            
+                    
+                    1.4 制作镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2. 微服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="microservice-intro.html">
+            
+                <a href="microservice-intro.html">
+            
+                    
+                    2.1 微服务架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="microservice-consul.html">
+            
+                <a href="microservice-consul.html">
+            
+                    
+                    2.2 服务治理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="microservice-polly.html">
+            
+                <a href="microservice-polly.html">
+            
+                    
+                    2.3 熔断降级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" data-path="microservice-ocelot.html">
+            
+                <a href="microservice-ocelot.html">
+            
+                    
+                    2.4 网关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2.5 微服务授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.6" data-path="rpc.html">
+            
+                <a href="rpc.html">
+            
+                    
+                    2.6 RPC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.7" data-path="microservice-docker.html">
+            
+                <a href="microservice-docker.html">
+            
+                    
+                    2.7 Docker+微服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅲ 其他技术</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. 多线程/异步
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="multithreading-intro.html">
+            
+                <a href="multithreading-intro.html">
+            
+                    
+                    1.1 进程、线程和应用程序域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="multithreading-basic.html">
+            
+                <a href="multithreading-basic.html">
+            
+                    
+                    1.2 进程、线程基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="multithreading-synchronization.html">
+            
+                <a href="multithreading-synchronization.html">
+            
+                    
+                    1.3 线程同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="multithreading-threadpool.html">
+            
+                <a href="multithreading-threadpool.html">
+            
+                    
+                    1.4 线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="multithreading-uiresource.html">
+            
+                <a href="multithreading-uiresource.html">
+            
+                    
+                    1.5 UI资源跨线程访问
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="multithreading-async.html">
+            
+                <a href="multithreading-async.html">
+            
+                    
+                    1.6 异步编程模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="unittest.html">
+            
+                <a href="unittest.html">
+            
+                    
+                    2. 单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part IV - 常用解决方案</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="autofac.html">
+            
+                <a href="autofac.html">
+            
+                    
+                    1. AutoFac
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="automapper.html">
+            
+                <a href="automapper.html">
+            
+                    
+                    2. AutoMapper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="https.html">
+            
+                <a href="https.html">
+            
+                    
+                    3. HTTPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="mailsms.html">
+            
+                <a href="mailsms.html">
+            
+                    
+                    4. 邮件短信通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="mailsms.html">
+            
+                <a href="mailsms.html">
+            
+                    
+                    5. 在线支付
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="staticssi.html">
+            
+                <a href="staticssi.html">
+            
+                    
+                    6. 页面静态化和SSI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4.3 生命周期</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x751F;&#x547D;&#x5468;&#x671F;"><a name="&#x751F;&#x547D;&#x5468;&#x671F;" class="plugin-anchor" href="#&#x751F;&#x547D;&#x5468;&#x671F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x751F;&#x547D;&#x5468;&#x671F;</h1>
+<p>&#x5728;<a href="pipeline-diagram.html">&#x7BA1;&#x9053;&#x6A21;&#x578B;</a>&#x4E2D;&#x6211;&#x4EEC;&#x4E86;&#x89E3;&#x5230;&#x4E86;Asp.Net Core&#x5982;&#x4F55;&#x5904;&#x7406;&#x4E00;&#x4E2A;Http&#x8BF7;&#x6C42;&#x7684;&#x8FC7;&#x7A0B;&#x53CA;&#x5176;&#x7BA1;&#x9053;&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;&#x3002;&#x8FD9;&#x4E00;&#x8282;&#x6211;&#x4EEC;&#x5C06;&#x5BF9;&#x58F0;&#x660E;&#x5468;&#x671F;&#x4E2D;&#x7684;&#x8BF8;&#x591A;&#x7EC6;&#x8282;&#x505A;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x8BB2;&#x89E3;&#x548C;&#x8865;&#x5145;&#x3002;</p>
+<h2 id="1iapplicationlifetime"><a name="1iapplicationlifetime" class="plugin-anchor" href="#1iapplicationlifetime"><i class="fa fa-link" aria-hidden="true"></i></a>1.IApplicationLifetime</h2>
+<p>&#x5728;&#x4F20;&#x7EDF;Asp.Net MVC&#x4E2D;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;Global&#x7684;Application_Start&#x7B49;&#x7BA1;&#x9053;&#x4E8B;&#x4EF6;&#x4E2D;&#x505A;&#x67D0;&#x4E9B;&#x4E1A;&#x52A1;&#x5904;&#x7406;&#xFF0C;Asp.Net Core&#x7684;<a href="pipeline-diagram.html">&#x7BA1;&#x9053;&#x6A21;&#x578B;</a>&#x5DF2;&#x7ECF;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x5316;&#xFF0C;&#x4F46;<code>IApplicationLifetime</code>&#x670D;&#x52A1;&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x54CD;&#x5E94;<code>ApplicationStarted</code>,<code>ApplicationStopping</code>,<code>ApplicationStopped</code>&#x4E09;&#x4E2A;&#x4E8B;&#x4EF6;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">Configure</span><span class="token punctuation">(</span><span class="token class-name">IApplicationBuilder</span> app<span class="token punctuation">,</span> <span class="token class-name">IHostingEnvironment</span> env<span class="token punctuation">,</span><span class="token class-name">IApplicationLifetime</span> lifetime<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    lifetime<span class="token punctuation">.</span>ApplicationStarted<span class="token punctuation">.</span><span class="token function">Register</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+    <span class="token punctuation">{</span>
+        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x5B8C;&#x6210;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    lifetime<span class="token punctuation">.</span>ApplicationStopped<span class="token punctuation">.</span><span class="token function">Register</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+    <span class="token punctuation">{</span>
+        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;&#x7A0B;&#x5E8F;&#x5DF2;&#x505C;&#x6B62;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//do something else ...</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">&#xA9; Colin Chang all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-07-09 15:30:26
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="pipeline-middlewire.html" class="navigation navigation-prev " aria-label="Previous page: 4.2 中间件">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="pipeline-environment.html" class="navigation navigation-next " aria-label="Next page: 4.4 环境变量">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.3 生命周期","level":"2.4.3","depth":2,"next":{"title":"4.4 环境变量","level":"2.4.4","depth":2,"path":"pages/pipeline-environment.md","ref":"pages/pipeline-environment.md","articles":[]},"previous":{"title":"4.2 中间件","level":"2.4.2","depth":2,"path":"pages/pipeline-middlewire.md","ref":"pages/pipeline-middlewire.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","-lunr","-search","search-plus","advanced-emoji","github-buttons","multipart","splitter","tbfed-pagefooter","anchors","sitemap","-sharing","sharing-plus","toggle-chapters","book-summary-scroll-position-saver","prism","-highlight","favicon-absolute"],"styles":{"website":"website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy Colin Chang","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"disqus":{"useIdentifier":false,"shortName":"http-colin-chang-site-1"},"book-summary-scroll-position-saver":{},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"multipart":{},"favicon-absolute":{"appleTouchIconMore":{"120x120":"https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png","180x180":"https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png"},"appleTouchIconPrecomposed152":"https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png","appleTouchIconPrecomposedMore":{"120x120":"https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png","180x180":"https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png"},"favicon":"https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png","bookmark":"https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png","appleTouchIcon152":"https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"https://ccstudio.org/netcore"},"github-buttons":{"buttons":[{"user":"colin-chang","repo":"netcore","type":"star","size":"small"}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":true,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","instapaper","vk","weibo"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"toggle-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":".Net Core-软件开发","gitbook":"*","description":".Net高效跨平台技术方案"},"file":{"path":"pages/pipeline-lifetime.md","mtime":"2020-07-09T07:30:26.773Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-18T15:55:59.139Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

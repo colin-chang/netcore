@@ -1,0 +1,1502 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.6 RPC · .Net Core-软件开发</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../website.css">
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="microservice-docker.html" />
+    
+    
+    <link rel="prev" href="index.md" />
+    
+
+    
+        <link rel="shortcut icon" href="https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png" type="image/x-icon">
+    
+    
+        <link rel="bookmark" href="https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png" type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" sizes="152x152" href="https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png">
+    
+    
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png">
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png">
+        
+    
+    
+        
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png">
+        
+        <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"colin-chang","repo":"netcore","type":"star","size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" >
+            
+                <a target="_blank" href="https://ccstudio.org">
+            
+                    
+                    CC Studio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part I - .NET Core 基础</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. 安装部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="install-install.html">
+            
+                <a href="install-install.html">
+            
+                    
+                    1.1 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="install-deploy.html">
+            
+                <a href="install-deploy.html">
+            
+                    
+                    1.2 部署项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="config.html">
+            
+                <a href="config.html">
+            
+                    
+                    2. 配置管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="index.md">
+            
+                <span>
+            
+                    
+                    3. 依赖注入
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="di-intro.html">
+            
+                <a href="di-intro.html">
+            
+                    
+                    3.1 依赖注入引入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="di-ioc.html">
+            
+                <a href="di-ioc.html">
+            
+                    
+                    3.2 控制反转（IoC）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="di-designmode.html">
+            
+                <a href="di-designmode.html">
+            
+                    
+                    3.3 基于IoC的设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="di-di.html">
+            
+                <a href="di-di.html">
+            
+                    
+                    3.4 依赖注入（DI）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="di-register.html">
+            
+                <a href="di-register.html">
+            
+                    
+                    3.5 服务注册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="di-consume.html">
+            
+                <a href="di-consume.html">
+            
+                    
+                    3.6 服务消费
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="di-lifetime.html">
+            
+                <a href="di-lifetime.html">
+            
+                    
+                    3.7 服务生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="di-aspnetcore.html">
+            
+                <a href="di-aspnetcore.html">
+            
+                    
+                    3.8 Asp.Net Core DI 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="di-src.html">
+            
+                <a href="di-src.html">
+            
+                    
+                    3.9 Asp.Net Core DI 源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="index.md">
+            
+                <span>
+            
+                    
+                    4. Asp.Net Core管道
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="pipeline-diagram.html">
+            
+                <a href="pipeline-diagram.html">
+            
+                    
+                    4.1 管道模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="pipeline-middlewire.html">
+            
+                <a href="pipeline-middlewire.html">
+            
+                    
+                    4.2 中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="pipeline-lifetime.html">
+            
+                <a href="pipeline-lifetime.html">
+            
+                    
+                    4.3 生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="pipeline-environment.html">
+            
+                <a href="pipeline-environment.html">
+            
+                    
+                    4.4 环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="supplement.html">
+            
+                <a href="supplement.html">
+            
+                    
+                    5. Session和Cache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="index.md">
+            
+                <span>
+            
+                    
+                    6. 认证与授权
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="auth-authentication.html">
+            
+                <a href="auth-authentication.html">
+            
+                    
+                    6.1 Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="auth-cookie.html">
+            
+                <a href="auth-cookie.html">
+            
+                    
+                    6.2 Cookie Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="auth-jwt.html">
+            
+                <a href="auth-jwt.html">
+            
+                    
+                    6.3 JwtBear Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="auth-auth2.html">
+            
+                <a href="auth-auth2.html">
+            
+                    
+                    6.4 OAuth2 & OpenID Connect Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="authorization.html">
+            
+                <a href="authorization.html">
+            
+                    
+                    6.5 Authorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="index.md">
+            
+                <span>
+            
+                    
+                    7. WebAPI
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="webapi-restful.html">
+            
+                <a href="webapi-restful.html">
+            
+                    
+                    7.1 WebAPI和Restful
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="webapi-basic.html">
+            
+                <a href="webapi-basic.html">
+            
+                    
+                    7.2 WebAPI基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="webapi-multiversion.html">
+            
+                <a href="webapi-multiversion.html">
+            
+                    
+                    7.3 多版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="webapi-security.html">
+            
+                <a href="webapi-security.html">
+            
+                    
+                    7.4 安全控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="webapi-openapi.html">
+            
+                <a href="webapi-openapi.html">
+            
+                    
+                    7.5 OpenAPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="log.html">
+            
+                <a href="log.html">
+            
+                    
+                    8. 日志管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part Ⅱ - 数据访问</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="dapper.html">
+            
+                <a href="dapper.html">
+            
+                    
+                    1. Dapper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2. EF Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part Ⅱ - 微服务</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="docker-intro.html">
+            
+                <a href="docker-intro.html">
+            
+                    
+                    1.1 Docker简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="docker-install.html">
+            
+                <a href="docker-install.html">
+            
+                    
+                    1.2 安装配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="docker-cmd.html">
+            
+                <a href="docker-cmd.html">
+            
+                    
+                    1.3 常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="docker-dockerfile.html">
+            
+                <a href="docker-dockerfile.html">
+            
+                    
+                    1.4 制作镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2. 微服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="microservice-intro.html">
+            
+                <a href="microservice-intro.html">
+            
+                    
+                    2.1 微服务架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="microservice-consul.html">
+            
+                <a href="microservice-consul.html">
+            
+                    
+                    2.2 服务治理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="microservice-polly.html">
+            
+                <a href="microservice-polly.html">
+            
+                    
+                    2.3 熔断降级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" data-path="microservice-ocelot.html">
+            
+                <a href="microservice-ocelot.html">
+            
+                    
+                    2.4 网关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2.5 微服务授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.2.6" data-path="rpc.html">
+            
+                <a href="rpc.html">
+            
+                    
+                    2.6 RPC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.7" data-path="microservice-docker.html">
+            
+                <a href="microservice-docker.html">
+            
+                    
+                    2.7 Docker+微服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅲ 其他技术</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. 多线程/异步
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="multithreading-intro.html">
+            
+                <a href="multithreading-intro.html">
+            
+                    
+                    1.1 进程、线程和应用程序域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="multithreading-basic.html">
+            
+                <a href="multithreading-basic.html">
+            
+                    
+                    1.2 进程、线程基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="multithreading-synchronization.html">
+            
+                <a href="multithreading-synchronization.html">
+            
+                    
+                    1.3 线程同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="multithreading-threadpool.html">
+            
+                <a href="multithreading-threadpool.html">
+            
+                    
+                    1.4 线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="multithreading-uiresource.html">
+            
+                <a href="multithreading-uiresource.html">
+            
+                    
+                    1.5 UI资源跨线程访问
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="multithreading-async.html">
+            
+                <a href="multithreading-async.html">
+            
+                    
+                    1.6 异步编程模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="unittest.html">
+            
+                <a href="unittest.html">
+            
+                    
+                    2. 单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part IV - 常用解决方案</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="autofac.html">
+            
+                <a href="autofac.html">
+            
+                    
+                    1. AutoFac
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="automapper.html">
+            
+                <a href="automapper.html">
+            
+                    
+                    2. AutoMapper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="https.html">
+            
+                <a href="https.html">
+            
+                    
+                    3. HTTPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="mailsms.html">
+            
+                <a href="mailsms.html">
+            
+                    
+                    4. 邮件短信通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="mailsms.html">
+            
+                <a href="mailsms.html">
+            
+                    
+                    5. 在线支付
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="staticssi.html">
+            
+                <a href="staticssi.html">
+            
+                    
+                    6. 页面静态化和SSI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.6 RPC</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="rpc"><a name="rpc" class="plugin-anchor" href="#rpc"><i class="fa fa-link" aria-hidden="true"></i></a>RPC</h1>
+<ul>
+<li><a href="#1-rpc">1. RPC</a></li>
+<li><a href="#2-thrift">2. Thrift</a><ul>
+<li><a href="#21-&#x7B80;&#x4ECB;">2.1 &#x7B80;&#x4ECB;</a></li>
+<li><a href="#22-&#x5DE5;&#x4F5C;&#x539F;&#x7406;">2.2 &#x5DE5;&#x4F5C;&#x539F;&#x7406;</a></li>
+<li><a href="#23-net-&#x4F7F;&#x7528;">2.3 .Net &#x4F7F;&#x7528;</a></li>
+</ul>
+</li>
+<li><a href="#3-&#x6848;&#x4F8B;&#x6E90;&#x7801;">3. &#x6848;&#x4F8B;&#x6E90;&#x7801;</a></li>
+</ul>
+<h2 id="1-rpc"><a name="1-rpc" class="plugin-anchor" href="#1-rpc"><i class="fa fa-link" aria-hidden="true"></i></a>1. RPC</h2>
+<p>RPC(Remote Procedure Call Protocol) - &#x8FDC;&#x7A0B;&#x8FC7;&#x7A0B;&#x8C03;&#x7528;&#x534F;&#x8BAE;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x901A;&#x8FC7;&#x7F51;&#x7EDC;&#x4ECE;&#x8FDC;&#x7A0B;&#x8BA1;&#x7B97;&#x673A;&#x7A0B;&#x5E8F;&#x4E0A;&#x8BF7;&#x6C42;&#x670D;&#x52A1;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x4E86;&#x89E3;&#x5E95;&#x5C42;&#x7F51;&#x7EDC;&#x6280;&#x672F;&#x7684;&#x534F;&#x8BAE;&#x3002;</p>
+<p>&#x5355;&#x4F53;&#x7A0B;&#x5E8F;&#x4E2D;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x81EA;&#x8EAB;&#x670D;&#x52A1;&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x5728;&#x5206;&#x5E03;&#x5F0F;&#x7CFB;&#x7EDF;&#x5F53;&#x4E2D;&#xFF0C;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x670D;&#x52A1;&#x8C03;&#x7528;&#x5462;&#xFF0C;RPC&#x6280;&#x672F;&#x7B80;&#x5355;&#x8BF4;&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FDC;&#x7A0B;&#x8C03;&#x7528;&#x670D;&#x52A1;&#x7684;&#x4E00;&#x79CD;&#x6280;&#x672F;&#xFF0C;&#x4F7F;&#x5F97;&#x8C03;&#x7528;&#x8005;&#x50CF;&#x8C03;&#x7528;&#x672C;&#x5730;&#x670D;&#x52A1;&#x4E00;&#x6837;&#x65B9;&#x4FBF;&#x900F;&#x660E;&#x3002;</p>
+<p><img src="https://i.loli.net/2020/02/26/naHUR5j2Lgh4A9T.png" alt="RPC&#x793A;&#x610F;&#x56FE;"></p>
+<p>RPC&#x53EF;&#x4EE5;&#x91C7;&#x7528;HTTP&#x534F;&#x8BAE;&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x7528;&#x6700;&#x4E3A;&#x5E7F;&#x6CDB;&#xFF0C;&#x4F18;&#x70B9;&#x662F;&#x5F00;&#x653E;&#x3001;&#x6807;&#x51C6;&#x3001;&#x7B80;&#x5355;&#x3001;&#x517C;&#x5BB9;&#x6027;&#x5347;&#x7EA7;&#x5BB9;&#x6613;&#xFF0C;&#x7F3A;&#x70B9;&#x662F;&#x6027;&#x80FD;&#x7565;&#x4F4E;&#x3002;&#x5728; QPS &#x8F83;&#x9AD8;&#x6216;&#x8005;&#x5BF9;&#x54CD;&#x5E94;&#x65F6;&#x95F4;&#x8981;&#x6C42;&#x82DB;&#x523B;&#x7684;&#x60C5;&#x51B5;&#x4E0B;,&#x5E38;&#x91C7;&#x7528;&#x4E8C;&#x8FDB;&#x5236;&#x4F20;&#x8F93;&#x3001;&#x5982;TCP&#x901A;&#x8BAF;,&#x66F4;&#x52A0;&#x9AD8;&#x6548;&#x4E5F;&#x66F4;&#x52A0;&#x5B89;&#x5168;&#x3002;&#x4E5F;&#x6709;&#x90E8;&#x5206;&#x516C;&#x53F8;&#x91C7;&#x7528;&#x79C1;&#x6709;&#x534F;&#x8BAE;&#xFF0C;&#x5982;&#x817E;&#x8BAF;&#x7684;JCE&#x534F;&#x8BAE;&#x3002;RPC &#x867D;&#x7136;&#x6548;&#x7387;&#x7565;&#x9AD8;,&#x4F46;&#x662F;&#x8026;&#x5408;&#x6027;&#x5F3A;,&#x5982;&#x679C;&#x517C;&#x5BB9;&#x6027;&#x5904;&#x7406;&#x4E0D;&#x597D;&#x7684;&#x8BDD;,&#x4E00;&#x65E6;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x63A5;&#x53E3;&#x5347;&#x7EA7;,&#x5BA2;&#x6237;&#x7AEF;&#x5C31;&#x8981;&#x540C;&#x6B65;&#x66F4;&#x65B0;,&#x6CA1;&#x6709;HTTP&#x7075;&#x6D3B;&#x3002;</p>
+<p>RPC&#x5728;&#x5404;&#x5927;&#x4E92;&#x8054;&#x7F51;&#x516C;&#x53F8;&#x4E2D;&#x88AB;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#xFF0C;&#x5982;&#x963F;&#x91CC;&#x5DF4;&#x5DF4;&#x7684;hsf&#x3001;dubbo&#xFF08;&#x5F00;&#x6E90;&#xFF09;&#x3001;Facebook&#x7684;thrift&#xFF08;&#x5F00;&#x6E90;&#xFF09;&#x3001;Google gRPC&#xFF08;&#x5F00;&#x6E90;&#xFF09;&#x3001;Twitter&#x7684;finagle&#xFF08;&#x5F00;&#x6E90;&#xFF09;&#x7B49;&#x3002;</p>
+<p>.Net Core&#x4E2D;&#x5E38;&#x7528;&#x7684;RPC&#x6846;&#x67B6;&#x6709; <a href="https://grpc.io/" target="_blank">gRPC</a>&#x3001;<a href="http://thrift.apache.org/" target="_blank">Thrift</a> &#x7B49;,
+gRPC&#x3001;Thrift &#x7B49;&#x90FD;&#x652F;&#x6301;&#x4E3B;&#x6D41;&#x7684;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x3002;</p>
+<p>&#x6027;&#x80FD;&#x65B9;&#x9762;&#xFF1A;Thirft(&#x5927;&#x7EA6; 10 &#x500D;) &gt; gRPC &gt; Http&#x3002;&#x6570;&#x636E;&#x6D9E;&#x6E90;&#x4E8E;&#x4E92;&#x8054;&#x7F51;,&#x6027;&#x80FD;&#x548C;&#x4E1A;&#x52A1;&#x6570;&#x636E;&#x7684;&#x7279;&#x70B9;&#x6709;&#x5173;,&#x4EC5;&#x4F9B;&#x53C2;&#x8003;&#x3002;<br>
+&#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#xFF1A;&#x5BF9;&#x5185;&#x4E00;&#x4E9B;&#x6027;&#x80FD;&#x8981;&#x6C42;&#x9AD8;&#x7684;&#x573A;&#x5408;&#x7528; RPC,&#x5BF9;&#x5185;&#x5176;&#x4ED6;&#x573A;&#x5408;&#x4EE5;&#x53CA;&#x5BF9;&#x5916;&#x91C7;&#x7528;HTTP&#x3002;</p>
+<h2 id="2-thrift"><a name="2-thrift" class="plugin-anchor" href="#2-thrift"><i class="fa fa-link" aria-hidden="true"></i></a>2. Thrift</h2>
+<h3 id="21-&#x7B80;&#x4ECB;"><a name="21-&#x7B80;&#x4ECB;" class="plugin-anchor" href="#21-&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 &#x7B80;&#x4ECB;</h3>
+<p>Thrift&#x662F;&#x4E00;&#x79CD;&#x63A5;&#x53E3;&#x63CF;&#x8FF0;&#x8BED;&#x8A00;&#x548C;&#x4E8C;&#x8FDB;&#x5236;&#x901A;&#x8BAF;&#x534F;&#x8BAE;&#xFF0C;&#x662F;&#x7531;Facebook&#x4E3A;&#x201C;&#x5927;&#x89C4;&#x6A21;&#x8DE8;&#x8BED;&#x8A00;&#x670D;&#x52A1;&#x5F00;&#x53D1;&#x201D;&#x800C;&#x5F00;&#x53D1;&#x7684;&#x3002;&#x5B83;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5F15;&#x64CE;&#x8054;&#x5408;&#x4E86;&#x4E00;&#x4E2A;&#x8F6F;&#x4EF6;&#x6808;&#xFF0C;&#x6765;&#x521B;&#x5EFA;&#x4E0D;&#x540C;&#x7A0B;&#x5EA6;&#x7684;&#x3001;&#x65E0;&#x7F1D;&#x7684;&#x8DE8;&#x5E73;&#x53F0;&#x9AD8;&#x6548;&#x670D;&#x52A1;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;C#&#x3001;C++&#xFF08;&#x57FA;&#x4E8E;POSIX&#x517C;&#x5BB9;&#x7CFB;&#x7EDF;&#xFF09;&#x3001;Cappuccino&#x3001;Cocoa&#x3001;Delphi&#x3001;Erlang&#x3001;Go&#x3001;Haskell&#x3001;Java&#x3001;Node.js&#x3001;OCaml&#x3001;Perl&#x3001;PHP&#x3001;Python&#x3001;Ruby&#x548C;Smalltalk&#x3002;&#x73B0;&#x5728;&#x662F;Apache&#x8F6F;&#x4EF6;&#x57FA;&#x91D1;&#x4F1A;&#x7684;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x3002;</p>
+<h3 id="22-&#x5DE5;&#x4F5C;&#x539F;&#x7406;"><a name="22-&#x5DE5;&#x4F5C;&#x539F;&#x7406;" class="plugin-anchor" href="#22-&#x5DE5;&#x4F5C;&#x539F;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2 &#x5DE5;&#x4F5C;&#x539F;&#x7406;</h3>
+<p>Thrif&#x901A;&#x8FC7;&#x6A21;&#x7248;&#x6587;&#x4EF6;&#x5B9A;&#x4E49;&#x670D;&#x52A1;&#x63A5;&#x53E3;&#x89C4;&#x8303;&#xFF0C;&#x6A21;&#x7248;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x751F;&#x6210;&#x4E0D;&#x540C;&#x8BED;&#x8A00;&#x5E73;&#x53F0;&#x7684;&#x4EE3;&#x7801;&#x6587;&#x4EF6;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x5206;&#x522B;&#x5F15;&#x7528;&#x751F;&#x6210;&#x7684;&#x63A5;&#x53E3;&#x6587;&#x4EF6;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;&#x5185;&#x5BB9;&#xFF0C;&#x5E76;Host&#x670D;&#x52A1;&#x516C;&#x5F00;&#x901A;&#x8BAF;&#x5730;&#x5740;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x7AEF;&#x5730;&#x5740;&#xFF0C;&#x5E76;&#x6309;&#x7167;&#x63A5;&#x53E3;&#x89C4;&#x8303;&#x8C03;&#x7528;&#x670D;&#x52A1;&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x7531;&#x4E8E;Thrif&#x9700;&#x8981;&#x517C;&#x5BB9;&#x5927;&#x591A;&#x6570;&#x4E3B;&#x6D41;&#x8BED;&#x8A00;&#x5E73;&#x53F0;&#xFF0C;&#x6240;&#x4EE5;&#x63A5;&#x53E3;&#x6587;&#x6863;&#x4E0D;&#x80FD;&#x91C7;&#x7528;&#x6240;&#x6709;&#x8BED;&#x8A00;&#x5404;&#x81EA;&#x4E66;&#x5199;&#x4E00;&#x904D;&#xFF0C;&#x4E8E;&#x662F;Thrif&#x63A8;&#x51FA; <a href="http://thrift.apache.org/docs/idl" target="_blank">IDL</a>(interface definition language)&#x6765;&#x4E66;&#x5199;&#x63A5;&#x53E3;&#x6587;&#x6863;&#x3002;IDL&#x4EC5;&#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x63A5;&#x53E3;&#xFF0C;&#x5305;&#x542B;&#x5E38;&#x7528;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x8BED;&#x6CD5;&#x6BD4;&#x4EF7;&#x7B80;&#x5355;&#xFF0C;&#x5177;&#x4F53;&#x8BED;&#x6CD5;&#x4F7F;&#x7528;&#x53EF;&#x4EE5;&#x53C2;&#x9605; <a href="https://www.cnblogs.com/valor-xh/p/6386584.html" target="_blank">https://www.cnblogs.com/valor-xh/p/6386584.html</a></p>
+<h3 id="23-net-&#x4F7F;&#x7528;"><a name="23-net-&#x4F7F;&#x7528;" class="plugin-anchor" href="#23-net-&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3 .Net &#x4F7F;&#x7528;</h3>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x4EE5;.Net Core&#x4E3A;&#x4F8B;&#x7B80;&#x5355;&#x6F14;&#x793A;&#x4E00;&#x4E0B;Thrif&#x7684;&#x4F7F;&#x7528;&#x3002;Thrif &#x5B98;&#x65B9;&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x5E38;&#x7528;&#x5F00;&#x53D1;&#x8BED;&#x8A00;&#x7684;&#x6848;&#x4F8B;&#xFF0C;&#x53C2;&#x89C1; <a href="https://github.com/colin-chang/thrift-official" target="_blank">https://github.com/colin-chang/thrift-official</a></p>
+<h4 id="1-&#x5B9A;&#x4E49;&#x6A21;&#x677F;"><a name="1-&#x5B9A;&#x4E49;&#x6A21;&#x677F;" class="plugin-anchor" href="#1-&#x5B9A;&#x4E49;&#x6A21;&#x677F;"><i class="fa fa-link" aria-hidden="true"></i></a>1) &#x5B9A;&#x4E49;&#x6A21;&#x677F;</h4>
+<p>&#x521B;&#x5EFA;&#x6A21;&#x677F;&#x6587;&#x4EF6; UserService.thrift&#x3002;&#x6A21;&#x677F;&#x6587;&#x4EF6;&#x6269;&#x5C55;&#x540D;&#x901A;&#x5E38;&#x4E3A;<code>.thrift</code></p>
+<pre class="language-"><code>namespace csharp ThriftDemo.Contract.Net
+namespace netcore ThriftDemo.Contract.Core
+
+service UserService 
+{
+  bool Create(1: Person person)
+  bool Delete(1: i32 id)
+  void Update(1: Person person)
+  Person Query(1: i32 id)
+}
+
+
+struct Person
+{
+  1: i32 id
+  2: string name
+  3: i32 age
+}
+</code></pre><h4 id="2-&#x751F;&#x6210;&#x63A5;&#x53E3;&#x6587;&#x6863;"><a name="2-&#x751F;&#x6210;&#x63A5;&#x53E3;&#x6587;&#x6863;" class="plugin-anchor" href="#2-&#x751F;&#x6210;&#x63A5;&#x53E3;&#x6587;&#x6863;"><i class="fa fa-link" aria-hidden="true"></i></a>2) &#x751F;&#x6210;&#x63A5;&#x53E3;&#x6587;&#x6863;</h4>
+<p>Thrift&#x63D0;&#x4F9B;&#x4E86;&#x4E0D;&#x540C;&#x5E73;&#x53F0;&#x7684;&#x6A21;&#x677F;&#x751F;&#x6210;&#x7A0B;&#x5E8F;Windows&#x4E0B;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#x4F7F;&#x7528;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x4F46;&#x5728;mac OS&#x548C;Linux&#x4E0B;&#x4F7F;&#x7528;&#x751F;&#x6210;&#x5668;&#x5219;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x590D;&#x6742;&#x7684;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#xFF0C;&#x4F46;&#x662F;Docker&#x8BA9;&#x4E00;&#x5207;&#x53D8;&#x5F97;&#x65E0;&#x6BD4;&#x7B80;&#x5355;&#xFF0C;&#x8FD9;&#x91CC;&#x7ED9;&#x51FA;Docker&#x751F;&#x6210;&#x5668;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x3002;</p>
+<pre class="language-"><code class="lang-sh"><span class="token comment"># .NET sync</span>
+docker run --rm -v <span class="token string">&quot;<span class="token environment constant">$PWD</span>:/data&quot;</span> thrift thrift -o /data --gen csharp /data/UserService.thrift
+
+<span class="token comment"># .Net Core async</span>
+docker run --rm -v <span class="token string">&quot;<span class="token environment constant">$PWD</span>:/data&quot;</span> thrift thrift -o /data --gen netcore /data/UserService.thrift
+</code></pre>
+<p>&#x76EE;&#x524D; Thrift v0.13.0 &#x4E3A;.Net Core&#x63D0;&#x4F9B;&#x4E86;TPL&#x98CE;&#x683C;&#x4EE3;&#x7801;&#xFF0C;&#x652F;&#x6301;&#x5F02;&#x6B65;&#xFF0C;&#x4F46;&#x9057;&#x61BE;&#x7684;&#x662F;.Net Framework&#x53EA;&#x6709;&#x540C;&#x6B65;&#x7248;&#x672C;,&#x4E24;&#x8005;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x4E5F;&#x7565;&#x6709;&#x4E0D;&#x540C;&#x3002;</p>
+<h4 id="3-&#x521B;&#x5EFA;&#x63A5;&#x53E3;&#x9879;&#x76EE;"><a name="3-&#x521B;&#x5EFA;&#x63A5;&#x53E3;&#x9879;&#x76EE;" class="plugin-anchor" href="#3-&#x521B;&#x5EFA;&#x63A5;&#x53E3;&#x9879;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>3) &#x521B;&#x5EFA;&#x63A5;&#x53E3;&#x9879;&#x76EE;</h4>
+<ul>
+<li>&#x521B;&#x5EFA;.Net Standard&#x7C7B;&#x5E93;&#x9879;&#x76EE;<code>ThriftTemplate.Contract</code>&#x4F5C;&#x4E3A;&#x63A5;&#x53E3;&#x9879;&#x76EE;&#x3002;</li>
+<li>&#x5C06;&#x4E0A;&#x4E00;&#x6B65;&#x751F;&#x6210;&#x7684;&#x63A5;&#x53E3;&#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x5230;&#x5F53;&#x524D;&#x9879;&#x76EE;&#x4E2D;&#x3002;</li>
+<li>&#x5F15;&#x7528; <a href="https://www.nuget.org/packages/ApacheThrift/" target="_blank">ApacheThrift</a> nuget&#x5305;&#x5230;&#x9879;&#x76EE;&#x4E2D;</li>
+</ul>
+<h4 id="4-&#x670D;&#x52A1;&#x7AEF;"><a name="4-&#x670D;&#x52A1;&#x7AEF;" class="plugin-anchor" href="#4-&#x670D;&#x52A1;&#x7AEF;"><i class="fa fa-link" aria-hidden="true"></i></a>4) &#x670D;&#x52A1;&#x7AEF;</h4>
+<h5 id="1-&#x63A5;&#x53E3;&#x5B9E;&#x73B0;"><a name="1-&#x63A5;&#x53E3;&#x5B9E;&#x73B0;" class="plugin-anchor" href="#1-&#x63A5;&#x53E3;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x63A5;&#x53E3;&#x5B9E;&#x73B0;</h5>
+<ul>
+<li>&#x521B;&#x5EFA;&#x7C7B;&#x5E93;&#x9879;&#x76EE;<code>ThriftTemplate.Contract.Implement</code></li>
+<li>&#x6DFB;&#x52A0;<code>ThriftTemplate.Contract</code>&#x63A5;&#x53E3;&#x9879;&#x76EE;&#x5F15;&#x7528;</li>
+<li><p>&#x5B9E;&#x73B0;&#x63A5;&#x53E3;&#x3002;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserSvs</span> <span class="token punctuation">:</span> <span class="token class-name">UserService<span class="token punctuation">.</span>IAsync</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> Task<span class="token operator">&lt;</span><span class="token keyword">bool</span><span class="token operator">&gt;</span> <span class="token function">CreateAsync</span><span class="token punctuation">(</span><span class="token class-name">Person</span> person<span class="token punctuation">,</span> <span class="token class-name">CancellationToken</span> cancellationToken<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">// your code</span>
+        <span class="token keyword">return</span> Task<span class="token punctuation">.</span><span class="token function">FromResult</span><span class="token punctuation">(</span><span class="token keyword">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> Task<span class="token operator">&lt;</span><span class="token keyword">bool</span><span class="token operator">&gt;</span> <span class="token function">DeleteAsync</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">,</span> <span class="token class-name">CancellationToken</span> cancellationToken<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">// your code</span>
+        <span class="token keyword">return</span> Task<span class="token punctuation">.</span><span class="token function">FromResult</span><span class="token punctuation">(</span><span class="token keyword">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Task</span> <span class="token function">UpdateAsync</span><span class="token punctuation">(</span><span class="token class-name">Person</span> person<span class="token punctuation">,</span> <span class="token class-name">CancellationToken</span> cancellationToken<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">// your code</span>
+        <span class="token keyword">return</span> Task<span class="token punctuation">.</span>CompletedTask<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> Task<span class="token operator">&lt;</span>Person<span class="token operator">&gt;</span> <span class="token function">QueryAsync</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">,</span> <span class="token class-name">CancellationToken</span> cancellationToken<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">// your code</span>
+        <span class="token keyword">return</span> Task<span class="token punctuation">.</span><span class="token function">FromResult</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>Id <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> Name <span class="token operator">=</span> <span class="token string">&quot;Colin&quot;</span><span class="token punctuation">,</span> Age <span class="token operator">=</span> <span class="token number">18</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ul>
+<h5 id="2-&#x8FD0;&#x884C;&#x670D;&#x52A1;"><a name="2-&#x8FD0;&#x884C;&#x670D;&#x52A1;" class="plugin-anchor" href="#2-&#x8FD0;&#x884C;&#x670D;&#x52A1;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x8FD0;&#x884C;&#x670D;&#x52A1;</h5>
+<ul>
+<li>&#x521B;&#x5EFA;&#x670D;&#x52A1;&#x5BBF;&#x4E3B;&#x63A7;&#x5236;&#x53F0;&#x9879;&#x76EE;<code>ThriftTemplate.Server</code>&#x3002;</li>
+<li>&#x7BA1;&#x7406;&#x9879;&#x76EE;&#x5F15;&#x7528;<ul>
+<li>&#x5F15;&#x7528;Nuget <ul>
+<li><a href="https://www.nuget.org/packages/ApacheThrift/" target="_blank">ApacheThrift</a></li>
+<li><a href="https://www.nuget.org/packages/Microsoft.Extensions.Logging" target="_blank">Microsoft.Extensions.Logging</a></li>
+</ul>
+</li>
+<li>&#x6DFB;&#x52A0;&#x9879;&#x76EE;&#x5F15;&#x7528;<ul>
+<li>&#x63A5;&#x53E3;&#x9879;&#x76EE;<code>ThriftTemplate.Contract</code></li>
+<li>&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x9879;&#x76EE;<code>ThriftTemplate.Contract.Implement</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x542F;&#x52A8;&#x670D;&#x52A1;&#x5230;&#x6307;&#x5B9A;&#x5730;&#x5740;&#x3002;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">var</span> serviceProvider <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ServiceCollection</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token generic-method"><span class="token function">AddSingleton</span><span class="token punctuation">&lt;</span><span class="token class-name">UserService<span class="token punctuation">.</span>IAsync</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">UserSvs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">AddLogging</span><span class="token punctuation">(</span>logging <span class="token operator">=&gt;</span> logging<span class="token punctuation">.</span><span class="token function">SetMinimumLevel</span><span class="token punctuation">(</span>LogLevel<span class="token punctuation">.</span>Trace<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">BuildServiceProvider</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">using</span> <span class="token punctuation">(</span><span class="token keyword">var</span> source <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CancellationTokenSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">var</span> server <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AsyncBaseServer</span><span class="token punctuation">(</span>
+        <span class="token keyword">new</span> <span class="token class-name">AsyncProcessor</span><span class="token punctuation">(</span>serviceProvider<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetService</span><span class="token punctuation">&lt;</span><span class="token class-name">UserService<span class="token punctuation">.</span>IAsync</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token keyword">new</span> <span class="token class-name">TServerSocketTransport</span><span class="token punctuation">(</span><span class="token number">10010</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token comment">//&#x76D1;&#x542C;&#x7AEF;&#x53E3;</span>
+        <span class="token keyword">new</span> <span class="token class-name">TBinaryProtocol<span class="token punctuation">.</span>Factory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token keyword">new</span> <span class="token class-name">TBinaryProtocol<span class="token punctuation">.</span>Factory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        serviceProvider<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetService</span><span class="token punctuation">&lt;</span><span class="token class-name">ILoggerFactory</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">await</span> server<span class="token punctuation">.</span><span class="token function">ServeAsync</span><span class="token punctuation">(</span>source<span class="token punctuation">.</span>Token<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ul>
+<h4 id="5-&#x5BA2;&#x6237;&#x7AEF;"><a name="5-&#x5BA2;&#x6237;&#x7AEF;" class="plugin-anchor" href="#5-&#x5BA2;&#x6237;&#x7AEF;"><i class="fa fa-link" aria-hidden="true"></i></a>5) &#x5BA2;&#x6237;&#x7AEF;</h4>
+<ul>
+<li>&#x521B;&#x5EFA;&#x5BA2;&#x6237;&#x7AEF;&#x63A7;&#x5236;&#x53F0;&#x9879;&#x76EE;<code>ThriftTemplate.Client</code></li>
+<li>&#x6DFB;&#x52A0;<code>ThriftTemplate.Contract</code>&#x63A5;&#x53E3;&#x9879;&#x76EE;&#x5F15;&#x7528;&#x3002;&#x5F15;&#x7528; <a href="https://www.nuget.org/packages/ApacheThrift/" target="_blank">ApacheThrift</a></li>
+<li>&#x8C03;&#x7528;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x3002;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x3002;<pre class="language-"><code class="lang-csharp"><span class="token comment">//&#x521B;&#x5EFA;&#x670D;&#x52A1;&#x8FDE;&#x63A5;</span>
+<span class="token keyword">using</span> <span class="token punctuation">(</span><span class="token keyword">var</span> transport <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TSocketClientTransport</span><span class="token punctuation">(</span>IPAddress<span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span><span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">10010</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">using</span> <span class="token punctuation">(</span><span class="token keyword">var</span> protocol <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TBinaryProtocol</span><span class="token punctuation">(</span>transport<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">using</span> <span class="token punctuation">(</span><span class="token keyword">var</span> client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">UserService<span class="token punctuation">.</span>Client</span><span class="token punctuation">(</span>protocol<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">using</span> <span class="token punctuation">(</span><span class="token keyword">var</span> source <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CancellationTokenSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">await</span> client<span class="token punctuation">.</span><span class="token function">OpenTransportAsync</span><span class="token punctuation">(</span>source<span class="token punctuation">.</span>Token<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">await</span> client<span class="token punctuation">.</span><span class="token function">QueryAsync</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> source<span class="token punctuation">.</span>Token<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//&#x8C03;&#x7528;&#x670D;&#x52A1;&#x65B9;&#x6CD5;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ul>
+<h4 id="6-&#x9879;&#x76EE;&#x4F18;&#x5316;"><a name="6-&#x9879;&#x76EE;&#x4F18;&#x5316;" class="plugin-anchor" href="#6-&#x9879;&#x76EE;&#x4F18;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>6) &#x9879;&#x76EE;&#x4F18;&#x5316;</h4>
+<p>&#x4EE5;&#x4E0A;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x8C03;&#x7528;&#x6BCF;&#x4E2A;&#x670D;&#x52A1;&#x7AEF;&#x65B9;&#x6CD5;&#x90FD;&#x9700;&#x5199;&#x7C7B;&#x4F3C;&#x8C03;&#x7528;&#x4EE3;&#x7801;&#x8F83;&#x7E41;&#x7410;&#x4E14;&#x91CD;&#x590D;&#xFF0C;&#x4E8E;&#x662F;&#x6211;&#x4EEC;&#x8003;&#x8651;&#x5C06;&#x5C01;&#x88C5;&#x6269;&#x5C55;&#x5BF9;&#x670D;&#x52A1;&#x7AEF;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#xFF0C;&#x6211;&#x4EEC;&#x53D1;&#x73B0;Thrift&#x751F;&#x6210;&#x7684;&#x63A5;&#x53E3;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x63A5;&#x53E3;&#x7684;&#x6240;&#x5728;&#x7C7B;&#x90FD;&#x662F;partial class&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x5F00;&#x53D1;&#x8005;&#x81EA;&#x884C;&#x6269;&#x5C55;&#x4E14;&#x907F;&#x514D;&#x91CD;&#x65B0;&#x751F;&#x6210;&#x540E;&#x9020;&#x6210;&#x4EE3;&#x7801;&#x8986;&#x76D6;&#x4E22;&#x5931;&#x3002;</p>
+<p>&#x6BCF;&#x4E2A;&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#x90FD;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5E2E;&#x52A9;&#x6269;&#x5C55;&#x65B9;&#x6CD5;&#xFF0C;&#x4E8E;&#x662F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x76F4;&#x63A5;&#x5B9E;&#x73B0;&#x670D;&#x52A1;&#x63A5;&#x53E3;&#xFF0C;&#x540C;&#x65F6;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x4F7F;&#x7528;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x5C06;&#x670D;&#x52A1;&#x8FD0;&#x884C;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x5C01;&#x88C5;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5728;&#x63A5;&#x53E3;&#x9879;&#x76EE;<code>ThriftTemplate.Contract</code>&#x4E2D;&#x65B0;&#x5EFA;<code>UserServiceExtension.cs</code>&#x5E76;&#x5BF9;&#x670D;&#x52A1;&#x63A5;&#x53E3;&#x8C03;&#x7528;&#x505A;&#x5982;&#x4E0B;&#x6269;&#x5C55;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">partial</span> <span class="token keyword">class</span> <span class="token class-name">UserService</span> <span class="token punctuation">:</span> <span class="token class-name">UserService<span class="token punctuation">.</span>IAsync</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// &#x670D;&#x52A1;&#x7AEF;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">async</span> <span class="token class-name">Task</span> <span class="token function">RunAsync</span><span class="token punctuation">(</span><span class="token class-name">IAsync</span> processor<span class="token punctuation">,</span> <span class="token keyword">int</span> port<span class="token punctuation">,</span> <span class="token class-name">ILoggerFactory</span> loggerFactory<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">using</span> <span class="token punctuation">(</span><span class="token keyword">var</span> source <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CancellationTokenSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">var</span> server <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AsyncBaseServer</span><span class="token punctuation">(</span>
+                <span class="token keyword">new</span> <span class="token class-name">AsyncProcessor</span><span class="token punctuation">(</span>processor<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token keyword">new</span> <span class="token class-name">TServerSocketTransport</span><span class="token punctuation">(</span>port<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token keyword">new</span> <span class="token class-name">TBinaryProtocol<span class="token punctuation">.</span>Factory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token keyword">new</span> <span class="token class-name">TBinaryProtocol<span class="token punctuation">.</span>Factory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                loggerFactory
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">await</span> server<span class="token punctuation">.</span><span class="token function">ServeAsync</span><span class="token punctuation">(</span>source<span class="token punctuation">.</span>Token<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">readonly</span> <span class="token class-name">IPAddress</span> _host<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">readonly</span> <span class="token keyword">int</span> _port<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">UserService</span><span class="token punctuation">(</span><span class="token class-name">IPAddress</span> host<span class="token punctuation">,</span> <span class="token keyword">int</span> port<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        _host <span class="token operator">=</span> host<span class="token punctuation">;</span>
+        _port <span class="token operator">=</span> port<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//&#x4EE5;&#x4E0B;&#x4E3A;&#x5BA2;&#x6237;&#x7AEF;&#x6269;&#x5C55;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">async</span> Task<span class="token operator">&lt;</span><span class="token keyword">bool</span><span class="token operator">&gt;</span> <span class="token function">CreateAsync</span><span class="token punctuation">(</span><span class="token class-name">Person</span> person<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">using</span> <span class="token punctuation">(</span><span class="token keyword">var</span> source <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CancellationTokenSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token function">CreateAsync</span><span class="token punctuation">(</span>person<span class="token punctuation">,</span> source<span class="token punctuation">.</span>Token<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">async</span> Task<span class="token operator">&lt;</span><span class="token keyword">bool</span><span class="token operator">&gt;</span> <span class="token function">CreateAsync</span><span class="token punctuation">(</span><span class="token class-name">Person</span> person<span class="token punctuation">,</span> <span class="token class-name">CancellationToken</span> cancellationToken<span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+        <span class="token keyword">await</span> <span class="token function">InvokeAsync</span><span class="token punctuation">(</span><span class="token keyword">async</span> client <span class="token operator">=&gt;</span> <span class="token keyword">await</span> client<span class="token punctuation">.</span><span class="token function">CreateAsync</span><span class="token punctuation">(</span>person<span class="token punctuation">,</span> cancellationToken<span class="token punctuation">)</span><span class="token punctuation">,</span>
+            cancellationToken<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+    <span class="token keyword">public</span> <span class="token keyword">async</span> Task<span class="token operator">&lt;</span><span class="token keyword">bool</span><span class="token operator">&gt;</span> <span class="token function">DeleteAsync</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">using</span> <span class="token punctuation">(</span><span class="token keyword">var</span> source <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CancellationTokenSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token function">DeleteAsync</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> source<span class="token punctuation">.</span>Token<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">async</span> Task<span class="token operator">&lt;</span><span class="token keyword">bool</span><span class="token operator">&gt;</span> <span class="token function">DeleteAsync</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">,</span> <span class="token class-name">CancellationToken</span> cancellationToken<span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+        <span class="token keyword">await</span> <span class="token function">InvokeAsync</span><span class="token punctuation">(</span><span class="token keyword">async</span> client <span class="token operator">=&gt;</span> <span class="token keyword">await</span> client<span class="token punctuation">.</span><span class="token function">DeleteAsync</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> cancellationToken<span class="token punctuation">)</span><span class="token punctuation">,</span> cancellationToken<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+    <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token class-name">Task</span> <span class="token function">UpdateAsync</span><span class="token punctuation">(</span><span class="token class-name">Person</span> person<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">using</span> <span class="token punctuation">(</span><span class="token keyword">var</span> source <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CancellationTokenSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">await</span> <span class="token function">UpdateAsync</span><span class="token punctuation">(</span>person<span class="token punctuation">,</span> source<span class="token punctuation">.</span>Token<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token class-name">Task</span> <span class="token function">UpdateAsync</span><span class="token punctuation">(</span><span class="token class-name">Person</span> person<span class="token punctuation">,</span> <span class="token class-name">CancellationToken</span> cancellationToken<span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+        <span class="token keyword">await</span> <span class="token function">InvokeAsync</span><span class="token punctuation">(</span><span class="token keyword">async</span> client <span class="token operator">=&gt;</span> <span class="token keyword">await</span> client<span class="token punctuation">.</span><span class="token function">UpdateAsync</span><span class="token punctuation">(</span>person<span class="token punctuation">,</span> cancellationToken<span class="token punctuation">)</span><span class="token punctuation">,</span> cancellationToken<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+    <span class="token keyword">public</span> <span class="token keyword">async</span> Task<span class="token operator">&lt;</span>Person<span class="token operator">&gt;</span> <span class="token function">QueryAsync</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">using</span> <span class="token punctuation">(</span><span class="token keyword">var</span> source <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CancellationTokenSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token function">QueryAsync</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> source<span class="token punctuation">.</span>Token<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">async</span> Task<span class="token operator">&lt;</span>Person<span class="token operator">&gt;</span> <span class="token function">QueryAsync</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">,</span> <span class="token class-name">CancellationToken</span> cancellationToken<span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+        <span class="token keyword">await</span> <span class="token function">InvokeAsync</span><span class="token punctuation">(</span><span class="token keyword">async</span> client <span class="token operator">=&gt;</span> <span class="token keyword">await</span> client<span class="token punctuation">.</span><span class="token function">QueryAsync</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> cancellationToken<span class="token punctuation">)</span><span class="token punctuation">,</span> cancellationToken<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+    <span class="token keyword">private</span> <span class="token keyword">async</span> <span class="token class-name">Task</span> <span class="token function">InvokeAsync</span><span class="token punctuation">(</span>Action<span class="token operator">&lt;</span>Client<span class="token operator">&gt;</span> action<span class="token punctuation">,</span> <span class="token class-name">CancellationToken</span> cancellationToken<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">using</span> <span class="token punctuation">(</span><span class="token keyword">var</span> transport <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TSocketClientTransport</span><span class="token punctuation">(</span>_host<span class="token punctuation">,</span> _port<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">using</span> <span class="token punctuation">(</span><span class="token keyword">var</span> protocol <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TBinaryProtocol</span><span class="token punctuation">(</span>transport<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">using</span> <span class="token punctuation">(</span><span class="token keyword">var</span> client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Client</span><span class="token punctuation">(</span>protocol<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    <span class="token keyword">await</span> client<span class="token punctuation">.</span><span class="token function">OpenTransportAsync</span><span class="token punctuation">(</span>cancellationToken<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token function">action</span><span class="token punctuation">(</span>client<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">async</span> Task<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> <span class="token generic-method"><span class="token function">InvokeAsync</span><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>Func<span class="token operator">&lt;</span>Client<span class="token punctuation">,</span> Task<span class="token operator">&lt;</span>T<span class="token operator">&gt;&gt;</span> action<span class="token punctuation">,</span> <span class="token class-name">CancellationToken</span> cancellationToken<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">using</span> <span class="token punctuation">(</span><span class="token keyword">var</span> transport <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TSocketClientTransport</span><span class="token punctuation">(</span>_host<span class="token punctuation">,</span> _port<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">using</span> <span class="token punctuation">(</span><span class="token keyword">var</span> protocol <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TBinaryProtocol</span><span class="token punctuation">(</span>transport<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">using</span> <span class="token punctuation">(</span><span class="token keyword">var</span> client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Client</span><span class="token punctuation">(</span>protocol<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    <span class="token keyword">await</span> client<span class="token punctuation">.</span><span class="token function">OpenTransportAsync</span><span class="token punctuation">(</span>cancellationToken<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token function">action</span><span class="token punctuation">(</span>client<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x4EE5;&#x4E0A;&#x6269;&#x5C55;&#x540E;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x5927;&#x5927;&#x7B80;&#x5316;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token comment">//&#x670D;&#x52A1;&#x7AEF;</span>
+<span class="token keyword">var</span> serviceProvider <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ServiceCollection</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token generic-method"><span class="token function">AddSingleton</span><span class="token punctuation">&lt;</span><span class="token class-name">UserService<span class="token punctuation">.</span>IAsync</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">UserSvs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">AddLogging</span><span class="token punctuation">(</span>logging <span class="token operator">=&gt;</span> logging<span class="token punctuation">.</span><span class="token function">SetMinimumLevel</span><span class="token punctuation">(</span>LogLevel<span class="token punctuation">.</span>Trace<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">BuildServiceProvider</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">await</span> UserService<span class="token punctuation">.</span><span class="token function">RunAsync</span><span class="token punctuation">(</span>serviceProvider<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetService</span><span class="token punctuation">&lt;</span><span class="token class-name">UserService<span class="token punctuation">.</span>IAsync</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">10010</span><span class="token punctuation">,</span> serviceProvider<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetService</span><span class="token punctuation">&lt;</span><span class="token class-name">ILoggerFactory</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x5BA2;&#x6237;&#x7AEF;</span>
+<span class="token keyword">var</span> service <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">UserService</span><span class="token punctuation">(</span>IPAddress<span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span><span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">10010</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">await</span> service<span class="token punctuation">.</span><span class="token function">QueryAsync</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">await</span> Service<span class="token punctuation">.</span><span class="token function">DeleteAsync</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="7-net-framework&#x4E0E;net-core"><a name="7-net-framework&#x4E0E;net-core" class="plugin-anchor" href="#7-net-framework&#x4E0E;net-core"><i class="fa fa-link" aria-hidden="true"></i></a>7) .Net Framework&#x4E0E;.Net Core</h4>
+<p><a href="https://www.nuget.org/packages/ApacheThrift/" target="_blank">ApacheThrift</a>&#x662F;Apach&#x5B98;&#x65B9;&#x63D0;&#x4F9B;&#x7684;Provider&#xFF0C;&#x53EF;&#x4EE5;&#x517C;&#x5BB9;.Net Core&#x548C;.Net Framework&#xFF0C;&#x5B83;&#x4E3A;.Net Core&#x548C;.Net Framework&#x63D0;&#x4F9B;&#x4E86;&#x4E0D;&#x540C;&#x7684;dll&#xFF0C;&#x6240;&#x4EE5;&#x4E5F;&#x5BFC;&#x81F4;&#x4F7F;&#x7528;&#x6B64;package&#x7684;.Net Core&#x548C;.Net Framework&#x9879;&#x76EE;&#x4E0D;&#x53EF;&#x4E92;&#x901A;&#xFF0C;&#x5982;&#xFF0C;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x4E00;&#x4E2A; .net core&#x5BA2;&#x6237;&#x7AEF;&#x8C03;&#x7528;.net framework&#x670D;&#x52A1;&#x7AEF;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x5B9E;&#x73B0;.Net Framework&#x548C;.Net Core&#x7684;Thrift&#x4E92;&#x901A;&#x53EF;&#x4EE5;&#x662F;&#x4F7F;&#x7528;&#x7B2C;&#x4E09;&#x65B9;nuget&#x5305;&#xFF0C;&#x5982;<a href="https://www.nuget.org/packages/apache-thrift-netcore/" target="_blank">apache-thrift-netcore</a>&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x517C;&#x5BB9;&#x6240;&#x6709;.net&#x5B9E;&#x73B0;&#x3002;</p>
+<h2 id="3-&#x6848;&#x4F8B;&#x6E90;&#x7801;"><a name="3-&#x6848;&#x4F8B;&#x6E90;&#x7801;" class="plugin-anchor" href="#3-&#x6848;&#x4F8B;&#x6E90;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x6848;&#x4F8B;&#x6E90;&#x7801;</h2>
+<p><img src="https://i.loli.net/2020/02/26/xrkURP5wuziALb4.jpg" alt="&#x6848;&#x4F8B;&#x89E3;&#x51B3;&#x65B9;&#x6848;"></p>
+<p>Core&#x76EE;&#x5F55;&#x4E0B;&#x662F;.Net Core&#x7248;&#x672C;&#x5B9E;&#x73B0;&#x3002;
+Net&#x76EE;&#x5F55;&#x4E0B;&#x662F;.Net Framework&#x7248;&#x672C;&#x5B9E;&#x73B0;&#x3002;
+Cross&#x76EE;&#x5F55;&#x4E0B;&#x662F;.Net Core&#x4E0E;.Net Framework&#x6DF7;&#x7528;&#x7248;&#x672C;</p>
+<p>&#x9879;&#x76EE;&#x6848;&#x4F8B;&#x4E0B;&#x8F7D;&#xFF1A;<a href="https://github.com/colin-chang/ThriftTemplate" target="_blank">https://github.com/colin-chang/ThriftTemplate</a></p>
+<blockquote>
+<p>&#x53C2;&#x8003;&#x6587;&#x6863;</p>
+</blockquote>
+<ul>
+<li><a href="https://www.cnblogs.com/focus-lei/p/8889389.html" target="_blank">https://www.cnblogs.com/focus-lei/p/8889389.html</a></li>
+<li><a href="http://doc.oschina.net/grpc?t=58008" target="_blank">http://doc.oschina.net/grpc?t=58008</a> </li>
+</ul>
+<footer class="page-footer"><span class="copyright">&#xA9; Colin Chang all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-07-09 15:30:26
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="index.md" class="navigation navigation-prev " aria-label="Previous page: 2.5 微服务授权">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="microservice-docker.html" class="navigation navigation-next " aria-label="Next page: 2.7 Docker+微服务">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.6 RPC","level":"4.2.6","depth":2,"next":{"title":"2.7 Docker+微服务","level":"4.2.7","depth":2,"path":"pages/microservice-docker.md","ref":"pages/microservice-docker.md","articles":[]},"previous":{"title":"2.5 微服务授权","level":"4.2.5","depth":2,"path":"pages/index.md","ref":"pages/index.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","-lunr","-search","search-plus","advanced-emoji","github-buttons","multipart","splitter","tbfed-pagefooter","anchors","sitemap","-sharing","sharing-plus","toggle-chapters","book-summary-scroll-position-saver","prism","-highlight","favicon-absolute"],"styles":{"website":"website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy Colin Chang","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"disqus":{"useIdentifier":false,"shortName":"http-colin-chang-site-1"},"book-summary-scroll-position-saver":{},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"multipart":{},"favicon-absolute":{"appleTouchIconMore":{"120x120":"https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png","180x180":"https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png"},"appleTouchIconPrecomposed152":"https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png","appleTouchIconPrecomposedMore":{"120x120":"https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png","180x180":"https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png"},"favicon":"https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png","bookmark":"https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png","appleTouchIcon152":"https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"https://ccstudio.org/netcore"},"github-buttons":{"buttons":[{"user":"colin-chang","repo":"netcore","type":"star","size":"small"}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":true,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","instapaper","vk","weibo"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"toggle-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":".Net Core-软件开发","gitbook":"*","description":".Net高效跨平台技术方案"},"file":{"path":"pages/rpc.md","mtime":"2020-07-09T07:30:26.772Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-18T15:55:59.139Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

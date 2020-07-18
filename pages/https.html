@@ -1,0 +1,1356 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3. HTTPS · .Net Core-软件开发</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../website.css">
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mailsms.html" />
+    
+    
+    <link rel="prev" href="automapper.html" />
+    
+
+    
+        <link rel="shortcut icon" href="https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png" type="image/x-icon">
+    
+    
+        <link rel="bookmark" href="https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png" type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" sizes="152x152" href="https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png">
+    
+    
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png">
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png">
+        
+    
+    
+        
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png">
+        
+        <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"colin-chang","repo":"netcore","type":"star","size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" >
+            
+                <a target="_blank" href="https://ccstudio.org">
+            
+                    
+                    CC Studio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part I - .NET Core 基础</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. 安装部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="install-install.html">
+            
+                <a href="install-install.html">
+            
+                    
+                    1.1 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="install-deploy.html">
+            
+                <a href="install-deploy.html">
+            
+                    
+                    1.2 部署项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="config.html">
+            
+                <a href="config.html">
+            
+                    
+                    2. 配置管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="index.md">
+            
+                <span>
+            
+                    
+                    3. 依赖注入
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="di-intro.html">
+            
+                <a href="di-intro.html">
+            
+                    
+                    3.1 依赖注入引入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="di-ioc.html">
+            
+                <a href="di-ioc.html">
+            
+                    
+                    3.2 控制反转（IoC）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="di-designmode.html">
+            
+                <a href="di-designmode.html">
+            
+                    
+                    3.3 基于IoC的设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="di-di.html">
+            
+                <a href="di-di.html">
+            
+                    
+                    3.4 依赖注入（DI）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="di-register.html">
+            
+                <a href="di-register.html">
+            
+                    
+                    3.5 服务注册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="di-consume.html">
+            
+                <a href="di-consume.html">
+            
+                    
+                    3.6 服务消费
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="di-lifetime.html">
+            
+                <a href="di-lifetime.html">
+            
+                    
+                    3.7 服务生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="di-aspnetcore.html">
+            
+                <a href="di-aspnetcore.html">
+            
+                    
+                    3.8 Asp.Net Core DI 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="di-src.html">
+            
+                <a href="di-src.html">
+            
+                    
+                    3.9 Asp.Net Core DI 源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="index.md">
+            
+                <span>
+            
+                    
+                    4. Asp.Net Core管道
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="pipeline-diagram.html">
+            
+                <a href="pipeline-diagram.html">
+            
+                    
+                    4.1 管道模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="pipeline-middlewire.html">
+            
+                <a href="pipeline-middlewire.html">
+            
+                    
+                    4.2 中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="pipeline-lifetime.html">
+            
+                <a href="pipeline-lifetime.html">
+            
+                    
+                    4.3 生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="pipeline-environment.html">
+            
+                <a href="pipeline-environment.html">
+            
+                    
+                    4.4 环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="supplement.html">
+            
+                <a href="supplement.html">
+            
+                    
+                    5. Session和Cache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="index.md">
+            
+                <span>
+            
+                    
+                    6. 认证与授权
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="auth-authentication.html">
+            
+                <a href="auth-authentication.html">
+            
+                    
+                    6.1 Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="auth-cookie.html">
+            
+                <a href="auth-cookie.html">
+            
+                    
+                    6.2 Cookie Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="auth-jwt.html">
+            
+                <a href="auth-jwt.html">
+            
+                    
+                    6.3 JwtBear Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="auth-auth2.html">
+            
+                <a href="auth-auth2.html">
+            
+                    
+                    6.4 OAuth2 & OpenID Connect Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="authorization.html">
+            
+                <a href="authorization.html">
+            
+                    
+                    6.5 Authorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="index.md">
+            
+                <span>
+            
+                    
+                    7. WebAPI
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="webapi-restful.html">
+            
+                <a href="webapi-restful.html">
+            
+                    
+                    7.1 WebAPI和Restful
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="webapi-basic.html">
+            
+                <a href="webapi-basic.html">
+            
+                    
+                    7.2 WebAPI基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="webapi-multiversion.html">
+            
+                <a href="webapi-multiversion.html">
+            
+                    
+                    7.3 多版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="webapi-security.html">
+            
+                <a href="webapi-security.html">
+            
+                    
+                    7.4 安全控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="webapi-openapi.html">
+            
+                <a href="webapi-openapi.html">
+            
+                    
+                    7.5 OpenAPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="log.html">
+            
+                <a href="log.html">
+            
+                    
+                    8. 日志管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part Ⅱ - 数据访问</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="dapper.html">
+            
+                <a href="dapper.html">
+            
+                    
+                    1. Dapper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2. EF Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part Ⅱ - 微服务</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="docker-intro.html">
+            
+                <a href="docker-intro.html">
+            
+                    
+                    1.1 Docker简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="docker-install.html">
+            
+                <a href="docker-install.html">
+            
+                    
+                    1.2 安装配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="docker-cmd.html">
+            
+                <a href="docker-cmd.html">
+            
+                    
+                    1.3 常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="docker-dockerfile.html">
+            
+                <a href="docker-dockerfile.html">
+            
+                    
+                    1.4 制作镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2. 微服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="microservice-intro.html">
+            
+                <a href="microservice-intro.html">
+            
+                    
+                    2.1 微服务架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="microservice-consul.html">
+            
+                <a href="microservice-consul.html">
+            
+                    
+                    2.2 服务治理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="microservice-polly.html">
+            
+                <a href="microservice-polly.html">
+            
+                    
+                    2.3 熔断降级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" data-path="microservice-ocelot.html">
+            
+                <a href="microservice-ocelot.html">
+            
+                    
+                    2.4 网关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2.5 微服务授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.6" data-path="rpc.html">
+            
+                <a href="rpc.html">
+            
+                    
+                    2.6 RPC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.7" data-path="microservice-docker.html">
+            
+                <a href="microservice-docker.html">
+            
+                    
+                    2.7 Docker+微服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅲ 其他技术</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. 多线程/异步
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="multithreading-intro.html">
+            
+                <a href="multithreading-intro.html">
+            
+                    
+                    1.1 进程、线程和应用程序域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="multithreading-basic.html">
+            
+                <a href="multithreading-basic.html">
+            
+                    
+                    1.2 进程、线程基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="multithreading-synchronization.html">
+            
+                <a href="multithreading-synchronization.html">
+            
+                    
+                    1.3 线程同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="multithreading-threadpool.html">
+            
+                <a href="multithreading-threadpool.html">
+            
+                    
+                    1.4 线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="multithreading-uiresource.html">
+            
+                <a href="multithreading-uiresource.html">
+            
+                    
+                    1.5 UI资源跨线程访问
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="multithreading-async.html">
+            
+                <a href="multithreading-async.html">
+            
+                    
+                    1.6 异步编程模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="unittest.html">
+            
+                <a href="unittest.html">
+            
+                    
+                    2. 单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part IV - 常用解决方案</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="autofac.html">
+            
+                <a href="autofac.html">
+            
+                    
+                    1. AutoFac
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="automapper.html">
+            
+                <a href="automapper.html">
+            
+                    
+                    2. AutoMapper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.3" data-path="https.html">
+            
+                <a href="https.html">
+            
+                    
+                    3. HTTPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="mailsms.html">
+            
+                <a href="mailsms.html">
+            
+                    
+                    4. 邮件短信通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="mailsms.html">
+            
+                <a href="mailsms.html">
+            
+                    
+                    5. 在线支付
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="staticssi.html">
+            
+                <a href="staticssi.html">
+            
+                    
+                    6. 页面静态化和SSI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3. HTTPS</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5168;&#x9762;-https-&#x65F6;&#x4EE3;"><a name="&#x5168;&#x9762;-https-&#x65F6;&#x4EE3;" class="plugin-anchor" href="#&#x5168;&#x9762;-https-&#x65F6;&#x4EE3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5168;&#x9762; HTTPS &#x65F6;&#x4EE3;</h1>
+<ul>
+<li><a href="#1-https-&#x7B80;&#x4ECB;">1. HTTPS &#x7B80;&#x4ECB;</a></li>
+<li><a href="#2-https-&#x5DE5;&#x4F5C;&#x539F;&#x7406;">2. HTTPS &#x5DE5;&#x4F5C;&#x539F;&#x7406;</a></li>
+<li><a href="#3-https-&#x73B0;&#x72B6;&#x5206;&#x6790;">3. HTTPS &#x73B0;&#x72B6;&#x5206;&#x6790;</a></li>
+<li><a href="#4-&#x514D;&#x8D39;&#x5347;&#x7EA7;&#x5230;-https">4. &#x514D;&#x8D39;&#x5347;&#x7EA7;&#x5230; HTTPS</a></li>
+<li><a href="#5-github-pages-&#x81EA;&#x5B9A;&#x4E49;&#x57DF;&#x540D;&#x652F;&#x6301;-https">5. GitHub Pages &#x81EA;&#x5B9A;&#x4E49;&#x57DF;&#x540D;&#x652F;&#x6301; HTTPS</a></li>
+</ul>
+<h2 id="1-https-&#x7B80;&#x4ECB;"><a name="1-https-&#x7B80;&#x4ECB;" class="plugin-anchor" href="#1-https-&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a>1. HTTPS &#x7B80;&#x4ECB;</h2>
+<h4 id="1-http-&#x7684;&#x95EE;&#x9898;"><a name="1-http-&#x7684;&#x95EE;&#x9898;" class="plugin-anchor" href="#1-http-&#x7684;&#x95EE;&#x9898;"><i class="fa fa-link" aria-hidden="true"></i></a>1) HTTP &#x7684;&#x95EE;&#x9898;</h4>
+<ul>
+<li>&#x8BA4;&#x8BC1;&#x7F51;&#x7AD9;
+  &#x5047;&#x5982;&#x4F60;&#x6B63;&#x5728;&#x8BBF;&#x95EE;&#x652F;&#x4ED8;&#x5B9D;&#xFF0C;&#x600E;&#x6837;&#x786E;&#x5B9A;&#x4F60;&#x6B63;&#x5728;&#x8BBF;&#x95EE;&#x7684;&#x662F;&#x963F;&#x91CC;&#x5DF4;&#x5DF4;&#x63D0;&#x4F9B;&#x7684;&#x652F;&#x4ED8;&#x5B9D;&#x800C;&#x4E0D;&#x662F;&#x5047;&#x5192;&#x4F2A;&#x52A3;&#x7684;&#x9493;&#x9C7C;&#x7F51;&#x7AD9;&#x5462;&#xFF1F;</li>
+<li>&#x6570;&#x636E;&#x5B89;&#x5168;
+  HTTP&#x534F;&#x8BAE;&#x4EE5;&#x660E;&#x6587;&#x65B9;&#x5F0F;&#x53D1;&#x9001;&#x5185;&#x5BB9;&#xFF0C;&#x4E0D;&#x63D0;&#x4F9B;&#x4EFB;&#x4F55;&#x65B9;&#x5F0F;&#x7684;&#x6570;&#x636E;&#x52A0;&#x5BC6;&#xFF0C;&#x5982;&#x679C;&#x653B;&#x51FB;&#x8005;&#x622A;&#x53D6;&#x4E86;Web&#x6D4F;&#x89C8;&#x5668;&#x548C;&#x7F51;&#x7AD9;&#x670D;&#x52A1;&#x5668;&#x4E4B;&#x95F4;&#x7684;&#x4F20;&#x8F93;&#x62A5;&#x6587;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8BFB;&#x61C2;&#x5176;&#x4E2D;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;HTTP&#x534F;&#x8BAE;&#x4E0D;&#x9002;&#x5408;&#x4F20;&#x8F93;&#x4E00;&#x4E9B;&#x654F;&#x611F;&#x4FE1;&#x606F;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;&#x4FE1;&#x7528;&#x5361;&#x53F7;&#x3001;&#x5BC6;&#x7801;&#x7B49;&#x652F;&#x4ED8;&#x4FE1;&#x606F;&#x3002;</li>
+</ul>
+<p>&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x4E0A;&#x9762;&#x7684;&#x95EE;&#x9898;&#xFF0C;HTTPS&#x51FA;&#x573A;&#x4E86; &#x1F44F;&#x1F44F;&#x1F44F;</p>
+<h4 id="2-https-&#x662F;&#x4EC0;&#x4E48;"><a name="2-https-&#x662F;&#x4EC0;&#x4E48;" class="plugin-anchor" href="#2-https-&#x662F;&#x4EC0;&#x4E48;"><i class="fa fa-link" aria-hidden="true"></i></a>2) HTTPS &#x662F;&#x4EC0;&#x4E48;</h4>
+<p>&#x4F20;&#x8F93;&#x5C42;&#x5B89;&#x5168;&#x6027;&#xFF08;TLS&#xFF09;&#x662F;HTTPS&#x7684;&#x5B98;&#x65B9;&#x540D;&#x79F0;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x542C;&#x8BF4;&#x8FC7;&#x5B83;&#x79F0;&#x4E3A;SSL&#xFF08;&#x5B89;&#x5168;&#x5957;&#x63A5;&#x5B57;&#x5C42;&#xFF09;&#xFF0C;SSL&#x662F;&#x5DF2;&#x5F03;&#x7528;&#x7684;&#x540D;&#x79F0;&#xFF0C;TLS&#x662F;&#x4E00;&#x79CD;&#x52A0;&#x5BC6;&#x534F;&#x8BAE;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;&#x8BA1;&#x7B97;&#x673A;&#x7F51;&#x7EDC;&#x63D0;&#x4F9B;&#x5B89;&#x5168;&#x901A;&#x4FE1;&#x3002;</p>
+<p>HTTPS&#x662F;&#x4EE5;&#x5B89;&#x5168;&#x4E3A;&#x76EE;&#x6807;&#x7684;HTTP&#x901A;&#x9053;&#xFF0C;&#x7B80;&#x5355;&#x8BB2;&#x662F;HTTP&#x7684;&#x5B89;&#x5168;&#x7248;&#xFF0C;&#x5373;HTTP&#x4E0B;&#x52A0;&#x5165;SSL&#x6216;TLS&#xFF0C;HTTPS&#x7684;&#x5B89;&#x5168;&#x57FA;&#x7840;&#x662F;SSL/TLS&#x3002;</p>
+<p>HTTPS&#x534F;&#x8BAE;&#x7684;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x6709;&#x4E24;&#x4E2A;&#xFF1A;&#x4E00;&#x79CD;&#x662F;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x4FE1;&#x606F;&#x5B89;&#x5168;&#x901A;&#x9053;&#xFF0C;&#x6765;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x7684;&#x5B89;&#x5168;&#xFF1B;&#x53E6;&#x4E00;&#x79CD;&#x5C31;&#x662F;&#x8BA4;&#x8BC1;&#x7F51;&#x7AD9;&#x7684;&#x771F;&#x5B9E;&#x6027;&#x3002;</p>
+<h2 id="2-https-&#x5DE5;&#x4F5C;&#x539F;&#x7406;"><a name="2-https-&#x5DE5;&#x4F5C;&#x539F;&#x7406;" class="plugin-anchor" href="#2-https-&#x5DE5;&#x4F5C;&#x539F;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>2. HTTPS &#x5DE5;&#x4F5C;&#x539F;&#x7406;</h2>
+<h4 id="1-&#x4E3B;&#x4F53;&#x5BF9;&#x8C61;"><a name="1-&#x4E3B;&#x4F53;&#x5BF9;&#x8C61;" class="plugin-anchor" href="#1-&#x4E3B;&#x4F53;&#x5BF9;&#x8C61;"><i class="fa fa-link" aria-hidden="true"></i></a>1) &#x4E3B;&#x4F53;&#x5BF9;&#x8C61;</h4>
+<ul>
+<li>&#x5BA2;&#x6237;&#x7AEF;&#x3002;&#x901A;&#x5E38;&#x662F;&#x6D4F;&#x89C8;&#x5668;(Chrome&#x3001;IE&#x3001;FireFox&#x7B49;)&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x7F16;&#x5199;&#x7684;&#x5404;&#x79CD;&#x8BED;&#x8A00;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x7A0B;&#x5E8F;&#x3002;</li>
+<li>&#x670D;&#x52A1;&#x7AEF;&#x3002;&#x4E00;&#x822C;&#x6307;&#x652F;&#x6301;Https&#x7684;&#x7F51;&#x7AD9;&#xFF0C;&#x6BD4;&#x5982;github&#x3001;&#x652F;&#x4ED8;&#x5B9D;&#x3002;</li>
+<li><p>CA(Certificate Authorities)&#x673A;&#x6784;&#x3002;Https&#x8BC1;&#x4E66;&#x7B7E;&#x53D1;&#x548C;&#x7BA1;&#x7406;&#x673A;&#x6784;&#xFF0C;&#x6BD4;&#x5982;Symantec&#x3001;Comodo&#x3001;GoDaddy&#x3001;GlobalSign&#x3002;</p>
+<p>  <img src="https://i.loli.net/2020/02/26/2vJl74IhwHiasWT.png" alt="https&#x4E3B;&#x4F53;"></p>
+</li>
+</ul>
+<h4 id="2-&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;"><a name="2-&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;" class="plugin-anchor" href="#2-&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>2) &#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</h4>
+<p>&#x5BA2;&#x6237;&#x7AEF;&#x5728;&#x4F7F;&#x7528;HTTPS&#x65B9;&#x5F0F;&#x4E0E;Web&#x670D;&#x52A1;&#x5668;&#x901A;&#x4FE1;&#x65F6;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x6B65;&#x9AA4;&#xFF0C;&#x5982;&#x56FE;&#x6240;&#x793A;&#x3002;</p>
+<p><img src="https://i.loli.net/2020/02/26/t8dKfR6CbrOMYBS.png" alt="HTTPS&#x5DE5;&#x4F5C;&#x539F;&#x7406;"></p>
+<p>&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;&#xFF0C;&#x57FA;&#x672C;&#x5206;&#x4E3A;&#x4E09;&#x4E2A;&#x9636;&#x6BB5;:</p>
+<ol>
+<li><p>&#x8BA4;&#x8BC1;&#x670D;&#x52A1;&#x5668;&#x3002;&#x6D4F;&#x89C8;&#x5668;&#x5185;&#x7F6E;&#x4E00;&#x4E2A;&#x53D7;&#x4FE1;&#x4EFB;&#x7684;CA&#x673A;&#x6784;&#x5217;&#x8868;&#xFF0C;&#x5E76;&#x4FDD;&#x5B58;&#x4E86;&#x8FD9;&#x4E9B;CA&#x673A;&#x6784;&#x7684;&#x8BC1;&#x4E66;&#x3002;&#x7B2C;&#x4E00;&#x9636;&#x6BB5;&#x670D;&#x52A1;&#x5668;&#x4F1A;&#x63D0;&#x4F9B;&#x7ECF;CA&#x673A;&#x6784;&#x8BA4;&#x8BC1;&#x9881;&#x53D1;&#x7684;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;&#xFF0C;&#x5982;&#x679C;&#x8BA4;&#x8BC1;&#x8BE5;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;&#x7684;CA&#x673A;&#x6784;&#xFF0C;&#x5B58;&#x5728;&#x4E8E;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x53D7;&#x4FE1;&#x4EFB;CA&#x673A;&#x6784;&#x5217;&#x8868;&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;&#x4E2D;&#x7684;&#x4FE1;&#x606F;&#x4E0E;&#x5F53;&#x524D;&#x6B63;&#x5728;&#x8BBF;&#x95EE;&#x7684;&#x7F51;&#x7AD9;&#xFF08;&#x57DF;&#x540D;&#x7B49;&#xFF09;&#x4E00;&#x81F4;&#xFF0C;&#x90A3;&#x4E48;&#x6D4F;&#x89C8;&#x5668;&#x5C31;&#x8BA4;&#x4E3A;&#x670D;&#x52A1;&#x7AEF;&#x662F;&#x53EF;&#x4FE1;&#x7684;&#xFF0C;&#x5E76;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;&#x4E2D;&#x53D6;&#x5F97;&#x670D;&#x52A1;&#x5668;&#x516C;&#x94A5;&#xFF0C;&#x7528;&#x4E8E;&#x540E;&#x7EED;&#x6D41;&#x7A0B;&#x3002;&#x5426;&#x5219;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x5C06;&#x63D0;&#x793A;&#x7528;&#x6237;&#xFF0C;&#x6839;&#x636E;&#x7528;&#x6237;&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x51B3;&#x5B9A;&#x662F;&#x5426;&#x7EE7;&#x7EED;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7BA1;&#x7406;&#x8FD9;&#x4E2A;&#x53D7;&#x4FE1;&#x4EFB;CA&#x673A;&#x6784;&#x5217;&#x8868;&#xFF0C;&#x6DFB;&#x52A0;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x4FE1;&#x4EFB;&#x7684;CA&#x673A;&#x6784;&#xFF0C;&#x6216;&#x8005;&#x79FB;&#x9664;&#x6211;&#x4EEC;&#x4E0D;&#x4FE1;&#x4EFB;&#x7684;CA&#x673A;&#x6784;&#x3002;</p>
+</li>
+<li><p>&#x534F;&#x5546;&#x4F1A;&#x8BDD;&#x5BC6;&#x94A5;&#x3002;&#x5BA2;&#x6237;&#x7AEF;&#x5728;&#x8BA4;&#x8BC1;&#x5B8C;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x83B7;&#x5F97;&#x670D;&#x52A1;&#x5668;&#x7684;&#x516C;&#x94A5;&#x4E4B;&#x540E;&#xFF0C;&#x5229;&#x7528;&#x8BE5;&#x516C;&#x94A5;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x901A;&#x4FE1;&#xFF0C;&#x534F;&#x5546;&#x51FA;&#x4E24;&#x4E2A;&#x4F1A;&#x8BDD;&#x5BC6;&#x94A5;&#xFF0C;&#x5206;&#x522B;&#x662F;&#x7528;&#x4E8E;&#x52A0;&#x5BC6;&#x5BA2;&#x6237;&#x7AEF;&#x5F80;&#x670D;&#x52A1;&#x7AEF;&#x53D1;&#x9001;&#x6570;&#x636E;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x4F1A;&#x8BDD;&#x5BC6;&#x94A5;&#xFF0C;&#x7528;&#x4E8E;&#x52A0;&#x5BC6;&#x670D;&#x52A1;&#x7AEF;&#x5F80;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x6570;&#x636E;&#x7684;&#x670D;&#x52A1;&#x7AEF;&#x4F1A;&#x8BDD;&#x5BC6;&#x94A5;&#x3002;&#x5728;&#x5DF2;&#x6709;&#x670D;&#x52A1;&#x5668;&#x516C;&#x94A5;&#xFF0C;&#x53EF;&#x4EE5;&#x52A0;&#x5BC6;&#x901A;&#x8BAF;&#x7684;&#x524D;&#x63D0;&#x4E0B;&#xFF0C;&#x8FD8;&#x8981;&#x534F;&#x5546;&#x4E24;&#x4E2A;&#x5BF9;&#x79F0;&#x5BC6;&#x94A5;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x975E;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x76F8;&#x5BF9;&#x590D;&#x6742;&#x5EA6;&#x66F4;&#x9AD8;&#xFF0C;&#x5728;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#xFF0C;&#x53EF;&#x4EE5;&#x8282;&#x7701;&#x8BA1;&#x7B97;&#x8D44;&#x6E90;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x4F1A;&#x8BDD;&#x5BC6;&#x94A5;&#x662F;&#x968F;&#x673A;&#x751F;&#x6210;&#xFF0C;&#x6BCF;&#x6B21;&#x534F;&#x5546;&#x90FD;&#x4F1A;&#x6709;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x6240;&#x4EE5;&#x5B89;&#x5168;&#x6027;&#x4E5F;&#x6BD4;&#x8F83;&#x9AD8;&#x3002;</p>
+</li>
+<li><p>&#x52A0;&#x5BC6;&#x901A;&#x8BAF;&#x3002;&#x6B64;&#x65F6;&#x5BA2;&#x6237;&#x7AEF;&#x670D;&#x52A1;&#x5668;&#x53CC;&#x65B9;&#x90FD;&#x6709;&#x4E86;&#x672C;&#x6B21;&#x901A;&#x8BAF;&#x7684;&#x4F1A;&#x8BDD;&#x5BC6;&#x94A5;&#xFF0C;&#x4E4B;&#x540E;&#x4F20;&#x8F93;&#x7684;&#x6240;&#x6709;Http&#x6570;&#x636E;&#xFF0C;&#x90FD;&#x901A;&#x8FC7;&#x4F1A;&#x8BDD;&#x5BC6;&#x94A5;&#x52A0;&#x5BC6;&#x3002;&#x8FD9;&#x6837;&#x7F51;&#x8DEF;&#x4E0A;&#x7684;&#x5176;&#x5B83;&#x7528;&#x6237;&#xFF0C;&#x5C06;&#x5F88;&#x96BE;&#x7A83;&#x53D6;&#x548C;&#x7BE1;&#x6539;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x4E4B;&#x95F4;&#x4F20;&#x8F93;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4ECE;&#x800C;&#x4FDD;&#x8BC1;&#x4E86;&#x6570;&#x636E;&#x7684;&#x79C1;&#x5BC6;&#x6027;&#x548C;&#x5B8C;&#x6574;&#x6027;&#x3002;</p>
+</li>
+</ol>
+<p><em>Https&#x5C31;&#x662F;Http&#x8DD1;&#x5728;SSL&#x6216;&#x8005;TLS&#x4E0A;&#xFF0C;&#x6240;&#x4EE5;&#x672C;&#x6587;&#x8BA8;&#x8BBA;&#x7684;&#x539F;&#x7406;&#x548C;&#x6D41;&#x7A0B;&#x5176;&#x5B9E;&#x662F;SSL&#x548C;TLS&#x7684;&#x6D41;&#x7A0B;&#xFF0C;&#x5BF9;&#x4E8E;&#x5176;&#x5B83;&#x4F7F;&#x7528;SSL&#x6216;&#x8005;TLS&#x7684;&#x5E94;&#x7528;&#x5C42;&#x534F;&#x8BAE;&#xFF0C;&#x672C;&#x6587;&#x5185;&#x5BB9;&#x4E00;&#x6837;&#x6709;&#x6548;&#x3002;</em></p>
+<h2 id="3-https-&#x73B0;&#x72B6;&#x5206;&#x6790;"><a name="3-https-&#x73B0;&#x72B6;&#x5206;&#x6790;" class="plugin-anchor" href="#3-https-&#x73B0;&#x72B6;&#x5206;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>3. HTTPS &#x73B0;&#x72B6;&#x5206;&#x6790;</h2>
+<h4 id="1-&#x4F18;&#x7F3A;&#x70B9;&#x5206;&#x6790;"><a name="1-&#x4F18;&#x7F3A;&#x70B9;&#x5206;&#x6790;" class="plugin-anchor" href="#1-&#x4F18;&#x7F3A;&#x70B9;&#x5206;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>1) &#x4F18;&#x7F3A;&#x70B9;&#x5206;&#x6790;</h4>
+<p>&#x641E;&#x660E;&#x767D;&#x4E86;Https&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x540E;&#xFF0C;&#x5176;&#x4F18;&#x7F3A;&#x70B9;&#x5C31;&#x5F88;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x4E86;&#x3002;</p>
+<p><strong>&#x4F18;&#x70B9;</strong></p>
+<p>&#x5C3D;&#x7BA1;HTTPS&#x5E76;&#x975E;&#x7EDD;&#x5BF9;&#x5B89;&#x5168;&#xFF0C;&#x638C;&#x63E1;&#x6839;&#x8BC1;&#x4E66;&#x7684;&#x673A;&#x6784;&#x3001;&#x638C;&#x63E1;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x7684;&#x7EC4;&#x7EC7;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x4E2D;&#x95F4;&#x4EBA;&#x5F62;&#x5F0F;&#x7684;&#x653B;&#x51FB;&#xFF0C;&#x4F46;HTTPS&#x4ECD;&#x662F;&#x73B0;&#x884C;&#x67B6;&#x6784;&#x4E0B;&#x6700;&#x5B89;&#x5168;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x5E76;&#x4E14;&#x89E3;&#x51B3;&#x4E86;&#x7F51;&#x7AD9;&#x8BA4;&#x8BC1;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x8FD9;&#x4E24;&#x70B9;&#x4E5F;&#x6B63;&#x662F;&#x6211;&#x4EEC;&#x5728;&#x6700;&#x5F00;&#x59CB;&#x63D0;&#x51FA;&#x7684;&#x95EE;&#x9898;&#x3002;&#x53E6;&#x5916;&#xFF0C;Google&#x66FE;&#x8868;&#x793A;&#x201C;&#x6BD4;&#x8D77;&#x540C;&#x7B49;HTTP&#x7F51;&#x7AD9;&#xFF0C;&#x91C7;&#x7528;HTTPS&#x52A0;&#x5BC6;&#x7684;&#x7F51;&#x7AD9;&#x5728;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x4E2D;&#x7684;&#x6392;&#x540D;&#x5C06;&#x4F1A;&#x66F4;&#x9AD8;&#x201D;&#xFF0C;&#x56E0;&#x6B64;&#x91C7;&#x7528;HTTPS&#x7684;&#x7F51;&#x7AD9;&#x66F4;&#x6709;&#x5229;&#x4E8E;SEO.</p>
+<p><strong>&#x7F3A;&#x70B9;</strong></p>
+<ul>
+<li>HTTPS&#x534F;&#x8BAE;&#x63E1;&#x624B;&#x9636;&#x6BB5;&#x6BD4;&#x8F83;&#x8D39;&#x65F6;&#xFF0C;&#x6CA1;&#x6709;HTTP&#x9AD8;&#x6548;&#xFF0C;&#x4E14;&#x4F1A;&#x4F7F;&#x9875;&#x9762;&#x7684;&#x52A0;&#x8F7D;&#x65F6;&#x95F4;&#x5EF6;&#x957F;&#x8FD1;&#x529F;&#x8017;&#x589E;&#x52A0;&#xFF1B;</li>
+<li>SSL&#x8BC1;&#x4E66;&#x6536;&#x8D39;</li>
+<li>SSL&#x8BC1;&#x4E66;&#x901A;&#x5E38;&#x9700;&#x8981;&#x7ED1;&#x5B9A;IP&#xFF0C;&#x4E0D;&#x80FD;&#x5728;&#x540C;&#x4E00;IP&#x4E0A;&#x7ED1;&#x5B9A;&#x591A;&#x4E2A;&#x57DF;&#x540D;&#x3002;</li>
+</ul>
+<h4 id="2-&#x73B0;&#x72B6;&#x5206;&#x6790;"><a name="2-&#x73B0;&#x72B6;&#x5206;&#x6790;" class="plugin-anchor" href="#2-&#x73B0;&#x72B6;&#x5206;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>2) &#x73B0;&#x72B6;&#x5206;&#x6790;</h4>
+<p>&#x4E86;&#x89E3;&#x4E86;HTTPS&#x7684;&#x4F18;&#x7F3A;&#x70B9;&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x6765;&#x770B;&#x4E0B;&#x5176;&#x53D1;&#x5C55;&#x73B0;&#x72B6;&#x3002;</p>
+<p>&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x5F88;&#x591A;&#x516C;&#x53F8;&#x90FD;&#x4F1A;&#x76F4;&#x63A5;&#x8D2D;&#x4E70;&#x7531;GlobalSign&#x3001;GeoTrust&#x3001;Verisign&#x7B49;&#x5168;&#x7403;&#x516C;&#x8BA4;&#x7684;&#x6570;&#x5B57;&#x8BC1;&#x4E66;&#x9881;&#x53D1;&#x673A;&#x6784;&#x9881;&#x53D1;&#x7684;SSL&#x8BC1;&#x4E66;&#x3002;&#x8D2D;&#x4E70;&#xFF1F;&#x6CA1;&#x9519;&#xFF0C;&#x5927;&#x591A;&#x6570;SSL&#x8BC1;&#x4E66;&#x90FD;&#x9700;&#x8981;&#x6309;&#x5E74;&#x4ED8;&#x8D39;&#x4F7F;&#x7528;&#xFF0C;&#x800C;&#x4E14;&#x4EF7;&#x683C;&#x4E0D;&#x83F2;&#x3002;&#x8FC7;&#x53BB;HTTPS&#x88AB;&#x8BA4;&#x4E3A;&#x6BD4;&#x8F83;&#x4F4E;&#x6548;&#x3002;&#x8FD9;&#x4E5F;&#x662F;&#x524D;&#x9762;&#x63D0;&#x5230;&#x7684;HTTPS&#x7684;&#x4E3B;&#x8981;&#x7F3A;&#x70B9;&#x3002;</p>
+<p>&#x4F46;&#x968F;&#x7740;&#x6280;&#x672F;&#x7684;&#x53D1;&#x5C55;&#xFF0C;&#x73B0;&#x5728;&#x673A;&#x5668;&#x53D8;&#x5F97;&#x66F4;&#x5FEB;&#xFF0C;&#x5DF2;&#x7ECF;&#x89E3;&#x51B3;&#x4E86;&#x6027;&#x80FD;&#x95EE;&#x9898;&#xFF0C;Let&apos;s Encrypt&#x7B49;&#x673A;&#x6784;&#x63D0;&#x4F9B;&#x514D;&#x8D39;TLS&#x8BC1;&#x4E66;&#xFF0C;&#x8FD9;&#x4E24;&#x9879;&#x53D1;&#x5C55;&#x6539;&#x53D8;&#x4E86;&#x6E38;&#x620F;&#xFF0C;&#x5E76;&#x4F7F;TLS&#x6210;&#x4E3A;&#x4E3B;&#x6D41;&#x3002;</p>
+<h4 id="3-&#x514D;&#x8D39;&#x8BC1;&#x4E66;"><a name="3-&#x514D;&#x8D39;&#x8BC1;&#x4E66;" class="plugin-anchor" href="#3-&#x514D;&#x8D39;&#x8BC1;&#x4E66;"><i class="fa fa-link" aria-hidden="true"></i></a>3) &#x514D;&#x8D39;&#x8BC1;&#x4E66;</h4>
+<p>Let&apos;s Encrypt &#x662F;&#x4E00;&#x4E2A;&#x514D;&#x8D39;&#x3001;&#x5F00;&#x653E;&#xFF0C;&#x81EA;&#x52A8;&#x5316;&#x7684;&#x8BC1;&#x4E66;&#x9881;&#x53D1;&#x673A;&#x6784;&#xFF0C;&#x7531; ISRG&#xFF08;Internet Security Research Group&#xFF09;&#x8FD0;&#x4F5C;&#x3002;ISRG &#x662F;&#x4E00;&#x4E2A;&#x5173;&#x6CE8;&#x7F51;&#x7EDC;&#x5B89;&#x5168;&#x7684;&#x516C;&#x76CA;&#x7EC4;&#x7EC7;&#xFF0C;&#x5176;&#x8D5E;&#x52A9;&#x5546;&#x5305;&#x62EC; Mozilla&#x3001;Akamai&#x3001;Cisco&#x3001;EFF&#x3001;Chrome&#x3001;IdenTrust&#x3001;Facebook&#x7B49;&#x516C;&#x53F8;&#x3002;ISRG &#x7684;&#x76EE;&#x7684;&#x662F;&#x6D88;&#x9664;&#x8D44;&#x91D1;&#x548C;&#x6280;&#x672F;&#x9886;&#x57DF;&#x7684;&#x969C;&#x788D;&#xFF0C;&#x5168;&#x9762;&#x63A8;&#x8FDB;&#x7F51;&#x7AD9;&#x4ECE;HTTP&#x5230;HTTPS&#x8FC7;&#x5EA6;&#x7684;&#x8FDB;&#x7A0B;&#x3002;</p>
+<p>&#x76EE;&#x524D;&#xFF0C;&#x5305;&#x62EC;FireFox&#x3001;Chrome&#x5728;&#x5185;&#x7684;&#x4E3B;&#x6D41;&#x6D4F;&#x89C8;&#x5668;&#x90FD;&#x652F;&#x6301;Let&apos;s Encrypt&#x8BC1;&#x4E66;&#xFF0C;&#x5DF2;&#x7ECF;&#x6709;&#x4E0D;&#x5C11;&#x7528;&#x6237;&#x5728;&#x771F;&#x5B9E;&#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528;Let&apos;s Encrypt&#x8BC1;&#x4E66;&#x3002;Let&apos;s Encrypt&#x514D;&#x8D39;SSL&#x8BC1;&#x4E66;&#x7684;&#x6709;&#x6548;&#x671F;&#x662F;90&#x5929;&#xFF0C;&#x5230;&#x671F;&#x540E;&#x53EF;&#x4EE5;&#x518D;&#x7EED;&#x671F;&#xFF0C;&#x8FD9;&#x6837;&#x4E5F;&#x5C31;&#x53EF;&#x4EE5;&#x53D8;&#x76F8;&#x957F;&#x671F;&#x4F7F;&#x7528;&#x4E86;&#x3002; </p>
+<h2 id="4-&#x514D;&#x8D39;&#x5347;&#x7EA7;&#x5230;-https"><a name="4-&#x514D;&#x8D39;&#x5347;&#x7EA7;&#x5230;-https" class="plugin-anchor" href="#4-&#x514D;&#x8D39;&#x5347;&#x7EA7;&#x5230;-https"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x514D;&#x8D39;&#x5347;&#x7EA7;&#x5230; HTTPS</h2>
+<p>&#x4E00;&#x822C;&#x7684;HTTPS&#x4F7F;&#x7528;&#x6D41;&#x7A0B;&#x5982;&#x4E0B;&#x3002;</p>
+<p><img src="https://i.loli.net/2020/02/26/H5OhIoYkGQE3Wvf.png" alt="HTTPS&#x4F7F;&#x7528;&#x6D41;&#x7A0B;"></p>
+<blockquote>
+<p>Let&#x2019;s Encrypt TLS &#x514D;&#x8D39;&#x8BC1;&#x4E66;&#x4F7F;&#x7528;</p>
+</blockquote>
+<p>Let&#x2019;s Encrypt TLS&#x8BC1;&#x4E66;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x5316;&#x751F;&#x6210;&#x548C;&#x66F4;&#x65B0;&#xFF0C;&#x7531;&#x4E8E;&#x4ED6;&#x4EEC;&#x662F;&#x514D;&#x8D39;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6CA1;&#x6709;&#x7406;&#x7531;&#x4E0D;&#x53BB;&#x505A;&#x3002;&#x76F8;&#x4FE1;&#x5927;&#x5BB6;&#x4E5F;&#x66F4;&#x5173;&#x6CE8;&#x514D;&#x8D39;&#x8BC1;&#x4E66;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#xFF0C;&#x4E0D;&#x591A;&#x8BF4;&#xFF0C;&#x8FD9;&#x5C31;&#x641E;&#x8D77;&#x6765; &#x1F60A;&#x1F60A;&#x1F60A;</p>
+<p><em>&#x4EE5;&#x4E0B;&#x6848;&#x4F8B;&#x4F7F;&#x7528; <code>Ubuntu 18.10/nginx 1.15.5</code> &#x73AF;&#x5883;&#x3002;</em></p>
+<ul>
+<li><p>&#x6839;&#x636E;<a href="https://letsencrypt.org/getting-started" target="_blank">Let&#x2019;s Encrypt &#x5B98;&#x7F51;</a>&#x63A8;&#x8350;&#xFF0C;&#x6211;&#x4EEC;&#x9009;&#x62E9;&#x4F7F;&#x7528;<a href="https://certbot.eff.org/" target="_blank"> Certbot ACME client</a></p>
+</li>
+<li><p>&#x9009;&#x62E9;&#x5BF9;&#x5E94;&#x7684;&#x8F6F;&#x4EF6;&#x548C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x73AF;&#x5883;</p>
+<p>  <img src="https://i.loli.net/2020/02/26/S8XhGaJvfgBOlxz.jpg" alt="Certbot&#x5B98;&#x7F51;"></p>
+</li>
+<li><p>&#x53C2;&#x7167;&#x7F51;&#x7AD9;&#x7ED9;&#x51FA;&#x7684;&#x547D;&#x4EE4;&#x8FDB;&#x884C;&#x5B89;&#x88C5;/&#x914D;&#x7F6E;/&#x66F4;&#x65B0; &#x8BC1;&#x4E66;</p>
+<p>  <img src="https://i.loli.net/2020/02/26/NAxD6MGTXW9KbUz.jpg" alt="&#x8BC1;&#x4E66;&#x5B89;&#x88C5;&#x914D;&#x7F6E;"></p>
+</li>
+<li><p>&#x5B8C;&#x6210;&#x4EE5;&#x4E0A;&#x914D;&#x7F6E;&#x540E;&#xFF0C;&#x8BBF;&#x95EE;&#x4F60;&#x7684;&#x7F51;&#x7AD9;&#xFF0C;&#x4E0D;&#x51FA;&#x610F;&#x5916;&#x5DF2;&#x7ECF;&#x5347;&#x7EA7;&#x5230;https&#x4E86;&#x1F44D;</p>
+</li>
+</ul>
+<p>&#x81EA;&#x52A8;&#x914D;&#x7F6E;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x7684;Nginx&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5F62;&#x5982;&#xFF1A;</p>
+<pre class="language-"><code class="lang-json">server <span class="token punctuation">{</span> 
+    server_name   localhost <span class="token number">104.199</span>.<span class="token number">230.207</span> bet<span class="token number">518.</span>win www.bet<span class="token number">518.</span>win;
+    location / <span class="token punctuation">{</span>
+        proxy_pass         localhost<span class="token operator">:</span><span class="token number">5000</span>;
+        proxy_http_version <span class="token number">1.1</span>;
+        proxy_set_header   Upgrade $http_upgrade;
+        proxy_set_header   Connection keep-alive;
+        proxy_set_header   Host $host;
+        proxy_cache_bypass $http_upgrade;
+        proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto $scheme;
+    <span class="token punctuation">}</span>
+
+    listen <span class="token number">443</span> ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/bet<span class="token number">518.</span>win/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/bet<span class="token number">518.</span>win/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+<span class="token punctuation">}</span>
+
+server <span class="token punctuation">{</span>
+    if ($host = www.bet<span class="token number">518.</span>win) <span class="token punctuation">{</span>
+        return <span class="token number">301</span> https<span class="token operator">:</span><span class="token comment">//$host$request_uri;</span>
+    <span class="token punctuation">}</span> # managed by Certbot
+
+
+    if ($host = bet<span class="token number">518.</span>win) <span class="token punctuation">{</span>
+        return <span class="token number">301</span> https<span class="token operator">:</span><span class="token comment">//$host$request_uri;</span>
+    <span class="token punctuation">}</span> # managed by Certbot
+
+    listen        <span class="token number">80</span>; 
+    server_name   localhost <span class="token number">104.199</span>.<span class="token number">230.207</span> bet<span class="token number">518.</span>win www.bet<span class="token number">518.</span>win;
+    return <span class="token number">404</span>; # managed by Certbot
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="5-github-pages-&#x81EA;&#x5B9A;&#x4E49;&#x57DF;&#x540D;&#x652F;&#x6301;-https"><a name="5-github-pages-&#x81EA;&#x5B9A;&#x4E49;&#x57DF;&#x540D;&#x652F;&#x6301;-https" class="plugin-anchor" href="#5-github-pages-&#x81EA;&#x5B9A;&#x4E49;&#x57DF;&#x540D;&#x652F;&#x6301;-https"><i class="fa fa-link" aria-hidden="true"></i></a>5. GitHub Pages &#x81EA;&#x5B9A;&#x4E49;&#x57DF;&#x540D;&#x652F;&#x6301; HTTPS</h2>
+<p>2018&#x5E74;5&#x6708;1&#x65E5;&#xFF0C;GitHub Pages &#x5B98;&#x65B9;&#x5BA3;&#x5E03; GitHub Pages &#x5BF9;&#x81EA;&#x5B9A;&#x4E49;&#x57DF;&#x540D;&#x652F;&#x6301; HTTPS&#x3002;
+<a href="https://blog.github.com/2018-05-01-github-pages-custom-domains-https/" target="_blank">https://blog.github.com/2018-05-01-github-pages-custom-domains-https/</a></p>
+<p>&#x4EC0;&#x4E48;&#xFF0C;&#x4F60;&#x95EE;&#x6211;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;GitHub Page&#x4F7F;&#x7528;HTTPS&#xFF1F;&#x7B80;&#x5355;&#x6765;&#x8BF4;&#xFF0C;&#x9664;&#x4E86; HTTPS &#x81EA;&#x8EAB;&#x5E26;&#x6765;&#x7684;&#x52A0;&#x5BC6;&#x3001;&#x9632;&#x52AB;&#x6301;&#x7B49;&#x7279;&#x6027;&#x5916;&#xFF0C;Github &#x5B98;&#x65B9;&#x57FA;&#x4E8E; HTTPS &#x914D;&#x5408; CND&#xFF0C;&#x4F7F;&#x5F97;&#x7F51;&#x7AD9;&#x7684;&#x52A0;&#x8F7D;&#x901F;&#x5EA6;&#x66F4;&#x5FEB;&#xFF0C;&#x8FD8;&#x80FD;&#x63D0;&#x4F9B;&#x989D;&#x5916;&#x7684;&#x9632;&#x5FA1; DDoS &#x653B;&#x51FB;&#x7684;&#x4FDD;&#x62A4;&#x3002;</p>
+<p>GitHub&#x5B98;&#x65B9;&#x6587;&#x6863;&#x5DF2;&#x7ECF;&#x8BF4;&#x660E;&#x4E86;&#x5982;&#x4F55;&#x5F00;&#x542F;HTTPS&#x3002;&#x82F1;&#x6587;&#x4E0D;&#x719F;&#x6089;&#x7684;&#x5C0F;&#x4F19;&#x4F34;&#x770B;&#x6211;&#x4E0B;&#x9762;&#x7684;&#x7B80;&#x5355;&#x7C97;&#x66B4;&#x7684;&#x8BB2;&#x89E3;&#x5373;&#x53EF;&#x3002;</p>
+<h4 id="1&#xFF09;&#x7ED1;&#x5B9A;&#x57DF;&#x540D;"><a name="1&#xFF09;&#x7ED1;&#x5B9A;&#x57DF;&#x540D;" class="plugin-anchor" href="#1&#xFF09;&#x7ED1;&#x5B9A;&#x57DF;&#x540D;"><i class="fa fa-link" aria-hidden="true"></i></a>1&#xFF09;&#x7ED1;&#x5B9A;&#x57DF;&#x540D;</h4>
+<p>&#x6CE8;&#x518C;&#x57DF;&#x540D;&#x4E0D;&#x591A;&#x8BF4;&#x3002;&#x5982;&#x4F55;&#x4F7F;&#x7528;GitHub Pages&#x4E2D;&#x521B;&#x5EFA;&#x535A;&#x5BA2;&#x4E5F;&#x4E0D;&#x591A;&#x8BF4;&#x3002;&#x5E9F;&#x8BDD;&#x5B8C;&#x4E86;&#xFF0C;&#x4E0B;&#x9762;&#x5F00;&#x59CB;&#x6B63;&#x9898;&#xFF0C;&#x4EE5;&#x535A;&#x4E3B;&#x81EA;&#x5DF1;&#x7684;&#x8D26;&#x6237;&#x4E3A;&#x4F8B;(GitHub&#x7528;&#x6237;&#x540D;&#x4E3A;<code>colin-chang</code>)</p>
+<ul>
+<li>&#x89E3;&#x6790;&#x57DF;&#x540D;</li>
+</ul>
+<p><img src="https://i.loli.net/2020/02/27/AYqRwvrJu6DoEFm.jpg" alt="&#x89E3;&#x6790;&#x57DF;&#x540D;"></p>
+<ul>
+<li>Github Pages &#x9879;&#x76EE;&#x914D;&#x7F6E;<ul>
+<li>&#x6253;&#x5F00; username.github.io &#x9879;&#x76EE;&#x8BBE;&#x7F6E;,&#x5E76;&#x627E;&#x5230; <code>GitHub Pages</code> &#x6A21;&#x5757;&#x7684;<code>Custom domain</code>&#x586B;&#x5199;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;&#x5E76;&#x70B9;&#x51FB; Save</li>
+</ul>
+</li>
+<li>&#x5728;&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; &#x201C;CNAME&#x201D; &#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5185;&#x5BB9;&#x4E3A;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;</li>
+</ul>
+<h4 id="2&#xFF09;&#x5F00;&#x542F;https"><a name="2&#xFF09;&#x5F00;&#x542F;https" class="plugin-anchor" href="#2&#xFF09;&#x5F00;&#x542F;https"><i class="fa fa-link" aria-hidden="true"></i></a>2&#xFF09;&#x5F00;&#x542F;HTTPS</h4>
+<p>&#x627E;&#x5230;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#x7684;<code>Enforce HTTPS</code>&#x9009;&#x9879;&#x5E76;&#x52FE;&#x9009;&#x3002;&#x7136;&#x540E;&#x8BBF;&#x95EE;&#x4E0B;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x4E0D;&#x51FA;&#x610F;&#x5916;&#x7684;&#x8BDD;&#xFF0C;&#x5DF2;&#x7ECF;&#x662F;https&#x4E86;&#x3002;</p>
+<p><img src="https://i.loli.net/2020/02/26/yjJwiaeBrEOxoYd.jpg" alt="&#x89E3;&#x6790;&#x57DF;&#x540D;"></p>
+<p>&#x90A3;&#x4E48;&#x5982;&#x679C;&#x5982;&#x679C;&#x4E4B;&#x524D;&#x5DF2;&#x7ECF;&#x5F00;&#x542F;&#x4E86;&#x81EA;&#x5B9A;&#x4E49;&#x57DF;&#x540D;&#xFF0C; enforce HTTPS &#x65E0;&#x6CD5;&#x52FE;&#x9009;&#x4E14;&#x600E;&#x4E48;&#x529E;&#xFF1F;&#x5F80;&#x4E0B;&#x770B;...</p>
+<ol>
+<li>&#x628A; Custom domain &#x4E2D;&#x7684;&#x503C;&#x6E05;&#x7A7A;&#xFF0C;&#x5E76;&#x70B9;&#x51FB; Save &#x8FDB;&#x884C;&#x4FDD;&#x5B58;&#xFF1B;</li>
+<li>&#x5728; Custom domain &#x4E2D;&#x7684;&#x586B;&#x5165;&#x4E4B;&#x524D;&#x6E05;&#x7A7A;&#x7684;&#x503C;&#xFF0C;&#x586B;&#x5165;&#x540E;&#x70B9;&#x51FB;&#x4FDD;&#x5B58;&#xFF1B;</li>
+<li>&#x5237;&#x65B0;&#x9879;&#x76EE;&#x8BBE;&#x7F6E;&#x9875;&#xFF0C;&#x5982;&#x679C; enforce HTTPS &#x53EF;&#x52FE;&#x9009;&#xFF0C;&#x52FE;&#x9009;&#x5373;&#x53EF;&#xFF1B;</li>
+<li>&#x5982;&#x679C; enforce HTTPS &#x4E0D;&#x53EF;&#x52FE;&#x9009;&#xFF0C;&#x5E76;&#x4E14;&#x63D0;&#x793A; Not yet available for your site because the certificate has not finished being issued&#x201D; &#xFF0C;&#x8BF4;&#x660E;&#x8BC1;&#x4E66;&#x5C1A;&#x672A;&#x7533;&#x8BF7;&#x5B8C;&#x6210;&#xFF0C;&#x7B49;&#x5F85;&#x4E00;&#x5929;&#x5373;&#x53EF;&#x3002;</li>
+<li>&#x5B8C;&#x6210;&#x4EE5;&#x4E0A;&#x6B65;&#x9AA4;&#x91CD;&#x65B0;&#x8BBF;&#x95EE;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x4EAB;&#x53D7;https&#x5427;&#x5F00;&#x59CB;</li>
+</ol>
+<p><small>&#x6CE8;&#x610F;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x4ECD;&#x7136;&#x5B58;&#x5728;&#x95EE;&#x9898;&#xFF0C;&#x8BF7;&#x68C0;&#x67E5;&#x81EA;&#x5DF1;&#x7684;&#x7F51;&#x7AD9;&#x5F15;&#x7528;&#x7684;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x6709;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x4E86; http &#x534F;&#x8BAE;&#xFF0C;&#x8BF7;&#x66FF;&#x6362;&#x6210;&#x76F8;&#x5E94;&#x7684; https &#x8D44;&#x6E90;&#x3002;</small></p>
+<footer class="page-footer"><span class="copyright">&#xA9; Colin Chang all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-07-09 15:30:26
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="automapper.html" class="navigation navigation-prev " aria-label="Previous page: 2. AutoMapper">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mailsms.html" class="navigation navigation-next " aria-label="Next page: 4. 邮件短信通知">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3. HTTPS","level":"6.3","depth":1,"next":{"title":"4. 邮件短信通知","level":"6.4","depth":1,"path":"pages/mailsms.md","ref":"pages/mailsms.md","articles":[]},"previous":{"title":"2. AutoMapper","level":"6.2","depth":1,"path":"pages/automapper.md","ref":"pages/automapper.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","-lunr","-search","search-plus","advanced-emoji","github-buttons","multipart","splitter","tbfed-pagefooter","anchors","sitemap","-sharing","sharing-plus","toggle-chapters","book-summary-scroll-position-saver","prism","-highlight","favicon-absolute"],"styles":{"website":"website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy Colin Chang","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"disqus":{"useIdentifier":false,"shortName":"http-colin-chang-site-1"},"book-summary-scroll-position-saver":{},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"multipart":{},"favicon-absolute":{"appleTouchIconMore":{"120x120":"https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png","180x180":"https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png"},"appleTouchIconPrecomposed152":"https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png","appleTouchIconPrecomposedMore":{"120x120":"https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png","180x180":"https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png"},"favicon":"https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png","bookmark":"https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png","appleTouchIcon152":"https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"https://ccstudio.org/netcore"},"github-buttons":{"buttons":[{"user":"colin-chang","repo":"netcore","type":"star","size":"small"}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":true,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","instapaper","vk","weibo"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"toggle-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":".Net Core-软件开发","gitbook":"*","description":".Net高效跨平台技术方案"},"file":{"path":"pages/https.md","mtime":"2020-07-09T07:30:26.777Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-18T15:55:59.139Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

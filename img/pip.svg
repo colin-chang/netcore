@@ -1,0 +1,909 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" viewBox="-4883 -774 3972 2400" width="3972" height="2400">
+  <defs>
+    <font-face font-family="Avenir" font-size="14" panose-1="2 11 7 3 2 2 3 2 2 4" units-per-em="1000" underline-position="-75" underline-thickness="50" slope="0" x-height="480" cap-height="708" ascent="1e3" descent="-365.9973" font-weight="800">
+      <font-face-src>
+        <font-face-name name="Avenir-Heavy"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="StickArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-7 -4 8 8" markerWidth="8" markerHeight="8" color="#666a6b">
+      <g>
+        <path d="M -5.76 0 L 0 0 M 0 2.16 L -5.76 0 L 0 -2.16" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <filter id="Shadow" filterUnits="userSpaceOnUse" x="-4883" y="-774">
+      <feOffset in="SourceAlpha" result="offset" dx="0" dy="2"/>
+      <feFlood flood-color="#919191" flood-opacity=".25" result="flood"/>
+      <feComposite in="flood" in2="offset" operator="in" result="color"/>
+      <feMerge>
+        <feMergeNode in="color"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <font-face font-family="Avenir" font-size="14" panose-1="2 11 5 3 2 2 3 2 2 4" units-per-em="1000" underline-position="-75" underline-thickness="50" slope="0" x-height="468" cap-height="708" ascent="1e3" descent="-365.9973" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Avenir-Roman"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="HalfStickArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-7 -4 8 5" markerWidth="8" markerHeight="5" color="#666a6b">
+      <g>
+        <path d="M -5.76 0 L 0 0 M 0 -2.16 L -5.76 0" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <font-face font-family="PingFang SC" font-size="21" panose-1="2 11 8 0 0 0 0 0 0 0" units-per-em="1000" underline-position="-150" underline-thickness="80" slope="0" x-height="600" cap-height="860" ascent="1060.0021" descent="-340.0007" font-weight="600">
+      <font-face-src>
+        <font-face-name name="PingFangSC-Semibold"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="PingFang SC" font-size="14" panose-1="2 11 8 0 0 0 0 0 0 0" units-per-em="1000" underline-position="-150" underline-thickness="80" slope="0" x-height="600" cap-height="860" ascent="1060.0021" descent="-340.0007" font-weight="600">
+      <font-face-src>
+        <font-face-name name="PingFangSC-Semibold"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="PingFang SC" font-size="15" panose-1="2 11 4 0 0 0 0 0 0 0" units-per-em="1000" underline-position="-150" underline-thickness="58" slope="0" x-height="600" cap-height="860" ascent="1060.0021" descent="-340.0007" font-weight="400">
+      <font-face-src>
+        <font-face-name name="PingFangSC-Regular"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="UMLInheritance_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-6 -4 7 8" markerWidth="7" markerHeight="8" color="#666a6b">
+      <g>
+        <path d="M -4.32 0 L 0 2.52 L 0 -2.52 Z" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <font-face font-family="Avenir" font-size="12" panose-1="2 11 5 3 2 2 3 2 2 4" units-per-em="1000" underline-position="-75" underline-thickness="50" slope="0" x-height="468" cap-height="708" ascent="1e3" descent="-365.9973" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Avenir-Roman"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="PingFang SC" font-size="12" panose-1="2 11 4 0 0 0 0 0 0 0" units-per-em="1000" underline-position="-150" underline-thickness="58" slope="0" x-height="600" cap-height="860" ascent="1060.0021" descent="-340.0007" font-weight="400">
+      <font-face-src>
+        <font-face-name name="PingFangSC-Regular"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="PingFang SC" font-size="40" panose-1="2 11 8 0 0 0 0 0 0 0" units-per-em="1000" underline-position="-150" underline-thickness="80" slope="0" x-height="600" cap-height="860" ascent="1060.0021" descent="-340.0007" font-weight="600">
+      <font-face-src>
+        <font-face-name name="PingFangSC-Semibold"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="PingFang SC" font-size="28" panose-1="2 11 8 0 0 0 0 0 0 0" units-per-em="1000" underline-position="-150" underline-thickness="80" slope="0" x-height="600" cap-height="860" ascent="1060.0021" descent="-340.0007" font-weight="600">
+      <font-face-src>
+        <font-face-name name="PingFangSC-Semibold"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="PingFang SC" font-size="14" panose-1="2 11 4 0 0 0 0 0 0 0" units-per-em="1000" underline-position="-150" underline-thickness="58" slope="0" x-height="600" cap-height="860" ascent="1060.0021" descent="-340.0007" font-weight="400">
+      <font-face-src>
+        <font-face-name name="PingFangSC-Regular"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="PingFang SC" font-size="11" panose-1="2 11 4 0 0 0 0 0 0 0" units-per-em="1000" underline-position="-150" underline-thickness="58" slope="0" x-height="600" cap-height="860" ascent="1060.0021" descent="-340.0007" font-weight="400">
+      <font-face-src>
+        <font-face-name name="PingFangSC-Regular"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Avenir" font-size="11" panose-1="2 11 7 3 2 2 3 2 2 4" units-per-em="1000" underline-position="-75" underline-thickness="50" slope="0" x-height="480" cap-height="708" ascent="1e3" descent="-365.9973" font-weight="800">
+      <font-face-src>
+        <font-face-name name="Avenir-Heavy"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="PingFang SC" font-size="11" panose-1="2 11 8 0 0 0 0 0 0 0" units-per-em="1000" underline-position="-150" underline-thickness="80" slope="0" x-height="600" cap-height="860" ascent="1060.0021" descent="-340.0007" font-weight="600">
+      <font-face-src>
+        <font-face-name name="PingFangSC-Semibold"/>
+      </font-face-src>
+    </font-face>
+    <filter id="Shadow_2" filterUnits="userSpaceOnUse" x="-4883" y="-774">
+      <feGaussianBlur in="SourceAlpha" result="blur" stdDeviation="1.3030978"/>
+      <feOffset in="blur" result="offset" dx="0" dy="2"/>
+      <feFlood flood-color="black" flood-opacity=".2" result="flood"/>
+      <feComposite in="flood" in2="offset" operator="in" result="color"/>
+      <feMerge>
+        <feMergeNode in="color"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <font-face font-family="Avenir" font-size="11" panose-1="2 11 5 3 2 2 3 2 2 4" units-per-em="1000" underline-position="-75" underline-thickness="50" slope="0" x-height="468" cap-height="708" ascent="1e3" descent="-365.9973" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Avenir-Roman"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="PingFang SC" font-size="18" panose-1="2 11 8 0 0 0 0 0 0 0" units-per-em="1000" underline-position="-150" underline-thickness="80" slope="0" x-height="600" cap-height="860" ascent="1060.0021" descent="-340.0007" font-weight="600">
+      <font-face-src>
+        <font-face-name name="PingFangSC-Semibold"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Avenir" font-size="16" panose-1="2 11 7 3 2 2 3 2 2 4" units-per-em="1000" underline-position="-75" underline-thickness="50" slope="0" x-height="480" cap-height="708" ascent="1e3" descent="-365.9973" font-weight="800">
+      <font-face-src>
+        <font-face-name name="Avenir-Heavy"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Verdana" font-size="13" panose-1="2 11 6 4 3 5 4 4 2 4" units-per-em="1000" underline-position="-87.89062" underline-thickness="58.59375" slope="0" x-height="545.41016" cap-height="727.0508" ascent="1005.3711" descent="-209.96094" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Verdana"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="PingFang SC" font-size="21" panose-1="2 11 8 0 0 0 0 0 0 0" units-per-em="1000" underline-position="-150" underline-thickness="80" slope="0" x-height="600" cap-height="860" ascent="1060.0021" descent="-340.0007" font-weight="600">
+      <font-face-src>
+        <font-face-name name="PingFangSC-Semibold"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.12.1 
+    <dc:date>2020-01-19 13:01:38 +0000</dc:date>
+  </metadata>
+  <g id="版面___1" stroke-dasharray="none" stroke-opacity="1" fill-opacity="1" stroke="none" fill="none">
+    <title>版面 1</title>
+    <g id="版面___1: 图层 1">
+      <title>图层 1</title>
+      <g id="Group_630">
+        <g id="Graphic_249">
+          <path d="M -3191 -690 L -2292.625 -690 C -2287.6544 -690 -2283.625 -685.9706 -2283.625 -681 L -2283.625 -262 C -2283.625 -257.02944 -2287.6544 -253 -2292.625 -253 L -3191 -253 C -3195.9706 -253 -3200 -257.02944 -3200 -262 L -3200 -681 C -3200 -685.9706 -3195.9706 -690 -3191 -690 Z" fill="white"/>
+          <path d="M -3191 -690 L -2292.625 -690 C -2287.6544 -690 -2283.625 -685.9706 -2283.625 -681 L -2283.625 -262 C -2283.625 -257.02944 -2287.6544 -253 -2292.625 -253 L -3191 -253 C -3195.9706 -253 -3200 -257.02944 -3200 -262 L -3200 -681 C -3200 -685.9706 -3195.9706 -690 -3191 -690 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="16.0,8.0,2.0,8.0" stroke-width="2"/>
+        </g>
+        <g id="Group_165">
+          <title>Start</title>
+          <g id="Graphic_167">
+            <text transform="translate(-2888.036 -773)" fill="#515556">
+              <tspan font-family="Avenir" font-size="14" font-weight="800" fill="#515556" x="6039613e-20" y="14">start</tspan>
+            </text>
+          </g>
+          <g id="Graphic_166">
+            <title>Circle</title>
+            <circle cx="-2907.5" cy="-764" r="10.0000159790191" fill="#3f4243"/>
+          </g>
+        </g>
+        <g id="Line_223">
+          <title>Transition</title>
+          <line x1="-2907.75" y1="-704.82" x2="-2907.75" y2="-751" marker-start="url(#StickArrow_Marker)" stroke="#666a6b" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="2"/>
+        </g>
+        <g id="Graphic_193" filter="url(#Shadow)">
+          <title>Class</title>
+          <rect x="-3002.5" y="-670" width="198.5" height="40" fill="white"/>
+          <rect x="-3002.5" y="-670" width="198.5" height="40" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(-2996.5 -660)" fill="#515556">
+            <tspan font-family="Avenir" font-size="14" font-weight="800" fill="#515556" x="43.858" y="14">WebHostBuiler</tspan>
+          </text>
+        </g>
+        <g id="Graphic_192" filter="url(#Shadow)">
+          <title>Class</title>
+          <rect x="-3002.5" y="-585.25" width="200" height="40" fill="white"/>
+          <rect x="-3002.5" y="-585.25" width="200" height="40" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(-2996.5 -575.25)" fill="#515556">
+            <tspan font-family="Avenir" font-size="14" font-weight="800" fill="#515556" x="63.543" y="14">WebHost</tspan>
+          </text>
+        </g>
+        <g id="Line_262">
+          <title>Transition</title>
+          <line x1="-2907.75" y1="-512.07" x2="-2907.75" y2="-547.25" marker-start="url(#StickArrow_Marker)" stroke="#666a6b" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="2"/>
+        </g>
+        <g id="Graphic_264">
+          <text transform="translate(-2894.647 -536.75)" fill="#515556">
+            <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#515556" x="8455459e-19" y="14">Create</tspan>
+          </text>
+        </g>
+        <g id="Line_268">
+          <title>Transition</title>
+          <line x1="-2907.75" y1="-594.82" x2="-2907.75" y2="-630" marker-start="url(#StickArrow_Marker)" stroke="#666a6b" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="2"/>
+        </g>
+        <g id="Graphic_267">
+          <text transform="translate(-2894.056 -619.5)" fill="#515556">
+            <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#515556" x="4938272e-19" y="14">build</tspan>
+          </text>
+        </g>
+        <g id="Graphic_289">
+          <title>Language</title>
+          <path d="M -3505.9 -456.8478 C -3519.7 -456.8478 -3530.875 -445.6478 -3530.875 -431.84783 C -3530.875 -418.04783 -3519.7 -406.84783 -3505.9 -406.84783 C -3492.075 -406.84783 -3480.875 -418.04783 -3480.875 -431.84783 C -3480.875 -445.6478 -3492.075 -456.8478 -3505.9 -456.8478 Z M -3488.575 -441.8478 L -3495.95 -441.8478 C -3496.75 -444.9728 -3497.9 -447.9728 -3499.4 -450.7478 C -3494.8 -449.1728 -3490.975 -445.9728 -3488.575 -441.8478 Z M -3505.875 -451.7478 C -3503.8 -448.7478 -3502.175 -445.4228 -3501.1 -441.8478 L -3510.65 -441.8478 C -3509.575 -445.4228 -3507.95 -448.7478 -3505.875 -451.7478 Z M -3525.225 -426.84783 C -3525.625 -428.44783 -3525.875 -430.12283 -3525.875 -431.84783 C -3525.875 -433.57283 -3525.625 -435.24783 -3525.225 -436.84783 L -3516.775 -436.84783 C -3516.975 -435.19783 -3517.125 -433.54783 -3517.125 -431.84783 C -3517.125 -430.14783 -3516.975 -428.49783 -3516.775 -426.84783 L -3525.225 -426.84783 Z M -3523.175 -421.84783 L -3515.8 -421.84783 C -3515 -418.72283 -3513.85 -415.72283 -3512.35 -412.94783 C -3516.95 -414.52283 -3520.775 -417.69783 -3523.175 -421.84783 Z M -3515.8 -441.8478 L -3523.175 -441.8478 C -3520.775 -445.9978 -3516.95 -449.1728 -3512.35 -450.7478 C -3513.85 -447.9728 -3515 -444.9728 -3515.8 -441.8478 Z M -3505.875 -411.94783 C -3507.95 -414.94783 -3509.575 -418.27283 -3510.65 -421.84783 L -3501.1 -421.84783 C -3502.175 -418.27283 -3503.8 -414.94783 -3505.875 -411.94783 Z M -3500.025 -426.84783 L -3511.725 -426.84783 C -3511.95 -428.49783 -3512.125 -430.14783 -3512.125 -431.84783 C -3512.125 -433.54783 -3511.95 -435.22283 -3511.725 -436.84783 L -3500.025 -436.84783 C -3499.8 -435.22283 -3499.625 -433.54783 -3499.625 -431.84783 C -3499.625 -430.14783 -3499.8 -428.49783 -3500.025 -426.84783 Z M -3499.4 -412.94783 C -3497.9 -415.72283 -3496.75 -418.72283 -3495.95 -421.84783 L -3488.575 -421.84783 C -3490.975 -417.72283 -3494.8 -414.52283 -3499.4 -412.94783 Z M -3494.975 -426.84783 C -3494.775 -428.49783 -3494.625 -430.14783 -3494.625 -431.84783 C -3494.625 -433.54783 -3494.775 -435.19783 -3494.975 -436.84783 L -3486.525 -436.84783 C -3486.125 -435.24783 -3485.875 -433.57283 -3485.875 -431.84783 C -3485.875 -430.12283 -3486.125 -428.44783 -3486.525 -426.84783 L -3494.975 -426.84783 Z" fill="black"/>
+        </g>
+        <g id="Line_293">
+          <title>Async Message</title>
+          <line x1="-3062.5533" y1="-426.75" x2="-3460.2173" y2="-426.75" marker-start="url(#HalfStickArrow_Marker)" stroke="#666a6b" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="2"/>
+        </g>
+        <g id="Line_297">
+          <title>Async Message</title>
+          <line x1="-3453.18" y1="-442.5" x2="-3055.516" y2="-442.5" marker-start="url(#HalfStickArrow_Marker)" stroke="#666a6b" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="2"/>
+        </g>
+        <g id="Graphic_298">
+          <text transform="translate(-3318.852 -466)" fill="#515556">
+            <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#515556" x="7673862e-19" y="14">Response</tspan>
+          </text>
+        </g>
+        <g id="Graphic_299">
+          <text transform="translate(-3316.676 -420.5)" fill="#515556">
+            <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#515556" x="0" y="14">Request</tspan>
+          </text>
+        </g>
+        <g id="Graphic_424">
+          <path d="M -3038.7333 -496.75 L -2766.2667 -496.75 C -2761.296 -496.75 -2757.2667 -492.72056 -2757.2667 -487.75 L -2757.2667 -324.75 C -2757.2667 -319.77944 -2761.296 -315.75 -2766.2667 -315.75 L -3038.7333 -315.75 C -3043.704 -315.75 -3047.7333 -319.77944 -3047.7333 -324.75 L -3047.7333 -487.75 C -3047.7333 -492.72056 -3043.704 -496.75 -3038.7333 -496.75 Z" fill="white"/>
+          <path d="M -3038.7333 -496.75 L -2766.2667 -496.75 C -2761.296 -496.75 -2757.2667 -492.72056 -2757.2667 -487.75 L -2757.2667 -324.75 C -2757.2667 -319.77944 -2761.296 -315.75 -2766.2667 -315.75 L -3038.7333 -315.75 C -3043.704 -315.75 -3047.7333 -319.77944 -3047.7333 -324.75 L -3047.7333 -487.75 C -3047.7333 -492.72056 -3043.704 -496.75 -3038.7333 -496.75 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Graphic_600">
+          <text transform="translate(-3175.7333 -665.5)" fill="#b1001c">
+            <tspan font-family="PingFang SC" font-size="21" font-weight="600" fill="#b1001c" x="0" y="22">管道构建过程</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Graphic_270"/>
+      <g id="Line_420">
+        <title>Lifeline</title>
+        <line x1="-2902.5" y1="-315.75" x2="-2902.5" y2="21.76923" stroke="#666a6b" stroke-linecap="square" stroke-linejoin="bevel" stroke-dasharray="8.0,8.0" stroke-width="2"/>
+      </g>
+      <g id="Graphic_419">
+        <title>Activation</title>
+        <rect x="-2914.4198" y="-176.61296" width="23.83953" height="130" fill="white"/>
+        <rect x="-2914.4198" y="-176.61296" width="23.83953" height="130" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(-2908.4198 -151.61296)" fill="#aeaeae">
+          <tspan font-family="PingFang SC" font-size="14" font-weight="600" fill="#aeaeae" x="0" y="15">具</tspan>
+          <tspan font-family="PingFang SC" font-size="14" font-weight="600" fill="#aeaeae" x="0" y="35">体</tspan>
+          <tspan font-family="PingFang SC" font-size="14" font-weight="600" fill="#aeaeae" x="0" y="55">实</tspan>
+          <tspan font-family="PingFang SC" font-size="14" font-weight="600" fill="#aeaeae" x="0" y="75">现</tspan>
+        </text>
+      </g>
+      <g id="Graphic_278">
+        <text transform="translate(-2663 -670)" fill="black">
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="20.2">程序通过WebHostBuilder创建WebHost，</tspan>
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="45.4">WebHost负责构建请求处理管道。</tspan>
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="95.8">管道由一个Server和一个IHttpApplication对象</tspan>
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="121">组成，后者是对所有注册的中间件的封装。</tspan>
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="171.4">WebHost启动时会创建Server和</tspan>
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="196.6">IHttpApplication对象，并调用Server.StarAsync</tspan>
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="221.8">方法将IHttpApplication对象作为参数传入启动</tspan>
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="247">服务器。</tspan>
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="297.4">启动后Server开启监听请求并利用</tspan>
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="322.6">HttpApplication来处理接收到请求。</tspan>
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="347.8">HttpApplication完成了所有请求处理工作之后会</tspan>
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="373">利用Server完成对请求的最终响应。</tspan>
+        </text>
+      </g>
+      <g id="Group_589">
+        <g id="Graphic_400">
+          <rect x="-3530.875" y="1118" width="1247.25" height="504" fill="white"/>
+          <path d="M -3530.875 1118 L -2283.625 1118 L -2283.625 1622 L -3530.875 1622 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="16.0,8.0,2.0,8.0" stroke-width="2"/>
+        </g>
+        <g id="Group_301">
+          <title>Class with Attributes, Operations, and Template Parameter</title>
+          <g id="Group_303">
+            <g id="Graphic_305">
+              <title>Class Name</title>
+              <rect x="-3368.8796" y="1164.3585" width="671.206" height="28" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              <text transform="translate(-3362.8796 1168.3585)" fill="#515556">
+                <tspan font-family="Avenir" font-size="14" font-weight="800" fill="#515556" x="275.115" y="14">IHttpApplication</tspan>
+              </text>
+            </g>
+            <g id="Graphic_304">
+              <title>Operations</title>
+              <rect x="-3368.8796" y="1192.3585" width="671.206" height="77" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              <text transform="translate(-3362.8796 1198.3585)" fill="#515556">
+                <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#515556" x="0" y="14">CreateContext(IFeatureCollection contextFeatures)</tspan>
+                <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#b1171c" x="0" y="37">Task ProcessRequestAsync(TContext context)</tspan>
+                <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#515556" x="0" y="60">void DisposeContext(TContext context, Exception exception);</tspan>
+              </text>
+            </g>
+          </g>
+          <g id="Graphic_302">
+            <title>Template Parameter</title>
+            <rect x="-2775.108" y="1149.5" width="206.52926" height="29.71698" fill="white"/>
+            <path d="M -2775.108 1149.5 L -2568.5787 1149.5 L -2568.5787 1179.217 L -2775.108 1179.217 Z" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8.0,8.0" stroke-width="2"/>
+            <text transform="translate(-2769.108 1154.8585)" fill="#515556">
+              <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#515556" x="67.94863" y="14">TContext</tspan>
+            </text>
+          </g>
+        </g>
+        <g id="Line_312">
+          <line x1="-2968.5097" y1="1277.4298" x2="-2968.6715" y2="1319.5" marker-start="url(#UMLInheritance_Marker)" stroke="#666a6b" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="2"/>
+        </g>
+        <g id="Group_321">
+          <g id="Graphic_323">
+            <title>Class Name</title>
+            <rect x="-3368.8796" y="1320.5" width="800.3009" height="28" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <text transform="translate(-3362.8796 1324.5)" fill="#515556">
+              <tspan font-family="Avenir" font-size="14" font-weight="800" fill="#515556" x="331.11545" y="14">HostingApplication</tspan>
+            </text>
+          </g>
+          <g id="Graphic_322">
+            <title>Operations</title>
+            <rect x="-3368.8796" y="1348.5" width="800.3009" height="32" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <text transform="translate(-3362.8796 1354.5)" fill="#515556">
+              <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#515556" x="0" y="14">HostingApplication.</tspan>
+              <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#b1171c" y="14">Context</tspan>
+              <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#515556" y="14"> CreateContext(IFeatureCollection contextFeatures)</tspan>
+            </text>
+          </g>
+        </g>
+        <g id="Line_327">
+          <line x1="-3191.466" y1="1386.8397" x2="-3191.091" y2="1431.6415" marker-start="url(#StickArrow_Marker)" stroke="#666a6b" stroke-linecap="square" stroke-linejoin="bevel" stroke-dasharray="8.0,8.0" stroke-width="2"/>
+        </g>
+        <g id="Group_335">
+          <title>Class with Attributes</title>
+          <g id="Graphic_337">
+            <title>Attributes</title>
+            <rect x="-3368.8796" y="1460.6415" width="355.828" height="123" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <text transform="translate(-3362.8796 1466.6415)" fill="#515556">
+              <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#515556" x="0" y="14">public HttpContext </tspan>
+              <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#b1171c" y="14">HttpContext</tspan>
+              <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#515556" y="14"> { get; set; }</tspan>
+              <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#515556" x="0" y="37">public IDisposable Scope { get; set; }</tspan>
+              <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#515556" x="0" y="60">public long StartTimestamp { get; set; }</tspan>
+              <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#515556" x="0" y="83">public bool EventLogEnabled { get; set; }</tspan>
+              <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#515556" x="0" y="106">public Activity Activity { get; set; }</tspan>
+            </text>
+          </g>
+          <g id="Graphic_336">
+            <title>Class Name</title>
+            <rect x="-3368.8796" y="1432.6415" width="355.828" height="28" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <text transform="translate(-3362.8796 1436.6415)" fill="#515556">
+              <tspan font-family="Avenir" font-size="14" font-weight="800" fill="#515556" x="145.608" y="14">Context</tspan>
+            </text>
+          </g>
+        </g>
+        <g id="Graphic_342">
+          <text transform="translate(-2958.9455 1289.4406)" fill="#6b6b6b">
+            <tspan font-family="Avenir" font-size="12" font-weight="400" fill="#6b6b6b" x="37658765e-20" y="13">&lt;&lt;</tspan>
+            <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="#6b6b6b" y="13">实现</tspan>
+            <tspan font-family="Avenir" font-size="12" font-weight="400" fill="#6b6b6b" y="13">&gt;&gt;</tspan>
+          </text>
+        </g>
+        <g id="Group_343">
+          <g id="Graphic_346">
+            <title>Attributes</title>
+            <rect x="-2935.6434" y="1460.6415" width="367.0647" height="54" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <text transform="translate(-2929.6434 1466.6415)" fill="#515556">
+              <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#515556" x="0" y="14">public abstract </tspan>
+              <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#b1171c" y="14">HttpRequest</tspan>
+              <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#515556" y="14"> Request { get; }</tspan>
+              <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#515556" x="0" y="37">public abstract </tspan>
+              <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#b1171c" y="37">HttpResponse</tspan>
+              <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#515556" y="37"> Response { get; }</tspan>
+            </text>
+          </g>
+          <g id="Graphic_345">
+            <title>Class Name</title>
+            <rect x="-2935.6434" y="1432.6415" width="367.0647" height="28" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <text transform="translate(-2929.6434 1436.6415)" fill="#515556">
+              <tspan font-family="Avenir" font-size="14" font-weight="800" fill="#515556" x="136.17635" y="14">HttpContext</tspan>
+            </text>
+          </g>
+        </g>
+        <g id="Line_390">
+          <line x1="-2998.2346" y1="1472.1239" x2="-2935.6434" y2="1470.8687" marker-start="url(#StickArrow_Marker)" stroke="#666a6b" stroke-linecap="square" stroke-linejoin="bevel" stroke-dasharray="8.0,8.0" stroke-width="2"/>
+        </g>
+        <g id="Line_398">
+          <line x1="-2752.111" y1="1526.7815" x2="-2752.111" y2="1549.6415" marker-start="url(#UMLInheritance_Marker)" stroke="#666a6b" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="2"/>
+        </g>
+        <g id="Group_395">
+          <g id="Graphic_397">
+            <title>Class Name</title>
+            <rect x="-2935.6434" y="1550.6415" width="367.0647" height="28" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <text transform="translate(-2929.6434 1554.6415)" fill="#515556">
+              <tspan font-family="Avenir" font-size="14" font-weight="800" fill="#515556" x="112.05435" y="14">DefaultHttpContext</tspan>
+            </text>
+          </g>
+        </g>
+        <g id="Graphic_394">
+          <text transform="translate(-2733.9 1522.6415)" fill="#6b6b6b">
+            <tspan font-family="Avenir" font-size="12" font-weight="400" fill="#6b6b6b" x="37658765e-20" y="13">&lt;&lt;</tspan>
+            <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="#6b6b6b" y="13">实现</tspan>
+            <tspan font-family="Avenir" font-size="12" font-weight="400" fill="#6b6b6b" y="13">&gt;&gt;</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Group_628">
+        <g id="Graphic_590">
+          <rect x="-4882" y="22.76923" width="1247.25" height="1602.2308" fill="white"/>
+          <path d="M -4882 22.76923 L -3634.75 22.76923 L -3634.75 1625 L -4882 1625 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="16.0,8.0,2.0,8.0" stroke-width="2"/>
+        </g>
+        <g id="Graphic_403">
+          <rect x="-4851.375" y="465.2853" width="741" height="690" id="path"/>
+          <clipPath id="clip_path">
+            <use xl:href="#path"/>
+          </clipPath>
+          <g clip-path="url(#clip_path)">
+            <image xl:href="https://i.loli.net/2020/02/26/DbFd1QNa6yzSHOU.png" width="741" height="690" transform="translate(-4851.375 465.2853)"/>
+          </g>
+        </g>
+        <g id="Graphic_405">
+          <rect x="-4851.375" y="1184.2853" width="896" height="410" id="path_2"/>
+          <clipPath id="clip_path_2">
+            <use xl:href="#path_2"/>
+          </clipPath>
+          <g clip-path="url(#clip_path_2)">
+            <image xl:href="https://i.loli.net/2020/02/26/Iz4JsgOQXFt7qRB.png" width="896" height="410" transform="translate(-4851.375 1184.2853)"/>
+          </g>
+        </g>
+        <g id="Group_408">
+          <g id="Graphic_404">
+            <rect x="-4851.375" y="67.76923" width="1186" height="367" id="path_3"/>
+            <clipPath id="clip_path_3">
+              <use xl:href="#path_3"/>
+            </clipPath>
+            <g clip-path="url(#clip_path_3)">
+              <image xl:href="https://i.loli.net/2020/02/26/rYqnARFpWtC57Uo.png" width="1186" height="367" transform="translate(-4851.375 67.76923)"/>
+            </g>
+          </g>
+          <g id="Graphic_407">
+            <rect x="-4829.875" y="173.28533" width="497" height="21" stroke="#ff3f00" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+          </g>
+        </g>
+      </g>
+      <g id="Group_593">
+        <g id="Graphic_592">
+          <rect x="-2160" y="-690" width="1247.25" height="2315" fill="white"/>
+          <path d="M -2160 -690 L -912.75 -690 L -912.75 1625 L -2160 1625 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="16.0,8.0,2.0,8.0" stroke-width="2"/>
+        </g>
+        <g id="Graphic_280">
+          <rect x="-2115.4644" y="-646.6253" width="640" height="246.63072" id="path_4"/>
+          <clipPath id="clip_path_4">
+            <use xl:href="#path_4"/>
+          </clipPath>
+          <g clip-path="url(#clip_path_4)">
+            <image xl:href="https://i.loli.net/2020/02/26/MsVeiny3cq7RrxN.jpg" width="640" height="244.5" transform="matrix(1 0 0 1.0087146 -2115.4644 -646.6253)"/>
+          </g>
+        </g>
+        <g id="Graphic_281">
+          <rect x="-2115.4644" y="-373.2636" width="640" height="470.061" id="path_5"/>
+          <clipPath id="clip_path_5">
+            <use xl:href="#path_5"/>
+          </clipPath>
+          <g clip-path="url(#clip_path_5)">
+            <image xl:href="https://i.loli.net/2020/02/26/Ai2tR1KWL3kxv7O.jpg" width="640" height="466" transform="matrix(1 0 0 1.0087146 -2115.4644 -373.2636)"/>
+          </g>
+        </g>
+        <g id="Graphic_282">
+          <rect x="-2115.4644" y="128.06754" width="640" height="323.29303" id="path_6"/>
+          <clipPath id="clip_path_6">
+            <use xl:href="#path_6"/>
+          </clipPath>
+          <g clip-path="url(#clip_path_6)">
+            <image xl:href="https://i.loli.net/2020/02/26/9wctYGLCUfOIEz4.jpg" width="640" height="320.5" transform="matrix(1 0 0 1.0087146 -2115.4644 128.06754)"/>
+          </g>
+        </g>
+        <g id="Graphic_283">
+          <rect x="-2115.4644" y="482.6307" width="1115.3216" height="450.8954" id="path_7"/>
+          <clipPath id="clip_path_7">
+            <use xl:href="#path_7"/>
+          </clipPath>
+          <g clip-path="url(#clip_path_7)">
+            <image xl:href="https://i.loli.net/2020/02/26/HzByqD84QiRretN.jpg" width="640" height="256.5" transform="matrix(1.74269 0 0 1.757877 -2115.4644 482.6307)"/>
+          </g>
+        </g>
+        <g id="Graphic_285">
+          <rect x="-2115.4644" y="957.2309" width="1175" height="636.4989" id="path_8"/>
+          <clipPath id="clip_path_8">
+            <use xl:href="#path_8"/>
+          </clipPath>
+          <g clip-path="url(#clip_path_8)">
+            <image xl:href="https://i.loli.net/2020/02/26/d7Xay39HGsw48JN.png" width="1175" height="631" transform="matrix(1 0 0 1.0087146 -2115.4644 957.2309)"/>
+          </g>
+        </g>
+      </g>
+      <g id="Graphic_602">
+        <text transform="translate(-4495.94 -685)" fill="#b1001c">
+          <tspan font-family="PingFang SC" font-size="40" font-weight="600" fill="#b1001c" x="45474735e-20" y="42">Asp.Net Core 管道模型图解(源码解析)</tspan>
+        </text>
+      </g>
+      <g id="Graphic_603">
+        <text transform="translate(-4488.487 -557)" fill="#b1001c">
+          <tspan font-family="PingFang SC" font-size="21" font-weight="600" fill="#b1001c" x="0" y="22">- 基于Asp.Net Core 2.2</tspan>
+        </text>
+      </g>
+      <g id="Graphic_618">
+        <text transform="translate(-3973.65 -557)" fill="#003776">
+          <tspan font-family="PingFang SC" font-size="21" font-weight="600" fill="#003776" x="0" y="22">by Colin Chang</tspan>
+        </text>
+      </g>
+      <g id="Group_627">
+        <g id="Group_619">
+          <g id="Graphic_604">
+            <text transform="translate(-4758.8325 -334.5)" fill="#003776">
+              <tspan font-family="PingFang SC" font-size="21" font-weight="600" fill="#003776" x="0" y="22">http://t.cn/A6vqHxSQ</tspan>
+            </text>
+          </g>
+          <g id="Graphic_610">
+            <text transform="translate(-4758.8325 -287.4634)" fill="#003776">
+              <tspan font-family="PingFang SC" font-size="21" font-weight="600" fill="#003776" x="0" y="22">http://t.cn/A6vq8XSz</tspan>
+            </text>
+          </g>
+          <g id="Graphic_611">
+            <text transform="translate(-4758.066 -242.5)" fill="#003776">
+              <tspan font-family="PingFang SC" font-size="21" font-weight="600" fill="#003776" x="0" y="22">http://t.cn/A6vqQYjm</tspan>
+            </text>
+          </g>
+          <g id="Graphic_612">
+            <text transform="translate(-4758.066 -196.07317)" fill="#003776">
+              <tspan font-family="PingFang SC" font-size="21" font-weight="600" fill="#003776" x="0" y="22">http://t.cn/A6vqQQ9G</tspan>
+            </text>
+          </g>
+          <g id="Graphic_613">
+            <text transform="translate(-4758.066 -147.58287)" fill="#003776">
+              <tspan font-family="PingFang SC" font-size="21" font-weight="600" fill="#003776" x="0" y="22">http://t.cn/A6vqQELW</tspan>
+            </text>
+          </g>
+          <g id="Graphic_614">
+            <text transform="translate(-4758.8325 -103.21951)" fill="#003776">
+              <tspan font-family="PingFang SC" font-size="21" font-weight="600" fill="#003776" x="1563194e-19" y="22">https://t.me/colinchang</tspan>
+            </text>
+          </g>
+        </g>
+        <g id="Graphic_620">
+          <text transform="translate(-4852.22 -409.5)" fill="#003776">
+            <tspan font-family="PingFang SC" font-size="28" font-weight="600" fill="#003776" x="23.36" y="30">订阅我们</tspan>
+          </text>
+        </g>
+        <g id="Graphic_621">
+          <text transform="translate(-4255.979 -409.5)" fill="#003776">
+            <tspan font-family="PingFang SC" font-size="28" font-weight="600" fill="#003776" x="23.605502" y="30">Subscribe Us</tspan>
+          </text>
+        </g>
+        <g id="Graphic_622">
+          <text transform="translate(-4211 -342)" fill="#003776">
+            <tspan font-family="PingFang SC" font-size="21" font-weight="600" fill="#003776" x="0" y="22">http://bit.ly/colinchang</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Group_629">
+        <g id="Graphic_431">
+          <path d="M -3517.125 22.76923 L -2287.875 22.76923 C -2282.9044 22.76923 -2278.875 26.798668 -2278.875 31.76923 L -2278.875 1055.2692 C -2278.875 1060.2398 -2282.9044 1064.2692 -2287.875 1064.2692 L -3517.125 1064.2692 C -3522.0956 1064.2692 -3526.125 1060.2398 -3526.125 1055.2692 L -3526.125 31.76923 C -3526.125 26.798668 -3522.0956 22.76923 -3517.125 22.76923 Z" fill="white"/>
+          <path d="M -3517.125 22.76923 L -2287.875 22.76923 C -2282.9044 22.76923 -2278.875 26.798668 -2278.875 31.76923 L -2278.875 1055.2692 C -2278.875 1060.2398 -2282.9044 1064.2692 -2287.875 1064.2692 L -3517.125 1064.2692 C -3522.0956 1064.2692 -3526.125 1060.2398 -3526.125 1055.2692 L -3526.125 31.76923 C -3526.125 26.798668 -3522.0956 22.76923 -3517.125 22.76923 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="16.0,8.0,2.0,8.0" stroke-width="2"/>
+        </g>
+        <g id="Group_586">
+          <g id="Graphic_433">
+            <title>Use Case</title>
+            <circle cx="-3221.125" cy="156.14336" r="76.000121440544" fill="white"/>
+            <circle cx="-3221.125" cy="156.14336" r="76.000121440544" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <text transform="translate(-3275.925 136.64336)" fill="#515556">
+              <tspan font-family="Avenir" font-size="14" font-weight="400" fill="#515556" x="34.822" y="14">Server</tspan>
+              <tspan font-family="PingFang SC" font-size="14" font-weight="400" fill="#515556" x="12.799999" y="34">（持续监听）</tspan>
+            </text>
+          </g>
+          <g id="Graphic_441">
+            <rect x="-3250.375" y="197.73687" width="60" height="20.696562" fill="white"/>
+            <text transform="translate(-3242.375 200.08515)" fill="#515556">
+              <tspan font-family="PingFang SC" font-size="11" font-weight="400" fill="#515556" x="0" y="12">捕获请求</tspan>
+            </text>
+          </g>
+          <g id="Graphic_446">
+            <text transform="translate(-3193.625 263.26413)" fill="#515556">
+              <tspan font-family="PingFang SC" font-size="11" font-weight="400" fill="#515556" x="0" y="12">调用</tspan>
+            </text>
+          </g>
+          <g id="Line_458">
+            <title>Transition</title>
+            <line x1="-3219.4483" y1="308.27842" x2="-3221.125" y2="232.1434" marker-start="url(#StickArrow_Marker)" stroke="#666a6b" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="2"/>
+          </g>
+          <g id="Group_463">
+            <title>Class with Qualifier</title>
+            <g id="Graphic_465" filter="url(#Shadow)">
+              <title>Class</title>
+              <rect x="-3309.125" y="324.09483" width="180.05" height="55.00928" fill="white"/>
+              <rect x="-3309.125" y="324.09483" width="180.05" height="55.00928" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              <text transform="translate(-3303.125 343.59947)" fill="#aeaeae">
+                <tspan font-family="Avenir" font-size="11" font-weight="800" fill="#aeaeae" x="24.856002" y="12">ProcessRequestAsync</tspan>
+                <tspan font-family="PingFang SC" font-size="11" font-weight="600" fill="#aeaeae" y="12">()</tspan>
+              </text>
+            </g>
+            <g id="Graphic_464" filter="url(#Shadow)">
+              <title>Qualifier</title>
+              <rect x="-3129.075" y="340.98364" width="96.95" height="21.231653" fill="white"/>
+              <rect x="-3129.075" y="340.98364" width="96.95" height="21.231653" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              <text transform="translate(-3123.075 344.09947)" fill="#aeaeae">
+                <tspan font-family="Avenir" font-size="11" font-weight="800" fill="#aeaeae" x="24.341498" y="11">IServer</tspan>
+              </text>
+            </g>
+          </g>
+          <g id="Line_489">
+            <title>Lifeline</title>
+            <line x1="-3219.1007" y1="380.1041" x2="-3219.2406" y2="583.89114" stroke="#666a6b" stroke-linecap="square" stroke-linejoin="bevel" stroke-dasharray="8.0,8.0" stroke-width="2"/>
+          </g>
+          <g id="Graphic_488">
+            <title>Activation</title>
+            <rect x="-3232.1665" y="435.35676" width="26" height="81.26162" fill="white"/>
+            <rect x="-3232.1665" y="435.35676" width="26" height="81.26162" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <text transform="translate(-3226.1665 459.98757)" fill="#aeaeae">
+              <tspan font-family="PingFang SC" font-size="11" font-weight="600" fill="#aeaeae" x="1.5" y="12">实</tspan>
+              <tspan font-family="PingFang SC" font-size="11" font-weight="600" fill="#aeaeae" x="1.5" y="28">现</tspan>
+            </text>
+          </g>
+          <g id="Graphic_485" filter="url(#Shadow_2)">
+            <path d="M -3400.3565 583.89114 L -3038.3565 583.89114 C -3033.386 583.89114 -3029.3565 587.9206 -3029.3565 592.89114 L -3029.3565 912.5719 C -3029.3565 917.5424 -3033.386 921.5719 -3038.3565 921.5719 L -3400.3565 921.5719 C -3405.327 921.5719 -3409.3565 917.5424 -3409.3565 912.5719 L -3409.3565 592.89114 C -3409.3565 587.9206 -3405.327 583.89114 -3400.3565 583.89114 Z" fill="white"/>
+            <path d="M -3400.3565 583.89114 L -3038.3565 583.89114 C -3033.386 583.89114 -3029.3565 587.9206 -3029.3565 592.89114 L -3029.3565 912.5719 C -3029.3565 917.5424 -3033.386 921.5719 -3038.3565 921.5719 L -3400.3565 921.5719 C -3405.327 921.5719 -3409.3565 917.5424 -3409.3565 912.5719 L -3409.3565 592.89114 C -3409.3565 587.9206 -3405.327 583.89114 -3400.3565 583.89114 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          </g>
+          <g id="Line_502">
+            <title>Transition</title>
+            <line x1="-3288.1315" y1="708.1106" x2="-3288.1315" y2="642.23366" marker-start="url(#StickArrow_Marker)" stroke="#666a6b" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="2"/>
+          </g>
+          <g id="Group_514">
+            <title>Class with Qualifier</title>
+            <g id="Graphic_516" filter="url(#Shadow)">
+              <title>Class</title>
+              <rect x="-3368.1315" y="600.84054" width="160" height="41.393123" fill="white"/>
+              <rect x="-3368.1315" y="600.84054" width="160" height="41.393123" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              <text transform="translate(-3362.1315 614.0371)" fill="#515556">
+                <tspan font-family="Avenir" font-size="11" font-weight="800" fill="#515556" x="32.86" y="11">CreateContext()</tspan>
+              </text>
+            </g>
+            <g id="Graphic_515" filter="url(#Shadow)">
+              <title>Qualifier</title>
+              <rect x="-3208.1315" y="609.5549" width="137.55" height="23.96444" fill="white"/>
+              <rect x="-3208.1315" y="609.5549" width="137.55" height="23.96444" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              <text transform="translate(-3202.1315 614.0371)" fill="#515556">
+                <tspan font-family="Avenir" font-size="11" font-weight="400" fill="#515556" x="15.183502" y="11">HostingApplication</tspan>
+              </text>
+            </g>
+          </g>
+          <g id="Group_520">
+            <title>Class with Qualifier</title>
+            <g id="Graphic_522" filter="url(#Shadow)">
+              <title>Class</title>
+              <rect x="-3368.1315" y="723.9306" width="160" height="41.393123" fill="white"/>
+              <rect x="-3368.1315" y="723.9306" width="160" height="41.393123" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              <text transform="translate(-3362.1315 737.1272)" fill="#515556">
+                <tspan font-family="Avenir" font-size="11" font-weight="800" fill="#515556" x="15.238" y="11">ProcessRequestAsync()</tspan>
+              </text>
+            </g>
+            <g id="Graphic_521" filter="url(#Shadow)">
+              <title>Qualifier</title>
+              <rect x="-3208.1315" y="732.64496" width="137.55" height="23.96444" fill="white"/>
+              <rect x="-3208.1315" y="732.64496" width="137.55" height="23.96444" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              <text transform="translate(-3202.1315 737.1272)" fill="#515556">
+                <tspan font-family="Avenir" font-size="11" font-weight="400" fill="#515556" x="15.183502" y="11">HostingApplication</tspan>
+              </text>
+            </g>
+          </g>
+          <g id="Group_523">
+            <title>Class with Qualifier</title>
+            <g id="Graphic_525" filter="url(#Shadow)">
+              <title>Class</title>
+              <rect x="-3368.1315" y="841.5742" width="160" height="61.00039" fill="white"/>
+              <rect x="-3368.1315" y="841.5742" width="160" height="61.00039" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              <text transform="translate(-3362.1315 857.0744)" fill="#515556">
+                <tspan font-family="Avenir" font-size="11" font-weight="800" fill="#515556" x="25.8365" y="11">OnResponseStart()</tspan>
+                <tspan font-family="Avenir" font-size="11" font-weight="800" fill="#515556" x="34.2845" y="26">OnCompleted()</tspan>
+              </text>
+            </g>
+            <g id="Graphic_524" filter="url(#Shadow)">
+              <title>Qualifier</title>
+              <rect x="-3208.1315" y="860.0922" width="137.55" height="23.96444" fill="white"/>
+              <rect x="-3208.1315" y="860.0922" width="137.55" height="23.96444" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              <text transform="translate(-3202.1315 864.5744)" fill="#515556">
+                <tspan font-family="Avenir" font-size="11" font-weight="400" fill="#515556" x="24.038502" y="11">FeatureContext</tspan>
+              </text>
+            </g>
+          </g>
+          <g id="Group_526">
+            <title>Class with Qualifier</title>
+            <g id="Graphic_528" filter="url(#Shadow)">
+              <title>Class</title>
+              <rect x="-3367.9415" y="994.5545" width="160" height="41.393123" fill="white"/>
+              <rect x="-3367.9415" y="994.5545" width="160" height="41.393123" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              <text transform="translate(-3361.9415 1007.751)" fill="#515556">
+                <tspan font-family="Avenir" font-size="11" font-weight="800" fill="#515556" x="29.6095" y="11">DisposeContext()</tspan>
+              </text>
+            </g>
+            <g id="Graphic_527" filter="url(#Shadow)">
+              <title>Qualifier</title>
+              <rect x="-3207.9415" y="1003.2688" width="137.55" height="23.96444" fill="white"/>
+              <rect x="-3207.9415" y="1003.2688" width="137.55" height="23.96444" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              <text transform="translate(-3201.9415 1007.751)" fill="#515556">
+                <tspan font-family="Avenir" font-size="11" font-weight="400" fill="#515556" x="15.183502" y="11">HostingApplication</tspan>
+              </text>
+            </g>
+          </g>
+          <g id="Line_529">
+            <title>Transition</title>
+            <line x1="-3287.8705" y1="978.7346" x2="-3287.6435" y2="928.2152" marker-start="url(#StickArrow_Marker)" stroke="#666a6b" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="2"/>
+          </g>
+          <g id="Line_530">
+            <title>Transition</title>
+            <path d="M -3055.7616 872.1287 L -2642.5818 873.643 L -2643.625 815.9105" marker-start="url(#StickArrow_Marker)" stroke="#666a6b" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="2"/>
+          </g>
+          <g id="Group_580">
+            <g id="Graphic_558" filter="url(#Shadow)">
+              <title>Node</title>
+              <path d="M -2967.125 815.9105 L -2967.125 607.0931 L -2902.425 583.89114 L -2320.125 583.89114 L -2320.125 792.7086 L -2384.825 815.9105 Z" fill="white"/>
+              <path d="M -2967.125 815.9105 L -2967.125 607.0931 L -2902.425 583.89114 L -2320.125 583.89114 L -2320.125 792.7086 L -2384.825 815.9105 L -2967.125 815.9105 M -2967.125 607.0931 L -2384.825 607.0931 L -2320.125 583.89114 M -2384.825 607.0931 L -2384.825 815.9105" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            </g>
+            <g id="Group_567">
+              <title>Component</title>
+              <g id="Graphic_570" filter="url(#Shadow)">
+                <rect x="-2937.125" y="652.3559" width="130" height="118.67219" fill="white"/>
+                <rect x="-2937.125" y="652.3559" width="130" height="118.67219" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                <text transform="translate(-2931.125 704.192)" fill="#515556">
+                  <tspan font-family="Avenir" font-size="11" font-weight="400" fill="#515556" x="23.954" y="11">Middleware_1</tspan>
+                </text>
+              </g>
+              <g id="Graphic_569">
+                <rect x="-2957.125" y="675.17744" width="35" height="22.821575" fill="white"/>
+                <rect x="-2957.125" y="675.17744" width="35" height="22.821575" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              </g>
+              <g id="Graphic_568">
+                <rect x="-2957.125" y="720.8206" width="35" height="22.821575" fill="white"/>
+                <rect x="-2957.125" y="720.8206" width="35" height="22.821575" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              </g>
+            </g>
+            <g id="Group_571">
+              <title>Component</title>
+              <g id="Graphic_574" filter="url(#Shadow)">
+                <rect x="-2761.125" y="652.3559" width="130" height="118.67219" fill="white"/>
+                <rect x="-2761.125" y="652.3559" width="130" height="118.67219" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                <text transform="translate(-2755.125 704.192)" fill="#515556">
+                  <tspan font-family="Avenir" font-size="11" font-weight="400" fill="#515556" x="23.954" y="11">Middleware_2</tspan>
+                </text>
+              </g>
+              <g id="Graphic_573">
+                <rect x="-2781.125" y="675.17744" width="35" height="22.821575" fill="white"/>
+                <rect x="-2781.125" y="675.17744" width="35" height="22.821575" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              </g>
+              <g id="Graphic_572">
+                <rect x="-2781.125" y="720.8206" width="35" height="22.821575" fill="white"/>
+                <rect x="-2781.125" y="720.8206" width="35" height="22.821575" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              </g>
+            </g>
+            <g id="Group_575">
+              <title>Component</title>
+              <g id="Graphic_578" filter="url(#Shadow)">
+                <rect x="-2534.125" y="652.3559" width="130" height="118.67219" fill="white"/>
+                <rect x="-2534.125" y="652.3559" width="130" height="118.67219" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                <text transform="translate(-2528.125 704.192)" fill="#515556">
+                  <tspan font-family="Avenir" font-size="11" font-weight="400" fill="#515556" x="23.954" y="11">Middleware_n</tspan>
+                </text>
+              </g>
+              <g id="Graphic_577">
+                <rect x="-2554.125" y="675.17744" width="35" height="22.821575" fill="white"/>
+                <rect x="-2554.125" y="675.17744" width="35" height="22.821575" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              </g>
+              <g id="Graphic_576">
+                <rect x="-2554.125" y="720.8206" width="35" height="22.821575" fill="white"/>
+                <rect x="-2554.125" y="720.8206" width="35" height="22.821575" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              </g>
+            </g>
+            <g id="Graphic_579">
+              <text transform="translate(-2612.183 704.192)" fill="#515556">
+                <tspan font-family="Avenir" font-size="11" font-weight="400" fill="#515556" x="9023893e-19" y="11">………..</tspan>
+              </text>
+            </g>
+          </g>
+          <g id="Line_581">
+            <title>Transition</title>
+            <line x1="-2981.9433" y1="745.9711" x2="-3069.5815" y2="744.6423" marker-start="url(#StickArrow_Marker)" stroke="#666a6b" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="2"/>
+          </g>
+          <g id="Line_583">
+            <title>Transition</title>
+            <path d="M -3311.945 157.31349 L -3487.4177 157.31349 L -3481.0298 873.7986 L -3369.1315 872.0897" marker-start="url(#StickArrow_Marker)" stroke="#666a6b" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="2"/>
+          </g>
+          <g id="Graphic_584">
+            <text transform="translate(-3469.125 434.1243)" fill="#515556">
+              <tspan font-family="PingFang SC" font-size="11" font-weight="400" fill="#515556" x="0" y="12">响应</tspan>
+            </text>
+          </g>
+        </g>
+        <g id="Graphic_601">
+          <text transform="translate(-3487.058 46.143365)" fill="#b1001c">
+            <tspan font-family="PingFang SC" font-size="18" font-weight="600" fill="#b1001c" x="8952838e-19" y="19">Http请求处理过程</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Graphic_633">
+        <text transform="translate(-2831 69)" fill="black">
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="20.2">Server启动时会创建全局唯一的HostingApplicaiton对象。</tspan>
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="70.6">创建HostingApplicaiton之前会通过BuildApplication方法注册所有中间件</tspan>
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="95.8">并拿到其RequestDelegate类型的代理对象传入HostingApplication对象</tspan>
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="121">中。</tspan>
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="171.4">Http请求首先到达Server。Server监听到请求之后会调用自身PR方法处理</tspan>
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="196.6">请求。</tspan>
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="247">Server的PR方法会为每个请求创建一个独立的上下文(根据原始请求包装</tspan>
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="272.2">后的上下文，包含HttpContext)。然后调用的HostingApplicaiton的PR方</tspan>
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="297.4">法真正处理Web请求。</tspan>
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="347.8">HostingApplicaiton的PR方法则会通过实例化之初构建的中间件代理对象</tspan>
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="373">执行各中间件逻辑，同时将HttpContext作为参数传入。</tspan>
+          <tspan font-family="PingFang SC" font-size="15" font-weight="400" fill="black" x="0" y="423.4">请求处理完毕之后Server负责返回响应内容，然后释放请求上下文。</tspan>
+        </text>
+      </g>
+      <g id="Graphic_635">
+        <rect x="-3033.3527" y="-452.5" width="252.20532" height="110" id="path_9"/>
+        <clipPath id="clip_path_9">
+          <use xl:href="#path_9"/>
+        </clipPath>
+        <g clip-path="url(#clip_path_9)">
+          <image xl:href="https://i.loli.net/2020/02/26/C7KYeB38wc4Gifs.png" width="603" height="263" transform="translate(-3033.3527 -452.5) scale(.41825095)"/>
+        </g>
+      </g>
+      <g id="Graphic_634">
+        <rect x="-4853.375" y="-687" width="300" height="166" id="path_10"/>
+        <clipPath id="clip_path_10">
+          <use xl:href="#path_10"/>
+        </clipPath>
+        <g clip-path="url(#clip_path_10)">
+          <image xl:href="https://i.loli.net/2020/02/26/MKkrZET2qvhXBgd.png" width="300" height="166" transform="translate(-4853.375 -687)"/>
+        </g>
+      </g>
+      <g id="Group_636">
+        <g id="Graphic_639">
+          <path d="M -2971.4417 -460.75 L -2880.0917 -460.75 C -2869.2863 -460.75 -2860.5167 -431.518 -2860.5167 -395.5 C -2860.5167 -359.482 -2869.2863 -330.25 -2880.0917 -330.25 L -2971.4417 -330.25 C -2982.247 -330.25 -2991.0167 -359.482 -2991.0167 -395.5 C -2991.0167 -431.518 -2982.247 -460.75 -2971.4417 -460.75 Z" fill="white" fill-opacity="0"/>
+          <path d="M -2971.4417 -460.75 L -2880.0917 -460.75 C -2869.2863 -460.75 -2860.5167 -431.518 -2860.5167 -395.5 C -2860.5167 -359.482 -2869.2863 -330.25 -2880.0917 -330.25 L -2971.4417 -330.25 C -2982.247 -330.25 -2991.0167 -359.482 -2991.0167 -395.5 C -2991.0167 -431.518 -2982.247 -460.75 -2971.4417 -460.75 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Graphic_638">
+          <text transform="translate(-2821.7187 -486.75)" fill="#b1001c">
+            <tspan font-family="Avenir" font-size="16" font-weight="800" fill="#b1001c" x="0" y="16">Pipeline</tspan>
+          </text>
+        </g>
+        <g id="Graphic_637">
+          <text transform="translate(-2974.217 -353)" fill="black">
+            <tspan font-family="Verdana" font-size="13" font-weight="400" fill="black" x="0" y="13">HttpApplication</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Graphic_642">
+        <rect x="-4829" y="-103.71951" width="30" height="30" id="path_11"/>
+        <clipPath id="clip_path_11">
+          <use xl:href="#path_11"/>
+        </clipPath>
+        <g clip-path="url(#clip_path_11)">
+          <image xl:href="https://i.loli.net/2020/02/25/fmSnov4KZs9zpac.png" width="95" height="95" transform="translate(-4829 -103.71951) scale(.31578947)"/>
+        </g>
+      </g>
+      <g id="Graphic_643">
+        <rect x="-4829" y="-328" width="30.60606" height="20" id="path_12"/>
+        <clipPath id="clip_path_12">
+          <use xl:href="#path_12"/>
+        </clipPath>
+        <g clip-path="url(#clip_path_12)">
+          <image xl:href="https://i.loli.net/2020/02/25/aQZ2ScPwUrLo6jF.png" width="101" height="66" transform="translate(-4835 -332) scale(.4330303)"/>
+        </g>
+      </g>
+      <g id="Graphic_644">
+        <rect x="-4829" y="-286.5" width="30" height="27.07317" id="path_13"/>
+        <clipPath id="clip_path_13">
+          <use xl:href="#path_13"/>
+        </clipPath>
+        <g clip-path="url(#clip_path_13)">
+          <image xl:href="https://i.loli.net/2020/02/25/InTkJBjE53LQpby.png" width="82" height="74" transform="translate(-4829 -286.5) scale(.36585366)"/>
+        </g>
+      </g>
+      <g id="Graphic_645">
+        <rect x="-4829" y="-243" width="30" height="30" id="path_14"/>
+        <clipPath id="clip_path_14">
+          <use xl:href="#path_14"/>
+        </clipPath>
+        <g clip-path="url(#clip_path_14)">
+          <image xl:href="https://i.loli.net/2020/02/25/5fPlozaEuAbrIXj.png" width="79" height="79" transform="translate(-4829 -243) scale(.37974684)"/>
+        </g>
+      </g>
+      <g id="Graphic_646">
+        <rect x="-4828.394" y="-196.57317" width="30" height="30" id="path_15"/>
+        <clipPath id="clip_path_15">
+          <use xl:href="#path_15"/>
+        </clipPath>
+        <g clip-path="url(#clip_path_15)">
+          <image xl:href="https://i.loli.net/2020/02/25/Qn36PopYZrFvOGj.png" width="180" height="180" transform="translate(-4828.394 -196.57317) scale(.16666667)"/>
+        </g>
+      </g>
+      <g id="Graphic_647">
+        <rect x="-4828.394" y="-148" width="30" height="29.834254" id="path_16"/>
+        <clipPath id="clip_path_16">
+          <use xl:href="#path_16"/>
+        </clipPath>
+        <g clip-path="url(#clip_path_16)">
+          <image xl:href="https://i.loli.net/2020/02/25/oSH81jaRMOAcEbf.png" width="181" height="180" transform="translate(-4828.394 -148) scale(.16574586)"/>
+        </g>
+      </g>
+      <g id="Graphic_648">
+        <text transform="translate(-4208 -293.42683)" fill="#003776">
+          <tspan font-family="PingFang SC" font-size="21" font-weight="600" fill="#003776" x="0" y="22">http://bit.ly/colin-bili</tspan>
+        </text>
+      </g>
+      <g id="Graphic_649">
+        <text transform="translate(-4208 -247)" fill="#003776">
+          <tspan font-family="PingFang SC" font-size="21" font-weight="600" fill="#003776" x="5400125e-19" y="22">http://bit.ly/colin-ins</tspan>
+        </text>
+      </g>
+      <g id="Graphic_650">
+        <text transform="translate(-4208 -200.57317)" fill="#003776">
+          <tspan font-family="PingFang SC" font-size="21" font-weight="600" fill="#003776" x="0" y="22">http://bit.ly/colin-fb</tspan>
+        </text>
+      </g>
+      <g id="Graphic_651">
+        <text transform="translate(-4208 -152.16575)" fill="#003776">
+          <tspan font-family="PingFang SC" font-size="21" font-weight="600" fill="#003776" x="55422333e-20" y="22">http://bit.ly/colin-git</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

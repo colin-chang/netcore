@@ -1,0 +1,1371 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3.4 依赖注入（DI） · .Net Core-软件开发</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../website.css">
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="di-register.html" />
+    
+    
+    <link rel="prev" href="di-designmode.html" />
+    
+
+    
+        <link rel="shortcut icon" href="https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png" type="image/x-icon">
+    
+    
+        <link rel="bookmark" href="https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png" type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" sizes="152x152" href="https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png">
+    
+    
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png">
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png">
+        
+    
+    
+        
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png">
+        
+        <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"colin-chang","repo":"netcore","type":"star","size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" >
+            
+                <a target="_blank" href="https://ccstudio.org">
+            
+                    
+                    CC Studio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part I - .NET Core 基础</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. 安装部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="install-install.html">
+            
+                <a href="install-install.html">
+            
+                    
+                    1.1 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="install-deploy.html">
+            
+                <a href="install-deploy.html">
+            
+                    
+                    1.2 部署项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="config.html">
+            
+                <a href="config.html">
+            
+                    
+                    2. 配置管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="index.md">
+            
+                <span>
+            
+                    
+                    3. 依赖注入
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="di-intro.html">
+            
+                <a href="di-intro.html">
+            
+                    
+                    3.1 依赖注入引入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="di-ioc.html">
+            
+                <a href="di-ioc.html">
+            
+                    
+                    3.2 控制反转（IoC）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="di-designmode.html">
+            
+                <a href="di-designmode.html">
+            
+                    
+                    3.3 基于IoC的设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.3.4" data-path="di-di.html">
+            
+                <a href="di-di.html">
+            
+                    
+                    3.4 依赖注入（DI）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="di-register.html">
+            
+                <a href="di-register.html">
+            
+                    
+                    3.5 服务注册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="di-consume.html">
+            
+                <a href="di-consume.html">
+            
+                    
+                    3.6 服务消费
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="di-lifetime.html">
+            
+                <a href="di-lifetime.html">
+            
+                    
+                    3.7 服务生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="di-aspnetcore.html">
+            
+                <a href="di-aspnetcore.html">
+            
+                    
+                    3.8 Asp.Net Core DI 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="di-src.html">
+            
+                <a href="di-src.html">
+            
+                    
+                    3.9 Asp.Net Core DI 源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="index.md">
+            
+                <span>
+            
+                    
+                    4. Asp.Net Core管道
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="pipeline-diagram.html">
+            
+                <a href="pipeline-diagram.html">
+            
+                    
+                    4.1 管道模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="pipeline-middlewire.html">
+            
+                <a href="pipeline-middlewire.html">
+            
+                    
+                    4.2 中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="pipeline-lifetime.html">
+            
+                <a href="pipeline-lifetime.html">
+            
+                    
+                    4.3 生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="pipeline-environment.html">
+            
+                <a href="pipeline-environment.html">
+            
+                    
+                    4.4 环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="supplement.html">
+            
+                <a href="supplement.html">
+            
+                    
+                    5. Session和Cache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="index.md">
+            
+                <span>
+            
+                    
+                    6. 认证与授权
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="auth-authentication.html">
+            
+                <a href="auth-authentication.html">
+            
+                    
+                    6.1 Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="auth-cookie.html">
+            
+                <a href="auth-cookie.html">
+            
+                    
+                    6.2 Cookie Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="auth-jwt.html">
+            
+                <a href="auth-jwt.html">
+            
+                    
+                    6.3 JwtBear Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="auth-auth2.html">
+            
+                <a href="auth-auth2.html">
+            
+                    
+                    6.4 OAuth2 & OpenID Connect Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="authorization.html">
+            
+                <a href="authorization.html">
+            
+                    
+                    6.5 Authorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="index.md">
+            
+                <span>
+            
+                    
+                    7. WebAPI
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="webapi-restful.html">
+            
+                <a href="webapi-restful.html">
+            
+                    
+                    7.1 WebAPI和Restful
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="webapi-basic.html">
+            
+                <a href="webapi-basic.html">
+            
+                    
+                    7.2 WebAPI基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="webapi-multiversion.html">
+            
+                <a href="webapi-multiversion.html">
+            
+                    
+                    7.3 多版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="webapi-security.html">
+            
+                <a href="webapi-security.html">
+            
+                    
+                    7.4 安全控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="webapi-openapi.html">
+            
+                <a href="webapi-openapi.html">
+            
+                    
+                    7.5 OpenAPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="log.html">
+            
+                <a href="log.html">
+            
+                    
+                    8. 日志管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part Ⅱ - 数据访问</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="dapper.html">
+            
+                <a href="dapper.html">
+            
+                    
+                    1. Dapper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2. EF Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part Ⅱ - 微服务</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="docker-intro.html">
+            
+                <a href="docker-intro.html">
+            
+                    
+                    1.1 Docker简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="docker-install.html">
+            
+                <a href="docker-install.html">
+            
+                    
+                    1.2 安装配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="docker-cmd.html">
+            
+                <a href="docker-cmd.html">
+            
+                    
+                    1.3 常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="docker-dockerfile.html">
+            
+                <a href="docker-dockerfile.html">
+            
+                    
+                    1.4 制作镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2. 微服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="microservice-intro.html">
+            
+                <a href="microservice-intro.html">
+            
+                    
+                    2.1 微服务架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="microservice-consul.html">
+            
+                <a href="microservice-consul.html">
+            
+                    
+                    2.2 服务治理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="microservice-polly.html">
+            
+                <a href="microservice-polly.html">
+            
+                    
+                    2.3 熔断降级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" data-path="microservice-ocelot.html">
+            
+                <a href="microservice-ocelot.html">
+            
+                    
+                    2.4 网关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2.5 微服务授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.6" data-path="rpc.html">
+            
+                <a href="rpc.html">
+            
+                    
+                    2.6 RPC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.7" data-path="microservice-docker.html">
+            
+                <a href="microservice-docker.html">
+            
+                    
+                    2.7 Docker+微服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅲ 其他技术</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. 多线程/异步
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="multithreading-intro.html">
+            
+                <a href="multithreading-intro.html">
+            
+                    
+                    1.1 进程、线程和应用程序域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="multithreading-basic.html">
+            
+                <a href="multithreading-basic.html">
+            
+                    
+                    1.2 进程、线程基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="multithreading-synchronization.html">
+            
+                <a href="multithreading-synchronization.html">
+            
+                    
+                    1.3 线程同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="multithreading-threadpool.html">
+            
+                <a href="multithreading-threadpool.html">
+            
+                    
+                    1.4 线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="multithreading-uiresource.html">
+            
+                <a href="multithreading-uiresource.html">
+            
+                    
+                    1.5 UI资源跨线程访问
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="multithreading-async.html">
+            
+                <a href="multithreading-async.html">
+            
+                    
+                    1.6 异步编程模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="unittest.html">
+            
+                <a href="unittest.html">
+            
+                    
+                    2. 单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part IV - 常用解决方案</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="autofac.html">
+            
+                <a href="autofac.html">
+            
+                    
+                    1. AutoFac
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="automapper.html">
+            
+                <a href="automapper.html">
+            
+                    
+                    2. AutoMapper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="https.html">
+            
+                <a href="https.html">
+            
+                    
+                    3. HTTPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="mailsms.html">
+            
+                <a href="mailsms.html">
+            
+                    
+                    4. 邮件短信通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="mailsms.html">
+            
+                <a href="mailsms.html">
+            
+                    
+                    5. 在线支付
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="staticssi.html">
+            
+                <a href="staticssi.html">
+            
+                    
+                    6. 页面静态化和SSI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3.4 依赖注入（DI）</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#xFF08;di&#xFF09;"><a name="&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#xFF08;di&#xFF09;" class="plugin-anchor" href="#&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#xFF08;di&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#xFF08;DI&#xFF09;</h1>
+<ul>
+<li><a href="#1-&#x5BB9;&#x5668;&#x63D0;&#x4F9B;&#x670D;&#x52A1;">1. &#x5BB9;&#x5668;&#x63D0;&#x4F9B;&#x670D;&#x52A1;</a></li>
+<li><a href="#2-&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x65B9;&#x5F0F;">2. &#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x65B9;&#x5F0F;</a><ul>
+<li><a href="#21-&#x6784;&#x9020;&#x5668;&#x6CE8;&#x5165;">2.1 &#x6784;&#x9020;&#x5668;&#x6CE8;&#x5165;</a></li>
+<li><a href="#22-&#x5C5E;&#x6027;&#x6CE8;&#x5165;">2.2 &#x5C5E;&#x6027;&#x6CE8;&#x5165;</a></li>
+<li><a href="#23-&#x65B9;&#x6CD5;&#x6CE8;&#x5165;">2.3 &#x65B9;&#x6CD5;&#x6CE8;&#x5165;</a></li>
+</ul>
+</li>
+<li><a href="#3-service-locator">3. Service Locator</a></li>
+<li><a href="#4-net-core&#x4E2D;&#x7684;di">4. .Net Core&#x4E2D;&#x7684;DI</a></li>
+</ul>
+<h2 id="1-&#x5BB9;&#x5668;&#x63D0;&#x4F9B;&#x670D;&#x52A1;"><a name="1-&#x5BB9;&#x5668;&#x63D0;&#x4F9B;&#x670D;&#x52A1;" class="plugin-anchor" href="#1-&#x5BB9;&#x5668;&#x63D0;&#x4F9B;&#x670D;&#x52A1;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x5BB9;&#x5668;&#x63D0;&#x4F9B;&#x670D;&#x52A1;</h2>
+<p>&#x548C;<a href="designmode.md">&#x57FA;&#x4E8E;IoC&#x7684;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;</a>&#x4E2D;&#x4ECB;&#x7ECD;&#x7684;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x548C;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x4E00;&#x6837;&#xFF0C;DI&#x662F;&#x4E00;&#x79CD;&#x201C;&#x5BF9;&#x8C61;&#x63D0;&#x4F9B;&#x578B;&#x201D;&#x7684;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5C06;&#x63D0;&#x4F9B;&#x7684;&#x5BF9;&#x8C61;&#x7EDF;&#x79F0;&#x4E3A;&#x201C;&#x670D;&#x52A1;&#x201D;&#x3001;&#x201C;&#x670D;&#x52A1;&#x5BF9;&#x8C61;&#x201D;&#x6216;&#x8005;&#x201C;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x201D;&#x3002;&#x5728;&#x4E00;&#x4E2A;&#x91C7;&#x7528;DI&#x7684;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x5728;&#x5B9A;&#x4E49;&#x67D0;&#x4E2A;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x5C06;&#x4F9D;&#x8D56;&#x7684;&#x670D;&#x52A1;&#x91C7;&#x7528;&#x76F8;&#x5E94;&#x7684;&#x65B9;&#x5F0F;&#x6CE8;&#x5165;&#x8FDB;&#x6765;&#x3002;&#x6309;&#x7167;&#x201C;&#x9762;&#x5411;&#x63A5;&#x53E3;&#x7F16;&#x7A0B;&#x201D;&#x7684;&#x539F;&#x5219;&#xFF0C;&#x88AB;&#x6CE8;&#x5165;&#x7684;&#x6700;&#x597D;&#x662F;&#x4F9D;&#x8D56;&#x670D;&#x52A1;&#x7684;&#x63A5;&#x53E3;&#x800C;&#x975E;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x5728;&#x5E94;&#x7528;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5BF9;&#x6240;&#x9700;&#x7684;&#x670D;&#x52A1;&#x8FDB;&#x884C;&#x5168;&#x5C40;&#x6CE8;&#x518C;&#x3002;&#x670D;&#x52A1;&#x4E00;&#x822C;&#x90FD;&#x662F;&#x9488;&#x5BF9;&#x63A5;&#x53E3;&#x8FDB;&#x884C;&#x6CE8;&#x518C;&#x7684;&#xFF0C;&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x4FE1;&#x606F;&#x7684;&#x6838;&#x5FC3;&#x76EE;&#x7684;&#x662F;&#x4E3A;&#x4E86;&#x5728;&#x540E;&#x7EED;&#x6D88;&#x8D39;&#x8FC7;&#x7A0B;&#x4E2D;&#x80FD;&#x591F;&#x6839;&#x636E;&#x63A5;&#x53E3;&#x521B;&#x5EFA;&#x6216;&#x8005;&#x63D0;&#x4F9B;&#x5BF9;&#x5E94;&#x7684;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x3002;&#x6309;&#x7167;&#x201C;&#x597D;&#x83B1;&#x575E;&#x6CD5;&#x5219;&#x201D;&#xFF0C;&#x5E94;&#x7528;&#x53EA;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x597D;&#x6240;&#x9700;&#x7684;&#x670D;&#x52A1;&#xFF0C;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x7684;&#x6FC0;&#x6D3B;&#x548C;&#x8C03;&#x7528;&#x5219;&#x5B8C;&#x5168;&#x4EA4;&#x7ED9;&#x6846;&#x67B6;&#x6765;&#x5B8C;&#x6210;&#xFF0C;&#x800C;&#x6846;&#x67B6;&#x5219;&#x4F1A;&#x91C7;&#x7528;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x201C;&#x5BB9;&#x5668;&#xFF08;Container&#xFF09;&#x201D;&#x6765;&#x63D0;&#x4F9B;&#x6BCF;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x3002;</p>
+<p>&#x6846;&#x67B6;&#x7528;&#x6765;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#x7684;&#x5BB9;&#x5668;&#x79F0;&#x4E3A;&#x201C;DI&#x5BB9;&#x5668;&#x201D;&#xFF0C;&#x4E5F;&#x6709;&#x5F88;&#x591A;&#x4EBA;&#x5C06;&#x5176;&#x79F0;&#x4E3A;&#x201C;IoC&#x5BB9;&#x5668;&#x201D;&#xFF0C;&#x6839;&#x636E;&#x6211;&#x4EEC;&#x5728;&#x300A;&#x63A7;&#x5236;&#x53CD;&#x8F6C;&#x300B;&#x9488;&#x5BF9;IoC&#x7684;&#x4ECB;&#x7ECD;&#xFF0C;&#x6211;&#x4E0D;&#x8BA4;&#x4E3A;&#x540E;&#x8005;&#x662F;&#x4E00;&#x4E2A;&#x5408;&#x7406;&#x7684;&#x79F0;&#x8C13;&#x3002;DI&#x5BB9;&#x5668;&#x4E4B;&#x6240;&#x4EE5;&#x80FD;&#x591F;&#x6309;&#x7167;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x63D0;&#x4F9B;&#x6240;&#x9700;&#x7684;&#x670D;&#x52A1;&#x662F;&#x56E0;&#x4E3A;&#x8BE5;&#x5BB9;&#x5668;&#x662F;&#x6839;&#x636E;&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x4FE1;&#x606F;&#x6765;&#x521B;&#x5EFA;&#x7684;&#xFF0C;&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x4E86;&#x5305;&#x542B;&#x63D0;&#x4F9B;&#x6240;&#x9700;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x4E3E;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;Cat&#x7684;DI&#x5BB9;&#x5668;&#x7C7B;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x5177;&#x6709;&#x5982;&#x4E0B;&#x5B9A;&#x4E49;&#x7684;&#x6269;&#x5C55;&#x65B9;&#x6CD5;GetService<t>&#x4ECE;&#x67D0;&#x4E2A;Cat&#x5BF9;&#x8C61;&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x7684;&#x670D;&#x52A1;&#x5BF9;&#x8C61;&#x3002;&#x6211;&#x4E4B;&#x6240;&#x4EE5;&#x5C06;&#x5176;&#x547D;&#x540D;&#x4E3A;Cat&#xFF0C;&#x6E90;&#x4E8E;&#x6211;&#x4EEC;&#x5927;&#x5BB6;&#x90FD;&#x975E;&#x5E38;&#x719F;&#x6089;&#x7684;&#x4E00;&#x4E2A;&#x5361;&#x901A;&#x5F62;&#x8C61;&#x201C;&#x673A;&#x5668;&#x732B;&#xFF08;&#x54C6;&#x5566;A&#x68A6;&#xFF09;&#x201D;&#x3002;&#x673A;&#x5668;&#x732B;&#x7684;&#x90A3;&#x4E2A;&#x56DB;&#x6B21;&#x5143;&#x53E3;&#x888B;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x7406;&#x60F3;&#x7684;DI&#x5BB9;&#x5668;&#xFF0C;&#x5927;&#x718A;&#x53EA;&#x9700;&#x8981;&#x544A;&#x8BC9;&#x54C6;&#x5566;A&#x68A6;&#x76F8;&#x5E94;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x5B83;&#x5C31;&#x80FD;&#x4ECE;&#x8FD9;&#x4E2A;&#x53E3;&#x888B;&#x4E2D;&#x5F97;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x6CD5;&#x5B9D;&#x3002;DI&#x5BB9;&#x5668;&#x4EA6;&#x662F;&#x5982;&#x6B64;&#xFF0C;&#x670D;&#x52A1;&#x6D88;&#x8D39;&#x8005;&#x53EA;&#x9700;&#x8981;&#x544A;&#x8BC9;&#x5BB9;&#x5668;&#x6240;&#x9700;&#x670D;&#x52A1;&#x7684;&#x7C7B;&#x578B;&#xFF08;&#x4E00;&#x822C;&#x662F;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x63A5;&#x53E3;&#x6216;&#x8005;&#x62BD;&#x8C61;&#x670D;&#x52A1;&#x7C7B;&#xFF09;&#xFF0C;&#x5C31;&#x80FD;&#x5F97;&#x5230;&#x4E0E;&#x4E4B;&#x5339;&#x914D;&#x7684;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;</t></p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">CatExtensions</span>
+<span class="token punctuation">{</span>  
+    <span class="token keyword">public</span> <span class="token keyword">static</span> T <span class="token generic-method"><span class="token function">GetService</span><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">Cat</span> cat<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5BF9;&#x4E8E;&#x6F14;&#x793A;&#x7684;MVC&#x6846;&#x67B6;&#xFF0C;&#x6211;&#x4EEC;&#x5728;<a href="designmode.md">&#x57FA;&#x4E8E;IoC&#x7684;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;</a>&#x4E2D;&#x5206;&#x522B;&#x91C7;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x5BF9;&#x6846;&#x67B6;&#x7684;&#x6838;&#x5FC3;&#x7C7B;&#x578B;MvcEngine&#x8FDB;&#x884C;&#x4E86;&#x6539;&#x9020;&#xFF0C;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x91C7;&#x7528;DI&#x7684;&#x65B9;&#x5F0F;&#x5E76;&#x5229;&#x7528;&#x4E0A;&#x8FF0;&#x7684;&#x8FD9;&#x4E2A;Cat&#x5BB9;&#x5668;&#x6309;&#x7167;&#x5982;&#x4E0B;&#x7684;&#x65B9;&#x5F0F;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x91CD;&#x65B0;&#x5B9E;&#x73B0;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x53D1;&#x73B0;MvcEngine&#x53D8;&#x5F97;&#x5F02;&#x5E38;&#x7B80;&#x6D01;&#x800C;&#x6E05;&#x6670;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"> <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MvcEngine</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">Cat</span> Cat <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token function">MvcEngine</span><span class="token punctuation">(</span><span class="token class-name">Cat</span> cat<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> Cat <span class="token operator">=</span> cat<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token class-name">Task</span> <span class="token function">StartAsync</span><span class="token punctuation">(</span><span class="token class-name">Uri</span> address<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> listener <span class="token operator">=</span> Cat<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetService</span><span class="token punctuation">&lt;</span><span class="token class-name">IWebLister</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> activator <span class="token operator">=</span> Cat<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetService</span><span class="token punctuation">&lt;</span><span class="token class-name">IControllerActivator</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> executor <span class="token operator">=</span> Cat<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetService</span><span class="token punctuation">&lt;</span><span class="token class-name">IControllerExecutor</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> render <span class="token operator">=</span> Cat<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetService</span><span class="token punctuation">&lt;</span><span class="token class-name">IViewRender</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">await</span> listener<span class="token punctuation">.</span><span class="token function">ListenAsync</span><span class="token punctuation">(</span>address<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token keyword">true</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">var</span> httpContext <span class="token operator">=</span> <span class="token keyword">await</span> listener<span class="token punctuation">.</span><span class="token function">ReceiveAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">var</span> controller <span class="token operator">=</span> <span class="token keyword">await</span> activator<span class="token punctuation">.</span><span class="token function">CreateControllerAsync</span><span class="token punctuation">(</span>httpContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">try</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">var</span> view <span class="token operator">=</span> <span class="token keyword">await</span> executor<span class="token punctuation">.</span><span class="token function">ExecuteAsync</span><span class="token punctuation">(</span>controller<span class="token punctuation">,</span> httpContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">await</span> render<span class="token punctuation">.</span><span class="token function">RendAsync</span><span class="token punctuation">(</span>view<span class="token punctuation">,</span> httpContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">finally</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">await</span> activator<span class="token punctuation">.</span><span class="token function">ReleaseAsync</span><span class="token punctuation">(</span>controller<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4ECE;&#x670D;&#x52A1;&#x6D88;&#x8D39;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x8BB2;&#xFF0C;&#x6211;&#x4EEC;&#x501F;&#x52A9;&#x4E8E;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x63A5;&#x53E3;&#x5BF9;&#x6D88;&#x8D39;&#x7684;&#x670D;&#x52A1;&#x8FDB;&#x884C;&#x62BD;&#x8C61;&#xFF0C;&#x90A3;&#x4E48;&#x670D;&#x52A1;&#x6D88;&#x8D39;&#x7A0B;&#x5E8F;&#x9488;&#x5BF9;&#x5177;&#x4F53;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#x7684;&#x4F9D;&#x8D56;&#x53EF;&#x4EE5;&#x8F6C;&#x79FB;&#x5230;&#x5BF9;&#x670D;&#x52A1;&#x63A5;&#x53E3;&#x7684;&#x4F9D;&#x8D56;&#x4E0A;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x63D0;&#x4F9B;&#x7ED9;&#x6D88;&#x8D39;&#x8005;&#x7684;&#x603B;&#x662F;&#x4E00;&#x4E2A;&#x9488;&#x5BF9;&#x67D0;&#x4E2A;&#x5177;&#x4F53;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x4E0D;&#x4EC5;&#x5982;&#x6B64;&#xFF0C;&#x8981;&#x5B8C;&#x6210;&#x5B9A;&#x4E49;&#x5728;&#x670D;&#x52A1;&#x63A5;&#x53E3;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x5176;&#x4ED6;&#x76F8;&#x5173;&#x5BF9;&#x8C61;&#x7684;&#x53C2;&#x4E0E;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x63D0;&#x4F9B;&#x7684;&#x8FD9;&#x4E2A;&#x670D;&#x52A1;&#x5BF9;&#x8C61;&#x53EF;&#x80FD;&#x5177;&#x6709;&#x9488;&#x5BF9;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x7684;&#x4F9D;&#x8D56;&#x3002;&#x4F5C;&#x4E3A;&#x670D;&#x52A1;&#x5BF9;&#x8C61;&#x63D0;&#x4F9B;&#x8005;&#x7684;DI&#x5BB9;&#x5668;&#xFF0C;&#x5728;&#x5B83;&#x5411;&#x6D88;&#x8D39;&#x8005;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#x5BF9;&#x8C61;&#x4E4B;&#x524D;&#x5C31;&#x4F1A;&#x6839;&#x636E;&#x670D;&#x52A1;&#x5B9E;&#x73B0;&#x7C7B;&#x578B;&#x548C;&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x4FE1;&#x606F;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x4F9D;&#x8D56;&#x7684;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#xFF0C;&#x5E76;&#x5C06;&#x540E;&#x8005;&#x6CE8;&#x5165;&#x5230;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#x4E4B;&#x4E2D;&#x3002;</p>
+<h2 id="2-&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x65B9;&#x5F0F;"><a name="2-&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x65B9;&#x5F0F;" class="plugin-anchor" href="#2-&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x65B9;&#x5F0F;</h2>
+<p>&#x4ECE;&#x670D;&#x52A1;&#x4F7F;&#x7528;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x8BB2;&#xFF0C;&#x6211;&#x4EEC;&#x501F;&#x52A9;&#x4E8E;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x5BF9;&#x670D;&#x52A1;&#x8FDB;&#x884C;&#x62BD;&#x8C61;&#xFF0C;&#x90A3;&#x4E48;&#x4F9D;&#x8D56;&#x5C06;&#x8F6C;&#x79FB;&#x5230;&#x670D;&#x52A1;&#x63A5;&#x53E3;&#x4E0A;&#x3002;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x63D0;&#x4F9B;&#x7ED9;&#x6D88;&#x8D39;&#x8005;&#x7684;&#x5219;&#x662F;&#x5177;&#x4F53;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x5728;&#x5177;&#x4F53;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#x4E2D;&#x8981;&#x5B9E;&#x73B0;&#x670D;&#x52A1;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x7684;&#x6210;&#x5458;&#x65F6;&#xFF0C;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x7B2C;&#x4E09;&#x65B9;&#x5BF9;&#x8C61;&#x8F85;&#x52A9;&#xFF0C;&#x8FD9;&#x5C31;&#x4EA7;&#x751F;&#x4E86;&#x5BF9;&#x7B2C;&#x4E09;&#x65B9;&#x5BF9;&#x8C61;&#x7684;&#x4F9D;&#x8D56;&#x3002;DI&#x5BB9;&#x5668;&#x5728;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#x5BF9;&#x8C61;&#x4E4B;&#x524D;&#x4F1A;&#x81EA;&#x52A8;&#x6CE8;&#x5165;&#x8FD9;&#x4E9B;&#x7B2C;&#x4E09;&#x65B9;&#x4F9D;&#x8D56;&#x5230;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#x4E2D;&#x3002;</p>
+<p>&#x670D;&#x52A1;&#x6D88;&#x8D39;&#x7A0B;&#x5E8F;&#x8C03;&#x7528;GetService<ifoo>()&#x65B9;&#x6CD5;&#x5411;DI&#x5BB9;&#x5668;&#x7D22;&#x53D6;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x4E86;IFoo&#x63A5;&#x53E3;&#x7684;&#x67D0;&#x4E2A;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;DI&#x5BB9;&#x5668;&#x4F1A;&#x6839;&#x636E;&#x9884;&#x5148;&#x6CE8;&#x518C;&#x7684;&#x7C7B;&#x578B;&#x5339;&#x914D;&#x5173;&#x7CFB;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x4E3A;Foo&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x6B64;&#x5916;&#xFF0C;Foo&#x5BF9;&#x8C61;&#x4F9D;&#x8D56;Bar&#x548C;Baz&#x5BF9;&#x8C61;&#x7684;&#x53C2;&#x4E0E;&#x624D;&#x80FD;&#x5B9E;&#x73B0;&#x5B9A;&#x4E49;&#x5728;&#x670D;&#x52A1;&#x63A5;&#x53E3;IFoo&#x4E4B;&#x4E2D;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x6240;&#x4EE5;Foo&#x5177;&#x6709;&#x4E86;&#x9488;&#x5BF9;Bar&#x548C;Baz&#x7684;&#x76F4;&#x63A5;&#x4F9D;&#x8D56;&#x3002;&#x81F3;&#x4E8E;Baz&#xFF0C;&#x5B83;&#x53C8;&#x4F9D;&#x8D56;Qux&#xFF0C;&#x90A3;&#x4E48;&#x540E;&#x8005;&#x6210;&#x4E3A;&#x4E86;Foo&#x7684;&#x95F4;&#x63A5;&#x4F9D;&#x8D56;&#x3002;&#x5BF9;&#x4E8E;DI&#x5BB9;&#x5668;&#x6700;&#x7EC8;&#x63D0;&#x4F9B;&#x7684;Foo&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x6240;&#x76F4;&#x63A5;&#x6216;&#x8005;&#x95F4;&#x63A5;&#x4F9D;&#x8D56;&#x7684;&#x5BF9;&#x8C61;Bar&#x3001;Baz&#x548C;Qux&#x90FD;&#x4F1A;&#x9884;&#x5148;&#x88AB;&#x521D;&#x59CB;&#x5316;&#x5E76;&#x81EA;&#x52A8;&#x6CE8;&#x5165;&#x5230;&#x8BE5;&#x5BF9;&#x8C61;&#x4E4B;&#x4E2D;&#x3002;</ifoo></p>
+<p><img src="https://i.loli.net/2020/02/26/OrkDB5xaN4vMKRt.jpg" alt="&#x54C6;&#x5566;A&#x68A6;&#x6848;&#x4F8B;"></p>
+<p>&#x4ECE;&#x7F16;&#x7A0B;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x8BB2;&#xFF0C;&#x7C7B;&#x578B;&#x4E2D;&#x7684;&#x5C5E;&#x6027;&#x662F;&#x4F9D;&#x8D56;&#x7684;&#x4E00;&#x79CD;&#x4E3B;&#x8981;&#x4F53;&#x73B0;&#x5F62;&#x5F0F;&#xFF0C;&#x5982;&#x679C;&#x7C7B;&#x578B;A&#x4E2D;&#x5177;&#x6709;&#x4E00;&#x4E2A;B&#x7C7B;&#x578B;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x90A3;&#x4E48;A&#x5C31;&#x5BF9;B&#x4EA7;&#x751F;&#x4E86;&#x4F9D;&#x8D56;&#x3002;&#x6240;&#x8C13;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x5730;&#x7406;&#x89E3;&#x4E3A;&#x4E00;&#x79CD;&#x9488;&#x5BF9;&#x4F9D;&#x8D56;&#x5C5E;&#x6027;&#x7684;&#x81EA;&#x52A8;&#x521D;&#x59CB;&#x5316;&#x65B9;&#x5F0F;&#x3002;&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E09;&#x79CD;&#x4E3B;&#x8981;&#x7684;&#x65B9;&#x5F0F;&#x8FBE;&#x5230;&#x8FD9;&#x4E2A;&#x76EE;&#x7684;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x63A5;&#x4E0B;&#x6765;&#x7740;&#x91CD;&#x4ECB;&#x7ECD;&#x7684;&#x4E09;&#x79CD;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x65B9;&#x5F0F;&#x3002;</p>
+<h3 id="21-&#x6784;&#x9020;&#x5668;&#x6CE8;&#x5165;"><a name="21-&#x6784;&#x9020;&#x5668;&#x6CE8;&#x5165;" class="plugin-anchor" href="#21-&#x6784;&#x9020;&#x5668;&#x6CE8;&#x5165;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 &#x6784;&#x9020;&#x5668;&#x6CE8;&#x5165;</h3>
+<p>&#x6784;&#x9020;&#x5668;&#x6CE8;&#x5165;&#x5C31;&#x5728;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x501F;&#x52A9;&#x53C2;&#x6570;&#x5C06;&#x4F9D;&#x8D56;&#x7684;&#x5BF9;&#x8C61;&#x6CE8;&#x5165;&#x5230;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x4E4B;&#x4E2D;&#x3002;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x6240;&#x793A;&#xFF0C;Foo&#x9488;&#x5BF9;Bar&#x7684;&#x4F9D;&#x8D56;&#x4F53;&#x73B0;&#x5728;&#x53EA;&#x8BFB;&#x5C5E;&#x6027;Bar&#x4E0A;&#xFF0C;&#x9488;&#x5BF9;&#x8BE5;&#x5C5E;&#x6027;&#x7684;&#x521D;&#x59CB;&#x5316;&#x5B9E;&#x73B0;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x5177;&#x4F53;&#x7684;&#x5C5E;&#x6027;&#x503C;&#x7531;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x63D0;&#x4F9B;&#x3002;&#x5F53;DI&#x5BB9;&#x5668;&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Foo&#x5BF9;&#x8C61;&#x4E4B;&#x524D;&#xFF0C;&#x9700;&#x8981;&#x6839;&#x636E;&#x5F53;&#x524D;&#x6CE8;&#x518C;&#x7684;&#x7C7B;&#x578B;&#x5339;&#x914D;&#x5173;&#x7CFB;&#x4EE5;&#x53CA;&#x5176;&#x4ED6;&#x76F8;&#x5173;&#x7684;&#x6CE8;&#x5165;&#x4FE1;&#x606F;&#x521B;&#x5EFA;&#x5E76;&#x521D;&#x59CB;&#x5316;&#x53C2;&#x6570;&#x5BF9;&#x8C61;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Foo</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">IBar</span> Bar<span class="token punctuation">{</span><span class="token keyword">get</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token function">Foo</span><span class="token punctuation">(</span><span class="token class-name">IBar</span> bar<span class="token punctuation">)</span> <span class="token operator">=&gt;</span>Bar <span class="token operator">=</span> bar<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p> &#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x6784;&#x9020;&#x5668;&#x6CE8;&#x5165;&#x8FD8;&#x4F53;&#x73B0;&#x5728;&#x5BF9;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x9009;&#x62E9;&#x4E0A;&#x9762;&#x3002;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x6240;&#x793A;&#xFF0C;Foo&#x7C7B;&#x4E0A;&#x9762;&#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x4E2A;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;DI&#x5BB9;&#x5668;&#x5728;&#x521B;&#x5EFA;Foo&#x5BF9;&#x8C61;&#x4E4B;&#x524D;&#x9996;&#x5148;&#x9700;&#x8981;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x9002;&#x5408;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;&#x81F3;&#x4E8E;&#x76EE;&#x6807;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5982;&#x4F55;&#x9009;&#x62E9;&#xFF0C;&#x4E0D;&#x540C;&#x7684;DI&#x5BB9;&#x5668;&#x53EF;&#x80FD;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x7B56;&#x7565;&#xFF0C;&#x6BD4;&#x5982;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x53C2;&#x6570;&#x6700;&#x591A;&#x6216;&#x8005;&#x6700;&#x5C11;&#x7684;&#xFF0C;&#x6216;&#x8005;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x7684;&#x65B9;&#x5F0F;&#x5728;&#x76EE;&#x6807;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E0A;&#x6807;&#x6CE8;&#x4E00;&#x4E2A;InjectionAttribute&#x7279;&#x6027;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Foo</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">IBar</span> Bar<span class="token punctuation">{</span><span class="token keyword">get</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token class-name">IBaz</span> Baz <span class="token punctuation">{</span><span class="token keyword">get</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
+
+    <span class="token punctuation">[</span><span class="token class-name">Injection</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token function">Foo</span><span class="token punctuation">(</span><span class="token class-name">IBar</span> bar<span class="token punctuation">)</span> <span class="token operator">=&gt;</span>Bar <span class="token operator">=</span> bar<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token function">Foo</span><span class="token punctuation">(</span><span class="token class-name">IBar</span> bar<span class="token punctuation">,</span> IBaz<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">this</span><span class="token punctuation">(</span>bar<span class="token punctuation">)</span> <span class="token operator">=&gt;</span>Baz <span class="token operator">=</span> baz<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="22-&#x5C5E;&#x6027;&#x6CE8;&#x5165;"><a name="22-&#x5C5E;&#x6027;&#x6CE8;&#x5165;" class="plugin-anchor" href="#22-&#x5C5E;&#x6027;&#x6CE8;&#x5165;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2 &#x5C5E;&#x6027;&#x6CE8;&#x5165;</h3>
+<p>&#x5982;&#x679C;&#x4F9D;&#x8D56;&#x76F4;&#x63A5;&#x4F53;&#x73B0;&#x4E3A;&#x7C7B;&#x7684;&#x67D0;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5E76;&#x4E14;&#x8BE5;&#x5C5E;&#x6027;&#x4E0D;&#x662F;&#x53EA;&#x8BFB;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BA9;DI&#x5BB9;&#x5668;&#x5728;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x4E4B;&#x540E;&#x81EA;&#x52A8;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x8D4B;&#x503C;&#x8FDB;&#x800C;&#x8FBE;&#x5230;&#x4F9D;&#x8D56;&#x81EA;&#x52A8;&#x6CE8;&#x5165;&#x7684;&#x76EE;&#x7684;&#x3002;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x5B9A;&#x4E49;&#x8FD9;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9700;&#x8981;&#x663E;&#x5F0F;&#x5C06;&#x8FD9;&#x6837;&#x7684;&#x5C5E;&#x6027;&#x6807;&#x8BC6;&#x4E3A;&#x9700;&#x8981;&#x81EA;&#x52A8;&#x6CE8;&#x5165;&#x7684;&#x4F9D;&#x8D56;&#x5C5E;&#x6027;&#x4EE5;&#x533A;&#x522B;&#x4E8E;&#x8BE5;&#x7C7B;&#x578B;&#x7684;&#x5176;&#x4ED6;&#x666E;&#x901A;&#x7684;&#x5C5E;&#x6027;&#x3002;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x6240;&#x793A;&#xFF0C;Foo&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x4E2A;&#x53EF;&#x8BFB;&#x5199;&#x7684;&#x516C;&#x5171;&#x5C5E;&#x6027;Bar&#x548C;Baz&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x6807;&#x6CE8;InjectionAttribute&#x7279;&#x6027;&#x7684;&#x65B9;&#x5F0F;&#x5C06;&#x5C5E;&#x6027;Baz&#x8BBE;&#x7F6E;&#x4E3A;&#x81EA;&#x52A8;&#x6CE8;&#x5165;&#x7684;&#x4F9D;&#x8D56;&#x5C5E;&#x6027;&#x3002;&#x5BF9;&#x4E8E;&#x7531;DI&#x5BB9;&#x5668;&#x63D0;&#x4F9B;&#x7684;Foo&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x7684;Baz&#x5C5E;&#x6027;&#x5C06;&#x4F1A;&#x81EA;&#x52A8;&#x88AB;&#x521D;&#x59CB;&#x5316;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Foo</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">IBar</span> Bar<span class="token punctuation">{</span><span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
+
+    <span class="token punctuation">[</span><span class="token class-name">Injection</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token class-name">IBaz</span> Baz <span class="token punctuation">{</span><span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="23-&#x65B9;&#x6CD5;&#x6CE8;&#x5165;"><a name="23-&#x65B9;&#x6CD5;&#x6CE8;&#x5165;" class="plugin-anchor" href="#23-&#x65B9;&#x6CD5;&#x6CE8;&#x5165;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3 &#x65B9;&#x6CD5;&#x6CE8;&#x5165;</h3>
+<p>&#x4F53;&#x73B0;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x7684;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x65B9;&#x6CD5;&#x7684;&#x5F62;&#x5F0F;&#x521D;&#x59CB;&#x5316;&#x3002;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x6240;&#x793A;&#xFF0C;Foo&#x9488;&#x5BF9;Bar&#x7684;&#x4F9D;&#x8D56;&#x4F53;&#x73B0;&#x5728;&#x53EA;&#x8BFB;&#x5C5E;&#x6027;&#x4E0A;&#xFF0C;&#x9488;&#x5BF9;&#x8BE5;&#x5C5E;&#x6027;&#x7684;&#x521D;&#x59CB;&#x5316;&#x5B9E;&#x73B0;&#x5728;Initialize&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x5177;&#x4F53;&#x7684;&#x5C5E;&#x6027;&#x503C;&#x7531;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x4F20;&#x5165;&#x53C2;&#x6570;&#x63D0;&#x4F9B;&#x3002;&#x6211;&#x4EEC;&#x540C;&#x6837;&#x901A;&#x8FC7;&#x6807;&#x6CE8;&#x7279;&#x6027;&#xFF08;InjectionAttribute&#xFF09;&#x7684;&#x65B9;&#x5F0F;&#x5C06;&#x8BE5;&#x65B9;&#x6CD5;&#x6807;&#x8BC6;&#x4E3A;&#x6CE8;&#x5165;&#x65B9;&#x6CD5;&#x3002;DI&#x5BB9;&#x5668;&#x5728;&#x8C03;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Foo&#x5BF9;&#x8C61;&#x4E4B;&#x540E;&#xFF0C;&#x5B83;&#x4F1A;&#x81EA;&#x52A8;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;Initialize&#x65B9;&#x6CD5;&#x5BF9;&#x53EA;&#x8BFB;&#x5C5E;&#x6027;Bar&#x8FDB;&#x884C;&#x8D4B;&#x503C;&#x3002;&#x5728;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#x4E4B;&#x524D;&#xFF0C;DI&#x5BB9;&#x5668;&#x4F1A;&#x6839;&#x636E;&#x9884;&#x5148;&#x6CE8;&#x518C;&#x7684;&#x7C7B;&#x578B;&#x6620;&#x5C04;&#x548C;&#x5176;&#x4ED6;&#x76F8;&#x5173;&#x7684;&#x6CE8;&#x5165;&#x4FE1;&#x606F;&#x521D;&#x59CB;&#x5316;&#x8BE5;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Foo</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">IBar</span> Bar<span class="token punctuation">{</span><span class="token keyword">get</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
+
+    <span class="token punctuation">[</span><span class="token class-name">Injection</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">Initialize</span><span class="token punctuation">(</span><span class="token class-name">IBar</span> bar<span class="token punctuation">)</span><span class="token operator">=&gt;</span> Bar <span class="token operator">=</span> bar<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x9664;&#x4E86;&#x4E0A;&#x8FF0;&#x8FD9;&#x79CD;&#x901A;&#x8FC7;DI&#x5BB9;&#x5668;&#x5728;&#x521D;&#x59CB;&#x5316;&#x670D;&#x52A1;&#x8FC7;&#x7A0B;&#x4E2D;&#x81EA;&#x52A8;&#x8C03;&#x7528;&#x7684;&#x5B9E;&#x73B0;&#x5728;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x5B83;&#x5B9E;&#x73B0;&#x53E6;&#x4E00;&#x4E2A;&#x66F4;&#x52A0;&#x81EA;&#x7531;&#x7684;&#x65B9;&#x6CD5;&#x6CE8;&#x5165;&#x5F62;&#x5F0F;&#xFF0C;&#x540E;&#x8005;&#x5728;ASP.NET Core&#x5E94;&#x7528;&#x5177;&#x6709;&#x5E7F;&#x6CDB;&#x7684;&#x5E94;&#x7528;&#x3002;ASP.NET Core&#x5728;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x8C03;&#x7528;&#x6211;&#x4EEC;&#x6CE8;&#x518C;&#x7684;Startup&#x5BF9;&#x8C61;&#x6765;&#x5B8C;&#x6210;&#x4E2D;&#x95F4;&#x4EF6;&#x7684;&#x6CE8;&#x518C;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x5728;&#x5B9A;&#x4E49;&#x8FD9;&#x4E2A;Startup&#x7C7B;&#x578B;&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x9700;&#x8981;&#x8BA9;&#x5B83;&#x5B9E;&#x73B0;&#x67D0;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x6240;&#x4EE5;&#x7528;&#x4E8E;&#x6CE8;&#x518C;&#x4E2D;&#x95F4;&#x4EF6;&#x7684;Configure&#x65B9;&#x6CD5;&#x5176;&#x5B9E;&#x6CA1;&#x6709;&#x4E00;&#x4E2A;&#x56FA;&#x5B9A;&#x7684;&#x58F0;&#x660E;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x5982;&#x4E0B;&#x7684;&#x65B9;&#x5F0F;&#x5C06;&#x4EFB;&#x610F;&#x4F9D;&#x8D56;&#x7684;&#x670D;&#x52A1;&#x76F4;&#x63A5;&#x6CE8;&#x5165;&#x5230;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4E2D;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Startup</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">Configure</span><span class="token punctuation">(</span><span class="token class-name">IApplicationBuilder</span> app<span class="token punctuation">,</span> <span class="token class-name">IFoo</span> foo<span class="token punctuation">,</span> <span class="token class-name">IBar</span> bar<span class="token punctuation">,</span> <span class="token class-name">IBaz</span> baz<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x7C7B;&#x4F3C;&#x7684;&#x6CE8;&#x5165;&#x65B9;&#x5F0F;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x5E94;&#x7528;&#x5230;&#x4E2D;&#x95F4;&#x4EF6;&#x7684;&#x5B9A;&#x4E49;&#x4E2D;&#x3002;&#x4E0E;&#x7528;&#x4E8E;&#x6CE8;&#x518C;&#x4E2D;&#x95F4;&#x4EF6;&#x7684;Startup&#x7C7B;&#x578B;&#x4E00;&#x6837;&#xFF0C;ASP.NET Core&#x6846;&#x67B6;&#x4E0B;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;&#x7C7B;&#x578B;&#x540C;&#x6837;&#x4E0D;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x67D0;&#x4E2A;&#x9884;&#x5B9A;&#x4E49;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x8BF7;&#x6C42;&#x7684;InvokeAsync&#x6216;&#x8005;Invoke&#x65B9;&#x6CD5;&#x4E0A;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x5982;&#x4E0B;&#x7684;&#x65B9;&#x5F0F;&#x6CE8;&#x5165;&#x4EFB;&#x610F;&#x7684;&#x4F9D;&#x8D56;&#x670D;&#x52A1;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FoobarMiddleware</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">readonly</span> <span class="token class-name">RequestDelegate</span> _next<span class="token punctuation">;</span> 
+    <span class="token keyword">public</span> <span class="token function">FoobarMiddleware</span><span class="token punctuation">(</span><span class="token class-name">RequestDelegate</span> next<span class="token punctuation">)</span> <span class="token operator">=&gt;</span>_next <span class="token operator">=</span> next<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token class-name">Task</span> <span class="token function">InvokeAsync</span><span class="token punctuation">(</span><span class="token class-name">HttpContext</span> httpContext<span class="token punctuation">,</span> <span class="token class-name">IFoo</span> foo<span class="token punctuation">,</span> <span class="token class-name">IBar</span> bar<span class="token punctuation">,</span> <span class="token class-name">IBaz</span> baz<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x7684;&#x65B9;&#x6CD5;&#x6CE8;&#x5165;&#x4FC3;&#x6210;&#x4E86;&#x4E00;&#x79CD;&#x201C;&#x9762;&#x5411;&#x7EA6;&#x5B9A;&#x201D;&#x7684;&#x7F16;&#x7A0B;&#x65B9;&#x5F0F;&#xFF0C;&#x7531;&#x4E8E;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x67D0;&#x4E2A;&#x9884;&#x5B9A;&#x4E49;&#x7684;&#x63A5;&#x53E3;&#x6216;&#x8005;&#x7EE7;&#x627F;&#x67D0;&#x4E00;&#x4E2A;&#x9884;&#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x7684;&#x65B9;&#x6CD5;&#x7684;&#x58F0;&#x660E;&#x4E5F;&#x5C31;&#x5C11;&#x4E86;&#x5BF9;&#x5E94;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x7528;&#x91C7;&#x7528;&#x6700;&#x76F4;&#x63A5;&#x7684;&#x65B9;&#x5F0F;&#x5C06;&#x4F9D;&#x8D56;&#x7684;&#x670D;&#x52A1;&#x6CE8;&#x5165;&#x5230;&#x6240;&#x9700;&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x4E0A;&#x9762;&#x4ECB;&#x7ECD;&#x7684;&#x8FD9;&#x51E0;&#x79CD;&#x6CE8;&#x5165;&#x65B9;&#x5F0F;&#xFF0C;&#x6784;&#x9020;&#x5668;&#x6CE8;&#x5165;&#x662F;&#x6700;&#x4E3A;&#x7406;&#x60F3;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x6211;&#x4E2A;&#x4EBA;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x5C5E;&#x6027;&#x6CE8;&#x5165;&#x548C;&#x65B9;&#x6CD5;&#x6CE8;&#x5165;&#xFF08;&#x4E0A;&#x9762;&#x4ECB;&#x7ECD;&#x8FD9;&#x79CD;&#x57FA;&#x4E8E;&#x7EA6;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;&#x6CE8;&#x5165;&#x9664;&#x5916;&#xFF09;&#x3002;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x7684;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#x5E94;&#x8BE5;&#x662F;&#x72EC;&#x7ACB;&#x81EA;&#x6CBB;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x5E94;&#x8BE5;&#x5BF9;&#x5B83;&#x8FD0;&#x884C;&#x7684;&#x73AF;&#x5883;&#x505A;&#x8FC7;&#x591A;&#x7684;&#x5047;&#x8BBE;&#x548C;&#x9650;&#x5236;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x540C;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5728;&#x6846;&#x67B6;A&#x4E2D;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5728;&#x6846;&#x67B6;B&#x4E0A;&#xFF1B;&#x5728;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;DI&#x5BB9;&#x5668;&#x7684;&#x5E94;&#x7528;&#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#xFF0C;&#x5F53;&#x4EFB;&#x4F55;&#x4E00;&#x79CD;DI&#x5BB9;&#x5668;&#x88AB;&#x4F7F;&#x7528;&#x5230;&#x5E94;&#x7528;&#x4E2D;&#x4E4B;&#x540E;&#xFF0C;&#x8BE5;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#x4F9D;&#x65E7;&#x80FD;&#x591F;&#x88AB;&#x6B63;&#x5E38;&#x4F7F;&#x7528;&#x3002;&#x5BF9;&#x4E8E;&#x4E0A;&#x9762;&#x4ECB;&#x7ECD;&#x7684;&#x8FD9;&#x4E09;&#x79CD;&#x6CE8;&#x5165;&#x65B9;&#x5F0F;&#xFF0C;&#x53EA;&#x6709;&#x6784;&#x9020;&#x5668;&#x6CE8;&#x5165;&#x80FD;&#x591F;&#x8FBE;&#x5230;&#x8FD9;&#x4E2A;&#x76EE;&#x7684;&#xFF0C;&#x800C;&#x5C5E;&#x6027;&#x6CE8;&#x5165;&#x548C;&#x65B9;&#x6CD5;&#x6CE8;&#x5165;&#x90FD;&#x4F9D;&#x8D56;&#x4E8E;&#x67D0;&#x4E2A;&#x5177;&#x4F53;&#x7684;DI&#x6846;&#x67B6;&#x6765;&#x5B9E;&#x73B0;&#x9488;&#x5BF9;&#x4F9D;&#x8D56;&#x5C5E;&#x6027;&#x7684;&#x81EA;&#x52A8;&#x8D4B;&#x503C;&#x548C;&#x4F9D;&#x8D56;&#x65B9;&#x6CD5;&#x7684;&#x81EA;&#x52A8;&#x8C03;&#x7528;&#x3002;</p>
+<h2 id="3-service-locator"><a name="3-service-locator" class="plugin-anchor" href="#3-service-locator"><i class="fa fa-link" aria-hidden="true"></i></a>3. Service Locator</h2>
+<p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x7C7B;&#x578B;Foo&#xFF0C;&#x5B83;&#x4F9D;&#x8D56;&#x4E8E;&#x53E6;&#x5916;&#x4E24;&#x4E2A;&#x670D;&#x52A1;Bar&#x548C;Baz&#xFF0C;&#x540E;&#x8005;&#x5BF9;&#x5E94;&#x7684;&#x670D;&#x52A1;&#x63A5;&#x53E3;&#x5206;&#x522B;&#x4E3A;IBar&#x548C;IBaz&#x3002;&#x5982;&#x679C;&#x5F53;&#x524D;&#x5E94;&#x7528;&#x4E2D;&#x5177;&#x6709;&#x4E00;&#x4E2A;DI&#x5BB9;&#x5668;&#xFF08;&#x5047;&#x8BBE;&#x7C7B;&#x4F3C;&#x4E8E;&#x6211;&#x4EEC;&#x5728;&#x4E0A;&#x9762;&#x5B9A;&#x4E49;&#x7684;Cat&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x5982;&#x4E0B;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x6765;&#x5B9A;&#x4E49;&#x8FD9;&#x4E2A;&#x670D;&#x52A1;&#x7C7B;&#x578B;Foo&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Foo</span> <span class="token punctuation">:</span> <span class="token class-name">IFoo</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">IBar</span> Bar <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token class-name">IBaz</span> Baz <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token function">Foo</span><span class="token punctuation">(</span><span class="token class-name">IBar</span> bar<span class="token punctuation">,</span> <span class="token class-name">IBaz</span> baz<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Bar <span class="token operator">=</span> bar<span class="token punctuation">;</span>
+        Baz <span class="token operator">=</span> baz<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>  
+    <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token class-name">Task</span> <span class="token function">InvokeAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">await</span> Bar<span class="token punctuation">.</span><span class="token function">InvokeAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">await</span> Baz<span class="token punctuation">.</span><span class="token function">InvokeAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Foo</span> <span class="token punctuation">:</span> <span class="token class-name">IFoo</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">Cat</span> Cat <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token function">Foo</span><span class="token punctuation">(</span><span class="token class-name">Cat</span> cat<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> Cat <span class="token operator">=</span> cat<span class="token punctuation">;</span> 
+    <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token class-name">Task</span> <span class="token function">InvokeAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">await</span> Cat<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetService</span><span class="token punctuation">&lt;</span><span class="token class-name">IBar</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">InvokeAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">await</span> Cat<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetService</span><span class="token punctuation">&lt;</span><span class="token class-name">IBaz</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">InvokeAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4ECE;&#x8868;&#x9762;&#x4E0A;&#x770B;&#xFF0C;&#x4E0A;&#x9762;&#x63D0;&#x4F9B;&#x7684;&#x8FD9;&#x4E24;&#x79CD;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#x7684;&#x5B9A;&#x4E49;&#x65B9;&#x5F0F;&#x8C8C;&#x4F3C;&#x90FD;&#x4E0D;&#x9519;&#xFF0C;&#x81F3;&#x5C11;&#x5B83;&#x4EEC;&#x90FD;&#x89E3;&#x51B3;&#x9488;&#x5BF9;&#x4F9D;&#x8D56;&#x670D;&#x52A1;&#x7684;&#x8026;&#x5408;&#x95EE;&#x9898;&#xFF0C;&#x5C06;&#x9488;&#x5BF9;&#x670D;&#x52A1;&#x5B9E;&#x73B0;&#x7684;&#x4F9D;&#x8D56;&#x8F6C;&#x53D8;&#x6210;&#x9488;&#x5BF9;&#x63A5;&#x53E3;&#x7684;&#x4F9D;&#x8D56;&#x3002;&#x90A3;&#x4E48;&#x54EA;&#x4E00;&#x79CD;&#x66F4;&#x597D;&#x5462;&#xFF1F;&#x6211;&#x60F3;&#x6709;&#x4EBA;&#x4F1A;&#x9009;&#x62E9;&#x7B2C;&#x4E8C;&#x79CD;&#x5B9A;&#x4E49;&#x65B9;&#x5F0F;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x79CD;&#x5B9A;&#x4E49;&#x65B9;&#x5F0F;&#x4E0D;&#x4EC5;&#x4EC5;&#x4EE3;&#x7801;&#x91CF;&#x66F4;&#x5C11;&#xFF0C;&#x9488;&#x5BF9;&#x670D;&#x52A1;&#x7684;&#x63D0;&#x4F9B;&#x4E5F;&#x66F4;&#x52A0;&#x76F4;&#x63A5;&#x3002;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x201C;&#x6CE8;&#x5165;&#x201D;&#x4E86;&#x4EE3;&#x8868;&#x201C;DI&#x5BB9;&#x5668;&#x201D;&#x7684;Cat&#x5BF9;&#x8C61;&#xFF0C;&#x5728;&#x4EFB;&#x4F55;&#x4F7F;&#x7528;&#x5230;&#x4F9D;&#x8D56;&#x670D;&#x52A1;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x5229;&#x7528;&#x5B83;&#x6765;&#x63D0;&#x4F9B;&#x5BF9;&#x5E94;&#x7684;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
+<p>&#x4F46;&#x4E8B;&#x5B9E;&#x4E0A;&#x7B2C;&#x4E8C;&#x79CD;&#x5B9A;&#x4E49;&#x65B9;&#x5F0F;&#x91C7;&#x7528;&#x7684;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x6839;&#x672C;&#x5C31;&#x4E0D;&#x662F;&#x201C;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x201D;&#xFF0C;&#x800C;&#x662F;&#x4E00;&#x79CD;&#x88AB;&#x79F0;&#x4E3A;&#x201C;Service Locator&#x201D;&#x7684;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x3002;Service Locator&#x6A21;&#x5F0F;&#x540C;&#x6837;&#x5177;&#x6709;&#x4E00;&#x4E2A;&#x901A;&#x8FC7;&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x521B;&#x5EFA;&#x7684;&#x5168;&#x5C40;&#x7684;&#x5BB9;&#x5668;&#x6765;&#x63D0;&#x4F9B;&#x6240;&#x9700;&#x7684;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#xFF0C;&#x8BE5;&#x5BB9;&#x5668;&#x88AB;&#x79F0;&#x4E3A;&#x201C;Service Locator&#x201D;&#x3002;&#x201C;DI&#x5BB9;&#x5668;&#x201D;&#x548C;&#x201C;Service Locator&#x201D;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x540C;&#x4E00;&#x4E8B;&#x7269;&#x5728;&#x4E0D;&#x540C;&#x8BBE;&#x8BA1;&#x6A21;&#x578B;&#x4E2D;&#x7684;&#x4E0D;&#x540C;&#x79F0;&#x8C13;&#x7F62;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;DI&#x548C;Service Locator&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;&#x4F53;&#x73B0;&#x5728;&#x4EC0;&#x4E48;&#x5730;&#x65B9;&#x5462;&#xFF1F;</p>
+<p>&#x6211;&#x4EEC;&#x89C9;&#x5F97;&#x53EF;&#x4EE5;&#x4ECE;&#x201C;DI&#x5BB9;&#x5668;&#x201D;&#x548C;&#x201C;Service Locator&#x201D;&#x88AB;&#x8C01;&#x4F7F;&#x7528;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x533A;&#x5206;&#x8FD9;&#x4E24;&#x79CD;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x7684;&#x5DEE;&#x522B;&#x3002;&#x5728;&#x4E00;&#x4E2A;&#x91C7;&#x7528;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x7684;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x91C7;&#x7528;&#x6807;&#x51C6;&#x7684;&#x6CE8;&#x5165;&#x5F62;&#x5F0F;&#x5C06;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;&#x597D;&#xFF0C;&#x5E76;&#x5728;&#x5E94;&#x7528;&#x542F;&#x52A8;&#x4E4B;&#x524D;&#x5B8C;&#x6210;&#x76F8;&#x5E94;&#x7684;&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;&#x6846;&#x67B6;&#x81EA;&#x8EAB;&#x7684;&#x5F15;&#x64CE;&#x5728;&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F1A;&#x5229;&#x7528;DI&#x5BB9;&#x5668;&#x6765;&#x63D0;&#x4F9B;&#x5F53;&#x524D;&#x6240;&#x9700;&#x7684;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x3002;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;DI&#x5BB9;&#x5668;&#x7684;&#x4F7F;&#x7528;&#x8005;&#x5E94;&#x8BE5;&#x662F;&#x6846;&#x67B6;&#x800C;&#x4E0D;&#x662F;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;Service Locator&#x6A21;&#x5F0F;&#x663E;&#x7136;&#x4E0D;&#x662F;&#x8FD9;&#x6837;&#xFF0C;&#x5F88;&#x660E;&#x663E;&#x662F;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5728;&#x5229;&#x7528;&#x5B83;&#x6765;&#x63D0;&#x4F9B;&#x6240;&#x9700;&#x7684;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x7684;&#x4F7F;&#x7528;&#x8005;&#x662F;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x4ECE;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x89D2;&#x5EA6;&#x533A;&#x5206;&#x4E24;&#x8005;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x522B;&#x3002;&#x7531;&#x4E8E;&#x4F9D;&#x8D56;&#x670D;&#x52A1;&#x662F;&#x4EE5;&#x201C;&#x6CE8;&#x5165;&#x201D;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x63D0;&#x4F9B;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x91C7;&#x7528;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x6A21;&#x5F0F;&#x7684;&#x5E94;&#x7528;&#x53EF;&#x4EE5;&#x770B;&#x6210;&#x662F;&#x5C06;&#x670D;&#x52A1;&#x201C;&#x63A8;&#x201D;&#x7ED9;DI&#x5BB9;&#x5668;&#xFF0C;Service Locator&#x6A21;&#x5F0F;&#x4E0B;&#x7684;&#x5E94;&#x7528;&#x5219;&#x662F;&#x5229;&#x7528;Service Locator&#x53BB;&#x201C;&#x62C9;&#x201D;&#x53D6;&#x6240;&#x9700;&#x7684;&#x670D;&#x52A1;&#xFF0C;&#x8FD9;&#x4E00;&#x63A8;&#x4E00;&#x62C9;&#x4E5F;&#x51C6;&#x786E;&#x5730;&#x4F53;&#x73B0;&#x4E86;&#x4E24;&#x8005;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;&#x3002;&#x90A3;&#x4E48;&#x65E2;&#x7136;&#x4E24;&#x8005;&#x4E4B;&#x95F4;&#x6709;&#x5DEE;&#x522B;&#xFF0C;&#x7A76;&#x7ADF;&#x5B70;&#x4F18;&#x5B70;&#x52A3;&#x5462;&#xFF1F;</p>
+<p>&#x65E9;&#x5728;2010&#x5E74;&#xFF0C;Mark Seemann&#x5C31;&#x5728;&#x5B83;&#x7684;&#x535A;&#x5BA2;&#x4E2D;&#x5C06;Service Locator&#x89C6;&#x4E3A;&#x4E00;&#x79CD;&#x201C;&#x53CD;&#x6A21;&#x5F0F;&#xFF08;Anti-Pattern&#xFF09;&#x201D;&#xFF0C;&#x867D;&#x7136;&#x4E5F;&#x6709;&#x4EBA;&#x5BF9;&#x6B64;&#x63D0;&#x51FA;&#x4E0D;&#x540C;&#x7684;&#x610F;&#x89C1;&#xFF0C;&#x4F46;&#x6211;&#x4E2A;&#x4EBA;&#x662F;&#x975E;&#x5E38;&#x4E0D;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x7684;&#x3002;&#x6211;&#x53CD;&#x5BF9;&#x4F7F;&#x7528;Service Locator&#x4E0E;&#x4E0A;&#x9762;&#x63D0;&#x5230;&#x7684;&#x53CD;&#x5BF9;&#x4F7F;&#x7528;&#x5C5E;&#x6027;&#x6CE8;&#x5165;&#x548C;&#x65B9;&#x6CD5;&#x6CE8;&#x5165;&#x5177;&#x6709;&#x7C7B;&#x4F3C;&#x7684;&#x7F18;&#x7531;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x65E2;&#x7136;&#x5C06;&#x4E00;&#x7EC4;&#x76F8;&#x5173;&#x7684;&#x64CD;&#x4F5C;&#x5B9A;&#x4E49;&#x5728;&#x4E00;&#x4E2A;&#x80FD;&#x591F;&#x590D;&#x7528;&#x7684;&#x670D;&#x52A1;&#x4E2D;&#xFF0C;&#x4E0D;&#x4F46;&#x8981;&#x6C42;&#x670D;&#x52A1;&#x81EA;&#x8EAB;&#x5177;&#x6709;&#x72EC;&#x7ACB;&#x548C;&#x81EA;&#x6CBB;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x4E5F;&#x8981;&#x6C42;&#x670D;&#x52A1;&#x4E4B;&#x95F4;&#x7684;&#x5E94;&#x8BE5;&#x5177;&#x6709;&#x660E;&#x786E;&#x7684;&#x8FB9;&#x754C;&#xFF0C;&#x670D;&#x52A1;&#x4E4B;&#x95F4;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x5E94;&#x8BE5;&#x662F;&#x660E;&#x786E;&#x7684;&#x800C;&#x4E0D;&#x662F;&#x6A21;&#x7CCA;&#x7684;&#x3002;&#x4E0D;&#x8BBA;&#x662F;&#x91C7;&#x7528;&#x5C5E;&#x6027;&#x6CE8;&#x5165;&#x6216;&#x8005;&#x6784;&#x9020;&#x5668;&#x6CE8;&#x5165;&#xFF0C;&#x8FD8;&#x662F;&#x4F7F;&#x7528;Service Locator&#x6765;&#x63D0;&#x4F9B;&#x5F53;&#x524D;&#x4F9D;&#x8D56;&#x7684;&#x670D;&#x52A1;&#xFF0C;&#x8FD9;&#x65E0;&#x7591;&#x4E3A;&#x5F53;&#x524D;&#x7684;&#x5E94;&#x7528;&#x589E;&#x6DFB;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x4F9D;&#x8D56;&#xFF0C;&#x5373;&#x9488;&#x5BF9;DI&#x5BB9;&#x5668;&#x6216;&#x8005;Service Locator&#x7684;&#x4F9D;&#x8D56;&#x3002;</p>
+<p>&#x5F53;&#x524D;&#x670D;&#x52A1;&#x9488;&#x5BF9;&#x53E6;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x7684;&#x4F9D;&#x8D56;&#x4E0E;&#x9488;&#x5BF9;DI&#x5BB9;&#x5668;&#x6216;&#x8005;Service Locator&#x7684;&#x4F9D;&#x8D56;&#x5177;&#x6709;&#x672C;&#x8D28;&#x7684;&#x4E0D;&#x540C;&#xFF0C;&#x524D;&#x8005;&#x662F;&#x4E00;&#x79CD;&#x57FA;&#x4E8E;&#x7C7B;&#x578B;&#x7684;&#x4F9D;&#x8D56;&#xFF0C;&#x4E0D;&#x8BBA;&#x662F;&#x57FA;&#x4E8E;&#x670D;&#x52A1;&#x7684;&#x63A5;&#x53E3;&#x8FD8;&#x662F;&#x5B9E;&#x73B0;&#x7C7B;&#x578B;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x57FA;&#x4E8E;&#x201C;&#x5951;&#x7EA6;&#x201D;&#x7684;&#x4F9D;&#x8D56;&#x3002;&#x8FD9;&#x79CD;&#x4F9D;&#x8D56;&#x4E0D;&#x4EC5;&#x662F;&#x660E;&#x786E;&#x7684;&#xFF0C;&#x4E5F;&#x662F;&#x6709;&#x4FDD;&#x969C;&#x7684;&#x3002;&#x4F46;&#x662F;DI&#x5BB9;&#x5668;&#x4E5F;&#x597D;&#xFF0C;Service Locator&#x4E5F;&#x7F62;&#xFF0C;&#x5B83;&#x4EEC;&#x672C;&#x8D28;&#x4E0A;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x9ED1;&#x76D2;&#xFF0C;&#x5B83;&#x80FD;&#x591F;&#x63D0;&#x4F9B;&#x6240;&#x9700;&#x670D;&#x52A1;&#x7684;&#x524D;&#x63D0;&#x5DF2;&#x7ECF;&#x9884;&#x5148;&#x6DFB;&#x52A0;&#x4E86;&#x5BF9;&#x5E94;&#x7684;&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x3002;</p>
+<p>&#x6B63;&#x56E0;&#x4E3A;&#x5982;&#x6B64;&#xFF0C;ASP.NET Core&#x6846;&#x67B6;&#x4F7F;&#x7528;&#x7684;DI&#x6846;&#x67B6;&#x53EA;&#x652F;&#x6301;&#x6784;&#x9020;&#x5668;&#x6CE8;&#x5165;&#xFF0C;&#x800C;&#x4E0D;&#x652F;&#x6301;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#x6CE8;&#x5165;&#xFF08;&#x7C7B;&#x4F3C;&#x4E8E;Startup&#x548C;&#x4E2D;&#x95F4;&#x4EF6;&#x57FA;&#x4E8E;&#x7EA6;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;&#x6CE8;&#x5165;&#x9664;&#x5916;&#xFF09;&#x3002;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x5F88;&#x6709;&#x53EF;&#x80FD;&#x4E0D;&#x77E5;&#x4E0D;&#x89C9;&#x5730;&#x4F1A;&#x6309;&#x7167;Service Locator&#x6A21;&#x5F0F;&#x6765;&#x7F16;&#x5199;&#x6211;&#x4EEC;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4ECE;&#x67D0;&#x79CD;&#x610F;&#x4E49;&#x4E0A;&#x8BB2;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x4F7F;&#x7528;IServiceProvider&#xFF08;&#x8868;&#x793A;DI&#x5BB9;&#x5668;&#xFF09;&#x6765;&#x63D0;&#x53D6;&#x67D0;&#x4E2A;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x610F;&#x5473;&#x7740;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5728;&#x4F7F;&#x7528;Service Locator&#x6A21;&#x5F0F;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x5F53;&#x6211;&#x4EEC;&#x9047;&#x5230;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x7684;&#x65F6;&#x5019;&#x5E94;&#x8BE5;&#x591A;&#x60F3;&#x4E00;&#x60F3;&#x662F;&#x5426;&#x4E00;&#x5B9A;&#x9700;&#x8981;&#x8FD9;&#x4E48;&#x505A;&#x3002;&#x867D;&#x7136;&#x6211;&#x4EEC;&#x63D0;&#x5021;&#x5C3D;&#x53EF;&#x80FD;&#x907F;&#x514D;&#x4F7F;&#x7528;Service Locator&#x6A21;&#x5F0F;&#xFF0C;&#x4F46;&#x662F;&#x6709;&#x7684;&#x65F6;&#x5019;&#xFF08;&#x6709;&#x5176;&#x662F;&#x5728;&#x7F16;&#x5199;&#x6846;&#x67B6;&#x6216;&#x8005;&#x7EC4;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#xFF09;&#xFF0C;&#x6211;&#x4EEC;&#x662F;&#x65E0;&#x6CD5;&#x907F;&#x514D;&#x4F7F;&#x7528;IServiceProvider&#x6765;&#x63D0;&#x53D6;&#x670D;&#x52A1;&#x3002;</p>
+<h2 id="4-net-core&#x4E2D;&#x7684;di"><a name="4-net-core&#x4E2D;&#x7684;di" class="plugin-anchor" href="#4-net-core&#x4E2D;&#x7684;di"><i class="fa fa-link" aria-hidden="true"></i></a>4. .Net Core&#x4E2D;&#x7684;DI</h2>
+<p>.NET Core&#x9488;&#x5BF9;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x7684;&#x7F16;&#x7A0B;&#x4E3B;&#x8981;&#x4F53;&#x73B0;&#x5728;&#x4E24;&#x4E2A;&#x65B9;&#x9762;&#xFF1A;</p>
+<ul>
+<li>&#x670D;&#x52A1;&#x6CE8;&#x518C;&#xFF1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;ServiceCollection&#x5BF9;&#x8C61;&#x5E76;&#x5C06;&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x4FE1;&#x606F;&#x4EE5;ServiceDescriptor&#x5BF9;&#x8C61;&#x7684;&#x5F62;&#x5F0F;&#x6DFB;&#x52A0;&#x5176;&#x4E2D;</li>
+<li>&#x670D;&#x52A1;&#x6D88;&#x8D39;&#xFF1A; &#x901A;&#x8FC7;ServiceCollection&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x5BF9;&#x5E94;&#x7684;ServiceProvider&#x5E76;&#x5229;&#x7528;&#x5B83;&#x63D0;&#x4F9B;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;</li>
+</ul>
+<p>&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x540E;&#x7EED;&#x7AE0;&#x8282;&#x4E2D;&#x5BF9;<a href="register.md">&#x670D;&#x52A1;&#x6CE8;&#x518C;</a>&#x548C;<a href="consume.md">&#x670D;&#x52A1;&#x6D88;&#x8D39;</a>&#x8FDB;&#x884C;&#x8BE6;&#x7EC6;&#x7684;&#x9610;&#x8FF0;&#x3002;</p>
+<blockquote>
+<p>&#x53C2;&#x8003;&#x6587;&#x732E;
+<a href="https://www.cnblogs.com/artech/p/net-core-di-03.html" target="_blank">https://www.cnblogs.com/artech/p/net-core-di-03.html</a> </p>
+</blockquote>
+<footer class="page-footer"><span class="copyright">&#xA9; Colin Chang all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-07-09 15:30:26
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="di-designmode.html" class="navigation navigation-prev " aria-label="Previous page: 3.3 基于IoC的设计模式">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="di-register.html" class="navigation navigation-next " aria-label="Next page: 3.5 服务注册">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3.4 依赖注入（DI）","level":"2.3.4","depth":2,"next":{"title":"3.5 服务注册","level":"2.3.5","depth":2,"path":"pages/di-register.md","ref":"pages/di-register.md","articles":[]},"previous":{"title":"3.3 基于IoC的设计模式","level":"2.3.3","depth":2,"path":"pages/di-designmode.md","ref":"pages/di-designmode.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","-lunr","-search","search-plus","advanced-emoji","github-buttons","multipart","splitter","tbfed-pagefooter","anchors","sitemap","-sharing","sharing-plus","toggle-chapters","book-summary-scroll-position-saver","prism","-highlight","favicon-absolute"],"styles":{"website":"website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy Colin Chang","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"disqus":{"useIdentifier":false,"shortName":"http-colin-chang-site-1"},"book-summary-scroll-position-saver":{},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"multipart":{},"favicon-absolute":{"appleTouchIconMore":{"120x120":"https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png","180x180":"https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png"},"appleTouchIconPrecomposed152":"https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png","appleTouchIconPrecomposedMore":{"120x120":"https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png","180x180":"https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png"},"favicon":"https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png","bookmark":"https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png","appleTouchIcon152":"https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"https://ccstudio.org/netcore"},"github-buttons":{"buttons":[{"user":"colin-chang","repo":"netcore","type":"star","size":"small"}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":true,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","instapaper","vk","weibo"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"toggle-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":".Net Core-软件开发","gitbook":"*","description":".Net高效跨平台技术方案"},"file":{"path":"pages/di-di.md","mtime":"2020-07-09T07:30:26.779Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-18T15:55:59.139Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1243 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>6. 页面静态化和SSI · .Net Core-软件开发</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../website.css">
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="mailsms.html" />
+    
+
+    
+        <link rel="shortcut icon" href="https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png" type="image/x-icon">
+    
+    
+        <link rel="bookmark" href="https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png" type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" sizes="152x152" href="https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png">
+    
+    
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png">
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png">
+        
+    
+    
+        
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png">
+        
+        <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"colin-chang","repo":"netcore","type":"star","size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" >
+            
+                <a target="_blank" href="https://ccstudio.org">
+            
+                    
+                    CC Studio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part I - .NET Core 基础</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. 安装部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="install-install.html">
+            
+                <a href="install-install.html">
+            
+                    
+                    1.1 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="install-deploy.html">
+            
+                <a href="install-deploy.html">
+            
+                    
+                    1.2 部署项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="config.html">
+            
+                <a href="config.html">
+            
+                    
+                    2. 配置管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="index.md">
+            
+                <span>
+            
+                    
+                    3. 依赖注入
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="di-intro.html">
+            
+                <a href="di-intro.html">
+            
+                    
+                    3.1 依赖注入引入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="di-ioc.html">
+            
+                <a href="di-ioc.html">
+            
+                    
+                    3.2 控制反转（IoC）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="di-designmode.html">
+            
+                <a href="di-designmode.html">
+            
+                    
+                    3.3 基于IoC的设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="di-di.html">
+            
+                <a href="di-di.html">
+            
+                    
+                    3.4 依赖注入（DI）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="di-register.html">
+            
+                <a href="di-register.html">
+            
+                    
+                    3.5 服务注册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="di-consume.html">
+            
+                <a href="di-consume.html">
+            
+                    
+                    3.6 服务消费
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="di-lifetime.html">
+            
+                <a href="di-lifetime.html">
+            
+                    
+                    3.7 服务生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="di-aspnetcore.html">
+            
+                <a href="di-aspnetcore.html">
+            
+                    
+                    3.8 Asp.Net Core DI 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="di-src.html">
+            
+                <a href="di-src.html">
+            
+                    
+                    3.9 Asp.Net Core DI 源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="index.md">
+            
+                <span>
+            
+                    
+                    4. Asp.Net Core管道
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="pipeline-diagram.html">
+            
+                <a href="pipeline-diagram.html">
+            
+                    
+                    4.1 管道模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="pipeline-middlewire.html">
+            
+                <a href="pipeline-middlewire.html">
+            
+                    
+                    4.2 中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="pipeline-lifetime.html">
+            
+                <a href="pipeline-lifetime.html">
+            
+                    
+                    4.3 生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="pipeline-environment.html">
+            
+                <a href="pipeline-environment.html">
+            
+                    
+                    4.4 环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="supplement.html">
+            
+                <a href="supplement.html">
+            
+                    
+                    5. Session和Cache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="index.md">
+            
+                <span>
+            
+                    
+                    6. 认证与授权
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="auth-authentication.html">
+            
+                <a href="auth-authentication.html">
+            
+                    
+                    6.1 Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="auth-cookie.html">
+            
+                <a href="auth-cookie.html">
+            
+                    
+                    6.2 Cookie Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="auth-jwt.html">
+            
+                <a href="auth-jwt.html">
+            
+                    
+                    6.3 JwtBear Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="auth-auth2.html">
+            
+                <a href="auth-auth2.html">
+            
+                    
+                    6.4 OAuth2 & OpenID Connect Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="authorization.html">
+            
+                <a href="authorization.html">
+            
+                    
+                    6.5 Authorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="index.md">
+            
+                <span>
+            
+                    
+                    7. WebAPI
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="webapi-restful.html">
+            
+                <a href="webapi-restful.html">
+            
+                    
+                    7.1 WebAPI和Restful
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="webapi-basic.html">
+            
+                <a href="webapi-basic.html">
+            
+                    
+                    7.2 WebAPI基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="webapi-multiversion.html">
+            
+                <a href="webapi-multiversion.html">
+            
+                    
+                    7.3 多版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="webapi-security.html">
+            
+                <a href="webapi-security.html">
+            
+                    
+                    7.4 安全控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="webapi-openapi.html">
+            
+                <a href="webapi-openapi.html">
+            
+                    
+                    7.5 OpenAPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="log.html">
+            
+                <a href="log.html">
+            
+                    
+                    8. 日志管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part Ⅱ - 数据访问</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="dapper.html">
+            
+                <a href="dapper.html">
+            
+                    
+                    1. Dapper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2. EF Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part Ⅱ - 微服务</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="docker-intro.html">
+            
+                <a href="docker-intro.html">
+            
+                    
+                    1.1 Docker简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="docker-install.html">
+            
+                <a href="docker-install.html">
+            
+                    
+                    1.2 安装配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="docker-cmd.html">
+            
+                <a href="docker-cmd.html">
+            
+                    
+                    1.3 常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="docker-dockerfile.html">
+            
+                <a href="docker-dockerfile.html">
+            
+                    
+                    1.4 制作镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2. 微服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="microservice-intro.html">
+            
+                <a href="microservice-intro.html">
+            
+                    
+                    2.1 微服务架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="microservice-consul.html">
+            
+                <a href="microservice-consul.html">
+            
+                    
+                    2.2 服务治理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="microservice-polly.html">
+            
+                <a href="microservice-polly.html">
+            
+                    
+                    2.3 熔断降级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" data-path="microservice-ocelot.html">
+            
+                <a href="microservice-ocelot.html">
+            
+                    
+                    2.4 网关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2.5 微服务授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.6" data-path="rpc.html">
+            
+                <a href="rpc.html">
+            
+                    
+                    2.6 RPC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.7" data-path="microservice-docker.html">
+            
+                <a href="microservice-docker.html">
+            
+                    
+                    2.7 Docker+微服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅲ 其他技术</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. 多线程/异步
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="multithreading-intro.html">
+            
+                <a href="multithreading-intro.html">
+            
+                    
+                    1.1 进程、线程和应用程序域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="multithreading-basic.html">
+            
+                <a href="multithreading-basic.html">
+            
+                    
+                    1.2 进程、线程基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="multithreading-synchronization.html">
+            
+                <a href="multithreading-synchronization.html">
+            
+                    
+                    1.3 线程同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="multithreading-threadpool.html">
+            
+                <a href="multithreading-threadpool.html">
+            
+                    
+                    1.4 线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="multithreading-uiresource.html">
+            
+                <a href="multithreading-uiresource.html">
+            
+                    
+                    1.5 UI资源跨线程访问
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="multithreading-async.html">
+            
+                <a href="multithreading-async.html">
+            
+                    
+                    1.6 异步编程模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="unittest.html">
+            
+                <a href="unittest.html">
+            
+                    
+                    2. 单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part IV - 常用解决方案</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="autofac.html">
+            
+                <a href="autofac.html">
+            
+                    
+                    1. AutoFac
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="automapper.html">
+            
+                <a href="automapper.html">
+            
+                    
+                    2. AutoMapper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="https.html">
+            
+                <a href="https.html">
+            
+                    
+                    3. HTTPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="mailsms.html">
+            
+                <a href="mailsms.html">
+            
+                    
+                    4. 邮件短信通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="mailsms.html">
+            
+                <a href="mailsms.html">
+            
+                    
+                    5. 在线支付
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.6" data-path="staticssi.html">
+            
+                <a href="staticssi.html">
+            
+                    
+                    6. 页面静态化和SSI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >6. 页面静态化和SSI</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x9875;&#x9762;&#x9759;&#x6001;&#x5316;&#x548C;ssi"><a name="&#x9875;&#x9762;&#x9759;&#x6001;&#x5316;&#x548C;ssi" class="plugin-anchor" href="#&#x9875;&#x9762;&#x9759;&#x6001;&#x5316;&#x548C;ssi"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9875;&#x9762;&#x9759;&#x6001;&#x5316;&#x548C;SSI</h1>
+<h2 id="1-&#x9875;&#x9762;&#x9759;&#x6001;&#x5316;"><a name="1-&#x9875;&#x9762;&#x9759;&#x6001;&#x5316;" class="plugin-anchor" href="#1-&#x9875;&#x9762;&#x9759;&#x6001;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x9875;&#x9762;&#x9759;&#x6001;&#x5316;</h2>
+<p>&#x5373;&#x4F7F;&#x4F7F;&#x7528;&#x7F13;&#x5B58;,&#x53EA;&#x662F;&#x964D;&#x4F4E;&#x6570;&#x636E;&#x5E93;&#x670D;&#x52A1;&#x5668;&#x538B;&#x529B;,web &#x670D;&#x52A1;&#x5668;&#x4ECD;&#x7136;&#x662F;&#x201C;&#x6BCF;&#x6B21;&#x6765;&#x8BBF;&#x90FD;&#x8981;&#x8DD1; &#x4E00;&#x904D;&#x4EE3;&#x7801;&#x201D;,&#x5982;&#x679C;&#x6240;&#x6709;&#x4EBA;&#x8BBF;&#x95EE;&#x7684;&#x7ED3;&#x679C;&#x90FD;&#x4E00;&#x6837;,&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8981;&#x54CD;&#x5E94;&#x7684;&#x5185;&#x5BB9;&#x4FDD;&#x5B58;&#x6210; html &#x6587;&#x4EF6;,&#x8BA9;&#x7528;&#x6237;&#x8BBF;&#x95EE; html &#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x7F13;&#x5B58;&#x548C;&#x9759;&#x6001;&#x9875;&#x7684;&#x533A;&#x522B;:&#x9759;&#x6001;&#x9875;&#x7684;&#x6027;&#x80FD;&#x6BD4;&#x7F13;&#x5B58;&#x597D;,&#x80FD;&#x7528;&#x9759;&#x6001;&#x9875;&#x5C31;&#x7528;&#x9759;&#x6001;&#x9875;&#x3002;&#x4EC0;&#x4E48;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x80FD;&#x7528;&#x9759;&#x6001;&#x9875;:&#x76F8;&#x540C;&#x7684;&#x5730;&#x5740;&#x4E0D;&#x540C;&#x7684;&#x4EBA;&#x770B;&#x7684;&#x4E0D;&#x4E00;&#x6837;&#x3001;&#x6709;&#x7684;&#x9875;&#x9762;&#x6709;&#x7684;&#x4EBA;&#x4E0D;&#x80FD;&#x770B;&#x3002;</p>
+<h3 id="11-mvc"><a name="11-mvc" class="plugin-anchor" href="#11-mvc"><i class="fa fa-link" aria-hidden="true"></i></a>1.1 MVC</h3>
+<p>&#x4E4B;&#x524D;&#x90FD;&#x662F;&#x7528;&#x6237;&#x8BF7;&#x6C42; Action,&#x83B7;&#x53D6; html &#x54CD;&#x5E94;&#x53BB;&#x663E;&#x793A;,&#x90A3;&#x4E48;&#x600E;&#x4E48;&#x6837;&#x901A;&#x8FC7;&#x7A0B;&#x5E8F;&#x53BB;&#x8BF7;&#x6C42; Action &#x83B7;&#x53D6;&#x54CD;&#x5E94;&#x5462;?</p>
+<p>&#x9996;&#x5148;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#x7684;&#x65B9;&#x6CD5;:</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">static</span> <span class="token keyword">string</span> <span class="token function">RenderViewToString</span><span class="token punctuation">(</span><span class="token class-name">ControllerContext</span> context<span class="token punctuation">,</span> <span class="token keyword">string</span> viewPath<span class="token punctuation">,</span> <span class="token keyword">object</span> model <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">var</span> viewEngineResult <span class="token operator">=</span> ViewEngines<span class="token punctuation">.</span>Engines<span class="token punctuation">.</span><span class="token function">FindView</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> viewPath<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>viewEngineResult <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">FileNotFoundException</span><span class="token punctuation">(</span><span class="token string">&quot;View&quot;</span> <span class="token operator">+</span> viewPath <span class="token operator">+</span> <span class="token string">&quot;cannot be found.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">var</span> view <span class="token operator">=</span> viewEngineResult<span class="token punctuation">.</span>View<span class="token punctuation">;</span>
+    context<span class="token punctuation">.</span>Controller<span class="token punctuation">.</span>ViewData<span class="token punctuation">.</span>Model <span class="token operator">=</span> model<span class="token punctuation">;</span>
+    <span class="token keyword">using</span> <span class="token punctuation">(</span><span class="token keyword">var</span> sw <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> ctx <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ViewContext</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> view<span class="token punctuation">,</span>
+            context<span class="token punctuation">.</span>Controller<span class="token punctuation">.</span>ViewData<span class="token punctuation">,</span>
+            context<span class="token punctuation">.</span>Controller<span class="token punctuation">.</span>TempData<span class="token punctuation">,</span>
+            sw<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        view<span class="token punctuation">.</span><span class="token function">Render</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> sw<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> sw<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+&#x7136;&#x540E;&#x5982;&#x4E0B;&#x8C03;&#x7528;<span class="token punctuation">:</span>
+```csharp
+<span class="token keyword">string</span> html <span class="token operator">=</span> <span class="token function">RenderViewToString</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>ControllerContext<span class="token punctuation">,</span> <span class="token string">&quot;~/Views/Home/Index.cshtml&quot;</span><span class="token punctuation">,</span> person<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+File<span class="token punctuation">.</span><span class="token function">WriteAllText</span><span class="token punctuation">(</span><span class="token string">&quot;home_index.html&quot;</span><span class="token punctuation">,</span>html<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x9759;&#x6001;&#x5316;&#x4E4B;&#x540E;&#x53EF;&#x4EE5;&#x5C06;&#x7528;&#x6237;&#x5BF9;<code>/Home/Index</code>&#x7684;&#x8BF7;&#x6C42;&#x8F6C;&#x4E3A;<code>/home_index.html</code>&#x3002;&#x65E2;&#x53EF;&#x4EE5;&#x5728;&#x751F;&#x6210;&#x5BA2;&#x6237;&#x7AEF;&#x94FE;&#x63A5;&#x7684;&#x65F6;&#x5019;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x9759;&#x6001;&#x5730;&#x5740;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x901A;&#x8FC7;&#x8DEF;&#x7531;&#x91CD;&#x5B9A;&#x9879;&#x7B49;&#x5904;&#x7406;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x901A;&#x5E38;&#x53EA;&#x5BF9;<strong>&#x8BFB;&#x591A;&#x5199;&#x5C11;</strong>&#x7684;&#x5185;&#x5BB9;&#x8FDB;&#x884C;&#x9875;&#x9762;&#x9759;&#x6001;&#x5316;&#x5904;&#x7406;&#xFF0C;&#x5F53;&#x9759;&#x6001;&#x5316;&#x7684;&#x9875;&#x9762;&#x5185;&#x5BB9;&#x53D1;&#x751F;&#x201C;&#x589E;&#x5220;&#x6539;&#x201D;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x91CD;&#x65B0;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x7684;&#x9759;&#x6001;&#x9875;&#x9762;&#x5373;&#x53EF;&#x3002;</p>
+<h3 id="12-webapi"><a name="12-webapi" class="plugin-anchor" href="#12-webapi"><i class="fa fa-link" aria-hidden="true"></i></a>1.2 WebAPI</h3>
+<p>&#x76EE;&#x524D;Web&#x5F00;&#x53D1;&#x4E2D;<a href="../distribution/separatefontend.md">&#x524D;&#x540E;&#x7AEF;&#x5206;&#x79BB;</a>&#x6280;&#x672F;&#x9010;&#x6E10;&#x6210;&#x4E3A;&#x8D8B;&#x52BF;&#x3002;&#x524D;&#x540E;&#x7AEF;&#x5206;&#x79BB;&#x4E4B;&#x540E;&#x9879;&#x76EE;&#x67B6;&#x6784;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x62BD;&#x8C61;&#x4E3A;<code>UI + WebAPI</code>&#x3002;&#x90A3;&#x4E48;&#x5982;&#x4F55;&#x5728;&#x524D;&#x540E;&#x7AEF;&#x5206;&#x79BB;&#x67B6;&#x6784;&#x4E2D;&#x8FDB;&#x884C;&#x9875;&#x9762;&#x9759;&#x6001;&#x5316;&#x5462;&#x3002;</p>
+<p>&#x9875;&#x9762;&#x9759;&#x6001;&#x5316;&#x672C;&#x8D28;&#x662F;&#x5728;HTML&#x7EC4;&#x88C5;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x5C06;&#x5176;&#x4FDD;&#x5B58;&#x4E3A;&#x9759;&#x6001;&#x6587;&#x4EF6;&#xFF0C;&#x7528;&#x6237;&#x8BF7;&#x6C42;&#x65F6;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x4FDD;&#x5B58;&#x7684;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x800C;&#x4E0D;&#x7528;&#x518D;&#x6B21;&#x52A8;&#x6001;&#x7EC4;&#x88C5;&#x3002;&#x90A3;&#x5728;&#x524D;&#x540E;&#x7AEF;&#x5206;&#x79BB;&#x4E4B;&#x540E;&#xFF0C;HTML&#x7684;&#x7EC4;&#x88C5;&#x5DE5;&#x4F5C;&#x90FD;&#x662F;&#x5728;<code>UI</code>&#x5B8C;&#x6210;&#xFF0C;&#x6240;&#x4EE5;&#x76F4;&#x63A5;&#x5728;<code>UI</code>&#x5C42;&#x7F16;&#x5199;&#x9759;&#x6001;&#x5316;&#x903B;&#x8F91;&#x5373;&#x53EF;&#x3002;&#x65B0;&#x589E;&#x9700;&#x8981;&#x9759;&#x6001;&#x5316;&#x7684;&#x8D44;&#x6E90;&#x65F6;&#xFF0C;&#x8BF7;&#x6C42;<code>API</code>&#x6570;&#x636E;&#x7EC4;&#x88C5;HTML&#x5E76;&#x4F7F;&#x7528;JS&#x5C06;&#x7EC4;&#x88C5;&#x5B8C;&#x6210;&#x7684;HTML&#x9875;&#x9762;&#x53E6;&#x5B58;&#x4E0B;&#x6765;&#xFF0C;&#x5176;&#x5185;&#x5BB9;&#x53D1;&#x751F;<code>&#x589E;&#x5220;&#x6539;</code>&#x64CD;&#x4F5C;&#x65F6;&#x518D;&#x6B21;&#x8BF7;&#x6C42;<code>API</code>&#x91CD;&#x65B0;&#x7EC4;&#x88C5;&#x5373;&#x53EF;&#x3002;</p>
+<h2 id="2-ssi"><a name="2-ssi" class="plugin-anchor" href="#2-ssi"><i class="fa fa-link" aria-hidden="true"></i></a>2. SSI</h2>
+<p><a href="https://www.jianshu.com/p/3898780ac1c9" target="_blank">https://www.jianshu.com/p/3898780ac1c9</a>
+<a href="https://www.cnblogs.com/dehigher/p/10127380.html" target="_blank">https://www.cnblogs.com/dehigher/p/10127380.html</a></p>
+<footer class="page-footer"><span class="copyright">&#xA9; Colin Chang all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-07-09 15:30:26
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="mailsms.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 5. 在线支付">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"6. 页面静态化和SSI","level":"6.6","depth":1,"previous":{"title":"5. 在线支付","level":"6.5","depth":1,"path":"pages/mailsms.md","ref":"pages/mailsms.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","-lunr","-search","search-plus","advanced-emoji","github-buttons","multipart","splitter","tbfed-pagefooter","anchors","sitemap","-sharing","sharing-plus","toggle-chapters","book-summary-scroll-position-saver","prism","-highlight","favicon-absolute"],"styles":{"website":"website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy Colin Chang","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"disqus":{"useIdentifier":false,"shortName":"http-colin-chang-site-1"},"book-summary-scroll-position-saver":{},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"multipart":{},"favicon-absolute":{"appleTouchIconMore":{"120x120":"https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png","180x180":"https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png"},"appleTouchIconPrecomposed152":"https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png","appleTouchIconPrecomposedMore":{"120x120":"https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png","180x180":"https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png"},"favicon":"https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png","bookmark":"https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png","appleTouchIcon152":"https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"https://ccstudio.org/netcore"},"github-buttons":{"buttons":[{"user":"colin-chang","repo":"netcore","type":"star","size":"small"}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":true,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","instapaper","vk","weibo"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"toggle-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":".Net Core-软件开发","gitbook":"*","description":".Net高效跨平台技术方案"},"file":{"path":"pages/staticssi.md","mtime":"2020-07-09T07:30:26.771Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-18T15:55:59.139Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

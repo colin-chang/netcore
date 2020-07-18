@@ -1,0 +1,1384 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3.5 服务注册 · .Net Core-软件开发</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../website.css">
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="di-consume.html" />
+    
+    
+    <link rel="prev" href="di-di.html" />
+    
+
+    
+        <link rel="shortcut icon" href="https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png" type="image/x-icon">
+    
+    
+        <link rel="bookmark" href="https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png" type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" sizes="152x152" href="https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png">
+    
+    
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png">
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png">
+        
+    
+    
+        
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png">
+        
+        <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"colin-chang","repo":"netcore","type":"star","size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" >
+            
+                <a target="_blank" href="https://ccstudio.org">
+            
+                    
+                    CC Studio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part I - .NET Core 基础</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. 安装部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="install-install.html">
+            
+                <a href="install-install.html">
+            
+                    
+                    1.1 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="install-deploy.html">
+            
+                <a href="install-deploy.html">
+            
+                    
+                    1.2 部署项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="config.html">
+            
+                <a href="config.html">
+            
+                    
+                    2. 配置管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="index.md">
+            
+                <span>
+            
+                    
+                    3. 依赖注入
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="di-intro.html">
+            
+                <a href="di-intro.html">
+            
+                    
+                    3.1 依赖注入引入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="di-ioc.html">
+            
+                <a href="di-ioc.html">
+            
+                    
+                    3.2 控制反转（IoC）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="di-designmode.html">
+            
+                <a href="di-designmode.html">
+            
+                    
+                    3.3 基于IoC的设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="di-di.html">
+            
+                <a href="di-di.html">
+            
+                    
+                    3.4 依赖注入（DI）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.3.5" data-path="di-register.html">
+            
+                <a href="di-register.html">
+            
+                    
+                    3.5 服务注册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="di-consume.html">
+            
+                <a href="di-consume.html">
+            
+                    
+                    3.6 服务消费
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="di-lifetime.html">
+            
+                <a href="di-lifetime.html">
+            
+                    
+                    3.7 服务生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="di-aspnetcore.html">
+            
+                <a href="di-aspnetcore.html">
+            
+                    
+                    3.8 Asp.Net Core DI 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="di-src.html">
+            
+                <a href="di-src.html">
+            
+                    
+                    3.9 Asp.Net Core DI 源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="index.md">
+            
+                <span>
+            
+                    
+                    4. Asp.Net Core管道
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="pipeline-diagram.html">
+            
+                <a href="pipeline-diagram.html">
+            
+                    
+                    4.1 管道模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="pipeline-middlewire.html">
+            
+                <a href="pipeline-middlewire.html">
+            
+                    
+                    4.2 中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="pipeline-lifetime.html">
+            
+                <a href="pipeline-lifetime.html">
+            
+                    
+                    4.3 生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="pipeline-environment.html">
+            
+                <a href="pipeline-environment.html">
+            
+                    
+                    4.4 环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="supplement.html">
+            
+                <a href="supplement.html">
+            
+                    
+                    5. Session和Cache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="index.md">
+            
+                <span>
+            
+                    
+                    6. 认证与授权
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="auth-authentication.html">
+            
+                <a href="auth-authentication.html">
+            
+                    
+                    6.1 Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="auth-cookie.html">
+            
+                <a href="auth-cookie.html">
+            
+                    
+                    6.2 Cookie Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="auth-jwt.html">
+            
+                <a href="auth-jwt.html">
+            
+                    
+                    6.3 JwtBear Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="auth-auth2.html">
+            
+                <a href="auth-auth2.html">
+            
+                    
+                    6.4 OAuth2 & OpenID Connect Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="authorization.html">
+            
+                <a href="authorization.html">
+            
+                    
+                    6.5 Authorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="index.md">
+            
+                <span>
+            
+                    
+                    7. WebAPI
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="webapi-restful.html">
+            
+                <a href="webapi-restful.html">
+            
+                    
+                    7.1 WebAPI和Restful
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="webapi-basic.html">
+            
+                <a href="webapi-basic.html">
+            
+                    
+                    7.2 WebAPI基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="webapi-multiversion.html">
+            
+                <a href="webapi-multiversion.html">
+            
+                    
+                    7.3 多版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="webapi-security.html">
+            
+                <a href="webapi-security.html">
+            
+                    
+                    7.4 安全控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="webapi-openapi.html">
+            
+                <a href="webapi-openapi.html">
+            
+                    
+                    7.5 OpenAPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="log.html">
+            
+                <a href="log.html">
+            
+                    
+                    8. 日志管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part Ⅱ - 数据访问</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="dapper.html">
+            
+                <a href="dapper.html">
+            
+                    
+                    1. Dapper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2. EF Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part Ⅱ - 微服务</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="docker-intro.html">
+            
+                <a href="docker-intro.html">
+            
+                    
+                    1.1 Docker简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="docker-install.html">
+            
+                <a href="docker-install.html">
+            
+                    
+                    1.2 安装配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="docker-cmd.html">
+            
+                <a href="docker-cmd.html">
+            
+                    
+                    1.3 常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="docker-dockerfile.html">
+            
+                <a href="docker-dockerfile.html">
+            
+                    
+                    1.4 制作镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2. 微服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="microservice-intro.html">
+            
+                <a href="microservice-intro.html">
+            
+                    
+                    2.1 微服务架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="microservice-consul.html">
+            
+                <a href="microservice-consul.html">
+            
+                    
+                    2.2 服务治理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="microservice-polly.html">
+            
+                <a href="microservice-polly.html">
+            
+                    
+                    2.3 熔断降级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" data-path="microservice-ocelot.html">
+            
+                <a href="microservice-ocelot.html">
+            
+                    
+                    2.4 网关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2.5 微服务授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.6" data-path="rpc.html">
+            
+                <a href="rpc.html">
+            
+                    
+                    2.6 RPC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.7" data-path="microservice-docker.html">
+            
+                <a href="microservice-docker.html">
+            
+                    
+                    2.7 Docker+微服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅲ 其他技术</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. 多线程/异步
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="multithreading-intro.html">
+            
+                <a href="multithreading-intro.html">
+            
+                    
+                    1.1 进程、线程和应用程序域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="multithreading-basic.html">
+            
+                <a href="multithreading-basic.html">
+            
+                    
+                    1.2 进程、线程基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="multithreading-synchronization.html">
+            
+                <a href="multithreading-synchronization.html">
+            
+                    
+                    1.3 线程同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="multithreading-threadpool.html">
+            
+                <a href="multithreading-threadpool.html">
+            
+                    
+                    1.4 线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="multithreading-uiresource.html">
+            
+                <a href="multithreading-uiresource.html">
+            
+                    
+                    1.5 UI资源跨线程访问
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="multithreading-async.html">
+            
+                <a href="multithreading-async.html">
+            
+                    
+                    1.6 异步编程模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="unittest.html">
+            
+                <a href="unittest.html">
+            
+                    
+                    2. 单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part IV - 常用解决方案</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="autofac.html">
+            
+                <a href="autofac.html">
+            
+                    
+                    1. AutoFac
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="automapper.html">
+            
+                <a href="automapper.html">
+            
+                    
+                    2. AutoMapper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="https.html">
+            
+                <a href="https.html">
+            
+                    
+                    3. HTTPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="mailsms.html">
+            
+                <a href="mailsms.html">
+            
+                    
+                    4. 邮件短信通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="mailsms.html">
+            
+                <a href="mailsms.html">
+            
+                    
+                    5. 在线支付
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="staticssi.html">
+            
+                <a href="staticssi.html">
+            
+                    
+                    6. 页面静态化和SSI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3.5 服务注册</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="net-core-&#x670D;&#x52A1;&#x6CE8;&#x518C;"><a name="net-core-&#x670D;&#x52A1;&#x6CE8;&#x518C;" class="plugin-anchor" href="#net-core-&#x670D;&#x52A1;&#x6CE8;&#x518C;"><i class="fa fa-link" aria-hidden="true"></i></a>.Net Core &#x670D;&#x52A1;&#x6CE8;&#x518C;</h1>
+<ul>
+<li><a href="#net-core-%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c">.Net Core &#x670D;&#x52A1;&#x6CE8;&#x518C;</a><ul>
+<li><a href="#1-servicedescriptor">1. ServiceDescriptor</a></li>
+<li><a href="#2-iservicecollection">2. IServiceCollection</a><ul>
+<li><a href="#1-add">1) Add</a></li>
+<li><a href="#2-addlifetime">2) Add{Lifetime}</a></li>
+<li><a href="#3-tryadd">3) TryAdd</a></li>
+<li><a href="#4-tryaddlifetime">4) TryAdd{Lifetime}</a></li>
+</ul>
+</li>
+<li><a href="#5-tryaddenumerable">5) TryAddEnumerable</a><ul>
+<li><a href="#6-removeall--replace">6) RemoveAll &amp; Replace</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x672C;&#x8D28;&#x662F;&#x521B;&#x5EFA;&#x76F8;&#x5E94;&#x7684;ServiceDescriptor&#x5BF9;&#x8C61;&#x5E76;&#x5C06;&#x5176;&#x6DFB;&#x52A0;&#x5230;&#x6307;&#x5B9A;IServiceCollection&#x96C6;&#x5408;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</strong></p>
+<h2 id="1-servicedescriptor"><a name="1-servicedescriptor" class="plugin-anchor" href="#1-servicedescriptor"><i class="fa fa-link" aria-hidden="true"></i></a>1. ServiceDescriptor</h2>
+<p>ServiceDescriptor&#x63D0;&#x4F9B;&#x5BF9;&#x670D;&#x52A1;&#x7684;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;&#xFF0C;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x5C06;&#x6307;&#x5BFC;ServiceProvider&#x6B63;&#x786E;&#x5730;&#x5B9E;&#x65BD;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x64CD;&#x4F5C;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ServiceDescriptor</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">Type</span> ServiceType <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token class-name">ServiceLifetime</span> Lifetime <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Type</span> ImplementationType <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> Func<span class="token operator">&lt;</span>IServiceProvider<span class="token punctuation">,</span> <span class="token keyword">object</span><span class="token operator">&gt;</span> ImplementationFactory <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">object</span> ImplementationInstance <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token function">ServiceDescriptor</span><span class="token punctuation">(</span><span class="token class-name">Type</span> serviceType<span class="token punctuation">,</span> <span class="token keyword">object</span> instance<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token function">ServiceDescriptor</span><span class="token punctuation">(</span><span class="token class-name">Type</span> serviceType<span class="token punctuation">,</span> Func<span class="token operator">&lt;</span>IServiceProvider<span class="token punctuation">,</span> <span class="token keyword">object</span><span class="token operator">&gt;</span> factory<span class="token punctuation">,</span> <span class="token class-name">ServiceLifetime</span> lifetime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token function">ServiceDescriptor</span><span class="token punctuation">(</span><span class="token class-name">Type</span> serviceType<span class="token punctuation">,</span> <span class="token class-name">Type</span> implementationType<span class="token punctuation">,</span> <span class="token class-name">ServiceLifetime</span> lifetime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>ServiceType&#x5C5E;&#x6027;&#x4EE3;&#x8868;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x7531;&#x4E8E;&#x6807;&#x51C6;&#x5316;&#x7684;&#x670D;&#x52A1;&#x4E00;&#x822C;&#x4F1A;&#x5B9A;&#x4E49;&#x6210;&#x63A5;&#x53E3;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x7EDD;&#x5927;&#x90E8;&#x5206;&#x60C5;&#x51B5;&#x4E0B;&#x4F53;&#x73B0;&#x4E3A;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x7C7B;&#x578B;&#x3002;</p>
+<p>&#x7C7B;&#x578B;&#x4E3A;ServiceLifetime&#x7684;&#x5C5E;&#x6027;Lifetime&#x4F53;&#x73B0;&#x4E86;ServiceProvider&#x9488;&#x5BF9;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x751F;&#x547D;&#x5468;&#x671F;&#x7684;&#x63A7;&#x5236;&#x65B9;&#x5F0F;&#x3002;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x6240;&#x793A;&#xFF0C;ServiceLifetime&#x662F;&#x4E00;&#x4E2A;&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#xFF0C;&#x5B9A;&#x4E49;&#x5176;&#x4E2D;&#x7684;&#x4E09;&#x4E2A;&#x9009;&#x9879;&#xFF08;Singleton&#x3001;Scoped&#x548C;Transient&#xFF09;&#x4F53;&#x73B0;&#x4E09;&#x79CD;&#x5BF9;&#x670D;&#x52A1;&#x5BF9;&#x8C61;&#x751F;&#x547D;&#x5468;&#x671F;&#x7684;&#x63A7;&#x5236;&#x5F62;&#x5F0F;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x540E;&#x7EED;&#x5BF9;&#x6B64;&#x4F5C;&#x4E13;&#x95E8;&#x7684;&#x4ECB;&#x7ECD;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">enum</span> ServiceLifetime
+<span class="token punctuation">{</span>
+    Singleton<span class="token punctuation">,</span>
+    Scoped<span class="token punctuation">,</span>
+    Transient
+<span class="token punctuation">}</span>
+</code></pre>
+<p>ServiceDescriptor&#x7684;&#x5176;&#x4ED6;&#x4E09;&#x4E2A;&#x5C5E;&#x6027;&#x4F53;&#x73B0;&#x4E86;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x7684;&#x4E09;&#x79CD;&#x63D0;&#x4F9B;&#x65B9;&#x5F0F;&#xFF0C;&#x5E76;&#x5BF9;&#x5E94;&#x7740;&#x4E09;&#x4E2A;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x6307;&#x5B9A;&#x4E86;&#x670D;&#x52A1;&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x578B;&#xFF08;&#x5BF9;&#x5E94;&#x4E8E;ImplementationType&#x5C5E;&#x6027;&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x6700;&#x7EC8;&#x7684;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x5C06;&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x5B9A;&#x4E49;&#x5728;&#x5B9E;&#x73B0;&#x7C7B;&#x578B;&#x4E2D;&#x67D0;&#x4E00;&#x4E2A;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6765;&#x521B;&#x5EFA;&#x3002;&#x5982;&#x679C;&#x6307;&#x5B9A;&#x7684;&#x662F;&#x4E00;&#x4E2A;Func&lt;IServiceProvider, object&gt;&#x5BF9;&#x8C61;&#xFF08;&#x5BF9;&#x5E94;&#x4E8E;ImplementationFactory&#x5C5E;&#x6027;&#xFF09;&#xFF0C;&#x90A3;&#x4E48;IServiceProvider&#x5BF9;&#x8C61;&#x5C06;&#x4F1A;&#x5C06;&#x81EA;&#x8EAB;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#x53C2;&#x6570;&#x8C03;&#x7528;&#x8BE5;&#x59D4;&#x6258;&#x5BF9;&#x8C61;&#x6765;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x73B0;&#x6709;&#x7684;&#x5BF9;&#x8C61;&#xFF08;&#x5BF9;&#x5E94;&#x7684;&#x5C5E;&#x6027;&#x4E3A;ImplementationInstance&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x5BF9;&#x8C61;&#x5C31;&#x662F;&#x6700;&#x7EC8;&#x63D0;&#x4F9B;&#x7684;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x91C7;&#x7528;&#x76F4;&#x63A5;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x7684;&#x5F62;&#x5F0F;&#x6765;&#x521B;&#x5EFA;ServiceDescriptor&#x5BF9;&#x8C61;&#xFF0C;&#x610F;&#x5473;&#x7740;&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x9ED8;&#x8BA4;&#x91C7;&#x7528;Singleton&#x751F;&#x547D;&#x5468;&#x671F;&#x6A21;&#x5F0F;&#x3002;&#x5BF9;&#x4E8E;&#x901A;&#x8FC7;&#x5176;&#x4ED6;&#x4E24;&#x4E2A;&#x6784;&#x9020;&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x7684;ServiceDescriptor&#x5BF9;&#x8C61;&#x6765;&#x8BF4;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x663E;&#x5F0F;&#x6307;&#x5B9A;&#x91C7;&#x7528;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x6A21;&#x5F0F;&#x3002;</p>
+<p>&#x9664;&#x4E86;&#x8C03;&#x7528;&#x4E0A;&#x9762;&#x4ECB;&#x7ECD;&#x7684;&#x4E09;&#x4E2A;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6765;&#x521B;&#x5EFA;&#x5BF9;&#x5E94;&#x7684;ServiceDescriptor&#x5BF9;&#x8C61;&#x4E4B;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x5B9A;&#x4E49;&#x5728;ServiceDescriptor&#x7C7B;&#x578B;&#x4E2D;&#x4E00;&#x7CFB;&#x5217;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x6765;&#x521B;&#x5EFA;&#x8BE5;&#x5BF9;&#x8C61;&#x3002;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x6240;&#x793A;&#xFF0C;ServiceDescriptor&#x63D0;&#x4F9B;&#x4E86;&#x5982;&#x4E0B;&#x4E24;&#x4E2A;&#x540D;&#x4E3A;Describe&#x7684;&#x65B9;&#x6CD5;&#x91CD;&#x8F7D;&#x6765;&#x521B;&#x5EFA;&#x5BF9;&#x5E94;&#x7684;ServiceDescriptor&#x5BF9;&#x8C61;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ServiceDescriptor</span>
+<span class="token punctuation">{</span>   
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">ServiceDescriptor</span> <span class="token function">Describe</span><span class="token punctuation">(</span><span class="token class-name">Type</span> serviceType<span class="token punctuation">,</span> Func<span class="token operator">&lt;</span>IServiceProvider<span class="token punctuation">,</span> <span class="token keyword">object</span><span class="token operator">&gt;</span> implementationFactory<span class="token punctuation">,</span> <span class="token class-name">ServiceLifetime</span> lifetime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">ServiceDescriptor</span> <span class="token function">Describe</span><span class="token punctuation">(</span><span class="token class-name">Type</span> serviceType<span class="token punctuation">,</span> <span class="token class-name">Type</span> implementationType<span class="token punctuation">,</span> <span class="token class-name">ServiceLifetime</span> lifetime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x8C03;&#x7528;&#x4E0A;&#x9762;&#x4E24;&#x4E2A;Describe&#x65B9;&#x6CD5;&#x6765;&#x521B;&#x5EFA;ServiceDescriptor&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#x603B;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x91C7;&#x7528;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x6A21;&#x5F0F;&#xFF0C;&#x4E3A;&#x4E86;&#x8BA9;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x53D8;&#x5F97;&#x66F4;&#x52A0;&#x7B80;&#x5355;&#xFF0C;ServiceDescriptor&#x4E2D;&#x8FD8;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x9488;&#x5BF9;&#x4E09;&#x79CD;&#x751F;&#x547D;&#x5468;&#x671F;&#x6A21;&#x5F0F;&#x7684;&#x9759;&#x6001;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x3002;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x7684;&#x662F;&#x9488;&#x5BF9;Singleton&#x6A21;&#x5F0F;&#x7684;&#x4E00;&#x7EC4;Singleton&#x65B9;&#x6CD5;&#x91CD;&#x8F7D;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x9488;&#x5BF9;&#x5176;&#x4ED6;&#x4E24;&#x79CD;&#x6A21;&#x5F0F;&#x7684;Scoped&#x548C;Transient&#x65B9;&#x6CD5;&#x5177;&#x6709;&#x7C7B;&#x4F3C;&#x7684;&#x5B9A;&#x4E49;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ServiceDescriptor</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> ServiceDescriptor <span class="token generic-method"><span class="token function">Singleton</span><span class="token punctuation">&lt;</span><span class="token class-name">TService</span><span class="token punctuation">,</span> <span class="token class-name">TImplementation</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">where</span> TService<span class="token punctuation">:</span> <span class="token keyword">class</span> <span class="token keyword">where</span> TImplementation<span class="token punctuation">:</span> <span class="token keyword">class</span><span class="token punctuation">,</span> TService<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> ServiceDescriptor <span class="token generic-method"><span class="token function">Singleton</span><span class="token punctuation">&lt;</span><span class="token class-name">TService</span><span class="token punctuation">,</span> <span class="token class-name">TImplementation</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>Func<span class="token operator">&lt;</span>IServiceProvider<span class="token punctuation">,</span> TImplementation<span class="token operator">&gt;</span> implementationFactory<span class="token punctuation">)</span> <span class="token keyword">where</span> TService<span class="token punctuation">:</span> <span class="token keyword">class</span> <span class="token keyword">where</span> TImplementation<span class="token punctuation">:</span> <span class="token keyword">class</span><span class="token punctuation">,</span> TService<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> ServiceDescriptor <span class="token generic-method"><span class="token function">Singleton</span><span class="token punctuation">&lt;</span><span class="token class-name">TService</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>Func<span class="token operator">&lt;</span>IServiceProvider<span class="token punctuation">,</span> TService<span class="token operator">&gt;</span> implementationFactory<span class="token punctuation">)</span> <span class="token keyword">where</span> TService<span class="token punctuation">:</span> <span class="token keyword">class</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> ServiceDescriptor <span class="token generic-method"><span class="token function">Singleton</span><span class="token punctuation">&lt;</span><span class="token class-name">TService</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token class-name">TService</span> implementationInstance<span class="token punctuation">)</span> <span class="token keyword">where</span> TService<span class="token punctuation">:</span> <span class="token keyword">class</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">ServiceDescriptor</span> <span class="token function">Singleton</span><span class="token punctuation">(</span><span class="token class-name">Type</span> serviceType<span class="token punctuation">,</span> Func<span class="token operator">&lt;</span>IServiceProvider<span class="token punctuation">,</span> <span class="token keyword">object</span><span class="token operator">&gt;</span> implementationFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">ServiceDescriptor</span> <span class="token function">Singleton</span><span class="token punctuation">(</span><span class="token class-name">Type</span> serviceType<span class="token punctuation">,</span> <span class="token keyword">object</span> implementationInstance<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">ServiceDescriptor</span> <span class="token function">Singleton</span><span class="token punctuation">(</span><span class="token class-name">Type</span> service<span class="token punctuation">,</span> <span class="token class-name">Type</span> implementationType<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="2-iservicecollection"><a name="2-iservicecollection" class="plugin-anchor" href="#2-iservicecollection"><i class="fa fa-link" aria-hidden="true"></i></a>2. IServiceCollection</h2>
+<p>IServiceCollection&#x5BF9;&#x8C61;&#x672C;&#x8D28;&#x4E0A;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x4E3A;ServiceDescriptor&#x7684;&#x5217;&#x8868;&#x3002;&#x5728;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x5B9E;&#x73B0;&#x8BE5;&#x63A5;&#x53E3;&#x7684;ServiceCollection&#x7C7B;&#x578B;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IServiceCollection</span> <span class="token punctuation">:</span> <span class="token class-name">IList</span><span class="token operator">&lt;</span>ServiceDescriptor<span class="token operator">&gt;</span>
+<span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ServiceCollection</span> <span class="token punctuation">:</span> <span class="token class-name">IServiceCollection</span>
+<span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre>
+<h3 id="1-add"><a name="1-add" class="plugin-anchor" href="#1-add"><i class="fa fa-link" aria-hidden="true"></i></a>1) Add</h3>
+<p>&#x8003;&#x8651;&#x5230;&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x662F;&#x4E00;&#x4E2A;&#x9AD8;&#x9891;&#x8C03;&#x7528;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x6240;&#x4EE5;DI&#x6846;&#x67B6;&#x4E3A;IServiceCollection&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x6269;&#x5C55;&#x65B9;&#x6CD5;&#x5B8C;&#x6210;&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x6BD4;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x8FD9;&#x4E24;&#x4E2A;Add&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5C06;&#x6307;&#x5B9A;&#x7684;&#x4E00;&#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A;ServiceDescriptor&#x5BF9;&#x8C61;&#x6DFB;&#x52A0;&#x5230;IServiceCollection&#x96C6;&#x5408;&#x4E2D;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">ServiceCollectionDescriptorExtensions</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">IServiceCollection</span> <span class="token function">Add</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> collection<span class="token punctuation">,</span> <span class="token class-name">ServiceDescriptor</span> descriptor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">IServiceCollection</span> <span class="token function">Add</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> collection<span class="token punctuation">,</span> IEnumerable<span class="token operator">&lt;</span>ServiceDescriptor<span class="token operator">&gt;</span> descriptors<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="2-addlifetime"><a name="2-addlifetime" class="plugin-anchor" href="#2-addlifetime"><i class="fa fa-link" aria-hidden="true"></i></a>2) Add{Lifetime}</h3>
+<p>DI&#x6846;&#x67B6;&#x8FD8;&#x9488;&#x5BF9;&#x5177;&#x4F53;&#x751F;&#x547D;&#x5468;&#x671F;&#x6A21;&#x5F0F;&#x4E3A;IServiceCollection&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x6269;&#x5C55;&#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x4EEC;&#x4F1A;&#x6839;&#x636E;&#x63D0;&#x4F9B;&#x7684;&#x8F93;&#x5165;&#x521B;&#x5EFA;&#x51FA;&#x5BF9;&#x5E94;&#x7684;ServiceDescriptor&#x5BF9;&#x8C61;&#x5E76;&#x5C06;&#x5176;&#x6DFB;&#x52A0;&#x5230;&#x6307;&#x5B9A;&#x7684;IServiceCollection&#x5BF9;&#x8C61;&#x4E2D;&#x3002;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x7684;&#x662F;&#x9488;&#x5BF9;Singleton&#x6A21;&#x5F0F;&#x7684;AddSingleton&#x65B9;&#x6CD5;&#x91CD;&#x8F7D;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x9488;&#x5BF9;&#x5176;&#x4ED6;&#x4E24;&#x4E2A;&#x751F;&#x547D;&#x5468;&#x671F;&#x6A21;&#x5F0F;&#x7684;AddScoped&#x548C;AddTransient&#x65B9;&#x6CD5;&#x5177;&#x6709;&#x7C7B;&#x4F3C;&#x7684;&#x5B9A;&#x4E49;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">ServiceCollectionServiceExtensions</span>
+<span class="token punctuation">{</span>   
+    <span class="token keyword">public</span> <span class="token keyword">static</span> IServiceCollection <span class="token generic-method"><span class="token function">AddSingleton</span><span class="token punctuation">&lt;</span><span class="token class-name">TService</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> services<span class="token punctuation">)</span> <span class="token keyword">where</span> TService<span class="token punctuation">:</span> <span class="token keyword">class</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> IServiceCollection <span class="token generic-method"><span class="token function">AddSingleton</span><span class="token punctuation">&lt;</span><span class="token class-name">TService</span><span class="token punctuation">,</span> <span class="token class-name">TImplementation</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> services<span class="token punctuation">)</span> <span class="token keyword">where</span> TService<span class="token punctuation">:</span> <span class="token keyword">class</span> <span class="token keyword">where</span> TImplementation<span class="token punctuation">:</span> <span class="token keyword">class</span><span class="token punctuation">,</span> TService<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> IServiceCollection <span class="token generic-method"><span class="token function">AddSingleton</span><span class="token punctuation">&lt;</span><span class="token class-name">TService</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> services<span class="token punctuation">,</span> <span class="token class-name">TService</span> implementationInstance<span class="token punctuation">)</span>  <span class="token keyword">where</span> TService<span class="token punctuation">:</span> <span class="token keyword">class</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> IServiceCollection <span class="token generic-method"><span class="token function">AddSingleton</span><span class="token punctuation">&lt;</span><span class="token class-name">TService</span><span class="token punctuation">,</span> <span class="token class-name">TImplementation</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> services<span class="token punctuation">,</span> Func<span class="token operator">&lt;</span>IServiceProvider<span class="token punctuation">,</span> TImplementation<span class="token operator">&gt;</span> implementationFactory<span class="token punctuation">)</span>  <span class="token keyword">where</span> TService<span class="token punctuation">:</span> <span class="token keyword">class</span> <span class="token keyword">where</span> TImplementation<span class="token punctuation">:</span> <span class="token keyword">class</span><span class="token punctuation">,</span> TService<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> IServiceCollection <span class="token generic-method"><span class="token function">AddSingleton</span><span class="token punctuation">&lt;</span><span class="token class-name">TService</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> services<span class="token punctuation">,</span> Func<span class="token operator">&lt;</span>IServiceProvider<span class="token punctuation">,</span> TService<span class="token operator">&gt;</span> implementationFactory<span class="token punctuation">)</span>  <span class="token keyword">where</span> TService<span class="token punctuation">:</span> <span class="token keyword">class</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">IServiceCollection</span> <span class="token function">AddSingleton</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> services<span class="token punctuation">,</span> <span class="token class-name">Type</span> serviceType<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">IServiceCollection</span> <span class="token function">AddSingleton</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> services<span class="token punctuation">,</span> <span class="token class-name">Type</span> serviceType<span class="token punctuation">,</span> Func<span class="token operator">&lt;</span>IServiceProvider<span class="token punctuation">,</span> <span class="token keyword">object</span><span class="token operator">&gt;</span> implementationFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">IServiceCollection</span> <span class="token function">AddSingleton</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> services<span class="token punctuation">,</span> <span class="token class-name">Type</span> serviceType<span class="token punctuation">,</span> <span class="token keyword">object</span> implementationInstance<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">IServiceCollection</span> <span class="token function">AddSingleton</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> services<span class="token punctuation">,</span> <span class="token class-name">Type</span> serviceType<span class="token punctuation">,</span> <span class="token class-name">Type</span> implementationType<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="3-tryadd"><a name="3-tryadd" class="plugin-anchor" href="#3-tryadd"><i class="fa fa-link" aria-hidden="true"></i></a>3) TryAdd</h3>
+<p>&#x867D;&#x7136;&#x9488;&#x5BF9;&#x540C;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x591A;&#x4E2A;ServiceDescriptor&#xFF0C;&#x4F46;&#x8FD9;&#x60C5;&#x51B5;&#x53EA;&#x6709;&#x5728;&#x5E94;&#x7528;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5230;&#x540C;&#x4E00;&#x7C7B;&#x578B;&#x7684;&#x591A;&#x4E2A;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x624D;&#x6709;&#x610F;&#x4E49;&#xFF0C;&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6CE8;&#x518C;&#x591A;&#x4E2A;ServiceDescriptor&#x6765;&#x63D0;&#x4F9B;&#x540C;&#x4E00;&#x4E2A;&#x4E3B;&#x9898;&#x7684;&#x591A;&#x4E2A;&#x8BA2;&#x9605;&#x8005;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x603B;&#x662F;&#x6839;&#x636E;&#x6307;&#x5B9A;&#x7684;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#x6765;&#x63D0;&#x53D6;&#x5355;&#x4E00;&#x7684;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#xFF0C;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x4E2A;ServiceDescriptor&#x5BF9;&#x8C61;&#x5C31;&#x591F;&#x4E86;&#x3002;&#x5BF9;&#x4E8E;&#x8FD9;&#x79CD;&#x573A;&#x666F;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x4F1A;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x4E24;&#x4E2A;&#x540D;&#x4E3A;TryAdd&#x7684;&#x6269;&#x5C55;&#x65B9;&#x6CD5;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x4F1A;&#x6839;&#x636E;&#x6307;&#x5B9A;ServiceDescriptor&#x63D0;&#x4F9B;&#x7684;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#x5224;&#x65AD;&#x5BF9;&#x5E94;&#x7684;&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;&#x53EA;&#x6709;<strong>&#x4E0D;&#x5B58;&#x5728;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x7684;&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x60C5;&#x51B5;&#x4E0B;</strong>&#xFF0C;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x7684;ServiceDescriptor&#x624D;&#x4F1A;&#x88AB;&#x6DFB;&#x52A0;&#x5230;&#x6307;&#x5B9A;&#x7684;IServiceCollection&#x5BF9;&#x8C61;&#x4E2D;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">ServiceCollectionDescriptorExtensions</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">TryAdd</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> collection<span class="token punctuation">,</span> <span class="token class-name">ServiceDescriptor</span> descriptor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">TryAdd</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> collection<span class="token punctuation">,</span> IEnumerable<span class="token operator">&lt;</span>ServiceDescriptor<span class="token operator">&gt;</span> descriptors<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="4-tryaddlifetime"><a name="4-tryaddlifetime" class="plugin-anchor" href="#4-tryaddlifetime"><i class="fa fa-link" aria-hidden="true"></i></a>4) TryAdd{Lifetime}</h3>
+<p>&#x6269;&#x5C55;&#x65B9;&#x6CD5;TryAdd&#x540C;&#x6837;&#x5177;&#x6709;&#x57FA;&#x4E8E;&#x4E09;&#x79CD;&#x751F;&#x547D;&#x5468;&#x671F;&#x6A21;&#x5F0F;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x7684;&#x9488;&#x5BF9;Singleton&#x6A21;&#x5F0F;&#x7684;TryAddSingleton&#x65B9;&#x6CD5;&#x7684;&#x5B9A;&#x4E49;&#x3002;&#x5728;&#x6307;&#x5B9A;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#x5BF9;&#x5E94;&#x7684;ServiceDescriptor&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5B83;&#x4EEC;&#x4F1A;&#x91C7;&#x7528;&#x63D0;&#x4F9B;&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x578B;&#x3001;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x521B;&#x5EFA;&#x5DE5;&#x5382;&#x4EE5;&#x53CA;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x6765;&#x521B;&#x5EFA;&#x751F;&#x547D;&#x5468;&#x671F;&#x6A21;&#x5F0F;&#x4E3A;Singleton&#x7684;ServiceDescriptor&#x5BF9;&#x8C61;&#x5E76;&#x5C06;&#x5176;&#x6DFB;&#x52A0;&#x5230;&#x6307;&#x5B9A;&#x7684;IServiceCollection&#x5BF9;&#x8C61;&#x4E2D;&#x3002;&#x9488;&#x5BF9;&#x5176;&#x4ED6;&#x4E24;&#x79CD;&#x751F;&#x547D;&#x5468;&#x671F;&#x6A21;&#x5F0F;&#x7684;TryAddScoped&#x548C;TryAddTransient&#x65B9;&#x6CD5;&#x5177;&#x6709;&#x7C7B;&#x4F3C;&#x7684;&#x5B9A;&#x4E49;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">ServiceCollectionDescriptorExtensions</span>
+<span class="token punctuation">{</span>    
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token generic-method"><span class="token function">TryAddSingleton</span><span class="token punctuation">&lt;</span><span class="token class-name">TService</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> collection<span class="token punctuation">)</span>  <span class="token keyword">where</span> TService<span class="token punctuation">:</span> <span class="token keyword">class</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token generic-method"><span class="token function">TryAddSingleton</span><span class="token punctuation">&lt;</span><span class="token class-name">TService</span><span class="token punctuation">,</span> <span class="token class-name">TImplementation</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> collection<span class="token punctuation">)</span>  <span class="token keyword">where</span> TService<span class="token punctuation">:</span> <span class="token keyword">class</span>  <span class="token keyword">where</span> TImplementation<span class="token punctuation">:</span> <span class="token keyword">class</span><span class="token punctuation">,</span> TService<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">TryAddSingleton</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> collection<span class="token punctuation">,</span>  <span class="token class-name">Type</span> service<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token generic-method"><span class="token function">TryAddSingleton</span><span class="token punctuation">&lt;</span><span class="token class-name">TService</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> collection<span class="token punctuation">,</span>  <span class="token class-name">TService</span> instance<span class="token punctuation">)</span> <span class="token keyword">where</span> TService<span class="token punctuation">:</span> <span class="token keyword">class</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token generic-method"><span class="token function">TryAddSingleton</span><span class="token punctuation">&lt;</span><span class="token class-name">TService</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> services<span class="token punctuation">,</span>  Func<span class="token operator">&lt;</span>IServiceProvider<span class="token punctuation">,</span> TService<span class="token operator">&gt;</span> implementationFactory<span class="token punctuation">)</span>  <span class="token keyword">where</span> TService<span class="token punctuation">:</span> <span class="token keyword">class</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">TryAddSingleton</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> collection<span class="token punctuation">,</span>  <span class="token class-name">Type</span> service<span class="token punctuation">,</span> Func<span class="token operator">&lt;</span>IServiceProvider<span class="token punctuation">,</span> <span class="token keyword">object</span><span class="token operator">&gt;</span> implementationFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">TryAddSingleton</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> collection<span class="token punctuation">,</span>  <span class="token class-name">Type</span> service<span class="token punctuation">,</span> <span class="token class-name">Type</span> implementationType<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="5-tryaddenumerable"><a name="5-tryaddenumerable" class="plugin-anchor" href="#5-tryaddenumerable"><i class="fa fa-link" aria-hidden="true"></i></a>5) TryAddEnumerable</h2>
+<p>&#x9664;&#x4E86;&#x4E0A;&#x9762;&#x4ECB;&#x7ECD;&#x7684;&#x6269;&#x5C55;&#x65B9;&#x6CD5;TryAdd&#x548C;TryAdd{Lifetime}&#x4E4B;&#x5916;&#xFF0C;IServiceCollection&#x63A5;&#x53E3;&#x8FD8;&#x5177;&#x6709;&#x5982;&#x4E0B;&#x4E24;&#x4E2A;&#x540D;&#x4E3A;TryAddEnumerable&#x7684;&#x6269;&#x5C55;&#x65B9;&#x6CD5;&#x3002;&#x5F53;TryAddEnumerable&#x65B9;&#x6CD5;&#x5728;&#x51B3;&#x5B9A;&#x5C06;&#x6307;&#x5B9A;&#x7684;ServiceDescriptor&#x6DFB;&#x52A0;&#x5230;IServiceCollection&#x5BF9;&#x8C61;&#x4E4B;&#x524D;&#xFF0C;&#x5B83;&#x4E5F;&#x4F1A;&#x505A;&#x5B58;&#x5728;&#x6027;&#x68C0;&#x9A8C;&#x3002;&#x4E0E;TryAdd&#x548C;TryAdd{Lifetime}&#x65B9;&#x6CD5;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x5728;<strong>&#x5224;&#x65AD;&#x6267;&#x884C;&#x7684;ServiceDescriptor&#x662F;&#x5426;&#x5B58;&#x5728;&#x65F6;&#x4F1A;&#x540C;&#x65F6;&#x8003;&#x8651;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#x548C;&#x5B9E;&#x73B0;&#x7C7B;&#x578B;&#x3002;</strong></p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">ServiceCollectionDescriptorExtensions</span>
+<span class="token punctuation">{</span>   
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">TryAddEnumerable</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> services<span class="token punctuation">,</span> <span class="token class-name">ServiceDescriptor</span> descriptor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">TryAddEnumerable</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> services<span class="token punctuation">,</span> IEnumerable<span class="token operator">&lt;</span>ServiceDescriptor<span class="token operator">&gt;</span> descriptors<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>TryAddEnumerable&#x5224;&#x65AD;&#x5B58;&#x5728;&#x6027;&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x578B;&#x4E0D;&#x53EA;&#x662F;ServiceDescriptor&#x7684;ImplementationType&#x5C5E;&#x6027;&#x3002;&#x5982;&#x679C;ServiceDescriptor&#x662F;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x521B;&#x5EFA;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x5B9E;&#x4F8B;&#x7684;&#x7C7B;&#x578B;&#x4F1A;&#x4F5C;&#x4E3A;&#x7528;&#x6765;&#x5224;&#x65AD;&#x5B58;&#x5728;&#x4E0E;&#x5426;&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x578B;&#x3002;&#x5982;&#x679C;ServiceDescriptor&#x662F;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x5DE5;&#x5382;&#x6765;&#x521B;&#x5EFA;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x4EE3;&#x8868;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x521B;&#x5EFA;&#x5DE5;&#x5382;&#x7684;Func&lt;in T, out TResult&gt;&#x5BF9;&#x8C61;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x5C06;&#x88AB;&#x7528;&#x4E8E;&#x5224;&#x65AD;ServiceDescriptor&#x7684;&#x5B58;&#x5728;&#x6027;&#x3002;&#x6269;&#x5C55;&#x65B9;&#x6CD5;TryAddEnumerable&#x7684;&#x5B9E;&#x73B0;&#x903B;&#x8F91;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5982;&#x4E0B;&#x8FD9;&#x6BB5;&#x7A0B;&#x5E8F;&#x6765;&#x9A8C;&#x8BC1;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">var</span> services <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ServiceCollection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+services<span class="token punctuation">.</span><span class="token function">TryAddEnumerable</span><span class="token punctuation">(</span>ServiceDescriptor<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">Singleton</span><span class="token punctuation">&lt;</span><span class="token class-name">IFoobarbazgux</span><span class="token punctuation">,</span> <span class="token class-name">Foo</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Debug<span class="token punctuation">.</span><span class="token function">Assert</span><span class="token punctuation">(</span>services<span class="token punctuation">.</span>Count <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+services<span class="token punctuation">.</span><span class="token function">TryAddEnumerable</span><span class="token punctuation">(</span>ServiceDescriptor<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">Singleton</span><span class="token punctuation">&lt;</span><span class="token class-name">IFoobarbazgux</span><span class="token punctuation">,</span> <span class="token class-name">Foo</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Debug<span class="token punctuation">.</span><span class="token function">Assert</span><span class="token punctuation">(</span>services<span class="token punctuation">.</span>Count <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+services<span class="token punctuation">.</span><span class="token function">TryAddEnumerable</span><span class="token punctuation">(</span>ServiceDescriptor<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">Singleton</span><span class="token punctuation">&lt;</span><span class="token class-name">IFoobarbazgux</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Debug<span class="token punctuation">.</span><span class="token function">Assert</span><span class="token punctuation">(</span>services<span class="token punctuation">.</span>Count <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Func<span class="token operator">&lt;</span>IServiceProvider<span class="token punctuation">,</span> Foo<span class="token operator">&gt;</span> factory4Foo <span class="token operator">=</span> _ <span class="token operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+services<span class="token punctuation">.</span><span class="token function">TryAddEnumerable</span><span class="token punctuation">(</span>ServiceDescriptor<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">Singleton</span><span class="token punctuation">&lt;</span><span class="token class-name">IFoobarbazgux</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>factory4Foo<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Debug<span class="token punctuation">.</span><span class="token function">Assert</span><span class="token punctuation">(</span>services<span class="token punctuation">.</span>Count <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+services<span class="token punctuation">.</span><span class="token function">TryAddEnumerable</span><span class="token punctuation">(</span>ServiceDescriptor<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">Singleton</span><span class="token punctuation">&lt;</span><span class="token class-name">IFoobarbazgux</span><span class="token punctuation">,</span> <span class="token class-name">Bar</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Debug<span class="token punctuation">.</span><span class="token function">Assert</span><span class="token punctuation">(</span>services<span class="token punctuation">.</span>Count <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+services<span class="token punctuation">.</span><span class="token function">TryAddEnumerable</span><span class="token punctuation">(</span>ServiceDescriptor<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">Singleton</span><span class="token punctuation">&lt;</span><span class="token class-name">IFoobarbazgux</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Baz</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Debug<span class="token punctuation">.</span><span class="token function">Assert</span><span class="token punctuation">(</span>services<span class="token punctuation">.</span>Count <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Func<span class="token operator">&lt;</span>IServiceProvider<span class="token punctuation">,</span> Gux<span class="token operator">&gt;</span> factory4Gux <span class="token operator">=</span> _ <span class="token operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Gux</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+services<span class="token punctuation">.</span><span class="token function">TryAddEnumerable</span><span class="token punctuation">(</span>ServiceDescriptor<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">Singleton</span><span class="token punctuation">&lt;</span><span class="token class-name">IFoobarbazgux</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>factory4Gux<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Debug<span class="token punctuation">.</span><span class="token function">Assert</span><span class="token punctuation">(</span>services<span class="token punctuation">.</span>Count <span class="token operator">==</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x901A;&#x8FC7;&#x4E0A;&#x8FF0;&#x7B56;&#x7565;&#x5F97;&#x5230;&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x578B;&#x4E3A;Object&#xFF0C;&#x90A3;&#x4E48;TryAddEnumerable&#x4F1A;&#x56E0;&#x4E3A;&#x5B9E;&#x73B0;&#x7C7B;&#x578B;&#x4E0D;&#x660E;&#x786E;&#x800C;&#x629B;&#x51FA;&#x4E00;&#x4E2A;ArgumentException&#x7C7B;&#x578B;&#x7684;&#x5F02;&#x5E38;&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E3B;&#x8981;&#x53D1;&#x751F;&#x5728;&#x63D0;&#x4F9B;&#x7684;ServiceDescriptor&#x5BF9;&#x8C61;&#x662F;&#x7531;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x5DE5;&#x5382;&#x521B;&#x5EFA;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x6240;&#x4EE5;&#x4E0A;&#x9762;&#x5B9E;&#x4F8B;&#x4E2D;&#x7528;&#x6765;&#x521B;&#x5EFA;ServiceDescriptor&#x7684;&#x5DE5;&#x5382;&#x7C7B;&#x578B;&#x5206;&#x522B;&#x4E3A;Func&lt;IServiceProvider, Foo&gt;&#x548C;Func&lt;IServiceProvider, Gux&gt;&#xFF0C;&#x800C;&#x4E0D;&#x662F;Func&lt;IServiceProvider, object&gt;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">var</span> service <span class="token operator">=</span> ServiceDescriptor<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">Singleton</span><span class="token punctuation">&lt;</span><span class="token class-name">IFoobarbazgux</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>_ <span class="token operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">ServiceCollection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">TryAddEnumerable</span><span class="token punctuation">(</span>service<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x91C7;&#x7528;&#x5982;&#x4E0A;&#x6240;&#x793A;&#x7684;&#x65B9;&#x5F0F;&#x5229;&#x7528;&#x4E00;&#x4E2A;Lamda&#x8868;&#x8FBE;&#x5F0F;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;ServiceDescriptor&#x5BF9;&#x8C61;&#xFF0C;&#x5BF9;&#x4E8E;&#x521B;&#x5EFA;&#x7684;ServiceDescriptor&#x6765;&#x8BF4;&#xFF0C;&#x5176;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x5DE5;&#x5382;&#x662F;&#x4E00;&#x4E2A;Func&lt;IServiceProvider, object&gt;&#x5BF9;&#x8C61;&#xFF0C;&#x6240;&#x4EE5;&#x5F53;&#x6211;&#x4EEC;&#x5C06;&#x5B83;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x8C03;&#x7528;TryAddEnumerable&#x65B9;&#x6CD5;&#x7684;&#x4F1A;&#x629B;&#x51FA;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#x7684;ArgumentException&#x5F02;&#x5E38;&#x3002;</p>
+<p><img src="https://i.loli.net/2020/02/26/GSMgkrhYCRnw5fT.png" alt="ArgumentException&#x7C7B;&#x578B;&#x7684;&#x5F02;&#x5E38;"></p>
+<h3 id="6-removeall--replace"><a name="6-removeall--replace" class="plugin-anchor" href="#6-removeall--replace"><i class="fa fa-link" aria-hidden="true"></i></a>6) RemoveAll &amp; Replace</h3>
+<p>&#x4E0A;&#x9762;&#x4ECB;&#x7ECD;&#x7684;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x6700;&#x7EC8;&#x7684;&#x76EE;&#x7684;&#x90FD;&#x662F;&#x6DFB;&#x52A0;&#x65B0;&#x7684;ServiceDescriptor&#x5230;&#x6307;&#x5B9A;&#x7684;IServiceCollection&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x6709;&#x7684;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x8FD8;&#x5E0C;&#x671B;&#x5220;&#x9664;&#x6216;&#x8005;&#x66FF;&#x6362;&#x73B0;&#x6709;&#x7684;&#x67D0;&#x4E2A;ServiceDescriptor&#xFF0C;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x901A;&#x5E38;&#x53D1;&#x751F;&#x5728;&#x9700;&#x8981;&#x5BF9;&#x5F53;&#x524D;&#x4F7F;&#x7528;&#x6846;&#x67B6;&#x4E2D;&#x7531;&#x67D0;&#x4E2A;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x7684;&#x529F;&#x80FD;&#x8FDB;&#x884C;&#x5B9A;&#x5236;&#x7684;&#x65F6;&#x5019;&#x3002;&#x7531;&#x4E8E;IServiceCollection&#x5B9E;&#x73B0;&#x4E86;IList<servicedescriptor>&#x63A5;&#x53E3;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x5176;Clear&#x3001;Remove&#x548C;RemoveAt&#x65B9;&#x6CD5;&#x6765;&#x6E05;&#x9664;&#x6216;&#x8005;&#x5220;&#x9664;&#x73B0;&#x6709;&#x7684;ServiceDescriptor&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x5982;&#x4E0B;&#x8FD9;&#x4E9B;&#x6269;&#x5C55;&#x65B9;&#x6CD5;&#x3002;</servicedescriptor></p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">ServiceCollectionDescriptorExtensions</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> IServiceCollection <span class="token generic-method"><span class="token function">RemoveAll</span><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span> <span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> collection<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">IServiceCollection</span> <span class="token function">RemoveAll</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> collection<span class="token punctuation">,</span>  <span class="token class-name">Type</span> serviceType<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">IServiceCollection</span> <span class="token function">Replace</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> collection<span class="token punctuation">,</span>  <span class="token class-name">ServiceDescriptor</span> descriptor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>RemoveAll&#x548C;RemoveAll<t>&#x65B9;&#x6CD5;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x9488;&#x5BF9;&#x6307;&#x5B9A;&#x7684;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#x6765;&#x5220;&#x9664;&#x6DFB;&#x52A0;&#x7684;ServiceDescriptor&#x3002;Replace&#x65B9;&#x6CD5;&#x4F1A;&#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x7684;ServiceDescriptor&#x53BB;&#x66FF;&#x6362;&#x7B2C;&#x4E00;&#x4E2A;&#x5177;&#x6709;&#x76F8;&#x540C;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#xFF08;&#x5BF9;&#x5E94;ServiceType&#x5C5E;&#x6027;&#xFF09;&#x7684;ServiceDescriptor&#xFF0C;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x662F;&#x5148;&#x5220;&#x9664;&#x540E;&#x6DFB;&#x52A0;&#x3002;&#x5982;&#x679C;&#x4ECE;&#x76EE;&#x524D;&#x7684;IServiceCollection&#x4E2D;&#x627E;&#x4E0D;&#x5230;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#x5339;&#x914D;&#x7684;ServiceDescriptor&#xFF0C;&#x6307;&#x5B9A;&#x7684;ServiceDescriptor&#x4F1A;&#x76F4;&#x63A5;&#x6DFB;&#x52A0;&#x5230;IServiceCollection&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E00;&#x903B;&#x8F91;&#x4E5F;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x5982;&#x4E0B;&#x7684;&#x7A0B;&#x5E8F;&#x6765;&#x9A8C;&#x8BC1;&#x3002;</t></p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">var</span> services <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ServiceCollection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+services<span class="token punctuation">.</span><span class="token function">Replace</span><span class="token punctuation">(</span>ServiceDescriptor<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">Singleton</span><span class="token punctuation">&lt;</span><span class="token class-name">IFoobarbazgux</span><span class="token punctuation">,</span> <span class="token class-name">Foo</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Debug<span class="token punctuation">.</span><span class="token function">Assert</span><span class="token punctuation">(</span>services<span class="token punctuation">.</span><span class="token function">Any</span><span class="token punctuation">(</span>it <span class="token operator">=&gt;</span> it<span class="token punctuation">.</span>ImplementationType <span class="token operator">==</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span>Foo<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+services<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">AddSingleton</span><span class="token punctuation">&lt;</span><span class="token class-name">IFoobarbazgux</span><span class="token punctuation">,</span> <span class="token class-name">Bar</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+services<span class="token punctuation">.</span><span class="token function">Replace</span><span class="token punctuation">(</span>ServiceDescriptor<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">Singleton</span><span class="token punctuation">&lt;</span><span class="token class-name">IFoobarbazgux</span><span class="token punctuation">,</span> <span class="token class-name">Baz</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Debug<span class="token punctuation">.</span><span class="token function">Assert</span><span class="token punctuation">(</span><span class="token operator">!</span>services<span class="token punctuation">.</span><span class="token function">Any</span><span class="token punctuation">(</span>it<span class="token operator">=&gt;</span>it<span class="token punctuation">.</span>ImplementationType <span class="token operator">==</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span>Foo<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Debug<span class="token punctuation">.</span><span class="token function">Assert</span><span class="token punctuation">(</span>services<span class="token punctuation">.</span><span class="token function">Any</span><span class="token punctuation">(</span>it <span class="token operator">=&gt;</span> it<span class="token punctuation">.</span>ImplementationType <span class="token operator">==</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span>Bar<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Debug<span class="token punctuation">.</span><span class="token function">Assert</span><span class="token punctuation">(</span>services<span class="token punctuation">.</span><span class="token function">Any</span><span class="token punctuation">(</span>it <span class="token operator">=&gt;</span> it<span class="token punctuation">.</span>ImplementationType <span class="token operator">==</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span>Baz<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<blockquote>
+<p>&#x53C2;&#x8003;&#x6587;&#x732E;
+<a href="https://www.cnblogs.com/artech/p/net-core-di-07.html" target="_blank">https://www.cnblogs.com/artech/p/net-core-di-07.html</a> </p>
+</blockquote>
+<footer class="page-footer"><span class="copyright">&#xA9; Colin Chang all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-07-09 15:30:26
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="di-di.html" class="navigation navigation-prev " aria-label="Previous page: 3.4 依赖注入（DI）">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="di-consume.html" class="navigation navigation-next " aria-label="Next page: 3.6 服务消费">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3.5 服务注册","level":"2.3.5","depth":2,"next":{"title":"3.6 服务消费","level":"2.3.6","depth":2,"path":"pages/di-consume.md","ref":"pages/di-consume.md","articles":[]},"previous":{"title":"3.4 依赖注入（DI）","level":"2.3.4","depth":2,"path":"pages/di-di.md","ref":"pages/di-di.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","-lunr","-search","search-plus","advanced-emoji","github-buttons","multipart","splitter","tbfed-pagefooter","anchors","sitemap","-sharing","sharing-plus","toggle-chapters","book-summary-scroll-position-saver","prism","-highlight","favicon-absolute"],"styles":{"website":"website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy Colin Chang","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"disqus":{"useIdentifier":false,"shortName":"http-colin-chang-site-1"},"book-summary-scroll-position-saver":{},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"multipart":{},"favicon-absolute":{"appleTouchIconMore":{"120x120":"https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png","180x180":"https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png"},"appleTouchIconPrecomposed152":"https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png","appleTouchIconPrecomposedMore":{"120x120":"https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png","180x180":"https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png"},"favicon":"https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png","bookmark":"https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png","appleTouchIcon152":"https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"https://ccstudio.org/netcore"},"github-buttons":{"buttons":[{"user":"colin-chang","repo":"netcore","type":"star","size":"small"}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":true,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","instapaper","vk","weibo"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"toggle-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":".Net Core-软件开发","gitbook":"*","description":".Net高效跨平台技术方案"},"file":{"path":"pages/di-register.md","mtime":"2020-07-09T07:30:26.780Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-18T15:55:59.139Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

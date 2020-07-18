@@ -1,0 +1,1560 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>7.2 WebAPI基础 · .Net Core-软件开发</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../website.css">
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="webapi-multiversion.html" />
+    
+    
+    <link rel="prev" href="webapi-restful.html" />
+    
+
+    
+        <link rel="shortcut icon" href="https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png" type="image/x-icon">
+    
+    
+        <link rel="bookmark" href="https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png" type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" sizes="152x152" href="https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png">
+    
+    
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png">
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png">
+        
+    
+    
+        
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png">
+        
+        <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"colin-chang","repo":"netcore","type":"star","size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" >
+            
+                <a target="_blank" href="https://ccstudio.org">
+            
+                    
+                    CC Studio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part I - .NET Core 基础</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. 安装部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="install-install.html">
+            
+                <a href="install-install.html">
+            
+                    
+                    1.1 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="install-deploy.html">
+            
+                <a href="install-deploy.html">
+            
+                    
+                    1.2 部署项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="config.html">
+            
+                <a href="config.html">
+            
+                    
+                    2. 配置管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="index.md">
+            
+                <span>
+            
+                    
+                    3. 依赖注入
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="di-intro.html">
+            
+                <a href="di-intro.html">
+            
+                    
+                    3.1 依赖注入引入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="di-ioc.html">
+            
+                <a href="di-ioc.html">
+            
+                    
+                    3.2 控制反转（IoC）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="di-designmode.html">
+            
+                <a href="di-designmode.html">
+            
+                    
+                    3.3 基于IoC的设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="di-di.html">
+            
+                <a href="di-di.html">
+            
+                    
+                    3.4 依赖注入（DI）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="di-register.html">
+            
+                <a href="di-register.html">
+            
+                    
+                    3.5 服务注册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="di-consume.html">
+            
+                <a href="di-consume.html">
+            
+                    
+                    3.6 服务消费
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="di-lifetime.html">
+            
+                <a href="di-lifetime.html">
+            
+                    
+                    3.7 服务生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="di-aspnetcore.html">
+            
+                <a href="di-aspnetcore.html">
+            
+                    
+                    3.8 Asp.Net Core DI 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="di-src.html">
+            
+                <a href="di-src.html">
+            
+                    
+                    3.9 Asp.Net Core DI 源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="index.md">
+            
+                <span>
+            
+                    
+                    4. Asp.Net Core管道
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="pipeline-diagram.html">
+            
+                <a href="pipeline-diagram.html">
+            
+                    
+                    4.1 管道模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="pipeline-middlewire.html">
+            
+                <a href="pipeline-middlewire.html">
+            
+                    
+                    4.2 中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="pipeline-lifetime.html">
+            
+                <a href="pipeline-lifetime.html">
+            
+                    
+                    4.3 生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="pipeline-environment.html">
+            
+                <a href="pipeline-environment.html">
+            
+                    
+                    4.4 环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="supplement.html">
+            
+                <a href="supplement.html">
+            
+                    
+                    5. Session和Cache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="index.md">
+            
+                <span>
+            
+                    
+                    6. 认证与授权
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="auth-authentication.html">
+            
+                <a href="auth-authentication.html">
+            
+                    
+                    6.1 Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="auth-cookie.html">
+            
+                <a href="auth-cookie.html">
+            
+                    
+                    6.2 Cookie Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="auth-jwt.html">
+            
+                <a href="auth-jwt.html">
+            
+                    
+                    6.3 JwtBear Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="auth-auth2.html">
+            
+                <a href="auth-auth2.html">
+            
+                    
+                    6.4 OAuth2 & OpenID Connect Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="authorization.html">
+            
+                <a href="authorization.html">
+            
+                    
+                    6.5 Authorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="index.md">
+            
+                <span>
+            
+                    
+                    7. WebAPI
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="webapi-restful.html">
+            
+                <a href="webapi-restful.html">
+            
+                    
+                    7.1 WebAPI和Restful
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.7.2" data-path="webapi-basic.html">
+            
+                <a href="webapi-basic.html">
+            
+                    
+                    7.2 WebAPI基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="webapi-multiversion.html">
+            
+                <a href="webapi-multiversion.html">
+            
+                    
+                    7.3 多版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="webapi-security.html">
+            
+                <a href="webapi-security.html">
+            
+                    
+                    7.4 安全控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="webapi-openapi.html">
+            
+                <a href="webapi-openapi.html">
+            
+                    
+                    7.5 OpenAPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="log.html">
+            
+                <a href="log.html">
+            
+                    
+                    8. 日志管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part Ⅱ - 数据访问</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="dapper.html">
+            
+                <a href="dapper.html">
+            
+                    
+                    1. Dapper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2. EF Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part Ⅱ - 微服务</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="docker-intro.html">
+            
+                <a href="docker-intro.html">
+            
+                    
+                    1.1 Docker简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="docker-install.html">
+            
+                <a href="docker-install.html">
+            
+                    
+                    1.2 安装配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="docker-cmd.html">
+            
+                <a href="docker-cmd.html">
+            
+                    
+                    1.3 常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="docker-dockerfile.html">
+            
+                <a href="docker-dockerfile.html">
+            
+                    
+                    1.4 制作镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2. 微服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="microservice-intro.html">
+            
+                <a href="microservice-intro.html">
+            
+                    
+                    2.1 微服务架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="microservice-consul.html">
+            
+                <a href="microservice-consul.html">
+            
+                    
+                    2.2 服务治理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="microservice-polly.html">
+            
+                <a href="microservice-polly.html">
+            
+                    
+                    2.3 熔断降级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" data-path="microservice-ocelot.html">
+            
+                <a href="microservice-ocelot.html">
+            
+                    
+                    2.4 网关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2.5 微服务授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.6" data-path="rpc.html">
+            
+                <a href="rpc.html">
+            
+                    
+                    2.6 RPC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.7" data-path="microservice-docker.html">
+            
+                <a href="microservice-docker.html">
+            
+                    
+                    2.7 Docker+微服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅲ 其他技术</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. 多线程/异步
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="multithreading-intro.html">
+            
+                <a href="multithreading-intro.html">
+            
+                    
+                    1.1 进程、线程和应用程序域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="multithreading-basic.html">
+            
+                <a href="multithreading-basic.html">
+            
+                    
+                    1.2 进程、线程基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="multithreading-synchronization.html">
+            
+                <a href="multithreading-synchronization.html">
+            
+                    
+                    1.3 线程同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="multithreading-threadpool.html">
+            
+                <a href="multithreading-threadpool.html">
+            
+                    
+                    1.4 线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="multithreading-uiresource.html">
+            
+                <a href="multithreading-uiresource.html">
+            
+                    
+                    1.5 UI资源跨线程访问
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="multithreading-async.html">
+            
+                <a href="multithreading-async.html">
+            
+                    
+                    1.6 异步编程模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="unittest.html">
+            
+                <a href="unittest.html">
+            
+                    
+                    2. 单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part IV - 常用解决方案</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="autofac.html">
+            
+                <a href="autofac.html">
+            
+                    
+                    1. AutoFac
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="automapper.html">
+            
+                <a href="automapper.html">
+            
+                    
+                    2. AutoMapper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="https.html">
+            
+                <a href="https.html">
+            
+                    
+                    3. HTTPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="mailsms.html">
+            
+                <a href="mailsms.html">
+            
+                    
+                    4. 邮件短信通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="mailsms.html">
+            
+                <a href="mailsms.html">
+            
+                    
+                    5. 在线支付
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="staticssi.html">
+            
+                <a href="staticssi.html">
+            
+                    
+                    6. 页面静态化和SSI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >7.2 WebAPI基础</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="webapi-&#x57FA;&#x7840;"><a name="webapi-&#x57FA;&#x7840;" class="plugin-anchor" href="#webapi-&#x57FA;&#x7840;"><i class="fa fa-link" aria-hidden="true"></i></a>WebAPI &#x57FA;&#x7840;</h1>
+<ul>
+<li><a href="#webapi-%e5%9f%ba%e7%a1%80">WebAPI &#x57FA;&#x7840;</a><ul>
+<li><a href="#1-apicontroller">1. ApiController</a></li>
+<li><a href="#2-%e8%b7%af%e7%94%b1%e5%8c%b9%e9%85%8d">2. &#x8DEF;&#x7531;&#x5339;&#x914D;</a><ul>
+<li><a href="#21-routeattribute-%e5%92%8c-httpmethodattribute">2.1 RouteAttribute &#x548C; HttpMethodAttribute</a></li>
+<li><a href="#22-restful-%e8%b7%af%e7%94%b1">2.2 Restful &#x8DEF;&#x7531;</a></li>
+<li><a href="#23-%e8%87%aa%e5%ae%9a%e4%b9%89%e8%b7%af%e7%94%b1">2.3 &#x81EA;&#x5B9A;&#x4E49;&#x8DEF;&#x7531;</a><ul>
+<li><a href="#231-restful-%e4%b9%8b%e6%ae%87">2.3.1 Restful &#x4E4B;&#x6B87;</a></li>
+<li><a href="#232-%e8%87%aa%e5%ae%9a%e4%b9%89action%e8%b7%af%e7%94%b1">2.3.2  &#x81EA;&#x5B9A;&#x4E49;Action&#x8DEF;&#x7531;</a></li>
+<li><a href="#233-%e5%9b%9e%e5%bd%92mvc%e8%b7%af%e7%94%b1">2.3.3 &#x56DE;&#x5F52;MVC&#x8DEF;&#x7531;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#3-api%e5%8f%82%e6%95%b0">3. API&#x53C2;&#x6570;</a><ul>
+<li><a href="#31-url%e5%8f%82%e6%95%b0">3.1 URL&#x53C2;&#x6570;</a></li>
+<li><a href="#32-%e5%af%b9%e8%b1%a1%e5%8f%82%e6%95%b0">3.2 &#x5BF9;&#x8C61;&#x53C2;&#x6570;</a></li>
+</ul>
+</li>
+<li><a href="#4-%e8%bf%94%e5%9b%9e%e5%80%bc">4. &#x8FD4;&#x56DE;&#x503C;</a></li>
+<li><a href="#5-%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">5. &#x5F02;&#x5E38;&#x5904;&#x7406;</a><ul>
+<li><a href="#51-%08%e4%b8%9a%e5%8a%a1%e6%80%a7%e9%94%99%e8%af%af">5.1 &#x4E1A;&#x52A1;&#x6027;&#x9519;&#x8BEF;</a></li>
+<li><a href="#52-%e5%b8%b8%e8%a7%84%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">5.2 &#x5E38;&#x89C4;&#x5F02;&#x5E38;&#x5904;&#x7406;</a></li>
+<li><a href="#53-%08%e5%85%a8%e5%b1%80%e5%bc%82%e5%b8%b8%e8%bf%87%e6%bb%a4%e5%99%a8">5.3 &#x5168;&#x5C40;&#x5F02;&#x5E38;&#x8FC7;&#x6EE4;&#x5668;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-apicontroller"><a name="1-apicontroller" class="plugin-anchor" href="#1-apicontroller"><i class="fa fa-link" aria-hidden="true"></i></a>1. ApiController</h2>
+<ul>
+<li><p>WebAPI&#x4E2D;<code>Controller</code>&#x76F4;&#x63A5;&#x5373;&#x7EE7;&#x627F;&#x81EA;<code>ControllerBase</code>&#x3002;&#x5728;ASP.NET Core 2.1&#x4E4B;&#x540E;&#x5F15;&#x5165;<code>[ApiController]</code>&#x7528;&#x4E8E;&#x6279;&#x6CE8; Web API &#x63A7;&#x5236;&#x5668;&#x7C7B;&#x3002;<code>[ApiController]</code>&#x7279;&#x6027;&#x901A;&#x5E38;&#x7ED3;&#x5408;<code>ControllerBase</code>&#x6765;&#x4E3A;&#x63A7;&#x5236;&#x5668;&#x542F;&#x7528;&#x7279;&#x5B9A; REST &#x884C;&#x4E3A;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp">  <span class="token punctuation">[</span><span class="token class-name">Route</span><span class="token punctuation">(</span><span class="token string">&quot;api/[controller]&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+  <span class="token punctuation">[</span><span class="token class-name">ApiController</span><span class="token punctuation">]</span>
+  <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ProductsController</span> <span class="token punctuation">:</span> <span class="token class-name">ControllerBase</span>
+</code></pre>
+</li>
+<li><p>&#x5728; ASP.NET Core 2.2 &#x6216;&#x66F4;&#x9AD8;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x53EF;&#x5C06;<code>[ApiController]</code>&#x7279;&#x6027;&#x5E94;&#x7528;&#x4E8E;&#x7A0B;&#x5E8F;&#x96C6;&#x3002;&#x4EE5;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x6CE8;&#x91CA;&#xFF0C;&#x4F1A;&#x5C06; web API &#x884C;&#x4E3A;&#x5E94;&#x7528;&#x5230;&#x7A0B;&#x5E8F;&#x96C6;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x63A7;&#x5236;&#x5668;&#x3002; &#x5EFA;&#x8BAE;&#x5C06;&#x7A0B;&#x5E8F;&#x96C6;&#x7EA7;&#x522B;&#x7684;&#x7279;&#x6027;&#x5E94;&#x7528;&#x4E8E; Startup &#x7C7B;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp">  <span class="token punctuation">[</span>assembly<span class="token punctuation">:</span> ApiController<span class="token punctuation">]</span>
+  <span class="token keyword">namespace</span> WebApiSample<span class="token punctuation">.</span>Api<span class="token punctuation">.</span>_22
+  <span class="token punctuation">{</span>
+      <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Startup</span>
+      <span class="token punctuation">{</span>
+      <span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="2-&#x8DEF;&#x7531;&#x5339;&#x914D;"><a name="2-&#x8DEF;&#x7531;&#x5339;&#x914D;" class="plugin-anchor" href="#2-&#x8DEF;&#x7531;&#x5339;&#x914D;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x8DEF;&#x7531;&#x5339;&#x914D;</h2>
+<h3 id="21-routeattribute-&#x548C;-httpmethodattribute"><a name="21-routeattribute-&#x548C;-httpmethodattribute" class="plugin-anchor" href="#21-routeattribute-&#x548C;-httpmethodattribute"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 RouteAttribute &#x548C; HttpMethodAttribute</h3>
+<p>WebAPI&#x4E2D;&#x5FC5;&#x987B;&#x4E3A;&#x6BCF;&#x4E2A;<code>Controller</code>&#x4F7F;&#x7528;<code>[Route]</code>&#x7279;&#x6027;&#x8FDB;&#x884C;&#x8DEF;&#x7531;&#x8BBE;&#x5B9A;&#xFF0C;&#x800C;&#x4E0D;&#x80FD;&#x901A;&#x8FC7;<code>UseMvc</code>&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x4F20;&#x7EDF;&#x8DEF;&#x7531;&#x6216;&#x901A;&#x8FC7;<code>Startup.Configure</code>&#x4E2D;&#x7684;<code>UseMvcWithDefaultRoute</code>&#x914D;&#x7F6E;&#x8DEF;&#x7531;&#x3002;</p>
+<p>&#x4E0E;<code>Controller</code>&#x8BBE;&#x5B9A;&#x8DEF;&#x7531;&#x65B9;&#x5F0F;&#x4E00;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;<code>Action</code>&#x65B9;&#x6CD5;&#x4E0A;&#x4F7F;&#x7528;<code>[Route]</code>&#x5355;&#x72EC;&#x8BBE;&#x5B9A;&#x8DEF;&#x7531;&#xFF0C;&#x9664;&#x4E86;<code>[Route]</code>&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>HttpMethodAttribute</code>&#x8BBE;&#x5B9A;&#x8DEF;&#x7531;&#xFF0C;&#x7528;&#x6CD5;&#x76F8;&#x540C;&#xFF0C;<code>HttpMethodAttribute</code>&#x5305;&#x62EC;<code>[HttpGet]</code>&#x3001;<code>[HttpPost]</code>&#x3001;<code>[HttpPut]</code>&#x3001;<code>[HttpDelete]</code>&#x7B49;&#x3002;<code>Action</code>&#x8DEF;&#x7531;&#x5EFA;&#x7ACB;&#x5728;<code>Controller</code>&#x8DEF;&#x7531;&#x4E4B;&#x4E0A;&#x3002;</p>
+<p>&#x4F7F;&#x7528;<code>HttpMethodAttribute</code>&#x5B9A;&#x4E49;&#x8DEF;&#x7531;&#x65F6;&#x4F1A;&#x540C;&#x65F6;&#x9650;&#x5236;<code>Action</code>&#x65B9;&#x6CD5;&#x7684;<code>HTTP</code>&#x8BBF;&#x95EE;&#x65B9;&#x5F0F;&#xFF0C;&#x5982;&#x679C;&#x5355;&#x7EAF;&#x60F3;&#x4E3A;<code>Action</code>&#x65B9;&#x6CD5;&#x8BBE;&#x5B9A;&#x8DEF;&#x7531;&#x540C;&#x65F6;&#x5141;&#x8BB8;&#x591A;&#x79CD;HTTP&#x8BBF;&#x95EE;&#x65B9;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x4F7F;&#x7528;<code>[Route]</code>&#x914D;&#x7F6E;&#x8DEF;&#x7531;&#x3002;</p>
+<p>&#x8DEF;&#x7531;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token punctuation">[</span><span class="token class-name">Route</span><span class="token punctuation">(</span><span class="token string">&quot;api/test&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestController</span> <span class="token punctuation">:</span> <span class="token class-name">ControllerBase</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// GET api/test</span>
+    <span class="token punctuation">[</span><span class="token class-name">HttpGet</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> ActionResult<span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">&gt;</span> <span class="token function">Get</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">nameof</span><span class="token punctuation">(</span>Get<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//GET api/test/1</span>
+    <span class="token punctuation">[</span><span class="token class-name">HttpGet</span><span class="token punctuation">(</span><span class="token string">&quot;{id}&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> ActionResult<span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">&gt;</span> <span class="token function">Get</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">nameof</span><span class="token punctuation">(</span>Get<span class="token punctuation">)</span> <span class="token operator">+</span> id<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//GET api/test/getbyname/colin</span>
+    <span class="token punctuation">[</span><span class="token class-name">HttpGet</span><span class="token punctuation">(</span><span class="token string">&quot;GetByName/{name?}&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> ActionResult<span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">&gt;</span> <span class="token function">Get</span><span class="token punctuation">(</span><span class="token keyword">string</span> name<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;GetByName&quot;</span> <span class="token operator">+</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//GET api/test/colin/18</span>
+    <span class="token punctuation">[</span><span class="token class-name">HttpGet</span><span class="token punctuation">(</span><span class="token string">&quot;{name}/{age}&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> ActionResult<span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">&gt;</span> <span class="token function">Get</span><span class="token punctuation">(</span><span class="token keyword">string</span> name<span class="token punctuation">,</span><span class="token keyword">int</span> age<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">nameof</span><span class="token punctuation">(</span>Get<span class="token punctuation">)</span> <span class="token operator">+</span> name <span class="token operator">+</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="22-restful-&#x8DEF;&#x7531;"><a name="22-restful-&#x8DEF;&#x7531;" class="plugin-anchor" href="#22-restful-&#x8DEF;&#x7531;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2 Restful &#x8DEF;&#x7531;</h3>
+<p>WebAPI&#x9ED8;&#x8BA4;&#x8DEF;&#x7531;&#x4F7F;&#x7528;<code>Restful</code>&#x98CE;&#x683C;,&#x6309;&#x7167;&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x8DEF;&#x7531;&#xFF0C;&#x4E0D;&#x4F5C;&#x6807;&#x8BB0;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<code>Action</code>&#x65B9;&#x6CD5;&#x540D;&#x4F1A;&#x6309;&#x7167;&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;<code>StartWith</code>&#x5339;&#x914D;&#x3002;&#x6240;&#x4EE5;&#x7684;<code>Get()</code>&#x3001;<code>GetById()</code>&#x3001;<code>GetXXX()</code>&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x533A;&#x522B;&#x3002;&#x5982;&#x679C;&#x4F7F;&#x7528;<code>[HttpGet]</code>&#x6807;&#x8BB0;&#x4E86;<code>Action</code>&#x65B9;&#x6CD5;&#xFF0C;&#x5219;&#x65B9;&#x6CD5;&#x540D;&#x4EFB;&#x610F;&#x53D6;&#xFF0C;&#x4E0D;&#x5FC5;&#x4EE5;<code>GET</code>&#x5F00;&#x5934;&#x3002;&#x540C;&#x7406;&#xFF0C;<code>POST</code>&#x3001;<code>PUT</code>&#x3001;<code>DELETE</code>&#x4EA6;&#x662F;&#x5982;&#x6B64;&#x3002;</p>
+<h3 id="23-&#x81EA;&#x5B9A;&#x4E49;&#x8DEF;&#x7531;"><a name="23-&#x81EA;&#x5B9A;&#x4E49;&#x8DEF;&#x7531;" class="plugin-anchor" href="#23-&#x81EA;&#x5B9A;&#x4E49;&#x8DEF;&#x7531;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3 &#x81EA;&#x5B9A;&#x4E49;&#x8DEF;&#x7531;</h3>
+<h4 id="231-restful-&#x4E4B;&#x6B87;"><a name="231-restful-&#x4E4B;&#x6B87;" class="plugin-anchor" href="#231-restful-&#x4E4B;&#x6B87;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3.1 Restful &#x4E4B;&#x6B87;</h4>
+<p>&#x5B8C;&#x5168;&#x7B26;&#x5408;<code>Restful</code>&#x98CE;&#x683C;&#x7684;API&#x5728;&#x5F88;&#x591A;&#x4E1A;&#x52A1;&#x5E38;&#x89C1;&#x4E0B;&#x5E76;&#x4E0D;&#x80FD;&#x6EE1;&#x8DB3;&#x9700;&#x6C42;&#x3002;&#x5982;&#x4E4B;&#x524D;&#x6240;&#x8BF4;&#xFF0C;&#x628A;&#x6240;&#x6709;&#x4E1A;&#x52A1;&#x62BD;&#x8C61;&#x4E3A;CRUD&#x64CD;&#x4F5C;&#x5E76;&#x4E0D;&#x73B0;&#x5B9E;&#xFF0C;&#x7B80;&#x5355;&#x901A;&#x8FC7;HTTP&#x72B6;&#x6001;&#x7801;&#x4E5F;&#x4E0D;&#x5BB9;&#x6613;&#x533A;&#x5206;&#x5904;&#x7406;&#x7ED3;&#x679C;&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x4EC5;&#x901A;&#x8FC7;&#x7B80;&#x5355;&#x51E0;&#x79CD;&#x8C13;&#x8BCD;&#x8BED;&#x610F;&#x8FDB;&#x884C;&#x8DEF;&#x7531;&#x5728;&#x96BE;&#x4EE5;&#x6EE1;&#x8DB3;&#x590D;&#x6742;&#x4E1A;&#x52A1;&#x9700;&#x6C42;&#x3002;&#x5982;&#xFF0C;&#x6839;&#x636E;ID&#x67E5;&#x8BE2;&#x7528;&#x6237;&#x3001;&#x6839;&#x636E;&#x7528;&#x6237;&#x540D;&#x67E5;&#x8BE2;&#x7528;&#x6237;&#x3001;&#x6839;&#x636E;&#x624B;&#x673A;&#x53F7;&#x67E5;&#x8BE2;&#x7528;&#x6237;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token comment">// &#x9519;&#x8BEF;&#x65B9;&#x5F0F;&#xFF0C;&#x8C03;&#x7528;&#x62A5;&#x9519;</span>
+<span class="token punctuation">[</span><span class="token class-name">Route</span><span class="token punctuation">(</span><span class="token string">&quot;api/test&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestController</span> <span class="token punctuation">:</span> <span class="token class-name">ControllerBase</span>
+<span class="token punctuation">{</span>
+    <span class="token punctuation">[</span><span class="token class-name">HttpGet</span><span class="token punctuation">(</span><span class="token string">&quot;{id}&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> ActionResult<span class="token operator">&lt;</span>User<span class="token operator">&gt;</span> <span class="token function">GetById</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Users<span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span>u<span class="token operator">=&gt;</span>u<span class="token punctuation">.</span>Id<span class="token operator">==</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">[</span><span class="token class-name">HttpGet</span><span class="token punctuation">(</span><span class="token string">&quot;{userName}&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> ActionResult<span class="token operator">&lt;</span>User<span class="token operator">&gt;</span> <span class="token function">GetByUserName</span><span class="token punctuation">(</span><span class="token keyword">string</span> userName<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Users<span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span>u<span class="token operator">=&gt;</span>u<span class="token punctuation">.</span>UserName<span class="token operator">==</span>userName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">[</span><span class="token class-name">HttpGet</span><span class="token punctuation">(</span><span class="token string">&quot;{phoneNumber}&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> ActionResult<span class="token operator">&lt;</span>User<span class="token operator">&gt;</span> <span class="token function">GetByPhoneNumber</span><span class="token punctuation">(</span><span class="token keyword">string</span> phoneNumber<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Users<span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span>u<span class="token operator">=&gt;</span>u<span class="token punctuation">.</span>PhoneNumber<span class="token operator">==</span>phoneNumber<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x7F16;&#x8BD1;&#x901A;&#x8FC7;&#xFF0C;&#x4F46;&#x7531;&#x4E8E;&#x4E09;&#x4E2A;<code>Action</code>&#x5339;&#x914D;&#x76F8;&#x540C;&#x8DEF;&#x7531;&#x89C4;&#x5219;&#xFF0C;&#x6240;&#x4EE5;<code>GET</code>&#x8BF7;&#x6C42;<code>~/api/test/xxx</code> &#x65F6;&#x4F1A;&#x51FA;&#x73B0;&#x6B67;&#x4E49;&#x800C;&#x629B;&#x51FA;<code>AmbiguousMatchException</code>&#x3002;</p>
+<h4 id="232--&#x81EA;&#x5B9A;&#x4E49;action&#x8DEF;&#x7531;"><a name="232--&#x81EA;&#x5B9A;&#x4E49;action&#x8DEF;&#x7531;" class="plugin-anchor" href="#232--&#x81EA;&#x5B9A;&#x4E49;action&#x8DEF;&#x7531;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3.2  &#x81EA;&#x5B9A;&#x4E49;Action&#x8DEF;&#x7531;</h4>
+<p>&#x6B64;&#x65F6;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x524D;&#x9762;&#x63D0;&#x5230;&#x7684;<a href="#21-routeattribute-&#x548C;-httpmethodattribute"><code>RouteAttribute</code>&#x6216;<code>HttpMethodAttribute</code></a>&#x6765;&#x4E3A;&#x6BCF;&#x4E2A;<code>Action</code>&#x8BBE;&#x7F6E;&#x7279;&#x5B9A;&#x8DEF;&#x7531;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token comment">// &#x81EA;&#x5B9A;&#x4E49;Action&#x8DEF;&#x7531;</span>
+<span class="token punctuation">[</span><span class="token class-name">Route</span><span class="token punctuation">(</span><span class="token string">&quot;api/test&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestController</span> <span class="token punctuation">:</span> <span class="token class-name">ControllerBase</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">//GET api/test/getbyid/1</span>
+    <span class="token punctuation">[</span><span class="token class-name">HttpGet</span><span class="token punctuation">(</span><span class="token string">&quot;GetById/{id}&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> ActionResult<span class="token operator">&lt;</span>User<span class="token operator">&gt;</span> <span class="token function">GetById</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Users<span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span>u<span class="token operator">=&gt;</span>u<span class="token punctuation">.</span>Id<span class="token operator">==</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//GET api/test/getbyusername/colin</span>
+    <span class="token punctuation">[</span><span class="token class-name">HttpGet</span><span class="token punctuation">(</span><span class="token string">&quot;GetByUserName/{userName}&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> ActionResult<span class="token operator">&lt;</span>User<span class="token operator">&gt;</span> <span class="token function">GetByUserName</span><span class="token punctuation">(</span><span class="token keyword">string</span> userName<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Users<span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span>u<span class="token operator">=&gt;</span>u<span class="token punctuation">.</span>UserName<span class="token operator">==</span>userName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//GET api/test/getbyphonenumber/110</span>
+    <span class="token punctuation">[</span><span class="token class-name">HttpGet</span><span class="token punctuation">(</span><span class="token string">&quot;GetByPhoneNumber/{phoneNumber}&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> ActionResult<span class="token operator">&lt;</span>User<span class="token operator">&gt;</span> <span class="token function">GetByPhoneNumber</span><span class="token punctuation">(</span><span class="token keyword">string</span> phoneNumber<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Users<span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span>u<span class="token operator">=&gt;</span>u<span class="token punctuation">.</span>PhoneNumber<span class="token operator">==</span>phoneNumber<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="233-&#x56DE;&#x5F52;mvc&#x8DEF;&#x7531;"><a name="233-&#x56DE;&#x5F52;mvc&#x8DEF;&#x7531;" class="plugin-anchor" href="#233-&#x56DE;&#x5F52;mvc&#x8DEF;&#x7531;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3.3 &#x56DE;&#x5F52;MVC&#x8DEF;&#x7531;</h4>
+<p>&#x4EE5;&#x4E0A;&#x4E3A;&#x6BCF;&#x4E2A;<code>Action</code>&#x5355;&#x72EC;&#x914D;&#x7F6E;&#x8DEF;&#x7531;&#x540E;&#x89E3;&#x51B3;&#x4E86;<code>Restful</code>&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#x3002;&#x4E0D;&#x96BE;&#x53D1;&#x73B0;&#x5F53;&#x6BCF;&#x4E2A;<code>Action</code>&#x65B9;&#x6CD5;&#x8DEF;&#x7531;&#x540D;&#x79F0;&#x6070;&#x597D;&#x662F;&#x81EA;&#x8EAB;&#x65B9;&#x6CD5;&#x540D;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x4FBF;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>Action</code>&#x540D;&#x79F0;&#x6765;&#x8BBF;&#x95EE;&#x5BF9;&#x5E94;&#x63A5;&#x53E3;&#xFF0C;&#x8FD9;&#x4E0E;<code>MVC</code>&#x8DEF;&#x7531;&#x65B9;&#x5F0F;&#x6548;&#x679C;&#x4E00;&#x81F4;&#x3002;</p>
+<p>&#x5355;&#x72EC;&#x4E3A;&#x6BCF;&#x4E2A;<code>Action</code>&#x65B9;&#x6CD5;&#x90FD;&#x914D;&#x7F6E;&#x8DEF;&#x7531;&#x8F83;&#x4E3A;&#x7E41;&#x7410;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4EFF;&#x7167;<code>MVC</code>&#x8DEF;&#x7531;&#x65B9;&#x5F0F;&#x76F4;&#x63A5;&#x914D;&#x7F6E;Controller&#x8DEF;&#x7531;&#xFF0C;&#x8DEF;&#x7531;&#x6548;&#x679C;&#x4E00;&#x81F4;&#xFF0C;&#x4F46;&#x4F7F;&#x7528;&#x8DDF;&#x7B80;&#x5355;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token comment">// &#x81EA;&#x5B9A;&#x4E49;Controller&#x8DEF;&#x7531;</span>
+
+<span class="token punctuation">[</span><span class="token class-name">Route</span><span class="token punctuation">(</span><span class="token string">&quot;api/test/{Action}&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestController</span> <span class="token punctuation">:</span> <span class="token class-name">ControllerBase</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">//GET api/test/getbyid/1</span>
+    <span class="token punctuation">[</span><span class="token class-name">HttpGet</span><span class="token punctuation">(</span><span class="token string">&quot;{id?}&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> ActionResult<span class="token operator">&lt;</span>User<span class="token operator">&gt;</span> <span class="token function">GetById</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Users<span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span>u<span class="token operator">=&gt;</span>u<span class="token punctuation">.</span>Id<span class="token operator">==</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//GET/POST/PUT/DELETE api/test/getbyusername/colin</span>
+    <span class="token punctuation">[</span><span class="token class-name">Route</span><span class="token punctuation">(</span><span class="token string">&quot;{userName}&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> ActionResult<span class="token operator">&lt;</span>User<span class="token operator">&gt;</span> <span class="token function">GetByUserName</span><span class="token punctuation">(</span><span class="token keyword">string</span> userName<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Users<span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span>u<span class="token operator">=&gt;</span>u<span class="token punctuation">.</span>UserName<span class="token operator">==</span>userName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//GET api/test/getbyphonenumber?phoneNumber=110</span>
+    <span class="token punctuation">[</span><span class="token class-name">HttpGet</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> ActionResult<span class="token operator">&lt;</span>User<span class="token operator">&gt;</span> <span class="token function">GetByPhoneNumber</span><span class="token punctuation">(</span><span class="token keyword">string</span> phoneNumber<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Users<span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span>u<span class="token operator">=&gt;</span>u<span class="token punctuation">.</span>PhoneNumber<span class="token operator">==</span>phoneNumber<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><code>Restful</code>&#x98CE;&#x683C;&#x8DEF;&#x7531;&#x4E0E;MVC&#x8DEF;&#x7531;&#x53EA;&#x662F;&#x5339;&#x914D;<code>Action</code>&#x65B9;&#x6CD5;&#x65B9;&#x5F0F;&#x4E0D;&#x540C;&#xFF0C;MVC&#x8DEF;&#x7531;&#x901A;&#x8FC7;<code>Action</code>&#x65B9;&#x6CD5;&#x540D;&#x5B9A;&#x4F4D;&#x8981;&#x6BD4;<code>Restful</code>&#x901A;&#x8FC7;&#x8C13;&#x8BCD;&#x8BED;&#x610F;&#x5B9A;&#x4F4D;&#x66F4;&#x52A0;&#x591A;&#x53D8;&#xFF0C;&#x66F4;&#x5BB9;&#x6613;&#x5E94;&#x4ED8;&#x590D;&#x6742;&#x7684;&#x4E1A;&#x52A1;&#x573A;&#x666F;&#x3002;</p>
+<h2 id="3-api&#x53C2;&#x6570;"><a name="3-api&#x53C2;&#x6570;" class="plugin-anchor" href="#3-api&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>3. API&#x53C2;&#x6570;</h2>
+<p><code>GET</code>&#x3001;<code>POST</code>&#x3001;<code>PUT</code>&#x3001;<code>DELETE</code>&#x7B49;&#x6240;&#x6709;&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;&#x5747;&#x53EF;&#x4F7F;&#x7528; URL&#x53C2;&#x6570; &#x548C; &#x5BF9;&#x8C61;&#x53C2;&#x6570; &#x8FDB;&#x884C;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x3002;</p>
+<p><code>GET</code>&#x548C;<code>DELETE</code>&#x8BF7;&#x6C42;&#x901A;&#x5E38;&#x4F20;&#x9012;&#x6570;&#x636E;&#x91CF;&#x8F83;&#x5C11;&#xFF0C;&#x591A;&#x4F7F;&#x7528;URL&#x53C2;&#x6570;&#x3002;<code>POST</code>&#x548C;<code>PUT</code>&#x8BF7;&#x6C42;&#x901A;&#x5E38;&#x4F20;&#x9012;&#x6570;&#x91CF;&#x8F83;&#x5927;&#xFF0C;&#x591A;&#x4F7F;&#x7528;&#x5BF9;&#x8C61;&#x53C2;&#x6570;&#x3002;</p>
+<h3 id="31-url&#x53C2;&#x6570;"><a name="31-url&#x53C2;&#x6570;" class="plugin-anchor" href="#31-url&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1 URL&#x53C2;&#x6570;</h3>
+<p>&#x7B80;&#x5355;&#x53C2;&#x6570;&#x6709;&#x4E24;&#x79CD;&#xFF0C;QueryString&#x53C2;&#x6570;&#x548C;&#x8DEF;&#x7531;&#x53C2;&#x6570;&#xFF0C;&#x8FD9;&#x4E24;&#x79CD;&#x90FD;&#x53C2;&#x6570;&#x4EE5;&#x4E0D;&#x540C;&#x5F62;&#x5F0F;&#x4F53;&#x73B0;&#x5728;URL&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x7EDF;&#x79F0;&#x4E3A;URL&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x5728;&#x53C2;&#x6570;&#x5C11;&#x4E14;&#x7B80;&#x5355;&#x5BF9;&#x5B89;&#x5168;&#x6027;&#x8981;&#x6C42;&#x4E0D;&#x9AD8;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;URL&#x53C2;&#x6570;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token punctuation">[</span><span class="token class-name">Route</span><span class="token punctuation">(</span><span class="token string">&quot;api/test&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestController</span> <span class="token punctuation">:</span> <span class="token class-name">ControllerBase</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">//GET api/test?name=colin&amp;age=18</span>
+    <span class="token punctuation">[</span><span class="token class-name">HttpGet</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> ActionResult<span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">&gt;</span> <span class="token function">Get</span><span class="token punctuation">(</span><span class="token keyword">string</span> name<span class="token punctuation">,</span> <span class="token keyword">int</span> age<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> name <span class="token operator">+</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//DELETE api/test/1</span>
+    <span class="token punctuation">[</span><span class="token class-name">HttpDelete</span><span class="token punctuation">(</span><span class="token string">&quot;{id}&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token class-name">ActionResult</span> <span class="token function">Delete</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">NoContent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="32-&#x5BF9;&#x8C61;&#x53C2;&#x6570;"><a name="32-&#x5BF9;&#x8C61;&#x53C2;&#x6570;" class="plugin-anchor" href="#32-&#x5BF9;&#x8C61;&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>3.2 &#x5BF9;&#x8C61;&#x53C2;&#x6570;</h3>
+<p>&#x53C2;&#x6570;&#x5185;&#x5BB9;&#x591A;&#x4E14;&#x590D;&#x6742;&#x6216;&#x5B89;&#x5168;&#x6027;&#x8F83;&#x9AD8;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5728;API&#x4E2D;&#x63A5;&#x6536;&#x53C2;&#x6570;&#x65F6;&#x6211;&#x4EEC;&#x5E38;&#x628A;&#x53C2;&#x6570;&#x5B57;&#x6BB5;&#x5C01;&#x88C5;&#x5230;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x6A21;&#x578B;&#x7C7B;&#x4E2D;&#x3002;<strong>&#x4F7F;&#x7528;&#x975E;URL&#x53C2;&#x6570;&#x800C;&#x4E0D;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x5C01;&#x88C5;&#x5BF9;&#x8C61;&#x4F1A;&#x9047;&#x5230;&#x5F88;&#x591A;&#x9EBB;&#x70E6;&#xFF0C;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x3002;</strong></p>
+<p>&#x5BA2;&#x6237;&#x7AEF;&#x4F20;&#x9012;&#x5BF9;&#x8C61;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x5F0F;&#x6709;&#x5F88;&#x591A;&#x4E2D;&#xFF0C;&#x4E00;&#x822C;&#x9700;&#x8981;&#x7EA6;&#x5B9A;<code>Content-Type</code>&#x62A5;&#x6587;&#x5934;&#x3002;&#x670D;&#x52A1;&#x7AEF;&#x63A5;&#x6536;&#x5BF9;&#x8C61;&#x53C2;&#x6570;&#x5E38;&#x4F7F;&#x7528;<code>[FromXXX]</code>&#x7279;&#x6027;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x7279;&#x6027;</th>
+<th style="text-align:left">ContentType</th>
+<th style="text-align:left">&#x4F20;&#x53C2;&#x65B9;&#x5F0F;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>[FromQuery]</code></td>
+<td style="text-align:left">-</td>
+<td style="text-align:left"><code>?name=colin&amp;age=18</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[FromHeader]</code></td>
+<td style="text-align:left">- &#x6216; <code>application/x-www-form-urlencoded</code> &#x6216; <code>multipart/form-data</code></td>
+<td style="text-align:left"><code>?name=colin&amp;age=18</code> &#x6216; <code>key-value</code>&#x5BF9;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[FromForm]</code></td>
+<td style="text-align:left"><code>multipart/form-data</code> &#x6216; <code>application/x-www-form-urlencoded</code></td>
+<td style="text-align:left"><code>name-value</code>&#x5BF9;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[FromBody]</code> &#x6216; &#x65E0;&#x6807;&#x8BB0;</td>
+<td style="text-align:left"><code>application/json</code></td>
+<td style="text-align:left"><code>{name:&apos;colin&apos;,age:18}</code></td>
+</tr>
+</tbody>
+</table>
+<pre class="language-"><code class="lang-csharp"><span class="token punctuation">[</span><span class="token class-name">Route</span><span class="token punctuation">(</span><span class="token string">&quot;api/test&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestController</span> <span class="token punctuation">:</span> <span class="token class-name">ControllerBase</span>
+<span class="token punctuation">{</span>
+    <span class="token punctuation">[</span><span class="token class-name">HttpPost</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token class-name">ActionResult</span> <span class="token function">Post</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token class-name">FromForm</span><span class="token punctuation">]</span> <span class="token class-name">Person</span> p<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">CreatedAtAction</span><span class="token punctuation">(</span><span class="token function">nameof</span><span class="token punctuation">(</span>Post<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token punctuation">{</span>id <span class="token operator">=</span> p<span class="token punctuation">.</span>Id<span class="token punctuation">}</span><span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">[</span><span class="token class-name">HttpPut</span><span class="token punctuation">(</span><span class="token string">&quot;{id}&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token class-name">ActionResult</span> <span class="token function">Put</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token class-name">FromBody</span><span class="token punctuation">]</span> <span class="token class-name">Person</span> p<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">NoContent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+<p><img src="https://i.loli.net/2020/02/26/BK8ALvHeqthEYG5.png" alt="POST&#x8BF7;&#x6C42;&#x8868;&#x5355;&#x53C2;&#x6570;"></p>
+<p><img src="https://i.loli.net/2020/02/26/QwxlN83juSkFMWI.png" alt="PUT&#x8BF7;&#x6C42;JSON&#x53C2;&#x6570;"></p>
+<blockquote>
+<p>JSON</p>
+</blockquote>
+<p>ContentType&#x4E3A;applciation/json&#x65F6;&#xFF0C;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x662F;<a href="https://www.json.org/" target="_blank">JSON&#x683C;&#x5F0F;</a>&#x3002;</p>
+<p>&#x6309;&#x7167;JSON&#x5B98;&#x7F51;&#x7684;&#x89C4;&#x8303;&#xFF08;&quot;A value can be a string in double quotes, or a number, or true or false or null, or an object or an array. These structures can be nested.&quot;&#xFF09;&#xFF0C;JSON&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F20;&#x9012;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x6570;&#x5B57;&#x548C;&#x5E03;&#x5C14;&#x4E09;&#x79CD;&#x7B80;&#x5355;&#x7C7B;&#x578B;&#x3002;&#x9700;&#x8981;&#x7279;&#x522B;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5B57;&#x7B26;&#x4E32;&#x9700;&#x8981;&#x5305;&#x88F9;&#x5728;&#x53CC;&#x5F15;&#x53F7;&#x76F4;&#x63A5;(<strong>&#x53CC;&#x5F15;&#x53F7;&#x4F5C;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x4E00;&#x90E8;&#x5206;</strong>)&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token punctuation">[</span><span class="token class-name">HttpPost</span><span class="token punctuation">]</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">Post</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token class-name">FromBody</span><span class="token punctuation">]</span> <span class="token keyword">string</span> <span class="token keyword">value</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><img src="https://i.loli.net/2020/02/26/ISQYUX3DcBlH7om.jpg" alt="POST&#x5B57;&#x7B26;&#x4E32;"></p>
+<p><img src="https://i.loli.net/2020/02/26/IbmZe26jgABL8yu.jpg" alt="POST Ajax"></p>
+<h2 id="4-&#x8FD4;&#x56DE;&#x503C;"><a name="4-&#x8FD4;&#x56DE;&#x503C;" class="plugin-anchor" href="#4-&#x8FD4;&#x56DE;&#x503C;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x8FD4;&#x56DE;&#x503C;</h2>
+<p>ASP.NET Core &#x63D0;&#x4F9B;&#x4EE5;&#x4E0B; Web API &#x63A7;&#x5236;&#x5668;&#x64CD;&#x4F5C;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x9009;&#x9879;&#xFF1A;</p>
+<ul>
+<li>&#x7279;&#x5B9A;&#x7C7B;&#x578B;</li>
+<li>IActionResult</li>
+<li>ActionResult<t></t></li>
+</ul>
+<p>&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#x8FD4;&#x56DE;&#x6570;&#x636E;&#x65F6;&#x7EDF;&#x4E00;&#x4F7F;&#x7528;<code>ActionResult</code>&lt;T&gt;&#x7C7B;&#x578B;&#x3002;<code>T</code>&#x662F;&#x5B9E;&#x9645;&#x5C5E;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5728;<code>Action</code>&#x65B9;&#x6CD5;&#x4E2D;&#x7F16;&#x7801;&#x65F6;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;<code>T</code>&#x7C7B;&#x578B;&#x6570;&#x636E;&#x5373;&#x53EF;&#x3002;ASP.NET Core &#x81EA;&#x52A8;&#x5C06;&#x5BF9;&#x8C61;&#x5E8F;&#x5217;&#x5316;&#x4E3A; JSON&#xFF0C;&#x5E76;&#x5C06; JSON &#x5199;&#x5165;&#x54CD;&#x5E94;&#x6D88;&#x606F;&#x7684;&#x6B63;&#x6587;&#x4E2D;&#x3002;</p>
+<p>&#x4E09;&#x79CD;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x5177;&#x4F53;&#x533A;&#x522B;&#x548C;&#x4F7F;&#x7528;&#x53C2;&#x89C1;<a href="https://docs.microsoft.com/zh-cn/aspnet/core/web-api/action-return-types?view=aspnetcore-2.2" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a>&#x3002;</p>
+<h2 id="5-&#x5F02;&#x5E38;&#x5904;&#x7406;"><a name="5-&#x5F02;&#x5E38;&#x5904;&#x7406;" class="plugin-anchor" href="#5-&#x5F02;&#x5E38;&#x5904;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>5. &#x5F02;&#x5E38;&#x5904;&#x7406;</h2>
+<h3 id="51-&#x4E1A;&#x52A1;&#x6027;&#x9519;&#x8BEF;"><a name="51-&#x4E1A;&#x52A1;&#x6027;&#x9519;&#x8BEF;" class="plugin-anchor" href="#51-&#x4E1A;&#x52A1;&#x6027;&#x9519;&#x8BEF;"><i class="fa fa-link" aria-hidden="true"></i></a>5.1 &#x4E1A;&#x52A1;&#x6027;&#x9519;&#x8BEF;</h3>
+<p>&#x7B80;&#x5355;&#x7684;&#x9519;&#x8BEF;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;<code>HttpStatusCode</code>&#x8FD4;&#x56DE;&#xFF0C;&#x5982;&#x8BF7;&#x6C42;&#x8D44;&#x6E90;&#x4E0D;&#x80FD;&#x5B58;&#x5728;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;<code>NotFound</code>(404)&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x8F83;&#x4E3A;&#x590D;&#x6742;&#x7684;&#x4E1A;&#x52A1;&#x9519;&#x8BEF;,&#x5982;&#xFF0C;&#x201C;&#x7528;&#x6237;&#x5E74;&#x9F84;&#x4E0D;&#x5408;&#x6CD5;&#x201D;&#x3001;&#x201C;Id&#x4E0D;&#x5B58;&#x5728;&#x7B49;&#x201D;&#xFF0C;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;<code>HttpStatusCode</code>&#x4E0D;&#x8DB3;&#x4EE5;&#x6EE1;&#x8DB3;&#x4E1A;&#x52A1;&#x9700;&#x8981;&#xFF0C;
+&#x4E00;&#x822C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7EDF;&#x4E00;&#x7684;&#x8FD4;&#x56DE;&#x5BF9;&#x8C61;&#x6765;&#x505A;&#x8BE6;&#x7EC6;&#x8BF4;&#x660E;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IApiResult</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ApiResult</span><span class="token operator">&lt;</span>T<span class="token operator">&gt;</span><span class="token punctuation">:</span>IApiResult
+<span class="token punctuation">{</span>
+    <span class="token comment">/// &lt;summary&gt;</span>
+    <span class="token comment">/// &#x4E1A;&#x52A1;&#x7801;&#x3002;&#x53EF;&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x5957;&#x4E1A;&#x52A1;&#x7801;&#x6807;&#x51C6;</span>
+    <span class="token comment">/// &lt;/summary&gt;</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> Code <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">;</span>
+
+    <span class="token comment">/// &lt;summary&gt;</span>
+    <span class="token comment">/// &#x6D88;&#x606F;&#x3002;&#x4E00;&#x822C;&#x53EF;&#x7528;&#x4E8E;&#x4F20;&#x8F93;&#x9519;&#x8BEF;&#x6D88;&#x606F;</span>
+    <span class="token comment">/// &lt;/summary&gt;</span>
+    <span class="token keyword">public</span> <span class="token keyword">string</span> Message <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+    <span class="token comment">/// &lt;summary&gt;</span>
+    <span class="token comment">/// &#x6570;&#x636E;&#x5185;&#x5BB9;&#x3002;&#x4E00;&#x822C;&#x4E3A;&#x5B9E;&#x9645;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#xFF0C;&#x5982;Json</span>
+    <span class="token comment">/// &lt;/summary&gt;</span>
+    <span class="token keyword">public</span> <span class="token class-name">T</span> Content <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token function">ApiResult</span><span class="token punctuation">(</span><span class="token keyword">int</span> code<span class="token punctuation">,</span> <span class="token keyword">string</span> message<span class="token punctuation">,</span> <span class="token class-name">T</span> content<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Code <span class="token operator">=</span> code<span class="token punctuation">;</span>
+        Message <span class="token operator">=</span> message<span class="token punctuation">;</span>
+        Content <span class="token operator">=</span> content<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token punctuation">[</span><span class="token class-name">HttpGet</span><span class="token punctuation">(</span><span class="token string">&quot;{age}&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">public</span> ActionResult<span class="token operator">&lt;</span>IApiResult<span class="token operator">&gt;</span> <span class="token function">Get</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>age <span class="token operator">&lt;</span> <span class="token number">18</span><span class="token operator">||</span>age<span class="token operator">&gt;</span><span class="token number">60</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token generic-method"><span class="token function">ApiResult</span><span class="token punctuation">&lt;</span><span class="token keyword">string</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token string">&quot;&#x5E74;&#x9F84;&#x8D85;&#x9650;&quot;</span><span class="token punctuation">,</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token generic-method"><span class="token function">ApiResult</span><span class="token punctuation">&lt;</span><span class="token keyword">string</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">&quot;OK&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;123&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="52-&#x5E38;&#x89C4;&#x5F02;&#x5E38;&#x5904;&#x7406;"><a name="52-&#x5E38;&#x89C4;&#x5F02;&#x5E38;&#x5904;&#x7406;" class="plugin-anchor" href="#52-&#x5E38;&#x89C4;&#x5F02;&#x5E38;&#x5904;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>5.2 &#x5E38;&#x89C4;&#x5F02;&#x5E38;&#x5904;&#x7406;</h3>
+<p>&#x5728;API&#x4EE3;&#x7801;&#x4E2D;&#x505A;&#x597D;&#x5FC5;&#x8981;&#x7684;&#x5F02;&#x5E38;&#x6355;&#x6349;&#x548C;&#x5904;&#x7406;&#xFF0C;&#x5982;&#x7528;&#x6237;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x5408;&#x6CD5;&#x6027;&#x6821;&#x9A8C;&#x7B49;&#x3002;&#x4E00;&#x822C;API&#x4E2D;&#x53EA;&#x505A;&#x7B80;&#x5355;&#x7684;&#x6570;&#x636E;&#x91C7;&#x96C6;&#x6821;&#x9A8C;&#xFF0C;&#x54CD;&#x5E94;&#x548C;&#x683C;&#x5F0F;&#x5316;&#x8FD4;&#x56DE;&#x6570;&#x636E;&#x7B49;&#x5DE5;&#x4F5C;&#xFF0C;&#x590D;&#x6742;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x5904;&#x7406;&#x662F;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x5C42;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x4E00;&#x822C;&#x5728;BLL&#x4E2D;&#x505A;&#x5F02;&#x5E38;&#x6355;&#x83B7;&#x548C;&#x5904;&#x7406;&#x3002;</p>
+<h3 id="53-&#x5168;&#x5C40;&#x5F02;&#x5E38;&#x8FC7;&#x6EE4;&#x5668;"><a name="53-&#x5168;&#x5C40;&#x5F02;&#x5E38;&#x8FC7;&#x6EE4;&#x5668;" class="plugin-anchor" href="#53-&#x5168;&#x5C40;&#x5F02;&#x5E38;&#x8FC7;&#x6EE4;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>5.3 &#x5168;&#x5C40;&#x5F02;&#x5E38;&#x8FC7;&#x6EE4;&#x5668;</h3>
+<p>&#x5168;&#x5C40;&#x672A;&#x5904;&#x7406;&#x5F02;&#x5E38;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5F02;&#x5E38;&#x8FC7;&#x6EE4;&#x5668;&#x6765;&#x8FDB;&#x884C;&#x6355;&#x6349;&#x5904;&#x7406;&#x3002;</p>
+<p>&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;&#x8FC7;&#x6EE4;&#x5668;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyAsyncExceptionFilter</span> <span class="token punctuation">:</span> <span class="token class-name">IAsyncExceptionFilter</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">ILogger</span> _logger<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">MyAsyncExceptionFilter</span><span class="token punctuation">(</span>ILogger<span class="token operator">&lt;</span>MyAsyncExceptionFilter<span class="token operator">&gt;</span> logger<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        _logger <span class="token operator">=</span> logger<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token class-name">Task</span> <span class="token function">OnExceptionAsync</span><span class="token punctuation">(</span><span class="token class-name">ExceptionContext</span> context<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        context<span class="token punctuation">.</span>ExceptionHandled <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">var</span> msg <span class="token operator">=</span> context<span class="token punctuation">.</span>Exception<span class="token punctuation">.</span>Message<span class="token punctuation">;</span>
+        _logger<span class="token punctuation">.</span><span class="token function">LogError</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        context<span class="token punctuation">.</span>Result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectResult</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token generic-method"><span class="token function">ApiResult</span><span class="token punctuation">&lt;</span><span class="token keyword">string</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">,</span> msg<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>StatusCode <span class="token operator">=</span> <span class="token number">500</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">await</span> Task<span class="token punctuation">.</span>CompletedTask<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Startup&#x4E2D;&#x6CE8;&#x518C;&#x8FC7;&#x6EE4;&#x5668;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">ConfigureServices</span><span class="token punctuation">(</span><span class="token class-name">IServiceCollection</span> services<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    services<span class="token punctuation">.</span><span class="token function">AddMvc</span><span class="token punctuation">(</span>options <span class="token operator">=&gt;</span>
+    <span class="token punctuation">{</span>
+        options<span class="token punctuation">.</span>Filters<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">Add</span><span class="token punctuation">&lt;</span><span class="token class-name">MyAsyncExceptionFilter</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">&#xA9; Colin Chang all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-07-09 15:30:26
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="webapi-restful.html" class="navigation navigation-prev " aria-label="Previous page: 7.1 WebAPI和Restful">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="webapi-multiversion.html" class="navigation navigation-next " aria-label="Next page: 7.3 多版本管理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"7.2 WebAPI基础","level":"2.7.2","depth":2,"next":{"title":"7.3 多版本管理","level":"2.7.3","depth":2,"path":"pages/webapi-multiversion.md","ref":"pages/webapi-multiversion.md","articles":[]},"previous":{"title":"7.1 WebAPI和Restful","level":"2.7.1","depth":2,"path":"pages/webapi-restful.md","ref":"pages/webapi-restful.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","-lunr","-search","search-plus","advanced-emoji","github-buttons","multipart","splitter","tbfed-pagefooter","anchors","sitemap","-sharing","sharing-plus","toggle-chapters","book-summary-scroll-position-saver","prism","-highlight","favicon-absolute"],"styles":{"website":"website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy Colin Chang","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"disqus":{"useIdentifier":false,"shortName":"http-colin-chang-site-1"},"book-summary-scroll-position-saver":{},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"multipart":{},"favicon-absolute":{"appleTouchIconMore":{"120x120":"https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png","180x180":"https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png"},"appleTouchIconPrecomposed152":"https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png","appleTouchIconPrecomposedMore":{"120x120":"https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png","180x180":"https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png"},"favicon":"https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png","bookmark":"https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png","appleTouchIcon152":"https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"https://ccstudio.org/netcore"},"github-buttons":{"buttons":[{"user":"colin-chang","repo":"netcore","type":"star","size":"small"}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":true,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","instapaper","vk","weibo"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"toggle-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":".Net Core-软件开发","gitbook":"*","description":".Net高效跨平台技术方案"},"file":{"path":"pages/webapi-basic.md","mtime":"2020-07-09T07:30:26.777Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-18T15:55:59.139Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

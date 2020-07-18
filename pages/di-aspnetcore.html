@@ -1,0 +1,1336 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3.8 Asp.Net Core DI 使用 · .Net Core-软件开发</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../website.css">
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="di-src.html" />
+    
+    
+    <link rel="prev" href="di-lifetime.html" />
+    
+
+    
+        <link rel="shortcut icon" href="https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png" type="image/x-icon">
+    
+    
+        <link rel="bookmark" href="https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png" type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" sizes="152x152" href="https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png">
+    
+    
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png">
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png">
+        
+    
+    
+        
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png">
+        
+        <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"colin-chang","repo":"netcore","type":"star","size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" >
+            
+                <a target="_blank" href="https://ccstudio.org">
+            
+                    
+                    CC Studio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part I - .NET Core 基础</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. 安装部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="install-install.html">
+            
+                <a href="install-install.html">
+            
+                    
+                    1.1 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="install-deploy.html">
+            
+                <a href="install-deploy.html">
+            
+                    
+                    1.2 部署项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="config.html">
+            
+                <a href="config.html">
+            
+                    
+                    2. 配置管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="index.md">
+            
+                <span>
+            
+                    
+                    3. 依赖注入
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="di-intro.html">
+            
+                <a href="di-intro.html">
+            
+                    
+                    3.1 依赖注入引入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="di-ioc.html">
+            
+                <a href="di-ioc.html">
+            
+                    
+                    3.2 控制反转（IoC）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="di-designmode.html">
+            
+                <a href="di-designmode.html">
+            
+                    
+                    3.3 基于IoC的设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="di-di.html">
+            
+                <a href="di-di.html">
+            
+                    
+                    3.4 依赖注入（DI）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="di-register.html">
+            
+                <a href="di-register.html">
+            
+                    
+                    3.5 服务注册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="di-consume.html">
+            
+                <a href="di-consume.html">
+            
+                    
+                    3.6 服务消费
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="di-lifetime.html">
+            
+                <a href="di-lifetime.html">
+            
+                    
+                    3.7 服务生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.3.8" data-path="di-aspnetcore.html">
+            
+                <a href="di-aspnetcore.html">
+            
+                    
+                    3.8 Asp.Net Core DI 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="di-src.html">
+            
+                <a href="di-src.html">
+            
+                    
+                    3.9 Asp.Net Core DI 源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="index.md">
+            
+                <span>
+            
+                    
+                    4. Asp.Net Core管道
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="pipeline-diagram.html">
+            
+                <a href="pipeline-diagram.html">
+            
+                    
+                    4.1 管道模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="pipeline-middlewire.html">
+            
+                <a href="pipeline-middlewire.html">
+            
+                    
+                    4.2 中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="pipeline-lifetime.html">
+            
+                <a href="pipeline-lifetime.html">
+            
+                    
+                    4.3 生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="pipeline-environment.html">
+            
+                <a href="pipeline-environment.html">
+            
+                    
+                    4.4 环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="supplement.html">
+            
+                <a href="supplement.html">
+            
+                    
+                    5. Session和Cache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="index.md">
+            
+                <span>
+            
+                    
+                    6. 认证与授权
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="auth-authentication.html">
+            
+                <a href="auth-authentication.html">
+            
+                    
+                    6.1 Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="auth-cookie.html">
+            
+                <a href="auth-cookie.html">
+            
+                    
+                    6.2 Cookie Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="auth-jwt.html">
+            
+                <a href="auth-jwt.html">
+            
+                    
+                    6.3 JwtBear Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="auth-auth2.html">
+            
+                <a href="auth-auth2.html">
+            
+                    
+                    6.4 OAuth2 & OpenID Connect Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="authorization.html">
+            
+                <a href="authorization.html">
+            
+                    
+                    6.5 Authorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="index.md">
+            
+                <span>
+            
+                    
+                    7. WebAPI
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="webapi-restful.html">
+            
+                <a href="webapi-restful.html">
+            
+                    
+                    7.1 WebAPI和Restful
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="webapi-basic.html">
+            
+                <a href="webapi-basic.html">
+            
+                    
+                    7.2 WebAPI基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="webapi-multiversion.html">
+            
+                <a href="webapi-multiversion.html">
+            
+                    
+                    7.3 多版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="webapi-security.html">
+            
+                <a href="webapi-security.html">
+            
+                    
+                    7.4 安全控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="webapi-openapi.html">
+            
+                <a href="webapi-openapi.html">
+            
+                    
+                    7.5 OpenAPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="log.html">
+            
+                <a href="log.html">
+            
+                    
+                    8. 日志管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part Ⅱ - 数据访问</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="dapper.html">
+            
+                <a href="dapper.html">
+            
+                    
+                    1. Dapper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2. EF Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part Ⅱ - 微服务</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="docker-intro.html">
+            
+                <a href="docker-intro.html">
+            
+                    
+                    1.1 Docker简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="docker-install.html">
+            
+                <a href="docker-install.html">
+            
+                    
+                    1.2 安装配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="docker-cmd.html">
+            
+                <a href="docker-cmd.html">
+            
+                    
+                    1.3 常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="docker-dockerfile.html">
+            
+                <a href="docker-dockerfile.html">
+            
+                    
+                    1.4 制作镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2. 微服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="microservice-intro.html">
+            
+                <a href="microservice-intro.html">
+            
+                    
+                    2.1 微服务架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="microservice-consul.html">
+            
+                <a href="microservice-consul.html">
+            
+                    
+                    2.2 服务治理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="microservice-polly.html">
+            
+                <a href="microservice-polly.html">
+            
+                    
+                    2.3 熔断降级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" data-path="microservice-ocelot.html">
+            
+                <a href="microservice-ocelot.html">
+            
+                    
+                    2.4 网关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5" data-path="index.md">
+            
+                <span>
+            
+                    
+                    2.5 微服务授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.6" data-path="rpc.html">
+            
+                <a href="rpc.html">
+            
+                    
+                    2.6 RPC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.7" data-path="microservice-docker.html">
+            
+                <a href="microservice-docker.html">
+            
+                    
+                    2.7 Docker+微服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅲ 其他技术</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="index.md">
+            
+                <span>
+            
+                    
+                    1. 多线程/异步
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="multithreading-intro.html">
+            
+                <a href="multithreading-intro.html">
+            
+                    
+                    1.1 进程、线程和应用程序域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="multithreading-basic.html">
+            
+                <a href="multithreading-basic.html">
+            
+                    
+                    1.2 进程、线程基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="multithreading-synchronization.html">
+            
+                <a href="multithreading-synchronization.html">
+            
+                    
+                    1.3 线程同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="multithreading-threadpool.html">
+            
+                <a href="multithreading-threadpool.html">
+            
+                    
+                    1.4 线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="multithreading-uiresource.html">
+            
+                <a href="multithreading-uiresource.html">
+            
+                    
+                    1.5 UI资源跨线程访问
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="multithreading-async.html">
+            
+                <a href="multithreading-async.html">
+            
+                    
+                    1.6 异步编程模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="unittest.html">
+            
+                <a href="unittest.html">
+            
+                    
+                    2. 单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part IV - 常用解决方案</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="autofac.html">
+            
+                <a href="autofac.html">
+            
+                    
+                    1. AutoFac
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="automapper.html">
+            
+                <a href="automapper.html">
+            
+                    
+                    2. AutoMapper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="https.html">
+            
+                <a href="https.html">
+            
+                    
+                    3. HTTPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="mailsms.html">
+            
+                <a href="mailsms.html">
+            
+                    
+                    4. 邮件短信通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="mailsms.html">
+            
+                <a href="mailsms.html">
+            
+                    
+                    5. 在线支付
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="staticssi.html">
+            
+                <a href="staticssi.html">
+            
+                    
+                    6. 页面静态化和SSI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3.8 Asp.Net Core DI 使用</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="aspnet-core-&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x4F7F;&#x7528;"><a name="aspnet-core-&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x4F7F;&#x7528;" class="plugin-anchor" href="#aspnet-core-&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>Asp.Net Core &#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x4F7F;&#x7528;</h1>
+<ul>
+<li><a href="#1-&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x5728;&#x7BA1;&#x9053;&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x4F7F;&#x7528;">1. &#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x5728;&#x7BA1;&#x9053;&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x4F7F;&#x7528;</a></li>
+<li><a href="#2-&#x4F9D;&#x8D56;&#x670D;&#x52A1;&#x6CE8;&#x518C;">2. &#x4F9D;&#x8D56;&#x670D;&#x52A1;&#x6CE8;&#x518C;</a></li>
+<li><a href="#3-&#x4F9D;&#x8D56;&#x670D;&#x52A1;&#x6D88;&#x8D39;">3. &#x4F9D;&#x8D56;&#x670D;&#x52A1;&#x6D88;&#x8D39;</a><ul>
+<li><a href="#31-controllerpagemodel">3.1 Controller/PageModel</a></li>
+<li><a href="#32-view">3.2 View</a></li>
+<li><a href="#33-httpcontext&#x83B7;&#x53D6;&#x5B9E;&#x4F8B;">3.3 HttpContext&#x83B7;&#x53D6;&#x5B9E;&#x4F8B;</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="1-&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x5728;&#x7BA1;&#x9053;&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x4F7F;&#x7528;"><a name="1-&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x5728;&#x7BA1;&#x9053;&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x4F7F;&#x7528;" class="plugin-anchor" href="#1-&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x5728;&#x7BA1;&#x9053;&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x5728;&#x7BA1;&#x9053;&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x4F7F;&#x7528;</h2>
+<p>&#x5728;ASP.NET Core&#x7BA1;&#x9053;&#x7684;&#x6784;&#x67B6;&#x8FC7;&#x7A0B;&#x4E2D;&#x4E3B;&#x8981;&#x6D89;&#x53CA;&#x4E09;&#x4E2A;&#x5BF9;&#x8C61;/&#x7C7B;&#x578B;&#xFF0C;&#x4F5C;&#x4E3A;&#x5BBF;&#x4E3B;&#x7684;WebHost&#x548C;&#x5B83;&#x7684;&#x521B;&#x5EFA;&#x8005;WebHostBuilder&#xFF0C;&#x4EE5;&#x53CA;&#x6CE8;&#x518C;&#x5230;WebHostBuilder&#x7684;Startup&#x7C7B;&#x578B;&#x3002; &#x5982;&#x4E0B;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x4F53;&#x73B0;&#x4E86;&#x542F;&#x52A8;ASP.NET Core&#x5E94;&#x7528;&#x91C7;&#x7528;&#x7684;&#x5178;&#x578B;&#x7F16;&#x7A0B;&#x6A21;&#x5F0F;&#xFF1A;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;IWebHostBuilder&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x5C06;Startup&#x7C7B;&#x578B;&#x6CE8;&#x518C;&#x5230;&#x5B83;&#x4E4B;&#x4E0A;&#x3002;&#x5728;&#x8C03;&#x7528;Build&#x65B9;&#x6CD5;&#x521B;&#x5EFA;WebHost&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x76F8;&#x5E94;&#x7684;&#x65B9;&#x5F0F;&#x505A;&#x5176;&#x4ED6;&#x6240;&#x9700;&#x7684;&#x6CE8;&#x518C;&#x5DE5;&#x4F5C;&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x8C03;&#x7528;WebHost&#x7684;Run&#x65B9;&#x6CD5;&#x4E4B;&#x540E;&#xFF0C;&#x540E;&#x8005;&#x4F1A;&#x5229;&#x7528;&#x6CE8;&#x518C;&#x7684;Startup&#x7C7B;&#x578B;&#x6765;&#x6784;&#x5EFA;&#x5B8C;&#x6574;&#x7684;&#x7BA1;&#x9053;&#x3002;&#x90A3;&#x4E48;&#x5728;&#x7BA1;&#x9053;&#x7684;&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;DI&#x662F;&#x5982;&#x4F55;&#x88AB;&#x5E94;&#x7528;&#x7684;&#x5462;&#xFF1F;</p>
+<pre class="language-"><code class="lang-csharp">WebHost<span class="token punctuation">.</span><span class="token function">CreateDefaultBuilder</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token generic-method"><span class="token function">UseStartup</span><span class="token punctuation">&lt;</span><span class="token class-name">Startup</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span>Xxx
+    <span class="token punctuation">.</span><span class="token function">Build</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">Run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>DI&#x5728;ASP.NET Core&#x7BA1;&#x9053;&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x5E94;&#x7528;&#x57FA;&#x672C;&#x4F53;&#x73B0;&#x5728;&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x5E8F;&#x5217;&#x56FE;&#x4E2D;&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x8C03;&#x7528;WebHostBuilder&#x7684;Build&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x5BF9;&#x5E94;&#x7684;WebHost&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x524D;&#x8005;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;ServiceCollection&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x5C06;&#x4E00;&#x7CFB;&#x5217;&#x9884;&#x5B9A;&#x4E49;&#x7684;&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x5728;&#x5B83;&#x4E4B;&#x4E0A;&#x3002;&#x63A5;&#x4E0B;&#x6765;WebHostBuilder&#x4F1A;&#x5229;&#x7528;&#x8FD9;&#x4E2A;ServiceCollection&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x51FA;&#x5BF9;&#x5E94;&#x7684;ServiceProvider&#xFF0C;&#x8FD9;&#x4E2A;ServiceProvider&#x548C;ServiceCollection&#x5BF9;&#x8C61;&#x4F1A;&#x4E00;&#x5E76;&#x4F20;&#x9012;&#x7ED9;&#x6700;&#x7EC8;&#x521B;&#x5EFA;WebHost&#x5BF9;&#x8C61;&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x8C03;&#x7528;WebHost&#x7684;Run&#x65B9;&#x6CD5;&#x542F;&#x52A8;&#x5B83;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5982;&#x679C;&#x6CE8;&#x518C;&#x7684;Startup&#x662F;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x7C7B;&#x578B;&#xFF0C;&#x5219;&#x4F1A;&#x4EE5;&#x6784;&#x9020;&#x5668;&#x6CE8;&#x5165;&#x7684;&#x65B9;&#x5F0F;&#x521B;&#x5EFA;&#x5BF9;&#x5E94;&#x7684;Startup&#x5BF9;&#x8C61;&#x3002;&#x6211;&#x4EEC;&#x6CE8;&#x518C;&#x7684;Startup&#x7C7B;&#x578B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x662F;&#x5141;&#x8BB8;&#x5B9A;&#x4E49;&#x53C2;&#x6570;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x5FC5;&#x987B;&#x662F;&#x9884;&#x5148;&#x6CE8;&#x518C;&#x5230;ServiceCollection&#x4E2D;&#x7684;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#x3002;</p>
+<p><img src="https://i.loli.net/2020/02/26/Ugw9JOZxdmRMr7h.png" alt="DI&#x5728;ASP.NET Core&#x7BA1;&#x9053;&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x5E94;&#x7528;"></p>
+<p>&#x6CE8;&#x518C;&#x7684;Startup&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;ConfigureServices&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5177;&#x6709;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x4E3A;IServiceCollection&#x63A5;&#x53E3;&#x7684;&#x53C2;&#x6570;&#x3002;WebHost&#x4F1A;&#x5C06;WebHostBuilder&#x4F20;&#x9012;&#x7ED9;&#x5B83;&#x7684;ServiceCollection&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;ConfigureServices&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x6211;&#x4EEC;&#x5219;&#x5229;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5C06;&#x6CE8;&#x518C;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;&#x548C;&#x5E94;&#x7528;&#x6240;&#x9700;&#x7684;&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x5230;&#x8FD9;&#x4E2A;ServiceCollection&#x5BF9;&#x8C61;&#x4E0A;&#x3002;&#x5728;&#x8FD9;&#x4E4B;&#x540E;&#xFF0C;&#x6240;&#x6709;&#x9700;&#x8981;&#x7684;&#x670D;&#x52A1;&#xFF08;&#x5305;&#x62EC;&#x6846;&#x67B6;&#x548C;&#x5E94;&#x7528;&#x6CE8;&#x518C;&#x7684;&#x670D;&#x52A1;&#xFF09;&#x90FD;&#x6CE8;&#x518C;&#x5230;&#x8FD9;&#x4E2A;ServiceCollection&#x4E0A;&#x9762;&#xFF0C;WebHost&#x4F1A;&#x5229;&#x7528;&#x5B83;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;ServiceProvider&#x3002;WebHost&#x4F1A;&#x5229;&#x7528;&#x8FD9;&#x4E2A;ServiceProvider&#x5BF9;&#x8C61;&#x4EE5;&#x65B9;&#x6CD5;&#x6CE8;&#x5165;&#x7684;&#x65B9;&#x5F0F;&#x8C03;&#x7528;Startup&#x5BF9;&#x8C61;/&#x7C7B;&#x578B;&#x7684;Configure&#x65B9;&#x6CD5;&#xFF0C;&#x6700;&#x7EC8;&#x5B8C;&#x6210;&#x4F60;&#x5BF9;&#x6574;&#x4E2A;&#x7BA1;&#x9053;&#x7684;&#x5EFA;&#x7ACB;&#x3002;&#x6362;&#x53E5;&#x8BDD;&#x4F1A;&#x8BF4;&#xFF0C;&#x5B9A;&#x4E49;&#x5728;Startup&#x7C7B;&#x578B;&#x4E2D;&#x65E8;&#x5728;&#x7528;&#x4E8E;&#x6CE8;&#x518C;Middleware&#x7684;Configure&#x65B9;&#x6CD5;&#x9664;&#x4E86;&#x91C7;&#x7528;IApplicationBuilder&#x4F5C;&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4E4B;&#x5916;&#xFF0C;&#x5B83;&#x4F9D;&#x7136;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x6CE8;&#x518C;&#x7684;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#x4F5C;&#x4E3A;&#x540E;&#x7EED;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x3002;</p>
+<p>&#x670D;&#x52A1;&#x7684;&#x6CE8;&#x518C;&#x9664;&#x4E86;&#x73B0;&#x5728;&#x6CE8;&#x518C;&#x7684;Startup&#x7C7B;&#x578B;&#x7684;ConfigureServices&#x65B9;&#x6CD5;&#x4E4B;&#x5916;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x8FD8;&#x5177;&#x6709;&#x53E6;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#x8C03;&#x7528;IWebHostBuilder&#x5B9A;&#x4E49;&#x7684;ConfigureServices&#x65B9;&#x6CD5;&#x3002;&#x5F53;WebHostBuilder&#x521B;&#x5EFA;&#x51FA;ServiceCollection&#x5BF9;&#x8C61;&#x5E76;&#x5B8C;&#x6210;&#x4E86;&#x9ED8;&#x8BA4;&#x670D;&#x52A1;&#x7684;&#x6CE8;&#x518C;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x6240;&#x4F20;&#x5165;&#x7684;&#x6240;&#x6709;Action&lt;IServiceCollection&gt;&#x5BF9;&#x8C61;&#x5C06;&#x6700;&#x7EC8;&#x5E94;&#x7528;&#x5230;&#x8FD9;&#x4E2A;ServiceCollection&#x5BF9;&#x8C61;&#x4E0A;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IWebHostBuilder</span>
+<span class="token punctuation">{</span>
+    <span class="token class-name">IWebHostBuilder</span> <span class="token function">ConfigureServiecs</span><span class="token punctuation">(</span>Action<span class="token operator">&lt;</span>IServiceCollection<span class="token operator">&gt;</span> configureServices<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x503C;&#x5F97;&#x4E00;&#x63D0;&#x7684;&#x662F;&#xFF0C;Startup&#x7C7B;&#x578B;&#x7684;ConfigureServices&#x65B9;&#x6CD5;&#x662F;&#x5141;&#x8BB8;&#x5177;&#x6709;&#x4E00;&#x4E2A;IServiceProvider&#x7C7B;&#x578B;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7684;ServiceProrivder&#xFF0C;&#x90A3;&#x4E48;WebHost&#x5C06;&#x4E0D;&#x4F1A;&#x5229;&#x7528;ServiceCollection&#x6765;&#x521B;&#x5EFA;ServiceProvider&#xFF0C;&#x800C;&#x662F;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x8FD4;&#x56DE;&#x7684;ServiceProvider&#x6765;&#x8C03;&#x7528;Startup&#x5BF9;&#x8C61;/&#x7C7B;&#x578B;&#x7684;Configure&#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x6709;&#x7528;&#x7684;&#x6269;&#x5C55;&#x70B9;&#xFF0C;&#x4F7F;&#x7528;&#x5B83;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x9488;&#x5BF9;&#x7B2C;&#x4E09;&#x65B9;DI&#x6846;&#x67B6;&#xFF08;&#x5982;Unity&#x3001;Castle&#x3001;Ninject&#x548C;AutoFac&#x7B49;&#xFF09;&#x7684;&#x96C6;&#x6210;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53EA;&#x662F;&#x7B80;&#x5355;&#x7684;&#x4ECB;&#x7ECD;&#x4E86;Asp.Net Core&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x7684;&#x7B80;&#x5355;&#x8FC7;&#x7A0B;&#xFF0C;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x7EC6;&#x8282;&#x5C5E;&#x4E8E;Asp.Net Core&#x6846;&#x67B6;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x540E;&#x7EED;<a href="disrc.md">Asp.Net Core &#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x6E90;&#x7801;&#x548C;DI&#x6E90;&#x7801;&#x5206;&#x6790;</a>&#x4E2D;&#x505A;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;</p>
+<h2 id="2-&#x4F9D;&#x8D56;&#x670D;&#x52A1;&#x6CE8;&#x518C;"><a name="2-&#x4F9D;&#x8D56;&#x670D;&#x52A1;&#x6CE8;&#x518C;" class="plugin-anchor" href="#2-&#x4F9D;&#x8D56;&#x670D;&#x52A1;&#x6CE8;&#x518C;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x4F9D;&#x8D56;&#x670D;&#x52A1;&#x6CE8;&#x518C;</h2>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x6765;&#x6F14;&#x793A;&#x5982;&#x4F55;&#x5229;&#x7528;Startup&#x7C7B;&#x578B;&#x7684;ConfigureServices&#x6765;&#x6CE8;&#x518C;&#x670D;&#x52A1;&#xFF0C;&#x4EE5;&#x53CA;&#x5728;Startup&#x7C7B;&#x578B;&#x4E0A;&#x7684;&#x4E24;&#x79CD;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x5F62;&#x5F0F;&#x3002;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x6240;&#x793A;&#xFF0C;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x4E2A;&#x670D;&#x52A1;&#x63A5;&#x53E3;&#xFF08;IFoo&#x548C;IBar&#xFF09;&#x548C;&#x5BF9;&#x5E94;&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x578B;&#xFF08;Foo&#x548C;Bar&#xFF09;&#x3002;&#x5176;&#x4E2D;&#x670D;&#x52A1;Foo&#x662F;&#x901A;&#x8FC7;&#x8C03;&#x7528;WebHostBuilder&#x7684;ConfigureServices&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x6CE8;&#x518C;&#x7684;&#xFF0C;&#x800C;&#x53E6;&#x4E00;&#x4E2A;&#x670D;&#x52A1;Bar&#x7684;&#x6CE8;&#x518C;&#x5219;&#x53D1;&#x751F;&#x5728;Startup&#x7684;ConfigureServices&#x65B9;&#x6CD5;&#x4E0A;&#x3002;&#x5BF9;&#x4E8E;Startup&#x6765;&#x8BF4;&#xFF0C;&#x5B83;&#x5177;&#x6709;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x4E3A;IFoo&#x7684;&#x53EA;&#x8BFB;&#x5C5E;&#x6027;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5229;&#x7528;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x4E0D;&#x7528;&#x8BF4;&#x8FD9;&#x4F53;&#x73B0;&#x4E86;&#x9488;&#x5BF9;Startup&#x7684;&#x6784;&#x9020;&#x5668;&#x6CE8;&#x5165;&#x3002;Startup&#x7684;Configure&#x65B9;&#x6CD5;&#x9664;&#x4E86;ApplicationBuilder&#x4F5C;&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x5177;&#x6709;&#x53E6;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x4E3A;IBar&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x6211;&#x4EEC;&#x5229;&#x7528;&#x5B83;&#x6765;&#x6F14;&#x793A;&#x65B9;&#x6CD5;&#x6CE8;&#x5165;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IFoo</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IBar</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Foo</span> <span class="token punctuation">:</span> <span class="token class-name">IFoo</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Bar</span> <span class="token punctuation">:</span> <span class="token class-name">IBar</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Program</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        WebHost<span class="token punctuation">.</span><span class="token function">CreateDefaultBuilder</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">ConfigureServices</span><span class="token punctuation">(</span>services <span class="token operator">=&gt;</span> services<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">AddSingleton</span><span class="token punctuation">&lt;</span><span class="token class-name">IFoo</span><span class="token punctuation">,</span> <span class="token class-name">Foo</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token generic-method"><span class="token function">UseStartup</span><span class="token punctuation">&lt;</span><span class="token class-name">Startup</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">Build</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">Run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Startup</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">IFoo</span> Foo <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">private</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token function">Startup</span><span class="token punctuation">(</span><span class="token class-name">IFoo</span> foo<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>Foo <span class="token operator">=</span> foo<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>    
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">ConfigureServices</span><span class="token punctuation">(</span><span class="token class-name">IServiceCollection</span> services<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">// &#x6700;&#x5E38;&#x7528;&#x7684;&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x65B9;&#x5F0F;</span>
+        services<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">AddTransient</span><span class="token punctuation">&lt;</span><span class="token class-name">IBar</span><span class="token punctuation">,</span> <span class="token class-name">Bar</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">Configure</span><span class="token punctuation">(</span><span class="token class-name">IApplicationBuilder</span> app<span class="token punctuation">,</span> <span class="token class-name">IBar</span> bar<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        app<span class="token punctuation">.</span><span class="token function">Run</span><span class="token punctuation">(</span><span class="token keyword">async</span> context <span class="token operator">=&gt;</span>
+        <span class="token punctuation">{</span>
+            context<span class="token punctuation">.</span>Response<span class="token punctuation">.</span>ContentType <span class="token operator">=</span> <span class="token string">&quot;text/html&quot;</span><span class="token punctuation">;</span>
+            <span class="token keyword">await</span> context<span class="token punctuation">.</span>Response<span class="token punctuation">.</span><span class="token function">WriteAsync</span><span class="token punctuation">(</span>$<span class="token string">&quot;IFoo=&gt;{this.Foo}&lt;br/&gt;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">await</span> context<span class="token punctuation">.</span>Response<span class="token punctuation">.</span><span class="token function">WriteAsync</span><span class="token punctuation">(</span>$<span class="token string">&quot;IBar=&gt;{bar}&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5728;Startup&#x7684;Configure&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x8C03;&#x7528;IApplicationBulder&#x7684;Run&#x65B9;&#x6CD5;&#x6CE8;&#x518C;&#x4E86;&#x4E00;&#x4E2A;Middleware&#xFF0C;&#x540E;&#x8005;&#x5C06;&#x4E24;&#x4E2A;&#x6CE8;&#x5165;&#x7684;&#x670D;&#x52A1;&#x7684;&#x7C7B;&#x578B;&#x4F5C;&#x4E3A;&#x54CD;&#x5E94;&#x7684;&#x5185;&#x5BB9;&#x8F93;&#x51FA;&#x3002;</p>
+<p><img src="https://i.loli.net/2020/02/26/ZFNTHnvIwQJgKuA.jpg" alt="&#x4F9D;&#x8D56;&#x670D;&#x52A1;&#x7684;&#x6CE8;&#x518C;&#x4E0E;&#x6CE8;&#x5165;"></p>
+<p>&#x53E6;&#x5916;&#xFF0C;WebHostBuilder&#x5728;&#x521B;&#x5EFA;ServiceCollection&#x4E4B;&#x540E;&#xFF0C;&#x4F1A;&#x6CE8;&#x518C;&#x4E00;&#x4E9B;&#x9ED8;&#x8BA4;&#x7684;&#x670D;&#x52A1;&#xFF08;&#x5982;IHostingEnvironment&#xFF0C;ILoggerFactory&#x7B49;&#xFF09;&#x3002;&#x8FD9;&#x4E9B;&#x670D;&#x52A1;&#x548C;&#x6211;&#x4EEC;&#x81EA;&#x884C;&#x6CE8;&#x518C;&#x7684;&#x670D;&#x52A1;&#x5E76;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x533A;&#x522B;&#xFF0C;&#x53EA;&#x8981;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x5BF9;&#x5E94;&#x7684;&#x670D;&#x52A1;&#x7C7B;&#x578B;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6CE8;&#x5165;&#x7684;&#x65B9;&#x5F0F;&#x83B7;&#x53D6;&#x5E76;&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#x3002;</p>
+<p>ASP.NET Core&#x7684;&#x4E00;&#x4E9B;&#x7EC4;&#x4EF6;&#x5DF2;&#x7ECF;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x5B9E;&#x4F8B;&#x7684;&#x7ED1;&#x5B9A;&#xFF0C;&#x50CF;AddMvc&#x5C31;&#x662F;Mvc Middleware&#x5728; IServiceCollection&#x4E0A;&#x6DFB;&#x52A0;&#x7684;&#x6269;&#x5C55;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">IMvcBuilder</span> <span class="token function">AddMvc</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> services<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>services <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">ArgumentNullException</span><span class="token punctuation">(</span><span class="token function">nameof</span><span class="token punctuation">(</span>services<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> builder <span class="token operator">=</span> services<span class="token punctuation">.</span><span class="token function">AddMvcCore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    builder<span class="token punctuation">.</span><span class="token function">AddApiExplorer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    builder<span class="token punctuation">.</span><span class="token function">AddAuthorization</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">AddDefaultFrameworkParts</span><span class="token punctuation">(</span>builder<span class="token punctuation">.</span>PartManager<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="3-&#x4F9D;&#x8D56;&#x670D;&#x52A1;&#x6D88;&#x8D39;"><a name="3-&#x4F9D;&#x8D56;&#x670D;&#x52A1;&#x6D88;&#x8D39;" class="plugin-anchor" href="#3-&#x4F9D;&#x8D56;&#x670D;&#x52A1;&#x6D88;&#x8D39;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x4F9D;&#x8D56;&#x670D;&#x52A1;&#x6D88;&#x8D39;</h2>
+<p>&#x4F9D;&#x8D56;&#x670D;&#x52A1;&#x4E4B;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x9700;&#x8981;&#x7684;&#x4F4D;&#x7F6E;&#x6D88;&#x8D39;&#x670D;&#x52A1;&#x4E86;&#x3002;DI&#x7684;<a href="di.md">&#x4E09;&#x79CD;&#x6CE8;&#x5165;&#x65B9;&#x5F0F;</a>&#xFF0C;Asp.Net Core&#x9ED8;&#x8BA4;&#x4EC5;&#x652F;&#x6301;&#x6784;&#x9020;&#x5668;&#x6CE8;&#x5165;&#x65B9;&#x5F0F;&#x548C;&#x9762;&#x5411;&#x7EA6;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;&#x6CE8;&#x5165;(&#x6846;&#x67B6;&#x7EA7;&#x522B;&#x4F7F;&#x7528;&#xFF0C;&#x5982;Starup&#x7684;Config&#x65B9;&#x6CD5;)&#x3002;&#x4E0A;&#x9762;&#x6848;&#x4F8B;&#x4E2D;&#x5728;Startup&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x548C;Config&#x65B9;&#x6CD5;&#x5206;&#x522B;&#x4F53;&#x73B0;&#x4E86;&#x4E24;&#x79CD;&#x6CE8;&#x5165;&#x65B9;&#x5F0F;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x6765;&#x6F14;&#x793A;&#x5728;Asp.Net Core&#x9879;&#x76EE;&#x4E2D;Startup&#x4E4B;&#x5916;&#x7684;&#x4F4D;&#x7F6E;&#x5982;&#x4F55;&#x6D88;&#x8D39;DI&#x670D;&#x52A1;&#x3002;</p>
+<h3 id="31-controllerpagemodel"><a name="31-controllerpagemodel" class="plugin-anchor" href="#31-controllerpagemodel"><i class="fa fa-link" aria-hidden="true"></i></a>3.1 Controller/PageModel</h3>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">private</span> ILoginService<span class="token operator">&lt;</span>ApplicationUser<span class="token operator">&gt;</span> _loginService<span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token function">AccountController</span><span class="token punctuation">(</span>
+  ILoginService<span class="token operator">&lt;</span>ApplicationUser<span class="token operator">&gt;</span> loginService<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  _loginService <span class="token operator">=</span> loginService<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x53EA;&#x8981;&#x5728;&#x63A7;&#x5236;&#x5668;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x91CC;&#x9762;&#x5199;&#x4E86;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;ServiceProvider&#x5C31;&#x4F1A;&#x5E2E;&#x6211;&#x4EEC;&#x6CE8;&#x5165;&#x8FDB;&#x6765;&#x3002;</p>
+<h3 id="32-view"><a name="32-view" class="plugin-anchor" href="#32-view"><i class="fa fa-link" aria-hidden="true"></i></a>3.2 View</h3>
+<p>&#x5728;View&#x4E2D;&#x9700;&#x8981;&#x7528;@inject &#x518D;&#x58F0;&#x660E;&#x4E00;&#x4E0B;&#xFF0C;&#x8D77;&#x4E00;&#x4E2A;&#x522B;&#x540D;&#x3002;</p>
+<pre class="language-"><code class="lang-html">@using MilkStone.Services;
+@model MilkStone.Models.AccountViewModel.LoginViewModel
+@inject ILoginService<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ApplicationUser</span><span class="token punctuation">&gt;</span></span>  loginService
+<span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://www.w3.org/1999/xhtml<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+  @loginService.GetUserName()
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<h3 id="33-httpcontext&#x83B7;&#x53D6;&#x5B9E;&#x4F8B;"><a name="33-httpcontext&#x83B7;&#x53D6;&#x5B9E;&#x4F8B;" class="plugin-anchor" href="#33-httpcontext&#x83B7;&#x53D6;&#x5B9E;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>3.3 HttpContext&#x83B7;&#x53D6;&#x5B9E;&#x4F8B;</h3>
+<p>HttpContext&#x4E0B;&#x6709;&#x4E00;&#x4E2A;RequestedService&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x83B7;&#x53D6;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0D;&#x8FC7;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x4E00;&#x822C;&#x4E0D;&#x63A8;&#x8350;&#x3002;&#x540C;&#x65F6;&#x8981;&#x6CE8;&#x610F;GetService&lt;&gt;&#x8FD9;&#x662F;&#x4E2A;&#x8303;&#x578B;&#x65B9;&#x6CD5;&#xFF0C;&#x9ED8;&#x8BA4;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6DFB;&#x52A0;Microsoft.Extension.DependencyInjection&#x7684;using&#xFF0C;&#x662F;&#x4E0D;&#x7528;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp">HttpContext<span class="token punctuation">.</span>RequestServices<span class="token punctuation">.</span>GetService<span class="token operator">&lt;</span>ILoginService<span class="token operator">&lt;</span>ApplicationUser<span class="token operator">&gt;&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<blockquote>
+<p>&#x53C2;&#x8003;&#x6587;&#x732E;</p>
+<ul>
+<li><a href="https://www.cnblogs.com/artech/p/dependency-injection-in-asp-net-core.html" target="_blank">https://www.cnblogs.com/artech/p/dependency-injection-in-asp-net-core.html</a></li>
+<li><a href="https://www.cnblogs.com/jesse2013/p/di-in-aspnetcore.html" target="_blank">https://www.cnblogs.com/jesse2013/p/di-in-aspnetcore.html</a> </li>
+</ul>
+</blockquote>
+<footer class="page-footer"><span class="copyright">&#xA9; Colin Chang all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-07-09 15:30:26
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="di-lifetime.html" class="navigation navigation-prev " aria-label="Previous page: 3.7 服务生命周期">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="di-src.html" class="navigation navigation-next " aria-label="Next page: 3.9 Asp.Net Core DI 源码分析">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3.8 Asp.Net Core DI 使用","level":"2.3.8","depth":2,"next":{"title":"3.9 Asp.Net Core DI 源码分析","level":"2.3.9","depth":2,"path":"pages/di-src.md","ref":"pages/di-src.md","articles":[]},"previous":{"title":"3.7 服务生命周期","level":"2.3.7","depth":2,"path":"pages/di-lifetime.md","ref":"pages/di-lifetime.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","-lunr","-search","search-plus","advanced-emoji","github-buttons","multipart","splitter","tbfed-pagefooter","anchors","sitemap","-sharing","sharing-plus","toggle-chapters","book-summary-scroll-position-saver","prism","-highlight","favicon-absolute"],"styles":{"website":"website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy Colin Chang","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"disqus":{"useIdentifier":false,"shortName":"http-colin-chang-site-1"},"book-summary-scroll-position-saver":{},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"multipart":{},"favicon-absolute":{"appleTouchIconMore":{"120x120":"https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png","180x180":"https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png"},"appleTouchIconPrecomposed152":"https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png","appleTouchIconPrecomposedMore":{"120x120":"https://i.loli.net/2020/02/25/h4IDHPOYcrpg2nE.png","180x180":"https://i.loli.net/2020/02/25/9q5EVHcRkaNyCiL.png"},"favicon":"https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png","bookmark":"https://i.loli.net/2020/02/25/AOjBhkIxtb8dRgl.png","appleTouchIcon152":"https://i.loli.net/2020/02/25/wjbT3FDZ2p6BJs1.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"https://ccstudio.org/netcore"},"github-buttons":{"buttons":[{"user":"colin-chang","repo":"netcore","type":"star","size":"small"}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":true,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","instapaper","vk","weibo"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"toggle-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":".Net Core-软件开发","gitbook":"*","description":".Net高效跨平台技术方案"},"file":{"path":"pages/di-aspnetcore.md","mtime":"2020-07-09T07:30:26.779Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-18T15:55:59.139Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
