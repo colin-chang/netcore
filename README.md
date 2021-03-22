@@ -1,4 +1,5 @@
-此项目已迁移至 https://github.com/colin-chang/dotnet
+# 公告
+**此项目已迁移至 https://github.com/colin-chang/dotnet **
 
 ~~.NET Core 是开放源代码通用开发平台，由 Microsoft 和 .NET 社区在 GitHub 上共同维护。 它跨平台（支持 Windows、macOS 和 Linux），并且可用于生成设备、云和 IoT 应用程序。~~
 
